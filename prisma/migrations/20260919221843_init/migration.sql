@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "Herb" (
-    "id" TEXT NOT NULL PRIMARY KEY,
+    "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "scientificName" TEXT NOT NULL,
     "category" TEXT NOT NULL,
@@ -9,8 +9,10 @@ CREATE TABLE "Herb" (
     "properties" TEXT NOT NULL,
     "cautions" TEXT,
     "imageUrl" TEXT,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Herb_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

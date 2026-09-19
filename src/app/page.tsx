@@ -14,14 +14,14 @@ export default async function HomePage({
     prisma.herb.findMany({
       where: {
         AND: [
-          category ? { category: { equals: category } } : {},
+          category ? { category: { equals: category, mode: "insensitive" } } : {},
           q
             ? {
                 OR: [
-                  { name: { contains: q } },
-                  { scientificName: { contains: q } },
-                  { uses: { contains: q } },
-                  { summary: { contains: q } },
+                  { name: { contains: q, mode: "insensitive" } },
+                  { scientificName: { contains: q, mode: "insensitive" } },
+                  { uses: { contains: q, mode: "insensitive" } },
+                  { summary: { contains: q, mode: "insensitive" } },
                 ],
               }
             : {},

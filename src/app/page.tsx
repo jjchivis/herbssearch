@@ -14,9 +14,7 @@ export default async function HomePage({
     prisma.herb.findMany({
       where: {
         AND: [
-          category
-            ? { category: { equals: category } }
-            : {},
+          category ? { category: { equals: category } } : {},
           q
             ? {
                 OR: [
@@ -38,74 +36,97 @@ export default async function HomePage({
     }),
   ]);
 
+  const isFiltered = Boolean(q || category);
+
   return (
-    <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-8 px-6 py-12">
-      <header className="flex flex-col gap-2">
-        <h1 className="text-3xl font-semibold tracking-tight">HerbSearch</h1>
-        <p className="text-gray-600 dark:text-gray-400">
-          Search and browse a database of herbs, their traditional uses, and properties.
-        </p>
-      </header>
+    <main className="flex flex-1 flex-col">
+      <section className="border-b border-[var(--border)]">
+        <div className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 py-16 sm:py-20">
+          <div className="flex max-w-2xl flex-col gap-4">
+            <p className="text-xs font-medium tracking-[0.2em] text-[var(--highlight)] uppercase">
+              Discover · Learn · Explore
+            </p>
+            <h1 className="font-serif text-4xl leading-tight text-[var(--foreground)] sm:text-5xl">
+              Discover the Power of Plants
+            </h1>
+            <p className="text-lg text-[var(--muted)]">
+              A botanical reference for researching herbs — their traditional uses,
+              properties, and safety, in one considered place.
+            </p>
+          </div>
 
-      <form
-        method="GET"
-        className="flex flex-col gap-3 sm:flex-row sm:items-center"
-      >
-        <input
-          type="search"
-          name="q"
-          defaultValue={q}
-          placeholder="Search by name, use, or property…"
-          className="flex-1 rounded-md border border-gray-300 px-4 py-2 text-sm outline-none focus:border-gray-500 dark:border-gray-700 dark:bg-gray-900"
-        />
-        <select
-          name="category"
-          defaultValue={category}
-          className="rounded-md border border-gray-300 px-4 py-2 text-sm outline-none focus:border-gray-500 dark:border-gray-700 dark:bg-gray-900"
-        >
-          <option value="">All categories</option>
-          {categories.map((c) => (
-            <option key={c.category} value={c.category}>
-              {c.category}
-            </option>
-          ))}
-        </select>
-        <button
-          type="submit"
-          className="rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-700 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-white"
-        >
-          Search
-        </button>
-      </form>
-
-      <p className="text-sm text-gray-500">
-        {herbs.length} herb{herbs.length === 1 ? "" : "s"} found
-      </p>
-
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {herbs.map((herb) => (
-          <Link
-            key={herb.id}
-            href={`/herbs/${herb.id}`}
-            className="flex flex-col gap-2 rounded-lg border border-gray-200 p-5 transition hover:border-gray-400 hover:shadow-sm dark:border-gray-800 dark:hover:border-gray-600"
+          <form
+            method="GET"
+            className="flex flex-col gap-3 sm:flex-row sm:items-center"
           >
-            <div className="flex items-baseline justify-between gap-2">
-              <h2 className="text-lg font-medium">{herb.name}</h2>
-              <span className="rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-600 dark:bg-gray-800 dark:text-gray-300">
-                {herb.category}
-              </span>
-            </div>
-            <p className="text-sm italic text-gray-500">{herb.scientificName}</p>
-            <p className="text-sm text-gray-700 dark:text-gray-300">{herb.summary}</p>
-          </Link>
-        ))}
-      </div>
+            <input
+              type="search"
+              name="q"
+              defaultValue={q}
+              placeholder="Search by name, use, or property…"
+              className="flex-1 rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm text-[var(--foreground)] outline-none placeholder:text-[var(--muted)] focus:border-[var(--accent)]"
+            />
+            <select
+              name="category"
+              defaultValue={category}
+              className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm text-[var(--foreground)] outline-none focus:border-[var(--accent)]"
+            >
+              <option value="">All categories</option>
+              {categories.map((c) => (
+                <option key={c.category} value={c.category}>
+                  {c.category}
+                </option>
+              ))}
+            </select>
+            <button
+              type="submit"
+              className="rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-medium text-[var(--accent-foreground)] transition hover:opacity-90"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </section>
 
-      {herbs.length === 0 && (
-        <p className="rounded-md border border-dashed border-gray-300 p-8 text-center text-sm text-gray-500 dark:border-gray-700">
-          No herbs matched your search. Try a different term or category.
-        </p>
-      )}
+      <section className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-6 px-6 py-12">
+        <div className="flex items-baseline justify-between">
+          <h2 className="font-serif text-xl text-[var(--foreground)]">
+            {isFiltered ? "Results" : "All herbs"}
+          </h2>
+          <p className="text-sm text-[var(--muted)]">
+            {herbs.length} herb{herbs.length === 1 ? "" : "s"}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {herbs.map((herb) => (
+            <Link
+              key={herb.id}
+              href={`/herbs/${herb.id}`}
+              className="group flex flex-col gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 transition hover:border-[var(--accent)]"
+            >
+              <div className="flex items-baseline justify-between gap-2">
+                <h3 className="font-serif text-xl text-[var(--foreground)] group-hover:text-[var(--accent)]">
+                  {herb.name}
+                </h3>
+                <span className="shrink-0 rounded-full bg-[var(--highlight-soft)] px-3 py-1 text-xs tracking-wide text-[var(--highlight)] uppercase">
+                  {herb.category}
+                </span>
+              </div>
+              <p className="font-serif text-sm text-[var(--muted)] italic">
+                {herb.scientificName}
+              </p>
+              <p className="text-sm text-[var(--foreground)]/80">{herb.summary}</p>
+            </Link>
+          ))}
+        </div>
+
+        {herbs.length === 0 && (
+          <p className="rounded-xl border border-dashed border-[var(--border)] p-10 text-center text-sm text-[var(--muted)]">
+            No herbs matched your search. Try a different term or category.
+          </p>
+        )}
+      </section>
     </main>
   );
 }

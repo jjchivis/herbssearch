@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { prisma } from "@/lib/prisma";
+import { FadeIn } from "@/components/motion/fade-in";
+import { HerbGrid, HerbCardMotion } from "@/components/motion/herb-grid";
 
 type SearchParams = { q?: string; category?: string };
 
@@ -42,7 +43,7 @@ export default async function HomePage({
     <main className="flex flex-1 flex-col">
       <section className="border-b border-[var(--border)]">
         <div className="mx-auto flex w-full max-w-5xl flex-col gap-8 px-6 py-16 sm:py-20">
-          <div className="flex max-w-2xl flex-col gap-4">
+          <FadeIn className="flex max-w-2xl flex-col gap-4">
             <p className="text-xs font-medium tracking-[0.2em] text-[var(--highlight)] uppercase">
               Discover · Learn · Explore
             </p>
@@ -53,38 +54,40 @@ export default async function HomePage({
               A botanical reference for researching herbs — their traditional uses,
               properties, and safety, in one considered place.
             </p>
-          </div>
+          </FadeIn>
 
-          <form
-            method="GET"
-            className="flex flex-col gap-3 sm:flex-row sm:items-center"
-          >
-            <input
-              type="search"
-              name="q"
-              defaultValue={q}
-              placeholder="Search by name, use, or property…"
-              className="flex-1 rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm text-[var(--foreground)] outline-none placeholder:text-[var(--muted)] focus:border-[var(--accent)]"
-            />
-            <select
-              name="category"
-              defaultValue={category}
-              className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm text-[var(--foreground)] outline-none focus:border-[var(--accent)]"
+          <FadeIn delay={0.1}>
+            <form
+              method="GET"
+              className="flex flex-col gap-3 sm:flex-row sm:items-center"
             >
-              <option value="">All categories</option>
-              {categories.map((c) => (
-                <option key={c.category} value={c.category}>
-                  {c.category}
-                </option>
-              ))}
-            </select>
-            <button
-              type="submit"
-              className="rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-medium text-[var(--accent-foreground)] transition hover:opacity-90"
-            >
-              Search
-            </button>
-          </form>
+              <input
+                type="search"
+                name="q"
+                defaultValue={q}
+                placeholder="Search by name, use, or property…"
+                className="flex-1 rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm text-[var(--foreground)] outline-none placeholder:text-[var(--muted)] focus:border-[var(--accent)]"
+              />
+              <select
+                name="category"
+                defaultValue={category}
+                className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm text-[var(--foreground)] outline-none focus:border-[var(--accent)]"
+              >
+                <option value="">All categories</option>
+                {categories.map((c) => (
+                  <option key={c.category} value={c.category}>
+                    {c.category}
+                  </option>
+                ))}
+              </select>
+              <button
+                type="submit"
+                className="rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-medium text-[var(--accent-foreground)] transition hover:opacity-90"
+              >
+                Search
+              </button>
+            </form>
+          </FadeIn>
         </div>
       </section>
 
@@ -98,13 +101,9 @@ export default async function HomePage({
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <HerbGrid>
           {herbs.map((herb) => (
-            <Link
-              key={herb.id}
-              href={`/herbs/${herb.id}`}
-              className="group flex flex-col gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 transition hover:border-[var(--accent)]"
-            >
+            <HerbCardMotion key={herb.id} href={`/herbs/${herb.id}`}>
               <div className="flex items-baseline justify-between gap-2">
                 <h3 className="font-serif text-xl text-[var(--foreground)] group-hover:text-[var(--accent)]">
                   {herb.name}
@@ -117,9 +116,9 @@ export default async function HomePage({
                 {herb.scientificName}
               </p>
               <p className="text-sm text-[var(--foreground)]/80">{herb.summary}</p>
-            </Link>
+            </HerbCardMotion>
           ))}
-        </div>
+        </HerbGrid>
 
         {herbs.length === 0 && (
           <p className="rounded-xl border border-dashed border-[var(--border)] p-10 text-center text-sm text-[var(--muted)]">

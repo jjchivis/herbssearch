@@ -1,23 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf7ef;
-  --surface: #ffffff;
-  --foreground: #1e2a22;
-  --muted: #6f6a5c;
-  --border: #e4ddcc;
-  --accent: #3f5e45;
-  --accent-foreground: #faf7ef;
-  --highlight: #b06a3a;
-  --highlight-soft: #f3e6da;
+  --background: #fbf6e8;
+  --surface: #f3ead7;
+  --surface-2: #ece0c8;
+  --foreground: #1f3616;
+  --muted: #6b6558;
+  --border: #dccdaa;
+  --accent: #33512c;
+  --accent-foreground: #fbf6e8;
+  --highlight: #ab5030;
+  --highlight-soft: #f3e2d3;
   --caution: #92400e;
   --caution-bg: #fdf1e2;
   --caution-border: #eccb9c;
+  --band: #17280f;
+  --band-2: #1e321a;
+  --on-band: #f1e9d4;
+  --on-band-soft: #b8c2a3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);
@@ -27,22 +33,28 @@
   --color-highlight-soft: var(--highlight-soft);
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #141f19;
-    --surface: #1a271f;
-    --foreground: #f1ede0;
-    --muted: #a39d8d;
-    --border: #2b3a30;
-    --accent: #9dbb92;
-    --accent-foreground: #141f19;
-    --highlight: #d99a6c;
-    --highlight-soft: #2e2418;
+    --background: #141f0e;
+    --surface: #1b2815;
+    --surface-2: #22301a;
+    --foreground: #f1e9d4;
+    --muted: #b8c2a3;
+    --border: #38452a;
+    --accent: #9fb27f;
+    --accent-foreground: #141f0e;
+    --highlight: #e08a5c;
+    --highlight-soft: #3a2a1c;
     --caution: #f0b878;
     --caution-bg: #2b2013;
     --caution-border: #4a3620;
+    --band: #0c1408;
+    --band-2: #0f1a0a;
+    --on-band: #f1e9d4;
+    --on-band-soft: #a9b596;
   }
 }
 
@@ -52,4 +64,8 @@ body {
 
 .font-serif {
   font-family: var(--font-serif), serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }

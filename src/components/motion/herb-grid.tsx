@@ -10,7 +10,11 @@ const item: Variants = {
 };
 
 export function HerbGrid({ children }: { children: ReactNode }) {
-  return <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">{children}</div>;
+  return (
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {children}
+    </div>
+  );
 }
 
 export function HerbCardMotion({
@@ -33,7 +37,7 @@ export function HerbCardMotion({
     >
       <Link
         href={href}
-        className="group flex h-full flex-col gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 transition-colors hover:border-[var(--accent)]"
+        className="group flex h-full flex-col gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--highlight)]"
       >
         {children}
       </Link>

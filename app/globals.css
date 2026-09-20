@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: oklch(0.99 0.01 130);
+  --color-foreground: oklch(0.24 0.03 145);
+  --color-primary: oklch(0.55 0.14 150);
+  --color-muted: oklch(0.55 0.02 145);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}

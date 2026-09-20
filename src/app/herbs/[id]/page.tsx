@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion/fade-in";
 import { TagList } from "@/components/motion/tag-list";
+import { HerbImage } from "@/components/herb-image";
 
 export async function generateMetadata({
   params,
@@ -43,8 +44,14 @@ export default async function HerbDetailPage({
         ← Back to search
       </Link>
 
-      <FadeIn>
-        <header className="flex flex-col gap-2 border-b border-[var(--border)] pb-8">
+      <FadeIn className="flex flex-col gap-6 border-b border-[var(--border)] pb-8">
+        <HerbImage
+          src={herb.imageUrl}
+          alt={`Botanical illustration of ${herb.name}`}
+          className="aspect-[4/5] w-full max-w-sm"
+          priority
+        />
+        <header className="flex flex-col gap-2">
           <span className="w-fit rounded-full bg-[var(--highlight-soft)] px-3 py-1 text-xs tracking-wide text-[var(--highlight)] uppercase">
             {herb.category}
           </span>

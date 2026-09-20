@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion/fade-in";
 import { HerbGrid, HerbCardMotion } from "@/components/motion/herb-grid";
+import { HerbImage } from "@/components/herb-image";
 
 type SearchParams = { q?: string; category?: string };
 
@@ -104,6 +105,11 @@ export default async function HomePage({
         <HerbGrid>
           {herbs.map((herb) => (
             <HerbCardMotion key={herb.id} href={`/herbs/${herb.id}`}>
+              <HerbImage
+                src={herb.imageUrl}
+                alt={`Botanical illustration of ${herb.name}`}
+                className="aspect-[4/3] w-full"
+              />
               <div className="flex items-baseline justify-between gap-2">
                 <h3 className="font-serif text-xl text-[var(--foreground)] group-hover:text-[var(--accent)]">
                   {herb.name}

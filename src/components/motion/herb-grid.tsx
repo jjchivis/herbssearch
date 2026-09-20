@@ -4,33 +4,13 @@ import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
-const container: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.05 },
-  },
-};
-
 const item: Variants = {
   hidden: { opacity: 0, y: 14 },
   show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
 
 export function HerbGrid({ children }: { children: ReactNode }) {
-  const shouldReduceMotion = useReducedMotion();
-
-  return (
-    <motion.div
-      className="grid grid-cols-1 gap-4 sm:grid-cols-2"
-      variants={shouldReduceMotion ? undefined : container}
-      initial={shouldReduceMotion ? undefined : "hidden"}
-      whileInView={shouldReduceMotion ? undefined : "show"}
-      viewport={{ once: true, amount: 0.15 }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">{children}</div>;
 }
 
 export function HerbCardMotion({
@@ -45,6 +25,9 @@ export function HerbCardMotion({
   return (
     <motion.div
       variants={shouldReduceMotion ? undefined : item}
+      initial={shouldReduceMotion ? undefined : "hidden"}
+      whileInView={shouldReduceMotion ? undefined : "show"}
+      viewport={{ once: true, amount: 0.1 }}
       whileHover={shouldReduceMotion ? undefined : { y: -3 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
     >

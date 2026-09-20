@@ -15,7 +15,7 @@ const herbs = [
     uses: "Pesto, tomato dishes, teas, aromatherapy",
     properties: "Anti-inflammatory, antioxidant, antibacterial",
     cautions: "Generally safe in culinary amounts.",
-    imageUrl: null,
+    imageUrl: "/herbs/basil.jpg",
   },
   {
     name: "Chamomile",
@@ -25,7 +25,7 @@ const herbs = [
     uses: "Sleep aid, calming tea, skin soothing",
     properties: "Mild sedative, anti-inflammatory, antispasmodic",
     cautions: "May cause allergic reaction in people sensitive to ragweed.",
-    imageUrl: null,
+    imageUrl: "/herbs/chamomile.jpg",
   },
   {
     name: "Peppermint",
@@ -35,7 +35,7 @@ const herbs = [
     uses: "Digestive tea, headache relief, aromatherapy",
     properties: "Antispasmodic, analgesic, carminative",
     cautions: "Can worsen acid reflux in some people.",
-    imageUrl: null,
+    imageUrl: "/herbs/peppermint.jpg",
   },
   {
     name: "Rosemary",
@@ -45,7 +45,7 @@ const herbs = [
     uses: "Roasted meats and vegetables, hair rinses, memory support",
     properties: "Antioxidant, antimicrobial, circulatory stimulant",
     cautions: "High doses may stimulate uterine contractions; avoid in pregnancy.",
-    imageUrl: null,
+    imageUrl: "/herbs/rosemary.jpg",
   },
   {
     name: "Lavender",
@@ -55,7 +55,7 @@ const herbs = [
     uses: "Aromatherapy, sleep support, skin care",
     properties: "Anxiolytic, sedative, antiseptic",
     cautions: "Essential oil should not be ingested undiluted.",
-    imageUrl: null,
+    imageUrl: "/herbs/lavender.jpg",
   },
   {
     name: "Ginger",
@@ -65,7 +65,7 @@ const herbs = [
     uses: "Nausea relief, teas, cooking, anti-inflammatory support",
     properties: "Anti-emetic, anti-inflammatory, digestive stimulant",
     cautions: "May interact with blood-thinning medication at high doses.",
-    imageUrl: null,
+    imageUrl: "/herbs/ginger.jpg",
   },
   {
     name: "Echinacea",
@@ -75,7 +75,7 @@ const herbs = [
     uses: "Cold and flu support, tinctures, teas",
     properties: "Immunostimulant, anti-inflammatory",
     cautions: "Not recommended for autoimmune conditions without medical advice.",
-    imageUrl: null,
+    imageUrl: "/herbs/echinacea.jpg",
   },
   {
     name: "Thyme",
@@ -85,7 +85,7 @@ const herbs = [
     uses: "Soups and stews, cough remedies, antiseptic gargle",
     properties: "Antimicrobial, expectorant, antispasmodic",
     cautions: "Essential oil is potent; use diluted.",
-    imageUrl: null,
+    imageUrl: "/herbs/thyme.jpg",
   },
   {
     name: "Sage",
@@ -95,7 +95,7 @@ const herbs = [
     uses: "Stuffing and sausages, sore throat gargle, memory support",
     properties: "Antioxidant, antimicrobial, astringent",
     cautions: "Avoid large medicinal doses during pregnancy.",
-    imageUrl: null,
+    imageUrl: "/herbs/sage.jpg",
   },
   {
     name: "Turmeric",
@@ -105,7 +105,7 @@ const herbs = [
     uses: "Curries, golden milk, joint support",
     properties: "Anti-inflammatory, antioxidant",
     cautions: "May interact with blood thinners; can upset stomach in high doses.",
-    imageUrl: null,
+    imageUrl: "/herbs/turmeric.jpg",
   },
   {
     name: "Lemon Balm",
@@ -115,7 +115,7 @@ const herbs = [
     uses: "Calming tea, stress relief, cold sore topical use",
     properties: "Mild sedative, antiviral, carminative",
     cautions: "May interact with thyroid medication.",
-    imageUrl: null,
+    imageUrl: "/herbs/lemon-balm.jpg",
   },
   {
     name: "Dill",
@@ -125,7 +125,7 @@ const herbs = [
     uses: "Pickling, fish dishes, digestive tea",
     properties: "Carminative, mild antispasmodic",
     cautions: "Generally safe in culinary amounts.",
-    imageUrl: null,
+    imageUrl: "/herbs/dill.jpg",
   },
   {
     name: "Valerian",
@@ -135,7 +135,7 @@ const herbs = [
     uses: "Sleep support, anxiety relief",
     properties: "Sedative, anxiolytic",
     cautions: "Can cause drowsiness; avoid combining with alcohol or sedatives.",
-    imageUrl: null,
+    imageUrl: "/herbs/valerian.jpg",
   },
   {
     name: "Oregano",
@@ -145,7 +145,7 @@ const herbs = [
     uses: "Italian and Greek cooking, antimicrobial oil",
     properties: "Antimicrobial, antioxidant",
     cautions: "Oil form is potent and should be diluted.",
-    imageUrl: null,
+    imageUrl: "/herbs/oregano.jpg",
   },
   {
     name: "Nettle",
@@ -155,7 +155,7 @@ const herbs = [
     uses: "Allergy relief tea, nutritive infusions",
     properties: "Anti-inflammatory, diuretic, nutritive",
     cautions: "Fresh plant causes skin irritation on contact; cook or dry before use.",
-    imageUrl: null,
+    imageUrl: "/herbs/nettle.jpg",
   },
   {
     name: "Cilantro",
@@ -175,7 +175,7 @@ const herbs = [
     uses: "Mood support, topical wound salves",
     properties: "Antidepressant-like, anti-inflammatory",
     cautions: "Interacts with many medications, including antidepressants and contraceptives.",
-    imageUrl: null,
+    imageUrl: "/herbs/st-johns-wort.jpg",
   },
   {
     name: "Fennel",
@@ -185,7 +185,7 @@ const herbs = [
     uses: "Digestive tea, salads, roasted bulb dishes",
     properties: "Carminative, mild estrogenic, antispasmodic",
     cautions: "Avoid concentrated forms during pregnancy.",
-    imageUrl: null,
+    imageUrl: "/herbs/fennel.jpg",
   },
   {
     name: "Ashwagandha",
@@ -195,7 +195,7 @@ const herbs = [
     uses: "Stress adaptogen, sleep support, energy balance",
     properties: "Adaptogenic, anxiolytic, anti-inflammatory",
     cautions: "Avoid in pregnancy and with certain thyroid or autoimmune conditions.",
-    imageUrl: null,
+    imageUrl: "/herbs/ashwagandha.jpg",
   },
   {
     name: "Parsley",
@@ -205,7 +205,7 @@ const herbs = [
     uses: "Garnish, tabbouleh, stocks and sauces",
     properties: "Diuretic, rich in vitamin K and C",
     cautions: "Medicinal doses (not culinary) should be avoided during pregnancy.",
-    imageUrl: null,
+    imageUrl: "/herbs/parsley.jpg",
   },
 ];
 

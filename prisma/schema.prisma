@@ -10,6 +10,58 @@ datasource db {
   provider = "postgresql"
 }
 
+// ---------------------------------------------------------------------------
+// Phase 1: knowledge-graph schema.
+// Existing Herb columns are untouched for backward compatibility with the
+// current site. Everything below is additive: new nullable columns on Herb,
+// plus new tables joined to it. No content is seeded here — only structure.
+// Content status lets editors track what's been sourced vs. still a stub.
+// ---------------------------------------------------------------------------
+
+enum ContentStatus {
+  DRAFT
+  RESEARCHING
+  VERIFIED
+  REVIEW_REQUIRED
+  PUBLISHED
+}
+
+enum SynonymType {
+  SCIENTIFIC_SYNONYM
+  COMMON_NAME
+  REGIONAL_NAME
+  TRADITIONAL_NAME
+  HISTORICAL_NAME
+}
+
+enum SourceTier {
+  TIER_1_GOVERNMENT // WHO, NIH, NCCIH, USDA, EMA
+  TIER_2_SYSTEMATIC_REVIEW // systematic reviews, meta-analyses, clinical trials
+  TIER_3_PEER_REVIEWED // peer-reviewed botanical/pharmacological research
+  TIER_4_TRADITIONAL_TEXT // historical herbal texts, traditional medicine references
+  TIER_5_SECONDARY // secondary educational sources
+}
+
+enum EvidenceCategory {
+  TRADITIONAL
+  PRECLINICAL
+  HUMAN_RESEARCH
+}
+
+enum SafetyCategory {
+  CONTRAINDICATION
+  ADVERSE_EFFECT
+  DRUG_INTERACTION
+  PREGNANCY
+  BREASTFEEDING
+  SURGERY
+  TOXICITY
+  DOSAGE
+  ALLERGY
+  CONTAMINATION
+  PREPARATION_SPECIFIC
+}
+
 model Herb {
   id             String   @id @default(cuid())
   name           String   @unique
@@ -23,6 +75,230 @@ model Herb {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 
+  // --- new identification / botanical-profile fields (Section 4) ---
+  family        String?
+  genus         String?
+  species       String?
+  subspecies    String?
+  nativeRange   String?
+  habitat       String?
+  partsUsed     String?
+  contentStatus ContentStatus @default(PUBLISHED)
+
+  // --- knowledge-graph relations ---
+  synonyms      HerbSynonym[]
+  symptoms      HerbSymptom[]
+  constituents  HerbConstituent[]
+  preparations  HerbPreparation[]
+  actions       HerbAction[]
+  traditions    HerbTradition[]
+  evidence      EvidenceEntry[]
+  safetyRecords SafetyRecord[]
+
   @@index([name])
+  @@index([category])
+  @@index([family])
+}
+
+model HerbSynonym {
+  id       String      @id @default(cuid())
+  herbId   String
+  herb     Herb        @relation(fields: [herbId], references: [id], onDelete: Cascade)
+  name     String
+  type     SynonymType
+  language String?
+  region   String?
+
+  @@index([herbId])
+  @@index([name])
+}
+
+// Section 12: body-system explorer
+model BodySystem {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  symptoms    Symptom[]
+
+  @@index([slug])
+}
+
+// Section 11: symptom search
+model Symptom {
+  id           String        @id @default(cuid())
+  name         String        @unique
+  slug         String        @unique
+  description  String?
+  bodySystemId String?
+  bodySystem   BodySystem?   @relation(fields: [bodySystemId], references: [id])
+  herbs        HerbSymptom[]
+
+  @@index([slug])
+  @@index([bodySystemId])
+}
+
+model HerbSymptom {
+  id        String   @id @default(cuid())
+  herbId    String
+  herb      Herb     @relation(fields: [herbId], references: [id], onDelete: Cascade)
+  symptomId String
+  symptom   Symptom  @relation(fields: [symptomId], references: [id], onDelete: Cascade)
+  notes     String?
+  createdAt DateTime @default(now())
+
+  @@unique([herbId, symptomId])
+  @@index([symptomId])
+}
+
+// Section 5: constituents, linked across herbs (e.g. berberine -> Berberis,
+// Coptis, Hydrastis)
+model Constituent {
+  id          String            @id @default(cuid())
+  name        String            @unique
+  slug        String            @unique
+  type        String? // alkaloid, flavonoid, terpene, volatile oil, tannin, saponin, polysaccharide, phenolic compound...
+  description String?
+  herbs       HerbConstituent[]
+
+  @@index([slug])
+  @@index([type])
+}
+
+model HerbConstituent {
+  id            String      @id @default(cuid())
+  herbId        String
+  herb          Herb        @relation(fields: [herbId], references: [id], onDelete: Cascade)
+  constituentId String
+  constituent   Constituent @relation(fields: [constituentId], references: [id], onDelete: Cascade)
+  notes         String?
+
+  @@unique([herbId, constituentId])
+  @@index([constituentId])
+}
+
+// Section 4: preparations (tea, tincture, decoction...)
+model Preparation {
+  id          String            @id @default(cuid())
+  name        String            @unique
+  slug        String            @unique
+  description String?
+  herbs       HerbPreparation[]
+
+  @@index([slug])
+}
+
+model HerbPreparation {
+  id            String      @id @default(cuid())
+  herbId        String
+  herb          Herb        @relation(fields: [herbId], references: [id], onDelete: Cascade)
+  preparationId String
+  preparation   Preparation @relation(fields: [preparationId], references: [id], onDelete: Cascade)
+  notes         String?
+
+  @@unique([herbId, preparationId])
+  @@index([preparationId])
+}
+
+// Section 5: traditional herbal actions (bitter, aromatic, astringent...)
+// Every classification should trace to a source or be explicitly traditional
+// terminology — hence the optional sourceId here.
+model HerbalAction {
+  id          String        @id @default(cuid())
+  name        String        @unique
+  slug        String        @unique
+  description String?
+  herbs       HerbAction[]
+
+  @@index([slug])
+}
+
+model HerbAction {
+  id       String       @id @default(cuid())
+  herbId   String
+  herb     Herb         @relation(fields: [herbId], references: [id], onDelete: Cascade)
+  actionId String
+  action   HerbalAction @relation(fields: [actionId], references: [id], onDelete: Cascade)
+  sourceId String?
+  source   Source?      @relation(fields: [sourceId], references: [id])
+
+  @@unique([herbId, actionId])
+  @@index([actionId])
+}
+
+// Section 9/16: traditional systems (Ayurveda, TCM, Western herbalism,
+// Native American ethnobotany...)
+model TraditionSystem {
+  id          String          @id @default(cuid())
+  name        String          @unique
+  slug        String          @unique
+  description String?
+  herbs       HerbTradition[]
+
+  @@index([slug])
+}
+
+model HerbTradition {
+  id         String          @id @default(cuid())
+  herbId     String
+  herb       Herb            @relation(fields: [herbId], references: [id], onDelete: Cascade)
+  traditionId String
+  tradition  TraditionSystem @relation(fields: [traditionId], references: [id], onDelete: Cascade)
+  notes      String?
+
+  @@unique([herbId, traditionId])
+  @@index([traditionId])
+}
+
+// Section 7/8: citations and the source-quality tier system
+model Source {
+  id               String     @id @default(cuid())
+  title            String
+  author           String?
+  organization     String?
+  publicationDate  DateTime?
+  journal          String?
+  doi              String?
+  pmid             String?
+  url              String?
+  sourceType       String? // government, systematic_review, peer_reviewed, historical_text, secondary
+  tier             SourceTier
+  citationDate     DateTime   @default(now())
+  evidenceEntries  EvidenceEntry[]
+  safetyRecords    SafetyRecord[]
+  herbActions      HerbAction[]
+
+  @@index([tier])
+  @@index([doi])
+  @@index([pmid])
+}
+
+// Section 6: evidence, separated by category and never blended together
+model EvidenceEntry {
+  id        String            @id @default(cuid())
+  herbId    String
+  herb      Herb              @relation(fields: [herbId], references: [id], onDelete: Cascade)
+  category  EvidenceCategory
+  summary   String
+  sourceId  String?
+  source    Source?           @relation(fields: [sourceId], references: [id])
+  createdAt DateTime          @default(now())
+
+  @@index([herbId])
+  @@index([category])
+}
+
+// Section 9: safety database
+model SafetyRecord {
+  id          String         @id @default(cuid())
+  herbId      String
+  herb        Herb           @relation(fields: [herbId], references: [id], onDelete: Cascade)
+  category    SafetyCategory
+  description String
+  sourceId    String?
+  source      Source?        @relation(fields: [sourceId], references: [id])
+  createdAt   DateTime       @default(now())
+
+  @@index([herbId])
   @@index([category])
 }

@@ -15,6 +15,9 @@ export function SiteHeader() {
           <Link href="/" className="hover:text-[var(--foreground)]">
             Discover
           </Link>
+          <Link href="/herbs" className="hover:text-[var(--foreground)]">
+            Herbal Library
+          </Link>
         </nav>
       </div>
     </header>

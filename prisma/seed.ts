@@ -165,7 +165,7 @@ const herbs = [
     uses: "Salsas, Curries, Garnish",
     properties: "Antioxidant, Mild digestive aid",
     cautions: "Some people find it tastes soapy because of their genes.",
-    imageUrl: null,
+    imageUrl: "/herbs/cilantro.jpg",
   },
   {
     name: "St. John's Wort",

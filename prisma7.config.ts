@@ -10,6 +10,9 @@ export default defineConfig({
     seed: "tsx prisma/seed.ts",
   },
   datasource: {
-    url: process.env["DATABASE_URL"],
+    // CLI commands (migrate deploy) need a direct connection: Neon's pooled
+    // "-pooler" host can't hold the advisory lock migrations take, so builds
+    // time out with P1002. The app itself keeps using the pooled DATABASE_URL.
+    url: process.env["DATABASE_URL_UNPOOLED"] ?? process.env["DATABASE_URL"],
   },
 });

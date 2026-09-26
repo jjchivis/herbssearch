@@ -1,13 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 14 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-};
 
 export function HerbGrid({ children }: { children: ReactNode }) {
   return (
@@ -27,11 +22,9 @@ export function HerbCardMotion({
   const shouldReduceMotion = useReducedMotion();
 
   return (
+    // Cards render visible immediately (no scroll-triggered fade-in), so the
+    // list never looks empty while it loads; only the hover lift is animated.
     <motion.div
-      variants={shouldReduceMotion ? undefined : item}
-      initial={shouldReduceMotion ? undefined : "hidden"}
-      whileInView={shouldReduceMotion ? undefined : "show"}
-      viewport={{ once: true, amount: 0.1 }}
       whileHover={shouldReduceMotion ? undefined : { y: -3 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
     >

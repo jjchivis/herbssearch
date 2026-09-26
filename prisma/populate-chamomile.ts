@@ -20,7 +20,7 @@ async function main() {
       family: "Asteraceae",
       genus: "Matricaria",
       species: "chamomilla",
-      partsUsed: "Flower (flower heads)",
+      partsUsed: "The flower heads",
       contentStatus: "VERIFIED",
     },
   });
@@ -112,7 +112,7 @@ async function main() {
         herbId: chamomile.id,
         traditionId: westernHerbalism.id,
         notes:
-          "Documented in ancient Egyptian, Greek, and Roman medical writings; long-standing use for digestive complaints and skin irritation.",
+          "Recorded in ancient Egyptian, Greek and Roman medical writings, with long-standing use for digestive complaints and skin irritation.",
       },
     });
   }
@@ -122,13 +122,13 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Chamomile has been used since antiquity, documented in ancient medical writings from Egypt, Greece, and Rome, traditionally for digestive discomfort, skin irritation, and as a calming preparation.",
+        "Chamomile appears in ancient Egyptian, Greek and Roman medical writings. Traditionally, it has been used for digestive discomfort, skin irritation, and calming and relaxation.",
       sourceId: pharmacognosyReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Human research has not produced sufficient reliable evidence to establish clinical usefulness for the conditions chamomile is commonly promoted for. Preliminary studies suggest possible benefit for generalized anxiety disorder and associated depression. A 2019 review found minimal research support for insomnia specifically.",
+        "Studies in people have not produced enough reliable evidence to show that chamomile works for the conditions it's commonly promoted for. Early studies suggest it may help people with generalized anxiety disorder (long-lasting, hard-to-control worry) and the depression that can come with it. A 2019 review found little research support for using chamomile for insomnia, despite its reputation as a sleep aid.",
       sourceId: nccih.id,
     },
   ];
@@ -146,27 +146,27 @@ async function main() {
     {
       category: "ALLERGY" as const,
       description:
-        "Higher risk of allergic reaction in people allergic to ragweed, chrysanthemums, marigolds, daisies, or related plants.",
+        "You're more likely to react to chamomile if you're allergic to ragweed, chrysanthemums, marigolds, daisies or related plants.",
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Side effects are uncommon but may include nausea, dizziness, and allergic reactions including anaphylaxis in rare cases; eye irritation is possible with direct eye contact.",
+        "Side effects are uncommon. They can include nausea, dizziness and allergic reactions. In rare cases, people have had a severe allergic reaction (anaphylaxis). It can irritate the eyes if it gets in them.",
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "May interact with birth control pills, drugs metabolized by the liver, blood thinners such as warfarin, and sedatives.",
+        "Chamomile may affect how these work:\n- Birth control pills\n- Medicines that are broken down by the liver\n- Blood thinners, such as warfarin\n- Sedatives (medicines that make you sleepy)",
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "Little is known about whether chamomile is safe to use during pregnancy or while breastfeeding.",
+        "Little is known about whether chamomile is safe during pregnancy or while breastfeeding.",
     },
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "May have estrogenic activity and could worsen hormone-sensitive conditions such as breast or uterine cancer.",
+        "Chamomile may act a little like the hormone estrogen. This could make hormone-sensitive conditions worse, such as breast or uterine cancer.",
     },
   ];
   for (const record of safetyRecords) {

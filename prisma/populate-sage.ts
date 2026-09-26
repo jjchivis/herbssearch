@@ -33,7 +33,7 @@ async function main() {
       family: "Lamiaceae",
       genus: "Salvia",
       species: "officinalis",
-      partsUsed: "Leaf",
+      partsUsed: "The leaves",
       contentStatus: "VERIFIED",
     },
   });
@@ -168,7 +168,7 @@ async function main() {
         herbId: sage.id,
         traditionId: mediterraneanFolkMedicine.id,
         notes:
-          "In European folk medicine, sage leaf has long been used for dyspepsia, excessive sweating, cognitive complaints, and inflammation of the mouth, throat, and skin; the German Commission E approved its use for dyspepsia and excessive perspiration. Folk use in parts of Asia and Latin America has additionally included seizure, ulcers, gout, rheumatism, dizziness, tremor, paralysis, diarrhea, and hyperglycemia.",
+          "In European folk medicine, sage leaf has long been used for indigestion, heavy sweating, memory and thinking complaints, and inflammation of the mouth, throat and skin. Germany's Commission E approved it for indigestion and heavy sweating. In parts of Asia and Latin America, folk use has also included seizures, ulcers, gout, rheumatism, dizziness, tremor, paralysis, diarrhea and high blood sugar.\n\nTechnical detail: dyspepsia, excessive perspiration, hyperglycemia.",
       },
     });
   }
@@ -178,25 +178,25 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Sage leaf has a long history of traditional/folk use in Europe for dyspepsia, excessive sweating, and inflammation of the mouth, throat, and skin (reflected in the EU traditional-use herbal monograph's indications), with German Commission E approval for dyspepsia and excessive perspiration. Traditional use elsewhere has additionally included seizure, ulcers, gout, rheumatism, dizziness, tremor, paralysis, diarrhea, and hyperglycemia.",
+        "Sage leaf has long been used in European folk medicine for indigestion, heavy sweating, and inflammation of the mouth, throat and skin. These uses are reflected in the European Medicines Agency's traditional-use profile, and Germany's Commission E approved sage for indigestion and heavy sweating. Elsewhere, traditional uses have also included seizures, ulcers, gout, rheumatism, dizziness, tremor, paralysis, diarrhea and high blood sugar.\n\nTechnical detail: dyspepsia, excessive perspiration, hyperglycemia.",
       sourceId: pharmacologyReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "In vitro and animal studies of sage and its constituents report: anti-inflammatory and analgesic effects from flavonoid extracts in the mouse carrageenan model, and from manool, carnosol, and ursolic acid; antioxidant activity from carnosol (radical-scavenging comparable to alpha-tocopherol) and rosmarinic-acid derivatives, with rosmarinic acid increasing pancreatic catalase, glutathione peroxidase, and superoxide dismutase activity in streptozotocin-induced diabetic rats; anticancer (pro-apoptotic, growth-inhibitory) effects of extracts and of rosmarinic acid, caryophyllene, alpha-humulene, manool, and ursolic acid against multiple human cancer cell lines and in mouse tumor models; hypoglycemic effects of extracts in normal and diabetic animal models, via inhibition of hepatocyte gluconeogenesis and PPAR-gamma-mediated reduction of insulin resistance; and activation of benzodiazepine receptors with inhibition of pentylenetetrazole-induced seizures. These are preclinical (cell-culture and animal) findings, not established clinical effects in humans.",
+        "Lab and animal studies of sage and its natural compounds report:\n- Reduced inflammation and pain in mice.\n- Antioxidant activity; in diabetic rats, rosmarinic acid boosted the body's own protective enzymes in the pancreas.\n- Slowed growth or death of several kinds of human cancer cells in the lab, and effects on tumors in mice.\n- Lower blood sugar in normal and diabetic animals.\n- Action on the same brain receptors as anti-anxiety medicines (benzodiazepines), and fewer seizures in animals.\nThese are lab and animal findings, not established effects in people.\n\nTechnical detail: anti-inflammatory and analgesic effects from flavonoid extracts (mouse carrageenan model), manool, carnosol and ursolic acid; carnosol radical-scavenging comparable to alpha-tocopherol; rosmarinic acid increased pancreatic catalase, glutathione peroxidase and superoxide dismutase in streptozotocin-induced diabetic rats; pro-apoptotic and growth-inhibitory effects of extracts, rosmarinic acid, caryophyllene, alpha-humulene, manool and ursolic acid; hypoglycemic effects via inhibition of hepatocyte gluconeogenesis and PPAR-gamma-mediated reduction of insulin resistance; benzodiazepine receptor activation and inhibition of pentylenetetrazole-induced seizures.",
       sourceId: pharmacologyReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Only a small amount of human research exists for sage. Preliminary studies suggest common sage may help reduce hot-flash frequency in menopausal women. A few studies indicate sage, Spanish sage, or combinations may improve memory and cognition scores in healthy people, though evidence remains limited, and very little research exists on sage in Alzheimer's disease. Some studies suggest possible beneficial effects on cholesterol and blood lipids, though evidence on blood glucose is insufficient. Sage has also been studied for sore throat.",
+        "There is only a small amount of research on sage in people:\n- Early studies suggest common sage may reduce how often menopausal women have hot flashes.\n- A few studies suggest sage, Spanish sage or combinations may improve memory and thinking scores in healthy people, but the evidence is limited. Very little research has looked at sage for Alzheimer's disease.\n- Some studies suggest possible benefits for cholesterol and other blood fats, but there isn't enough evidence on blood sugar.\n- Sage has also been studied for sore throat.",
       sourceId: nccih.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A systematic review of clinical trials on Salvia species and cognition found several sage-specific trials: single doses of 300-1,332 mg of dried sage leaf or sage essential oil improved mood and cognitive-task performance in healthy adults under acute testing, with a 333-mg dose associated with significant enhancement of secondary memory across testing timepoints; and a 16-week randomized trial in patients with mild-to-moderate Alzheimer's disease found that 60 drops daily of a 1:1 Salvia officinalis extract (in 45% alcohol) produced significant cognitive improvement versus placebo on the Clinical Dementia Rating and Alzheimer's Disease Assessment Scale. The review's authors noted methodological limitations across studies, including heterogeneous preparations and lack of standardization, that prevent definitive conclusions about effectiveness.",
+        "A review of trials on sage and memory found:\n- In healthy adults, a single dose of dried sage leaf or sage oil improved mood and performance on thinking tasks during testing, and a 333 mg dose improved memory.\n- In a 16-week trial in people with mild to moderate Alzheimer's disease, 60 drops a day of a sage extract improved thinking and memory scores compared with placebo.\nThe reviewers noted the studies had weaknesses, including different, non-standardized preparations, so firm conclusions about how well sage works can't be drawn.\n\nTechnical detail: single doses of 300–1,332 mg; 333 mg enhanced secondary memory across timepoints; Alzheimer's trial used a 1:1 Salvia officinalis extract in 45% alcohol, randomized, measured on the Clinical Dementia Rating and Alzheimer's Disease Assessment Scale.",
       sourceId: cognitionSystematicReview.id,
     },
   ];
@@ -213,48 +213,48 @@ async function main() {
   const safetyRecords = [
     {
       category: "ALLERGY" as const,
-      description: "Contraindicated in people with a known hypersensitivity (allergy) to sage leaf or its constituents.",
+      description: "Don't use sage leaf if you are allergic to it or to any of its components.",
       sourceId: ema.id,
     },
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "Use in children and adolescents under 18 years of age is not recommended; safety and efficacy have not been established due to a lack of adequate data.",
+        "Sage medicines are not recommended for anyone under 18, because there isn't enough data to show they are safe and effective.",
       sourceId: ema.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "Safety during pregnancy has not been established. In the absence of sufficient data, use during pregnancy is not recommended.",
+        "Sage has not been shown to be safe during pregnancy, so using it as a medicine while pregnant is not recommended.",
       sourceId: ema.id,
     },
     {
       category: "BREASTFEEDING" as const,
       description:
-        "Safety during breastfeeding has not been established. In the absence of sufficient data, use during breastfeeding is not recommended.",
+        "Sage has not been shown to be safe while breastfeeding, so using it as a medicine while breastfeeding is not recommended.",
       sourceId: ema.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
-      description: "No interactions between sage leaf and other medicinal products have been described in the literature as of this assessment.",
+      description: "No interactions between sage leaf and medicines had been described in the research at the time of this assessment.",
       sourceId: ema.id,
     },
     {
       category: "DOSAGE" as const,
       description:
-        "Thujone content must be specified for any given product, and daily thujone exposure must stay below 6.0 mg; chemotypes with low thujone content should be preferred, as thujone is reported to be neurotoxic. Adequate genotoxicity, carcinogenicity, and reproductive-toxicity testing has not been performed.",
+        "Sage contains thujone, a compound reported to harm the nerves. Products must state how much thujone they contain, and daily intake must stay below 6.0 mg. Types of sage low in thujone should be preferred. Sage has not been properly tested for DNA damage, cancer risk or harm to reproduction.\n\nTechnical detail: neurotoxic; low-thujone chemotypes; genotoxicity, carcinogenicity and reproductive-toxicity testing.",
       sourceId: ema.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "No case of overdose from sage leaf itself has been reported, but intake of sage oil corresponding to more than 15 g of sage leaf is reported to cause a sensation of heat, tachycardia, vertigo, and epileptiform convulsions (seizures).",
+        "No overdose from sage leaf itself has been reported. But taking sage oil in an amount equal to more than 15 g of sage leaf is reported to cause a feeling of heat, a racing heart, dizziness and seizures.\n\nTechnical detail: tachycardia, vertigo, epileptiform convulsions.",
       sourceId: ema.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "Common sage (Salvia officinalis) contains thujone, which can be toxic if consumed in large amounts; thujone has caused seizures in animal models. Sage is likely safe in amounts commonly found in food, and larger amounts have been used safely for up to 8 weeks in research studies.",
+        "Common sage (Salvia officinalis) contains thujone, which can be toxic in large amounts and has caused seizures in animals. Sage is likely safe in normal food amounts, and larger amounts have been used safely for up to 8 weeks in research studies.",
       sourceId: nccih.id,
     },
   ];

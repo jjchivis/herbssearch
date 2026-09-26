@@ -22,8 +22,8 @@ const bodySystems = [
   { name: "Urinary", slug: "urinary", description: "Kidneys and urinary tract." },
   { name: "Reproductive", slug: "reproductive", description: "Reproductive health." },
   { name: "Metabolic", slug: "metabolic", description: "Metabolism and blood sugar." },
-  { name: "Liver & Gallbladder", slug: "liver-gallbladder", description: "Liver, bile, and detoxification pathways." },
-  { name: "General Wellness", slug: "general-wellness", description: "Everyday vitality and balance." },
+  { name: "Liver & Gallbladder", slug: "liver-gallbladder", description: "Liver, gallbladder and bile." },
+  { name: "General Wellness", slug: "general-wellness", description: "General health and wellbeing." },
 ];
 
 const symptoms: { name: string; slug: string; bodySystem: string }[] = [
@@ -41,20 +41,21 @@ const symptoms: { name: string; slug: string; bodySystem: string }[] = [
   { name: "Headache", slug: "headache", bodySystem: "nervous-system" },
 ];
 
+// Descriptions double as the plain-language definitions shown to visitors.
 const preparations = [
-  { name: "Tea / Infusion", slug: "tea-infusion" },
-  { name: "Decoction", slug: "decoction" },
-  { name: "Tincture", slug: "tincture" },
-  { name: "Glycerite", slug: "glycerite" },
-  { name: "Powder", slug: "powder" },
-  { name: "Capsule", slug: "capsule" },
-  { name: "Extract", slug: "extract" },
-  { name: "Oil", slug: "oil" },
-  { name: "Essential Oil", slug: "essential-oil" },
-  { name: "Salve", slug: "salve" },
-  { name: "Poultice", slug: "poultice" },
-  { name: "Syrup", slug: "syrup" },
-  { name: "Culinary Preparation", slug: "culinary-preparation" },
+  { name: "Tea / Infusion", slug: "tea-infusion", description: "Made by pouring hot water over plant material and letting it steep." },
+  { name: "Decoction", slug: "decoction", description: "Made by simmering tougher plant parts, such as roots, bark or seeds, in water." },
+  { name: "Tincture", slug: "tincture", description: "A concentrated liquid made by soaking plant material in alcohol, glycerin or another liquid." },
+  { name: "Glycerite", slug: "glycerite", description: "A tincture made with glycerin instead of alcohol." },
+  { name: "Powder", slug: "powder", description: "Dried plant material ground into a fine powder." },
+  { name: "Capsule", slug: "capsule", description: "Powdered herb or extract sealed in a capsule to swallow." },
+  { name: "Extract", slug: "extract", description: "A concentrated preparation made by drawing a plant's compounds out with a liquid such as water or alcohol." },
+  { name: "Oil", slug: "oil", description: "Plant material soaked in a carrier oil, such as olive oil. This is different from an essential oil." },
+  { name: "Essential Oil", slug: "essential-oil", description: "A concentrated oil containing the aromatic compounds from a plant." },
+  { name: "Salve", slug: "salve", description: "A thick ointment for the skin, made from herb-infused oil and wax." },
+  { name: "Poultice", slug: "poultice", description: "Mashed or moistened plant material placed directly on the skin." },
+  { name: "Syrup", slug: "syrup", description: "An herbal preparation mixed with sugar or honey." },
+  { name: "Culinary Preparation", slug: "culinary-preparation", description: "Used as food or seasoning in cooking." },
 ];
 
 const traditions = [

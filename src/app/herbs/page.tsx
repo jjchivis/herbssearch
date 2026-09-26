@@ -89,7 +89,7 @@ export default async function HerbLibraryPage({
                 type="search"
                 name="q"
                 defaultValue={q}
-                placeholder="Search by name, use, or property…"
+                placeholder="Search by name or traditional use…"
                 className="flex-1 rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-3 text-sm text-[var(--foreground)] outline-none placeholder:text-[var(--muted)] focus:border-[var(--highlight)]"
               />
               <button

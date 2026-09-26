@@ -43,7 +43,7 @@ async function main() {
       genus: "Urtica",
       species: "dioica",
       partsUsed:
-        "Leaf (Urticae folium) — traditionally for minor articular/joint pain and as a mild diuretic adjuvant for urinary tract complaints; Root (Urticae radix) — traditionally for lower urinary tract symptoms of benign prostatic hyperplasia (BPH). Leaf and root have distinct chemical profiles and are covered by separate EU herbal monographs.",
+        "Leaf (Urticae folium): traditionally used for minor joint pain, and alongside other care to increase urination for minor urinary complaints. Root (Urticae radix): traditionally used for urinary symptoms caused by an enlarged prostate (benign prostatic hyperplasia, or BPH). The leaf and root contain different natural compounds and have separate official European herbal profiles.",
       contentStatus: "VERIFIED",
     },
   });
@@ -199,21 +199,21 @@ async function main() {
     {
       constituentId: betaSitosterol.id,
       notes:
-        "Most abundant phytosterol in the root (roughly 75-82% of total root sterols); considered, alongside lignans, polysaccharides, and the lectin UDA, among the active principles for BPH-related effects, though the specific contribution of each compound is not fully established (Martz & Kankaanpää, 2025).",
+        "The most plentiful plant sterol in the root (about 75–82% of the root's sterols). Along with lignans, polysaccharides and the lectin UDA, it is thought to be one of the compounds behind the root's effects on prostate symptoms, though how much each one contributes isn't fully known (Martz & Kankaanpää, 2025).",
     },
     {
       constituentId: histamine.id,
       notes:
-        "Present in the fluid of the stinging hairs (trichomes) on fresh leaves and stems; a biochemical mediator of the immediate stinging/contact-dermatitis reaction on skin contact, alongside serotonin, acetylcholine, and formic acid (Cummings & Olsen, 2011).",
+        "Found in the fluid of the stinging hairs on fresh leaves and stems. It helps cause the immediate sting and skin rash when you touch the plant, along with serotonin, acetylcholine and formic acid (Cummings & Olsen, 2011).",
     },
     {
       constituentId: formicAcid.id,
       notes:
-        "Found at high concentration in the stinging-hair spicules; one of the biochemical mediators (with histamine, acetylcholine, and serotonin) implicated in the burning sensation from fresh-plant contact (Cummings & Olsen, 2011).",
+        "Found in high amounts in the tips of the stinging hairs. It is one of the substances, along with histamine, acetylcholine and serotonin, behind the burning feeling from touching the fresh plant (Cummings & Olsen, 2011).",
     },
     {
       constituentId: scopoletin.id,
-      notes: "A coumarin compound reported in the root (Martz & Kankaanpää, 2025).",
+      notes: "A coumarin compound found in the root (Martz & Kankaanpää, 2025).",
     },
   ];
   for (const link of constituentLinks) {
@@ -240,7 +240,7 @@ async function main() {
         herbId: nettle.id,
         traditionId: europeanFolkMedicine.id,
         notes:
-          "Long-standing traditional use across Europe as food (a spring vegetable eaten cooked or dried) and folk medicine — leaf for joint/muscle pain and as a diuretic, root for urinary complaints — reflected in the EU/HMPC herbal monographs, which list vernacular names for nettle root in over 20 European languages as evidence of widespread traditional use.",
+          "Nettle has long been used across Europe as food (a spring vegetable eaten cooked or dried) and in folk medicine: the leaf for joint and muscle pain and to increase urination, and the root for urinary complaints. The official European herbal profiles list local names for nettle root in more than 20 European languages, a sign of how widely it has been used.",
       },
     });
   }
@@ -250,37 +250,37 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Nettle leaf (Urticae folium) is recognized by the EU/HMPC as a traditional herbal medicinal product, based exclusively on long-standing use, for two indications: relief of minor articular (joint) pain, and to increase the amount of urine to achieve flushing of the urinary tract as an adjuvant in minor urinary complaints.",
+        "The European Medicines Agency recognizes nettle leaf as a traditional herbal medicine, based only on its long history of use, for two purposes:\n- Relief of minor joint pain\n- Increasing urination to help flush the urinary tract, alongside other care for minor urinary complaints",
       sourceId: emaFolium.id,
     },
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Nettle root (Urticae radix) is recognized by the EU/HMPC as a traditional herbal medicinal product, based exclusively on long-standing use, for the relief of lower urinary tract symptoms related to benign prostatic hyperplasia (BPH), after serious conditions have been excluded by a doctor.",
+        "The European Medicines Agency recognizes nettle root as a traditional herbal medicine, based only on its long history of use, for relieving urinary symptoms caused by an enlarged prostate (benign prostatic hyperplasia, or BPH), once a doctor has ruled out serious conditions.",
       sourceId: emaRadix.id,
     },
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Historically, Urtica dioica has been widely used as a food (eaten as a cooked vegetable or dried and used as stock food during food shortages) and in traditional medicine across Europe, Asia, and Africa as a diuretic and for the treatment of cough, cold, cuts, and wounds, with external application of the leaves traditionally used for joint pain relief.",
+        "Historically, nettle has been widely eaten, as a cooked vegetable or dried and stored as food during shortages. In traditional medicine across Europe, Asia and Africa it has been used to increase urination and for coughs, colds, cuts and wounds. Fresh leaves were traditionally applied to the skin to relieve joint pain.",
       sourceId: devkotaLeafReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "In vitro studies of nettle root extracts and their constituents report: phytosterols (chiefly beta-sitosterol), lignans (chiefly pinoresinol), polysaccharides, and the lectin UDA (Urtica dioica agglutinin) are considered among the active principles behind effects relevant to BPH, though the precise contribution of each compound is not fully demonstrated; UDA additionally shows antifungal and antibacterial activity via chitin-binding to fungal/bacterial cell-wall glycans, broad-spectrum in vitro antiviral activity against several enveloped viruses (including SARS-CoV-2, influenza, dengue, and HIV, but not non-enveloped viruses), and antiproliferative/cytotoxic and apoptotic effects against various cancer cell lines including acute myeloid leukemia cells. These are preclinical (in vitro) findings, not established clinical effects in humans.",
+        "Lab studies of nettle root and its natural compounds report:\n- Several compounds, including plant sterols (mainly beta-sitosterol), lignans, polysaccharides and a protein called UDA, are thought to be behind the root's effects on prostate symptoms, though how much each contributes isn't fully shown.\n- UDA acted against fungi and bacteria, and against several viruses that have an outer envelope (including SARS-CoV-2, flu, dengue and HIV) but not viruses without one.\n- UDA slowed or killed several types of cancer cells in the lab, including leukemia cells.\nThese are lab findings, not established effects in people.\n\nTechnical detail: main lignan is pinoresinol; UDA is Urtica dioica agglutinin, a lectin that binds chitin in fungal and bacterial cell walls; antiproliferative, cytotoxic and apoptotic effects including against acute myeloid leukemia cells.",
       sourceId: martzRootReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A randomized, double-blind, placebo-controlled crossover trial in 27 patients with osteoarthritic pain at the base of the thumb or index finger had patients apply stinging nettle leaf (Urtica dioica) topically to the painful area daily for one week, compared with a placebo leaf (white deadnettle, Lamium album) for one week after a five-week washout. Reductions in both pain (visual analogue scale) and disability (health assessment questionnaire) were significantly greater with nettle sting than placebo (P = 0.026 and P = 0.0027, respectively) — the first randomized controlled trial of this long-standing folk remedy.",
+        "In a trial of 27 people with arthritis pain at the base of the thumb or index finger, people rubbed fresh stinging nettle leaf on the painful area every day for a week, and a look-alike non-stinging plant (white deadnettle) for another week. Pain and disability dropped significantly more with the stinging nettle. This was the first controlled trial of this long-standing folk remedy.\n\nTechnical detail: randomized, double-blind, placebo-controlled crossover with a five-week washout; osteoarthritis; visual analogue scale P = 0.026; health assessment questionnaire P = 0.0027; placebo was Lamium album.",
       sourceId: randallTrial.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "There is some limited clinical-trial evidence that nettle root may improve symptoms of benign prostatic hyperplasia (BPH), including lower urinary tract symptoms. A 2005 trial of 620 patients found significant improvement in International Prostate Symptom Score (IPSS) and maximum urinary flow rate compared with placebo over 6 months, with benefit maintained at 18 months. Combination trials of nettle root with saw palmetto have also shown superiority over placebo for inflammatory and obstructive symptoms, with one comparison finding the combination and the drug tamsulosin similarly effective. Nettle root appears to be generally well tolerated in these trials, with occasional mild gastrointestinal effects.",
+        "There is some limited evidence from trials that nettle root may improve urinary symptoms of an enlarged prostate (BPH). A 2005 trial of 620 men found better symptom scores and urine flow than placebo over 6 months, with the benefit lasting to 18 months. Trials combining nettle root with saw palmetto also did better than placebo, and one found the combination worked about as well as the prostate drug tamsulosin. Nettle root was generally well tolerated, with occasional mild stomach upset.\n\nTechnical detail: International Prostate Symptom Score (IPSS) and maximum urinary flow rate; combination trials showed benefit for inflammatory and obstructive symptoms.",
       sourceId: nccihBph.id,
     },
   ];
@@ -298,80 +298,80 @@ async function main() {
     // Leaf (Urticae folium monograph)
     {
       category: "ALLERGY" as const,
-      description: "Contraindicated in individuals with known hypersensitivity to nettle leaf (Urtica dioica L.; Urtica urens L.) or its constituents.",
+      description: "Don't use nettle leaf if you are allergic to nettle (Urtica dioica or Urtica urens) or any of its components.",
       sourceId: emaFolium.id,
     },
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "Not to be used in conditions where a reduced fluid intake is recommended, such as severe cardiac or renal disease — relevant because of the leaf's traditional diuretic/urinary-flushing use.",
+        "Don't use nettle leaf if you have been told to limit how much fluid you drink, for example because of severe heart or kidney disease. This matters because nettle leaf is traditionally used to increase urination.",
       sourceId: emaFolium.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Mild gastrointestinal complaints (nausea, vomiting, diarrhoea) and skin reactions (itching, exanthema, hives) may occur with oral use of the leaf; frequency not known.",
+        "Taken by mouth, nettle leaf may cause mild stomach upset (nausea, vomiting, diarrhea) and skin reactions (itching, rash, hives). How often is not known.",
       sourceId: emaFolium.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "Safety of nettle leaf during pregnancy has not been established; in the absence of sufficient data, use during pregnancy is not recommended.",
+        "Nettle leaf has not been shown to be safe during pregnancy, so using it as a medicine while pregnant is not recommended.",
       sourceId: emaFolium.id,
     },
     {
       category: "BREASTFEEDING" as const,
       description:
-        "Safety of nettle leaf during lactation has not been established; in the absence of sufficient data, use during breastfeeding is not recommended.",
+        "Nettle leaf has not been shown to be safe while breastfeeding, so using it as a medicine while breastfeeding is not recommended.",
       sourceId: emaFolium.id,
     },
     {
       category: "DOSAGE" as const,
       description:
-        "Use of nettle leaf in children under 12 years of age is not recommended due to lack of adequate data. Traditional-use duration should not exceed 4 weeks for joint pain or 2-4 weeks for urinary complaints; a doctor should be consulted if joint pain is accompanied by swelling, redness, or fever, or if urinary symptoms worsen or are accompanied by fever, dysuria, spasm, or blood in the urine.",
+        "Nettle leaf is not recommended for children under 12, because there isn't enough data. Traditional use should last no more than 4 weeks for joint pain, or 2–4 weeks for urinary complaints. See a doctor if joint pain comes with swelling, redness or fever, or if urinary symptoms get worse or come with fever, painful urination, cramps or blood in the urine.",
       sourceId: emaFolium.id,
     },
     // Root (Urticae radix monograph)
     {
       category: "ALLERGY" as const,
-      description: "Contraindicated in individuals with known hypersensitivity to nettle root (Urtica dioica L.; Urtica urens L.).",
+      description: "Don't use nettle root if you are allergic to it (Urtica dioica or Urtica urens).",
       sourceId: emaRadix.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Gastrointestinal disorders (nausea, heartburn, feeling of fullness, flatulence, diarrhoea) and immune system disorders (allergic reactions including pruritus, rash, and urticaria) may occur with oral use of the root; frequency not known.",
+        "Taken by mouth, nettle root may cause stomach problems (nausea, heartburn, feeling full, gas, diarrhea) and allergic reactions (itching, rash, hives). How often is not known.",
       sourceId: emaRadix.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "The EU herbal monograph for nettle root states pregnancy and lactation are 'not relevant' for this product, which is indicated for lower urinary tract symptoms of benign prostatic hyperplasia in men; no fertility data are available.",
+        "The European herbal profile for nettle root says pregnancy and breastfeeding don't apply, because the product is meant for prostate symptoms in men. There is no data on fertility.",
       sourceId: emaRadix.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "Adequate tests on genotoxicity have not been performed for nettle root preparations, and tests on reproductive toxicity and carcinogenicity have not been performed.",
+        "Nettle root products have not been properly tested for DNA damage, harm to reproduction, or cancer risk.",
       sourceId: emaRadix.id,
     },
     {
       category: "DOSAGE" as const,
       description:
-        "There is no relevant use of nettle root in children and adolescents under 18 years of age. A doctor should be consulted if complaints worsen or if fever, spasms, blood in the urine, painful urination, or urinary retention occur during use.",
+        "Nettle root is not used in children or teenagers under 18. See a doctor if symptoms get worse, or if you get a fever, cramps, blood in the urine, painful urination, or can't pass urine.",
       sourceId: emaRadix.id,
     },
     // Cross-cutting
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "Urtica dioica contains tannins, which can interact with concomitant intake of iron, reducing the effectiveness of iron supplementation in patients who need it.",
+        "Nettle contains tannins, which can reduce how well your body absorbs iron. This can make iron supplements less effective for people who need them.",
       sourceId: nccihBph.id,
     },
     {
       category: "PREPARATION_SPECIFIC" as const,
       description:
-        "Contact with the fresh (raw, undried) plant's stinging hairs causes an immediate stinging contact dermatitis: the hollow hairs mechanically inject a mix of histamine, serotonin, acetylcholine, and formic acid into the skin, producing burning pain, redness, and welts. This fresh-plant contact reaction is distinct from reactions to dried, cooked, or otherwise processed nettle preparations, which do not retain the stinging mechanism.",
+        "Touching the fresh, raw plant causes an immediate stinging rash. Its hollow hairs inject a mix of histamine, serotonin, acetylcholine and formic acid into the skin, causing burning pain, redness and welts. Dried, cooked or otherwise processed nettle doesn't sting.\n\nTechnical detail: stinging contact dermatitis from trichomes.",
       sourceId: cummingsOlsen.id,
     },
   ];

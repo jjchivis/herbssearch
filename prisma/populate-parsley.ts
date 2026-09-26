@@ -49,9 +49,9 @@ async function main() {
       genus: "Petroselinum",
       species: "crispum",
       nativeRange:
-        "Native to Algeria, Greece, Morocco, and the north-western Balkan Peninsula; naturalized and cultivated worldwide",
+        "Native to Algeria, Greece, Morocco and the northwestern Balkans; now grown and growing wild around the world",
       partsUsed:
-        "Fresh or dried leaf (\"herb\") and dried root are the primary parts used, culinarily and medicinally; the fruit (seed) and its concentrated essential oil have a separate history of medicinal/abortifacient use and carry distinct toxicity concerns",
+        "Mainly the fresh or dried leaves and the dried root, used in cooking and as medicine. The seeds (botanically small fruits) and their concentrated essential oil have a separate history of medicinal use, including to cause miscarriage, and carry their own serious safety concerns.",
       contentStatus: "VERIFIED",
     },
   });
@@ -179,7 +179,7 @@ async function main() {
       slug: "apiol",
       type: "volatile oil",
       description:
-        "Major essential-oil constituent of parsley leaf and seed; in concentrated/isolated form (e.g. parsley seed essential oil) it is neurotoxic, hepatotoxic, nephrotoxic, and historically used — and still misused — as an abortifacient, with documented fatalities and maternal organ injury at high doses.",
+        "A major natural compound in the essential oil of parsley leaf and seed. In concentrated form (for example parsley seed essential oil), it damages the nerves, liver and kidneys. It has been used, and is still misused, to cause miscarriage, and has caused deaths and organ damage in mothers at high doses.\n\nTechnical detail: neurotoxic, hepatotoxic, nephrotoxic; abortifacient.",
     },
   });
   const myristicin = await prisma.constituent.upsert({
@@ -189,7 +189,7 @@ async function main() {
       name: "Myristicin",
       slug: "myristicin",
       type: "volatile oil",
-      description: "Major essential-oil constituent of parsley leaf and seed, alongside apiol.",
+      description: "A major natural compound in the essential oil of parsley leaf and seed, along with apiol.",
     },
   });
   const bergapten = await prisma.constituent.upsert({
@@ -199,7 +199,7 @@ async function main() {
       name: "Bergapten",
       slug: "bergapten",
       type: "furanocoumarin",
-      description: "5-methoxypsoralen; a furanocoumarin identified in parsley that can cause photocontact dermatitis.",
+      description: "A natural compound in parsley (a furanocoumarin) that can cause a skin rash when the skin is then exposed to sunlight.\n\nTechnical detail: 5-methoxypsoralen; photocontact dermatitis.",
     },
   });
   const apigenin = await prisma.constituent.findUniqueOrThrow({ where: { slug: "apigenin" } });
@@ -227,12 +227,12 @@ async function main() {
     {
       traditionId: mediterraneanFolkMedicine.id,
       notes:
-        "Native to the central/eastern Mediterranean (Algeria, Greece, Morocco, north-western Balkans per Kew POWO). Ancient Greek and Roman use for urinary-tract complaints and kidney-stone prevention is documented, and therapeutic applications are recorded as far back as the Ebers Papyrus.",
+        "Native to the central and eastern Mediterranean (Algeria, Greece, Morocco and the northwestern Balkans, according to Kew). The ancient Greeks and Romans used it for urinary complaints and to prevent kidney stones, and its medical use is recorded as far back as the Ebers Papyrus, an ancient Egyptian medical text.",
     },
     {
       traditionId: europeanFolkMedicine.id,
       notes:
-        "Long-standing European herbal-medicine use as a urinary-tract \"flushing\" agent and diuretic for prevention/treatment of kidney gravel, formally recognized in the German Commission E monograph for parsley herb and root (approved March 2, 1989).",
+        "In European herbal medicine, parsley has long been used to flush the urinary tract, increase urination, and prevent or treat kidney gravel (small kidney stones). Germany's Commission E formally recognized this use for parsley leaf and root on March 2, 1989.\n\nTechnical detail: diuretic.",
     },
   ];
   for (const link of traditionLinks) {
@@ -249,37 +249,37 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "The German Commission E monograph recognizes parsley herb and root for flushing out the efferent urinary tract and for the prevention and treatment of kidney gravel, reflecting long-standing European medicinal use rather than a specific clinical trial base.",
+        "Germany's Commission E, an official expert panel on herbal medicines, recognizes parsley leaf and root for flushing the urinary tract and for preventing and treating kidney gravel (small kidney stones). This reflects long-standing European use rather than clinical trials.",
       sourceId: commissionE.id,
     },
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Parsley has been used in traditional and folk medicine as a carminative, gastric tonic, diuretic, urinary-tract antiseptic, anti-urolithiasis agent, antidote, and anti-inflammatory, and for amenorrhea, dysmenorrhea, gastrointestinal disorders, hypertension, cardiac disease, urinary disease, otitis, sniffles, diabetes, and various dermal conditions.",
+        "In traditional and folk medicine, parsley has been used to relieve gas, strengthen the stomach, increase urination, fight urinary infections, prevent kidney stones, counter poisons and reduce inflammation. It has also been used for missing or painful periods, digestive problems, high blood pressure, heart disease, urinary disease, ear infections, sniffles, diabetes and various skin conditions.\n\nTechnical detail: carminative, gastric tonic, diuretic, urinary-tract antiseptic, anti-urolithiasis, antidote; amenorrhea, dysmenorrhea, otitis.",
       sourceId: ethnopharmacologyReview.id,
     },
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Ancient Greeks and Romans used parsley for urinary-tract infections and kidney-stone prevention, with therapeutic applications also recorded in the Ebers Papyrus. The review also notes traditional Chinese and Ayurvedic use for hypertension and inflammation, alongside the plant's Mediterranean origin.",
+        "The ancient Greeks and Romans used parsley for urinary infections and to prevent kidney stones, and its medical use is also recorded in the Ebers Papyrus, an ancient Egyptian medical text. A research review also notes its traditional use in Chinese and Ayurvedic medicine for high blood pressure and inflammation.",
       sourceId: renalHealthReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Animal studies reviewed by Alobaidi (2024) show parsley extracts/preparations reduce oxidative stress, improve renal biomarkers, and support kidney function, including protective effects against ischemia/reperfusion injury, drug-induced nephrotoxicity, and hyperuricemia-induced renal dysfunction across multiple rodent models. These are animal findings, not established human clinical effects.",
+        "In several rodent studies, parsley extracts reduced oxidative stress (a type of cell damage) and helped protect the kidneys, including from reduced blood flow, damage caused by drugs, and kidney problems linked to high uric acid. These are animal findings, not established effects in people.\n\nTechnical detail: ischemia/reperfusion injury, drug-induced nephrotoxicity, hyperuricemia-induced renal dysfunction; improved renal biomarkers.",
       sourceId: renalHealthReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "The Farzaei et al. review catalogs a wide range of pharmacological activities demonstrated for parsley extracts and isolated compounds in laboratory (in vitro/animal) studies, including antioxidant, hepatoprotective, brain-protective, anti-diabetic, analgesic, spasmolytic, immunosuppressant, anti-platelet, gastroprotective, cytoprotective, laxative, estrogenic, diuretic, hypotensive, antibacterial, and antifungal effects. These are preclinical findings and are not established human clinical effects.",
+        "A research review lists many effects of parsley extracts and compounds in lab and animal studies:\n- Antioxidant activity\n- Protecting the liver, brain and stomach\n- Lowering blood sugar and blood pressure\n- Relieving pain and cramps\n- Calming the immune system and making blood less likely to clot\n- Acting as a laxative, increasing urination and estrogen-like effects\n- Fighting bacteria and fungi These are lab and animal findings, not established effects in people.\n\nTechnical detail: hepatoprotective, anti-diabetic, analgesic, spasmolytic, immunosuppressant, anti-platelet, gastroprotective, cytoprotective, laxative, estrogenic, diuretic, hypotensive, antibacterial, antifungal.",
       sourceId: ethnopharmacologyReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Human studies summarized by Alobaidi (2024) show mixed results: Nielsen et al. (1999) documented increased urinary apigenin excretion and enhanced antioxidant enzyme activity after parsley consumption; Essa et al. (2024) found improved renal health markers in obese women given parsley-seed-supplemented bread; but Alyami and Rabah (2011) found no significant difference in urinary parameters compared with a control group. The review characterizes the overall human evidence base for parsley's renal effects as limited and mixed.",
+        "Studies in people have had mixed results:\n- Eating parsley increased the antioxidant activity of certain body enzymes (Nielsen et al., 1999).\n- Obese women who ate bread with added parsley seed had better kidney health markers (Essa et al., 2024).\n- Another study found no difference in urine measurements compared with a control group (Alyami and Rabah, 2011).\nOverall, the review describes the evidence for parsley's effects on the kidneys in people as limited and mixed.\n\nTechnical detail: Nielsen et al. also documented increased urinary apigenin excretion.",
       sourceId: renalHealthReview.id,
     },
   ];
@@ -301,60 +301,60 @@ async function main() {
     {
       category: "PREPARATION_SPECIFIC" as const,
       description:
-        "The toxicity and abortifacient concerns associated with parsley are concentrated in concentrated seed (fruit) extracts and isolated essential oil, which are rich in apiol; ordinary culinary use of the fresh or dried leaf is a distinct, much lower-exposure preparation. The Commission E monograph itself warns that \"the essential oil should not be used in isolation because of its toxicity.\"",
+        "The serious safety concerns about parsley, including miscarriage, apply mainly to concentrated seed extracts and pure essential oil, which are rich in a compound called apiol. Normal cooking with fresh or dried parsley leaf involves much smaller amounts. Commission E itself warns that \"the essential oil should not be used in isolation because of its toxicity.\"",
       sourceId: commissionE.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "Commission E lists pregnancy as a contraindication for parsley herb/root preparations. Separately, concentrated parsley preparations and apiole-rich essential oil have a documented history of use as an abortifacient (notably in South America and Italy), historically ending in death in some cases from severe post-abortive vaginal bleeding; in animal studies, oral doses of 5-14 g induced severe hemorrhage and abortion in pregnant rabbits.",
+        "Commission E says parsley leaf and root medicines should not be used during pregnancy. Separately, concentrated parsley products and apiol-rich essential oil have a history of being used to cause miscarriage (especially in South America and Italy), which sometimes ended in death from severe bleeding. In pregnant rabbits, oral doses of 5–14 g caused severe bleeding and miscarriage.\n\nTechnical detail: abortifacient; apiole.",
       sourceId: commissionE.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "Because apiole's abortifacient action appears to occur mainly at maternally hepatotoxic doses (via mechanisms including indirect induction of placental hemorrhage), the reviewing authors recommend avoiding apiole-rich parsley oil by all routes throughout pregnancy and breastfeeding, since a safe human threshold has not been established.",
+        "Apiol seems to cause miscarriage mainly at doses that also damage the mother's liver, partly by causing bleeding in the placenta. Because no safe level has been established for people, the review authors recommend avoiding apiol-rich parsley oil in any form throughout pregnancy and breastfeeding.\n\nTechnical detail: maternally hepatotoxic doses; indirect induction of placental hemorrhage.",
       sourceId: reproductiveToxicityReview.id,
     },
     {
       category: "BREASTFEEDING" as const,
       description:
-        "Apiole-rich parsley essential oil/concentrated preparations are recommended to be avoided throughout breastfeeding as well as pregnancy, as a safe human exposure threshold has not been established.",
+        "Apiol-rich parsley essential oil and concentrated parsley products should be avoided while breastfeeding as well as during pregnancy, because no safe level has been established for people.",
       sourceId: reproductiveToxicityReview.id,
     },
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "Contraindicated in existing inflammatory kidney conditions. Irrigation (flushing) therapy with parsley should not be carried out in cases of edema caused by impaired heart or kidney function, and requires concurrent intake of large amounts of fluid.",
+        "Don't use parsley medicines if you have an inflammatory kidney condition. Parsley flushing therapy should not be used for swelling (edema) caused by heart or kidney problems, and it requires drinking large amounts of fluid at the same time.",
       sourceId: commissionE.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
-      description: "Occasional allergic skin or mucous membrane reactions have been reported.",
+      description: "Allergic reactions of the skin or the lining of the mouth and nose have occasionally been reported.",
       sourceId: commissionE.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Bergapten (5-methoxypsoralen), a furanocoumarin present in parsley, may induce photocontact dermatitis.",
+        "Bergapten, a natural compound in parsley, can cause a skin rash when the skin is then exposed to sunlight.\n\nTechnical detail: 5-methoxypsoralen, a furanocoumarin; photocontact dermatitis.",
       sourceId: renalHealthReview.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "In excess, apiol (a major parsley essential-oil constituent) is neurotoxic, hepatotoxic, and nephrotoxic, with fatalities recorded historically. Reported poisoning signs include cognitive and visual disturbances, vertigo, tinnitus, ataxia, headache, giddiness, and loss of balance, with convulsions, paralysis, and death at higher doses. In a mouse study, a single gavage dose of 10 mL/kg of the oil killed all treated animals within 60 hours via liver and kidney toxicity.",
+        "In large amounts, apiol (a major compound in parsley essential oil) damages the nerves, liver and kidneys, and has caused deaths in the past. Signs of poisoning include confusion, vision problems, dizziness, ringing in the ears, clumsiness, headache and loss of balance, and at higher doses seizures, paralysis and death. In mice, a single dose of the oil killed all the animals within 60 hours from liver and kidney damage.\n\nTechnical detail: neurotoxic, hepatotoxic, nephrotoxic; vertigo, tinnitus, ataxia; mouse gavage dose 10 mL/kg.",
       sourceId: reproductiveToxicityReview.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "A case report describes elevated blood levels of the immunosuppressant sirolimus in a transplant patient who consumed large quantities of parsley, suggesting possible inhibition of the CYP3A4 drug-metabolizing enzyme.",
+        "In one reported case, a transplant patient who ate large amounts of parsley had higher blood levels of the anti-rejection medicine sirolimus. Parsley may have slowed a liver enzyme that breaks down many medicines.\n\nTechnical detail: possible CYP3A4 inhibition.",
       sourceId: renalHealthReview.id,
     },
     {
       category: "DOSAGE" as const,
       description:
-        "Commission E-referenced daily dose (unless otherwise prescribed): 6 g of the prepared herb/root drug, as the crushed drug for infusions or other galenical preparations with a comparably small proportion of essential oil, taken orally. For irrigation (flushing) therapy, large amounts of fluid must be taken concurrently.",
+        "Daily amount referenced by Commission E (unless a professional advises otherwise): 6 g of prepared parsley leaf or root, crushed for tea or used in other preparations that contain only a small amount of essential oil, taken by mouth. For flushing therapy, you must drink large amounts of fluid at the same time.\n\nTechnical detail: galenical preparations.",
       sourceId: commissionE.id,
     },
   ];

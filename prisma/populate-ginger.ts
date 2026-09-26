@@ -22,8 +22,8 @@ async function main() {
       family: "Zingiberaceae",
       genus: "Zingiber",
       species: "officinale",
-      nativeRange: "E. Himalaya to S. Central China",
-      partsUsed: "Rhizome (underground stem)",
+      nativeRange: "From the eastern Himalayas to south-central China",
+      partsUsed: "The rhizome, the knobbly underground stem usually called ginger root",
       contentStatus: "VERIFIED",
     },
   });
@@ -141,8 +141,8 @@ async function main() {
   // --- traditions (Ali et al. 2008 confirms ginger has been "widely used in
   // Chinese, Ayurvedic and Tibb-Unani herbal medicines... since antiquity") ---
   const traditionSlugs = [
-    { slug: "ayurveda", notes: "Known as Ardraka (fresh rhizome) and Shunthi (dried rhizome); used since antiquity as a digestive, respiratory, and circulatory remedy." },
-    { slug: "traditional-chinese-medicine", notes: "Fresh rhizome (Sheng Jiang) used since antiquity, traceable to the Shen Nong Ben Cao Jing; documented in the Chinese Pharmacopoeia to relieve exterior syndrome, disperse cold, and arrest vomiting." },
+    { slug: "ayurveda", notes: "Known as Ardraka (fresh ginger) and Shunthi (dried ginger). Used since ancient times for digestion, breathing and circulation." },
+    { slug: "traditional-chinese-medicine", notes: "Fresh ginger (Sheng Jiang) has been used since ancient times and appears in the Shen Nong Ben Cao Jing, one of the oldest Chinese herbal texts. The Chinese Pharmacopoeia lists it to ease the early stage of colds (\"exterior syndrome\"), to \"disperse cold\", and to stop vomiting." },
   ];
   for (const t of traditionSlugs) {
     const tradition = await prisma.traditionSystem.findUniqueOrThrow({ where: { slug: t.slug } });
@@ -161,31 +161,31 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Ginger has been used in Chinese, Ayurvedic, and Tibb-Unani herbal medicine since antiquity for arthritis, rheumatism, sprains, muscular aches, sore throats, cramps, constipation, indigestion, vomiting, hypertension, dementia, fever, infectious diseases, and helminthiasis.",
+        "Since ancient times, ginger has been used in Chinese, Ayurvedic and Unani herbal medicine for arthritis and rheumatism, sprains, muscle aches, sore throats, cramps, constipation, indigestion, vomiting, high blood pressure, dementia, fever, infections and intestinal worms.\n\nTechnical detail: Tibb-Unani; helminthiasis.",
       sourceId: aliReview.id,
     },
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Ginger has been employed in folk medicine since ancient times for asthma, flu, indigestion, and gastrointestinal discomfort.",
+        "In folk medicine, ginger has been used since ancient times for asthma, flu, indigestion and stomach discomfort.",
       sourceId: nccih.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Gingerols and shogaols, the main pungent phenolic compounds in ginger, exhibit anticancer, antioxidant, antimicrobial, anti-inflammatory, and anti-allergic activity in laboratory research, acting on cholinergic and serotonergic receptors implicated in nausea.",
+        "In lab research, gingerols and shogaols (the compounds that give ginger its heat) showed antioxidant, germ-fighting and anticancer activity, and reduced inflammation and allergic responses. They also act on nerve receptors involved in nausea.\n\nTechnical detail: pungent phenolic compounds acting on cholinergic and serotonergic receptors.",
       sourceId: gingerolsShogaolsReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A systematic review and meta-analysis of 12 randomized controlled trials (1,278 pregnant women) found ginger significantly improved nausea symptoms compared to placebo (MD 1.20, 95% CI 0.56-1.84, p = 0.0002), though it did not significantly reduce the number of vomiting episodes. The review concluded ginger could be considered a harmless and possibly effective option for nausea and vomiting of pregnancy.",
+        "A review that combined 12 trials with 1,278 pregnant women found ginger improved nausea compared with placebo (a dummy pill), but it did not reduce how often women vomited. The reviewers concluded ginger could be considered a harmless and possibly effective option for nausea and vomiting during pregnancy.\n\nTechnical detail: systematic review and meta-analysis of randomized controlled trials; mean difference 1.20 (95% CI 0.56–1.84), p = 0.0002.",
       sourceId: pregnancyNauseaSR.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Research shows ginger may be helpful for nausea and vomiting associated with pregnancy, and dietary supplements might help reduce the severity of menstrual cramps. Most studies of ginger for motion sickness haven't shown it to be helpful, and it's uncertain whether ginger helps with chemotherapy- or post-surgery-related nausea and vomiting.",
+        "Research shows ginger may help with nausea and vomiting during pregnancy, and ginger supplements might make period cramps less severe. Most studies of ginger for motion sickness haven't found it helpful, and it's uncertain whether it helps with nausea and vomiting from chemotherapy or after surgery.",
       sourceId: nccih.id,
     },
   ];
@@ -203,19 +203,19 @@ async function main() {
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Can have side effects such as abdominal discomfort, heartburn, diarrhea, and mouth and throat irritation when taken orally.",
+        "Taken by mouth, ginger can cause side effects such as stomach discomfort, heartburn, diarrhea, and irritation of the mouth and throat.",
       sourceId: nccih.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "High doses of concentrated ginger (powder or herbal tinctures) can increase bleeding risk by decreasing platelet aggregation, and can increase stomach acid production, especially if taken with other herbs or medicines that have the same effect.",
+        "High doses of concentrated ginger (powder or tinctures) can raise the risk of bleeding by making blood cells called platelets less sticky. They can also increase stomach acid. This is more likely if you take it with other herbs or medicines that have the same effects.\n\nTechnical detail: decreased platelet aggregation.",
       sourceId: pregnancyNauseaSR.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "The use of ginger dietary supplements during pregnancy may be safe; a systematic review of 12 RCTs found ginger did not pose a significant risk for spontaneous abortion or for side effects such as heartburn or drowsiness compared to placebo.",
+        "Ginger supplements may be safe during pregnancy. A review of 12 trials found ginger did not significantly raise the risk of miscarriage, or of side effects such as heartburn or drowsiness, compared with placebo.",
       sourceId: nccih.id,
     },
     {

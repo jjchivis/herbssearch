@@ -24,7 +24,7 @@ async function main() {
       family: "Lamiaceae",
       genus: "Ocimum",
       species: "basilicum",
-      partsUsed: "Leaf, aerial parts (essential oil)",
+      partsUsed: "Leaves, plus the above-ground parts used to make essential oil",
       contentStatus: "VERIFIED",
     },
   });
@@ -128,11 +128,11 @@ async function main() {
     {
       slug: "ayurveda",
       notes:
-        "Used within Ayurvedic and Unani systems, particularly in South Asian practice, for fever, cough, cold, digestive complaints, and reproductive disorders.",
+        "Used in Ayurvedic and Unani medicine, especially in South Asia, for fever, cough, colds, digestive complaints and reproductive problems.",
     },
     {
       slug: "african-traditional-medicine",
-      notes: "Documented in African ethnomedicine for allergic reactions, inflammation, and the common cold.",
+      notes: "Used in African traditional medicine for allergic reactions, inflammation and the common cold.",
     },
   ];
   for (const t of traditionLinks) {
@@ -152,19 +152,19 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Documented across multiple traditional medicine systems: in Ayurvedic and Unani systems, used for fever, cough, cold, digestive issues, and reproductive disorders in South Asian practice; in Southeast Asian traditions, for flatulence, peptic ulcers, tuberculosis, and ringworm; in African ethnomedicine, for allergic reactions, inflammation, and the common cold; and in Brazilian folk medicine, for delayed menstruation, indigestion, and nasal congestion. Traditional preparations included infusions, inhalations, pastes, powders, and teas.",
+        "Basil has been used in many traditional medicine systems:\n- Ayurvedic and Unani medicine (South Asia): fever, cough, colds, digestive problems and reproductive problems.\n- Southeast Asian traditions: gas, stomach ulcers, tuberculosis and ringworm (a fungal skin infection).\n- African traditional medicine: allergic reactions, inflammation and the common cold.\n- Brazilian folk medicine: late periods, indigestion and a stuffy nose.\nTraditional preparations included teas and infusions, steam inhalations, pastes and powders.",
       sourceId: basilReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "In vitro and animal studies report antiviral activity (against SARS-CoV-2, dengue, HIV, herpes simplex, hepatitis B, and Zika viruses in laboratory models), antibacterial activity against Gram-positive and Gram-negative species, antifungal activity against Candida albicans and Aspergillus species, antioxidant activity in DPPH assays, anticancer effects in breast cancer and glioblastoma cell lines, antidiabetic ('insulin-like') effects, neuroprotective effects including memory improvement and anticonvulsant activity in mice, anti-inflammatory effects in carrageenan-induced paw edema in mice, and wound-healing effects in topical formulations. The review notes that no human clinical trials were included in its pharmacological findings — all of this evidence derives from in vitro, animal, or computational studies.",
+        "In lab tests and animal studies, basil has shown a wide range of effects: it acted against several viruses (including SARS-CoV-2, dengue, HIV, herpes simplex, hepatitis B and Zika) and against many bacteria and fungi, including Candida yeast. It also showed antioxidant activity, slowed some breast and brain cancer cells in the lab, had insulin-like effects, improved memory and reduced seizures in mice, reduced swelling in mice, and helped wounds heal when applied to the skin. The review included no human trials. All of this comes from lab, animal or computer-model studies.\n\nTechnical detail: antiviral, antibacterial (Gram-positive and Gram-negative), antifungal (Candida albicans, Aspergillus), antioxidant (DPPH assays), anticancer (breast cancer and glioblastoma cell lines), antidiabetic, neuroprotective and anticonvulsant (mice), anti-inflammatory (carrageenan-induced paw edema in mice) and wound-healing effects in topical formulations.",
       sourceId: basilReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "In a single-blind, randomized, placebo-controlled trial (n=60) in patients with major depressive disorder already taking sertraline, adding a basil hydroalcoholic-extract syrup (1100 mg extract per 5 mL, nightly) for 4 weeks produced significantly greater reductions in anxiety (Hamilton Anxiety Rating Scale) and depression (Beck Depression Inventory) scores than placebo (p < 0.001 for both). This is a single trial and further replication would be needed to confirm the finding.",
+        "In one trial, 60 people with major depression who were already taking the antidepressant sertraline added either a basil syrup or a placebo (a dummy syrup) every night for 4 weeks. The basil group had much larger drops in anxiety and depression scores than the placebo group. This is a single trial, and the result needs to be repeated to be confirmed.\n\nTechnical detail: single-blind, randomized, placebo-controlled; hydroalcoholic-extract syrup, 1100 mg extract per 5 mL; Hamilton Anxiety Rating Scale and Beck Depression Inventory, p < 0.001 for both.",
       sourceId: anxietyRct.id,
     },
   ];
@@ -182,31 +182,31 @@ async function main() {
     {
       category: "TOXICITY" as const,
       description:
-        "Essential oil from the aerial parts of Ocimum basilicum can contain approximately 20-89% estragole (methyl chavicol) depending on chemotype. The EMA's Committee on Herbal Medicinal Products (HMPC) has concluded that estragole is a genotoxic carcinogen in animal studies and recommends that exposure to it from herbal products be kept as low as practically achievable.",
+        "Basil essential oil can contain a lot of a natural compound called estragole, anywhere from about 20% to 89% depending on the type of basil. The European Medicines Agency's herbal committee has concluded that estragole damages DNA and causes cancer in animal studies. It recommends keeping exposure from herbal products as low as practically possible.\n\nTechnical detail: estragole is also called methyl chavicol; HMPC classifies it as a genotoxic carcinogen in animal studies; content varies by chemotype.",
       sourceId: emaEstragole.id,
     },
     {
       category: "DOSAGE" as const,
       description:
-        "HMPC guidance limits herbal medicinal products containing estragole (such as basil preparations) to short-term use of no more than 14 days, with a guidance value for maximum intake of 0.05 mg estragole per day for adults (1 microgram per kg body weight per day for children up to age 11).",
+        "European guidance limits herbal medicines that contain estragole, such as basil preparations, to short-term use of no more than 14 days. The suggested maximum is 0.05 mg of estragole a day for adults, and 1 microgram per kg of body weight a day for children up to age 11.",
       sourceId: emaEstragole.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "HMPC guidance states that use of estragole-containing herbal medicinal products, including basil preparations, is not recommended during pregnancy above the 0.05 mg/day guidance value unless justified by an adequate risk assessment.",
+        "European guidance does not recommend basil herbal medicines (or other products containing estragole) during pregnancy above 0.05 mg of estragole a day, unless a proper risk assessment supports it. This applies to medicinal preparations, not normal cooking amounts.",
       sourceId: emaEstragole.id,
     },
     {
       category: "BREASTFEEDING" as const,
       description:
-        "HMPC guidance states that use of estragole-containing herbal medicinal products, including basil preparations, is not recommended while breastfeeding above the 0.05 mg/day guidance value unless justified by an adequate risk assessment.",
+        "European guidance does not recommend basil herbal medicines (or other products containing estragole) while breastfeeding above 0.05 mg of estragole a day, unless a proper risk assessment supports it.",
       sourceId: emaEstragole.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "In a 4-week randomized controlled trial combining basil syrup with sertraline in patients with major depressive disorder, mild, transient adverse effects included gastrointestinal discomfort (1 of 27 participants) and headache (2 of 27); no serious adverse effects were observed, and the basil supplement was reported as well tolerated overall.",
+        "In the 4-week trial of basil syrup taken alongside sertraline, side effects were mild and short-lived: stomach discomfort (1 of 27 people) and headache (2 of 27). There were no serious side effects, and people generally tolerated the basil syrup well.",
       sourceId: anxietyRct.id,
     },
   ];

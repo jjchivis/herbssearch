@@ -32,7 +32,7 @@ async function main() {
       family: "Lamiaceae",
       genus: "Thymus",
       species: "vulgaris",
-      partsUsed: "Leaf and flowering top (aerial parts), dried or fresh",
+      partsUsed: "The leaves and flowering tops, dried or fresh",
       contentStatus: "VERIFIED",
     },
   });
@@ -169,7 +169,7 @@ async function main() {
         herbId: thyme.id,
         traditionId: mediterraneanFolkMedicine.id,
         notes:
-          "Native to the Mediterranean region; used since antiquity by the Egyptians, Greeks, and Romans for embalming, purification, and disinfection, and long-standing folk use across the Mediterranean and Europe for respiratory complaints, digestive upset, intestinal parasites, and minor wounds.",
+          "Native to the Mediterranean region. The ancient Egyptians, Greeks and Romans used thyme for embalming, purification and disinfection. It has a long history of folk use across the Mediterranean and Europe for breathing problems, upset stomach, intestinal worms and minor wounds.",
       },
     });
   }
@@ -179,19 +179,19 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Thyme has a long history of ethnomedicinal use dating to ancient Egypt, Greece, and Rome, where it was used for wound healing and disinfection (including burning bundles for purification) and for skin ailments during plague outbreaks. Traditionally used for respiratory ailments including bronchitis, asthma, whooping cough, and pharyngitis; for gastrointestinal complaints and intestinal worm infestations; for rheumatic aches via topical/aromatherapy use; and in food preparation for its antimicrobial, preservative properties.",
+        "Thyme's traditional use goes back to ancient Egypt, Greece and Rome, where it was used to heal wounds and disinfect (including burning bundles of it for purification), and for skin problems during plague outbreaks. Traditionally, it has been used for:\n- Breathing problems, including bronchitis, asthma, whooping cough and sore throat\n- Digestive complaints and intestinal worms\n- Rheumatic aches, applied to the skin or used as aromatherapy\n- Preserving food, because it helps fight germs\n\nTechnical detail: pharyngitis; ethnomedicinal use.",
       sourceId: ethnopharmacologyReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Steam-distilled Thymus vulgaris essential oil (thymol chemotype: thymol 48.1%, p-cymene 11.7%, 1,8-cineole 6.7%, gamma-terpinene 6.1%, carvacrol 5.5%) showed strong antioxidant activity in a DPPH radical-scavenging assay (85.2% inhibition). In antimicrobial testing, the oil produced moderate-to-strong inhibition zones (9.89-22.44 mm) against gram-positive and gram-negative bacteria, yeasts, and biofilm-forming strains, with the lowest minimum inhibitory concentrations against Bacillus subtilis, Enterococcus faecalis, and Staphylococcus aureus. Vapor-phase exposure also inhibited Penicillium growth on bread and Serratia marcescens on stored carrots, and MALDI-TOF analysis indicated disruption of biofilm protein profiles in Salmonella Enteritidis and Pseudomonas fluorescens. These are in vitro/food-model findings, not established clinical effects in humans.",
+        "In lab tests, thyme essential oil (rich in thymol) showed strong antioxidant activity and slowed the growth of many bacteria and yeasts, including ones that form protective films (biofilms). It worked best against Bacillus subtilis, Enterococcus faecalis and Staphylococcus aureus. Thyme oil vapor also stopped mold on bread and bacteria on stored carrots, and disrupted the biofilms of Salmonella and Pseudomonas bacteria. These are lab and food-testing findings, not established effects in people.\n\nTechnical detail: Thymus vulgaris thymol chemotype: thymol 48.1%, p-cymene 11.7%, 1,8-cineole 6.7%, gamma-terpinene 6.1%, carvacrol 5.5%. DPPH assay 85.2% inhibition; inhibition zones 9.89–22.44 mm against gram-positive and gram-negative bacteria and yeasts; vapor-phase inhibition of Penicillium and Serratia marcescens; MALDI-TOF showed disrupted biofilm protein profiles in Salmonella Enteritidis and Pseudomonas fluorescens.",
       sourceId: essentialOilStudy.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A prospective, double-blind, placebo-controlled, multicentre phase IV trial randomized 361 adult outpatients with acute bronchitis and productive cough to an 11-day course of a fixed thyme herb/primrose root dry-extract combination (183 patients) or placebo (178 patients), three tablets daily. The active-treatment group had a significantly greater mean reduction in coughing fits on days 7-9 relative to baseline (67.1% vs. 51.3% with placebo, p < 0.0001), reached a 50% reduction in coughing fits about two days sooner than placebo, and had a higher responder rate on the Bronchitis Severity Score at study end (92.9% vs. 75.8%, p < 0.0001).",
+        "In a trial of 361 adults with acute bronchitis and a wet (mucus-producing) cough, people took either tablets combining thyme and primrose root, or a placebo, three times a day for 11 days. On days 7–9, coughing fits dropped by about 67% with the thyme combination compared with about 51% with placebo. The thyme group reached half as many coughing fits about two days sooner, and more of them improved on a bronchitis severity score by the end (about 93% vs. 76%). Note that this tested thyme combined with primrose, not thyme alone.\n\nTechnical detail: prospective, double-blind, placebo-controlled, multicentre phase IV trial; 183 active vs. 178 placebo; 67.1% vs. 51.3%, p < 0.0001; Bronchitis Severity Score responder rate 92.9% vs. 75.8%, p < 0.0001.",
       sourceId: bronchitisTrial.id,
     },
   ];
@@ -208,28 +208,28 @@ async function main() {
   const safetyRecords = [
     {
       category: "CONTRAINDICATION" as const,
-      description: "Hypersensitivity to thyme (the active substance) or to other plants of the Lamiaceae (Labiatae) family.",
+      description: "Don't use thyme medicines if you are allergic to thyme or to other plants in the mint family (Lamiaceae).\n\nTechnical detail: Lamiaceae is also called Labiatae.",
     },
     {
       category: "DOSAGE" as const,
       description:
-        "For most oral preparations (tinctures, soft/dry extracts, comminuted herb as tea), use in children under 12 years of age is not recommended due to lack of adequate data. For certain liquid extract preparations, use in children under 4 years is not recommended and medical advice should be sought. If symptoms persist longer than 1 week, or if dyspnoea, fever, or purulent sputum occur, a doctor or qualified health care practitioner should be consulted.",
+        "Most thyme medicines taken by mouth (tinctures, extracts, and the chopped herb as tea) are not recommended for children under 12, because there isn't enough data. For some liquid extracts, use in children under 4 is not recommended and you should get medical advice. See a doctor or qualified health professional if symptoms last more than a week, or if you get short of breath, have a fever, or cough up pus-like mucus.\n\nTechnical detail: dyspnoea, purulent sputum.",
     },
     {
       category: "ADVERSE_EFFECT" as const,
-      description: "Gastric disorders may occur; frequency not known. If other adverse reactions occur, a doctor or qualified health care practitioner should be consulted.",
+      description: "Stomach upset can happen; how often is not known. If you get any other side effects, see a doctor or qualified health professional.",
     },
     {
       category: "DRUG_INTERACTION" as const,
-      description: "No interactions between thyme herb preparations and other medicinal products have been reported.",
+      description: "No interactions between thyme medicines and other medicines have been reported.",
     },
     {
       category: "PREGNANCY" as const,
-      description: "Safety during pregnancy has not been established. In the absence of sufficient data, use during pregnancy is not recommended; no fertility data are available.",
+      description: "Thyme has not been shown to be safe during pregnancy, so using it as a medicine while pregnant is not recommended. There is no data on fertility.",
     },
     {
       category: "BREASTFEEDING" as const,
-      description: "Safety during breastfeeding has not been established. In the absence of sufficient data, use during breastfeeding is not recommended.",
+      description: "Thyme has not been shown to be safe while breastfeeding, so using it as a medicine while breastfeeding is not recommended.",
     },
   ];
   for (const record of safetyRecords) {

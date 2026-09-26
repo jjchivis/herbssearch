@@ -32,8 +32,8 @@ async function main() {
       family: "Zingiberaceae",
       genus: "Curcuma",
       species: "longa",
-      nativeRange: "SW. India (known only as a cultigen; not found in the wild)",
-      partsUsed: "Rhizome (underground stem)",
+      nativeRange: "Southwestern India. Turmeric is known only as a cultivated plant and isn't found growing in the wild.",
+      partsUsed: "The rhizome, the underground stem usually called turmeric root",
       contentStatus: "VERIFIED",
     },
   });
@@ -177,12 +177,12 @@ async function main() {
     {
       slug: "ayurveda",
       notes:
-        "Known as Haridra (Sanskrit) or Haldi (Hindi); traditionally used as a remedy for digestive disorders, arthritis, skin diseases, and inflammatory conditions, valued for reducing inflammation and pain.",
+        "Known as Haridra in Sanskrit and Haldi in Hindi. Traditionally used for digestive problems, arthritis, skin diseases and inflammation, and valued for easing inflammation and pain.",
     },
     {
       slug: "traditional-chinese-medicine",
       notes:
-        "Known as Jiang Huang (姜黄); traditionally used to promote blood circulation, resolve blood stasis, and relieve pain, and prescribed for conditions involving stagnation and swelling.",
+        "Known as Jiang Huang (姜黄). Traditionally used to \"promote blood circulation\", \"resolve blood stasis\" (poor blood flow, in Chinese medicine terms) and relieve pain, and prescribed for conditions involving \"stagnation\" and swelling.",
     },
   ];
   for (const t of traditionSlugs) {
@@ -202,37 +202,37 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Turmeric has historically been used in Chinese, Indian (e.g., Ayurvedic), Islamic, and Thai traditional medicine systems for conditions such as indigestion, the common cold, skin infections, arthritis, abdominal pain, and liver disease, and has also been used in some Indian religious ceremonies.",
+        "Turmeric has historically been used in Chinese, Indian (including Ayurvedic), Islamic and Thai traditional medicine for indigestion, the common cold, skin infections, arthritis, stomach pain and liver disease. It has also been used in some Indian religious ceremonies.",
       sourceId: nccih.id,
     },
     {
       category: "TRADITIONAL" as const,
       summary:
-        "In Ayurvedic practice turmeric (Haridra) has been used as a remedy for digestive disorders, arthritis, skin diseases, and inflammatory conditions. In Traditional Chinese Medicine, turmeric (Jiang Huang) has been used to promote blood circulation, resolve blood stasis, and relieve pain, often prescribed for conditions involving stagnation and swelling.",
+        "In Ayurvedic practice, turmeric (Haridra) has been used for digestive problems, arthritis, skin diseases and inflammation. In Traditional Chinese Medicine, turmeric (Jiang Huang) has been used to \"promote blood circulation\", \"resolve blood stasis\" and relieve pain, often for conditions involving \"stagnation\" and swelling.",
       sourceId: turmericFunctionalFoodReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Curcumin inhibits NF-κB activation and reduces pro-inflammatory mediators (COX-2, IL-6, IL-8, PGE2), suppresses matrix metalloproteinase synthesis that drives cartilage degradation, counteracts IL-1β cytotoxicity in chondrocytes, and stimulates anti-apoptotic factors — effects demonstrated in vitro on chondrocytes and cartilage explants.",
+        "In lab tests on cartilage cells and tissue, curcumin (turmeric's best-known natural compound) reduced chemical signals that drive inflammation, slowed the enzymes that break down cartilage, and helped protect cartilage cells from damage.\n\nTechnical detail: inhibits NF-κB activation; reduces COX-2, IL-6, IL-8 and PGE2; suppresses matrix metalloproteinase synthesis; counteracts IL-1β cytotoxicity in chondrocytes; stimulates anti-apoptotic factors; in vitro on chondrocytes and cartilage explants.",
       sourceId: henrotinOAReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Curcumin activates nuclear factor erythroid 2-related factor 2 (Nrf2), inducing antioxidant enzymes including heme oxygenase-1 (HO-1), superoxide dismutase (SOD), catalase, and glutathione peroxidase (GPx), and modulates microRNAs and long noncoding RNAs implicated in cancer-related signaling pathways.",
+        "In lab research, curcumin switched on the body's own antioxidant defenses and affected genetic signals linked to cancer.\n\nTechnical detail: activates Nrf2, inducing heme oxygenase-1 (HO-1), superoxide dismutase (SOD), catalase and glutathione peroxidase (GPx); modulates microRNAs and long noncoding RNAs in cancer-related signaling pathways.",
       sourceId: turmericFunctionalFoodReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A systematic review and meta-analysis of 15 randomized controlled trials (1,670 patients) found curcuminoids alone reduced knee osteoarthritis pain versus placebo (VAS pain WMD -1.77, 95% CI -2.44 to -1.09, exceeding the clinical significance threshold) and improved WOMAC total score (WMD -10.47, 95% CI -15.65 to -5.3), with adverse event rates not significantly different from placebo and lower than with NSAIDs. The authors concluded curcuminoids show short-term analgesic and functional benefit but recommended cautious, conservative clinical use pending higher-quality evidence.",
+        "A review that combined 15 trials with 1,670 people found curcumin-type compounds reduced knee arthritis pain more than placebo, by an amount large enough to matter to patients, and improved scores for pain, stiffness and function. Side effects were no more common than with placebo, and less common than with standard painkillers such as ibuprofen (NSAIDs). The authors concluded these compounds help pain and function in the short term, but advised cautious use until better-quality evidence is available.\n\nTechnical detail: randomized controlled trials of curcuminoids; VAS pain WMD −1.77 (95% CI −2.44 to −1.09); WOMAC total WMD −10.47 (95% CI −15.65 to −5.3).",
       sourceId: curcuminoidsOAMetaAnalysis.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Several meta-analyses of oral turmeric or curcumin for knee osteoarthritis (pain, stiffness, joint strength, and mobility) show positive initial evidence, though higher-quality evidence is needed; it is unclear whether topical curcumin ointment affects knee osteoarthritis pain. Initial research suggests oral turmeric or curcumin might improve some measures of non-alcoholic fatty liver disease (NAFLD) and, in oral or mouthwash form, symptoms of cancer-treatment-related oral mucositis, but overall there is not enough evidence to definitively conclude turmeric or curcumin is beneficial for any health purpose.",
+        "Several research reviews show early positive evidence that turmeric or curcumin taken by mouth may help knee arthritis (pain, stiffness, strength and movement), but better-quality studies are needed. It's unclear whether curcumin ointment on the skin helps knee pain. Early research suggests turmeric or curcumin by mouth might improve some measures of fatty liver disease not caused by alcohol (NAFLD), and, by mouth or as a mouthwash, mouth sores caused by cancer treatment. Overall, there isn't enough evidence to say for certain that turmeric or curcumin helps with any health condition.\n\nTechnical detail: oral mucositis.",
       sourceId: nccih.id,
     },
   ];
@@ -250,36 +250,36 @@ async function main() {
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Conventionally formulated oral turmeric or curcumin (not modified to enhance bioavailability) is likely safe in recommended amounts for up to 2-3 months. Oral turmeric can cause nausea and vomiting, acid reflux, stomach upset, diarrhea, or constipation; topical curcumin can cause hives or itching.",
+        "Regular turmeric or curcumin taken by mouth (not specially made to be absorbed better) is likely safe in recommended amounts for up to 2–3 months. By mouth, it can cause nausea and vomiting, acid reflux, stomach upset, diarrhea or constipation. On the skin, curcumin can cause hives or itching.",
       sourceId: nccih.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "Highly bioavailable formulations of curcumin, which enhance the body's ability to absorb curcumin, may harm the liver; liver damage has been reported in some people who consumed these bioavailable formulations. Warning signs include fatigue, nausea, poor appetite, dark urine, or jaundice.",
+        "Curcumin products specially made to be absorbed better (\"highly bioavailable\" formulas) may harm the liver. Liver damage has been reported in some people who took them. Warning signs include tiredness, nausea, poor appetite, dark urine and yellowing of the skin or eyes (jaundice).",
       sourceId: nccih.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "A US Drug-Induced Liver Injury Network (DILIN) case series identified 10 cases of turmeric-associated liver injury enrolled between 2011 and 2022 (6 since 2017); liver injury was hepatocellular in 9 of 10 cases, 5 patients were hospitalized, and 1 died of acute liver failure. Injury had a latency of 1 to 4 months and was strongly linked to the HLA-B*35:01 allele; 3 of 7 chemically analyzed products also contained piperine (black pepper), which is used to boost curcumin bioavailability. The authors concluded turmeric-related liver injury appears to be increasing in the United States.",
+        "A US network that tracks drug-related liver damage identified 10 cases of liver injury linked to turmeric between 2011 and 2022 (6 of them since 2017). Five people were hospitalized, and one died of sudden liver failure. The damage appeared 1 to 4 months after starting turmeric and was strongly linked to a particular inherited gene variant. Three of the 7 products tested also contained piperine (from black pepper), which is added to help the body absorb curcumin. The authors concluded that turmeric-related liver injury appears to be increasing in the United States.\n\nTechnical detail: Drug-Induced Liver Injury Network (DILIN) case series; hepatocellular injury in 9 of 10 cases; HLA-B*35:01 allele.",
       sourceId: dilinLiverInjuryCaseSeries.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "People who take any type of medicine should talk with their health care provider before using turmeric or curcumin products, as some herbs and medicines interact in harmful ways.",
+        "If you take any medicine, talk with your health care provider before using turmeric or curcumin products, because some herbs and medicines interact in harmful ways.",
       sourceId: nccih.id,
     },
     {
       category: "PREGNANCY" as const,
-      description: "The use of turmeric supplements during pregnancy may be unsafe.",
+      description: "Turmeric supplements may be unsafe during pregnancy.",
       sourceId: nccih.id,
     },
     {
       category: "BREASTFEEDING" as const,
       description:
-        "Little is known about whether it's safe to use turmeric in amounts greater than those commonly found in food while breastfeeding.",
+        "Little is known about whether turmeric is safe while breastfeeding in amounts larger than those normally found in food.",
       sourceId: nccih.id,
     },
   ];

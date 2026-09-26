@@ -5,6 +5,15 @@ import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion/fade-in";
 import { TagList } from "@/components/motion/tag-list";
 import { HerbImage } from "@/components/herb-image";
+import { PlainText } from "@/components/plain-text";
+import {
+  EVIDENCE_LABELS,
+  EVIDENCE_NOTES,
+  FAMILY_COMMON_NAMES,
+  SAFETY_LABELS,
+  TIER_LABELS,
+  herbPageTitle,
+} from "@/lib/plain-language";
 
 export async function generateMetadata({
   params,
@@ -12,50 +21,32 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const herb = await prisma.herb.findUnique({ where: { id } });
+  const herb = await prisma.herb.findUnique({
+    where: { id },
+    include: { safetyRecords: { where: { category: "DRUG_INTERACTION" } } },
+  });
   if (!herb) return {};
   return {
-    title: herb.name,
+    title: { absolute: herbPageTitle(herb.name, herb.scientificName, hasKnownInteractions(herb.safetyRecords)) },
     description: herb.summary,
   };
 }
 
-const EVIDENCE_LABELS: Record<string, string> = {
-  TRADITIONAL: "Traditional Evidence",
-  PRECLINICAL: "Preclinical Evidence",
-  HUMAN_RESEARCH: "Human Research",
-};
-
 const EVIDENCE_ORDER = ["TRADITIONAL", "PRECLINICAL", "HUMAN_RESEARCH"];
 
-const SAFETY_LABELS: Record<string, string> = {
-  CONTRAINDICATION: "Contraindications",
-  ADVERSE_EFFECT: "Adverse Effects",
-  DRUG_INTERACTION: "Drug Interactions",
-  PREGNANCY: "Pregnancy",
-  BREASTFEEDING: "Breastfeeding",
-  SURGERY: "Surgery",
-  TOXICITY: "Toxicity",
-  DOSAGE: "Dosage",
-  ALLERGY: "Allergy",
-  CONTAMINATION: "Contamination",
-  PREPARATION_SPECIFIC: "Preparation-Specific",
-};
-
-const TIER_LABELS: Record<string, string> = {
-  TIER_1_GOVERNMENT: "Tier 1 — Government",
-  TIER_2_SYSTEMATIC_REVIEW: "Tier 2 — Systematic Review",
-  TIER_3_PEER_REVIEWED: "Tier 3 — Peer-Reviewed",
-  TIER_4_TRADITIONAL_TEXT: "Tier 4 — Traditional Text",
-  TIER_5_SECONDARY: "Tier 5 — Secondary",
-};
+// Some herbs carry a DRUG_INTERACTION record that says none are known
+// ("No interactions ... have been described"); those shouldn't trigger the
+// interaction alert.
+function hasKnownInteractions(records: { category: string; description: string }[]) {
+  return records.some((r) => r.category === "DRUG_INTERACTION" && !/^No interactions\b/.test(r.description));
+}
 
 const SYNONYM_LABELS: Record<string, string> = {
-  SCIENTIFIC_SYNONYM: "Scientific synonym",
-  COMMON_NAME: "Common name",
-  REGIONAL_NAME: "Regional name",
-  TRADITIONAL_NAME: "Traditional name",
-  HISTORICAL_NAME: "Historical name",
+  COMMON_NAME: "Also called",
+  REGIONAL_NAME: "Regional names",
+  TRADITIONAL_NAME: "Traditional names",
+  HISTORICAL_NAME: "Historical names",
+  SCIENTIFIC_SYNONYM: "Older scientific names",
 };
 
 export default async function HerbDetailPage({
@@ -86,7 +77,7 @@ export default async function HerbDetailPage({
   const properties = herbData.properties.split(",").map((p) => p.trim()).filter(Boolean);
 
   // Assign a stable citation number to every unique source referenced below,
-  // in first-appearance order across evidence, then safety.
+  // in first-appearance order across safety, then evidence (the page order).
   const citations = new Map<string, { number: number; source: NonNullable<typeof herbData.evidence[number]["source"]> }>();
   function cite(source: typeof herbData.evidence[number]["source"]) {
     if (!source) return null;
@@ -95,9 +86,6 @@ export default async function HerbDetailPage({
     }
     return citations.get(source.id)!.number;
   }
-  for (const e of herbData.evidence) cite(e.source);
-  for (const s of herbData.safetyRecords) cite(s.source);
-
   const evidenceByCategory = EVIDENCE_ORDER.map((cat) => ({
     category: cat,
     entries: herbData.evidence.filter((e) => e.category === cat),
@@ -110,6 +98,9 @@ export default async function HerbDetailPage({
     }))
     .filter((g) => g.records.length > 0);
 
+  for (const g of safetyByCategory) for (const s of g.records) cite(s.source);
+  for (const g of evidenceByCategory) for (const e of g.entries) cite(e.source);
+
   const synonymsByType = Object.entries(SYNONYM_LABELS)
     .map(([type, label]) => ({
       label,
@@ -117,15 +108,21 @@ export default async function HerbDetailPage({
     }))
     .filter((g) => g.names.length > 0);
 
+  const familyCommonName = herbData.family ? FAMILY_COMMON_NAMES[herbData.family] : undefined;
   const botanicalFacts = [
-    { label: "Family", value: herbData.family },
+    {
+      label: "Plant family",
+      value: herbData.family && (familyCommonName ? `${herbData.family}, ${familyCommonName}` : herbData.family),
+    },
+    { label: "Parts used", value: herbData.partsUsed },
+    { label: "Where it grows", value: herbData.nativeRange },
+    { label: "Habitat", value: herbData.habitat },
     { label: "Genus", value: herbData.genus },
     { label: "Species", value: herbData.species },
-    { label: "Subspecies / Variety", value: herbData.subspecies },
-    { label: "Native Range", value: herbData.nativeRange },
-    { label: "Habitat", value: herbData.habitat },
-    { label: "Parts Used", value: herbData.partsUsed },
+    { label: "Subspecies / variety", value: herbData.subspecies },
   ].filter((f) => f.value);
+  const showInteractionAlert = hasKnownInteractions(herbData.safetyRecords);
+  const glossaryUsed = new Set<string>();
 
   const sortedCitations = [...citations.values()].sort((a, b) => a.number - b.number);
 
@@ -160,10 +157,24 @@ export default async function HerbDetailPage({
 
       <p className="text-lg leading-relaxed text-[var(--foreground)]">{herbData.summary}</p>
 
+      {showInteractionAlert && (
+        <p
+          role="note"
+          className="rounded-xl border border-[var(--caution-border)] bg-[var(--caution-bg)] p-5 text-sm leading-relaxed text-[var(--caution)]"
+        >
+          <span className="font-semibold">{herbData.name} may interact with some medicines.</span> If you take
+          any medicine, read{" "}
+          <a href="#safety" className="underline underline-offset-2">
+            Interactions with medicines
+          </a>{" "}
+          below and talk to your doctor or pharmacist before using it.
+        </p>
+      )}
+
       {/* BOTANICAL IDENTITY */}
       {(botanicalFacts.length > 0 || synonymsByType.length > 0) && (
         <section className="flex flex-col gap-4 border-t border-[var(--border)] pt-8">
-          <h2 className="font-serif text-xl text-[var(--foreground)]">Botanical Identity</h2>
+          <h2 className="font-serif text-xl text-[var(--foreground)]">What is {herbData.name}?</h2>
           {botanicalFacts.length > 0 && (
             <dl className="grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2">
               {botanicalFacts.map((f) => (
@@ -185,14 +196,14 @@ export default async function HerbDetailPage({
 
       <section className="flex flex-col gap-3">
         <h2 className="text-xs font-semibold tracking-[0.15em] text-[var(--muted)] uppercase">
-          Traditional uses
+          Traditionally used for
         </h2>
         <TagList tags={uses} />
       </section>
 
       <section className="flex flex-col gap-3">
         <h2 className="text-xs font-semibold tracking-[0.15em] text-[var(--muted)] uppercase">
-          Properties
+          Traditionally described as
         </h2>
         <TagList tags={properties} />
       </section>
@@ -200,12 +211,16 @@ export default async function HerbDetailPage({
       {/* TRADITIONS */}
       {herbData.traditions.length > 0 && (
         <section className="flex flex-col gap-3">
-          <h2 className="font-serif text-xl text-[var(--foreground)]">Traditional Systems</h2>
+          <h2 className="font-serif text-xl text-[var(--foreground)]">Traditions that use it</h2>
           <ul className="flex flex-col gap-3">
             {herbData.traditions.map((t) => (
               <li key={t.id} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4">
                 <p className="font-medium text-[var(--foreground)]">{t.tradition.name}</p>
-                {t.notes && <p className="mt-1 text-sm text-[var(--muted)]">{t.notes}</p>}
+                {t.notes && (
+                  <div className="mt-1 text-sm text-[var(--muted)]">
+                    <PlainText glossaryUsed={glossaryUsed} text={t.notes} />
+                  </div>
+                )}
               </li>
             ))}
           </ul>
@@ -215,7 +230,7 @@ export default async function HerbDetailPage({
       {/* CONSTITUENTS */}
       {herbData.constituents.length > 0 && (
         <section className="flex flex-col gap-3">
-          <h2 className="font-serif text-xl text-[var(--foreground)]">Constituents</h2>
+          <h2 className="font-serif text-xl text-[var(--foreground)]">Natural compounds</h2>
           <div className="flex flex-wrap gap-2">
             {herbData.constituents.map((hc) => (
               <Link
@@ -231,26 +246,33 @@ export default async function HerbDetailPage({
         </section>
       )}
 
-      {/* EVIDENCE */}
-      {evidenceByCategory.length > 0 && (
-        <section className="flex flex-col gap-6 border-t border-[var(--border)] pt-8">
-          <h2 className="font-serif text-xl text-[var(--foreground)]">Evidence</h2>
-          {evidenceByCategory.map((g) => (
-            <div key={g.category} className="flex flex-col gap-3">
-              <h3 className="font-mono text-xs uppercase tracking-wide text-[var(--highlight)]">
-                {EVIDENCE_LABELS[g.category]}
+      {/* SAFETY */}
+      {safetyByCategory.length > 0 && (
+        <section id="safety" className="flex flex-col gap-4 rounded-xl border border-[var(--caution-border)] bg-[var(--caution-bg)] p-6">
+          <h2 className="text-sm font-semibold tracking-[0.1em] text-[var(--caution)] uppercase">
+            Safety
+          </h2>
+          {safetyByCategory.map((g) => (
+            <div key={g.category} className="flex flex-col gap-1">
+              <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--caution)]">
+                {SAFETY_LABELS[g.category]}
               </h3>
               <ul className="flex flex-col gap-3">
-                {g.entries.map((e) => {
-                  const n = cite(e.source);
+                {g.records.map((s) => {
+                  const n = cite(s.source);
                   return (
-                    <li key={e.id} className="text-sm leading-relaxed text-[var(--foreground)]/90">
-                      {e.summary}
-                      {n && (
-                        <a href={`#source-${n}`} className="ml-1 text-[var(--highlight)] no-underline">
-                          [{n}]
-                        </a>
-                      )}
+                    <li key={s.id} className="text-sm leading-relaxed text-[var(--caution)]">
+                      <PlainText
+                        glossaryUsed={glossaryUsed}
+                        text={s.description}
+                        after={
+                          n && (
+                            <a href={`#source-${n}`} className="ml-1 no-underline">
+                              [{n}]
+                            </a>
+                          )
+                        }
+                      />
                     </li>
                   );
                 })}
@@ -260,28 +282,34 @@ export default async function HerbDetailPage({
         </section>
       )}
 
-      {/* SAFETY */}
-      {safetyByCategory.length > 0 && (
-        <section className="flex flex-col gap-4 rounded-xl border border-[var(--caution-border)] bg-[var(--caution-bg)] p-6">
-          <h2 className="text-sm font-semibold tracking-[0.1em] text-[var(--caution)] uppercase">
-            Safety
-          </h2>
-          {safetyByCategory.map((g) => (
-            <div key={g.category} className="flex flex-col gap-1">
-              <h3 className="text-xs font-semibold uppercase tracking-wide text-[var(--caution)]">
-                {SAFETY_LABELS[g.category]}
+      {/* EVIDENCE */}
+      {evidenceByCategory.length > 0 && (
+        <section className="flex flex-col gap-6 border-t border-[var(--border)] pt-8">
+          <h2 className="font-serif text-xl text-[var(--foreground)]">What does the research say?</h2>
+          {evidenceByCategory.map((g) => (
+            <div key={g.category} className="flex flex-col gap-3">
+              <h3 className="font-mono text-xs uppercase tracking-wide text-[var(--highlight)]">
+                {EVIDENCE_LABELS[g.category]}
               </h3>
-              <ul className="flex flex-col gap-1">
-                {g.records.map((s) => {
-                  const n = cite(s.source);
+              {EVIDENCE_NOTES[g.category] && (
+                <p className="text-sm text-[var(--muted)] italic">{EVIDENCE_NOTES[g.category]}</p>
+              )}
+              <ul className="flex flex-col gap-4">
+                {g.entries.map((e) => {
+                  const n = cite(e.source);
                   return (
-                    <li key={s.id} className="text-sm leading-relaxed text-[var(--caution)]">
-                      {s.description}
-                      {n && (
-                        <a href={`#source-${n}`} className="ml-1 no-underline">
-                          [{n}]
-                        </a>
-                      )}
+                    <li key={e.id} className="text-sm leading-relaxed text-[var(--foreground)]/90">
+                      <PlainText
+                        glossaryUsed={glossaryUsed}
+                        text={e.summary}
+                        after={
+                          n && (
+                            <a href={`#source-${n}`} className="ml-1 text-[var(--highlight)] no-underline">
+                              [{n}]
+                            </a>
+                          )
+                        }
+                      />
                     </li>
                   );
                 })}
@@ -293,7 +321,7 @@ export default async function HerbDetailPage({
 
       {herbData.cautions && (
         <section className="rounded-xl border border-[var(--caution-border)] bg-[var(--caution-bg)] p-5 text-sm text-[var(--caution)]">
-          <h2 className="mb-1 text-xs font-semibold tracking-[0.15em] uppercase">Cautions</h2>
+          <h2 className="mb-1 text-xs font-semibold tracking-[0.15em] uppercase">In short</h2>
           <p>{herbData.cautions}</p>
         </section>
       )}

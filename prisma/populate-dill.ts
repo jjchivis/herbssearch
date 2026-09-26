@@ -40,8 +40,8 @@ async function main() {
       family: "Apiaceae",
       genus: "Anethum",
       species: "graveolens",
-      nativeRange: "Indigenous to southern Europe; now cultivated worldwide",
-      partsUsed: "Dried ripe fruit (seed, \"Fructus Anethi\") and fresh or dried leaf (\"dill weed\")",
+      nativeRange: "Originally from southern Europe; now grown around the world",
+      partsUsed: "The dried ripe seeds (botanically small fruits, called \"Fructus Anethi\" in herbal references) and the fresh or dried leaves (\"dill weed\")",
       contentStatus: "VERIFIED",
     },
   });
@@ -172,12 +172,12 @@ async function main() {
     {
       traditionId: ayurveda.id,
       notes:
-        "Used in Ayurvedic medicine as a carminative, stomachic, and diuretic; dill fruit (Fructus Anethi) is included in the Ayurvedic Pharmacopoeia of India, and dill seed/herb has a long history of Ayurvedic use in India, where it is known as \"sowa\".",
+        "In Ayurvedic medicine, where dill is known as \"sowa\", it is traditionally used to relieve gas, settle the stomach and increase urination. Dill seed (Fructus Anethi) is included in the Ayurvedic Pharmacopoeia of India.\n\nTechnical detail: carminative, stomachic, diuretic.",
     },
     {
       traditionId: europeanFolkMedicine.id,
       notes:
-        "Indigenous to southern Europe with a long history of European folk use; documented use by Egyptian physicians roughly 5,000 years ago and archaeological traces found in Roman ruins in Great Britain. Dill is the classic ingredient in gripe water, a traditional European remedy given to relieve infant colic and flatulence.",
+        "Dill comes from southern Europe and has a long history of folk use there. Egyptian physicians used it about 5,000 years ago, and traces have been found in Roman ruins in Britain. Dill is the classic ingredient in gripe water, a traditional European remedy given to babies for colic and gas.",
     },
   ];
   for (const link of traditionLinks) {
@@ -194,31 +194,31 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "The WHO monograph records dill fruit (Fructus Anethi) uses described in pharmacopoeias and well-established documents as treatment of dyspepsia, gastritis, flatulence, and stomach ache. Broader uses described in traditional medicine include use as an aphrodisiac, analgesic, antipyretic, diuretic, emmenagogue, galactagogue, and appetite stimulant, and treatment of diarrhoea, asthma, neuralgia, dysuria, dysmenorrhoea, gallbladder disease, insomnia, hiatus hernia, and kidney stones. The monograph states there are no uses of Fructus Anethi supported by clinical data.",
+        "The World Health Organization's profile of dill seed lists these traditional uses:\n- Documented in official herbal references: indigestion, stomach inflammation (gastritis), gas and stomach ache.\n- In wider traditional medicine: to boost sex drive, relieve pain, lower fever, increase urination, bring on periods, increase breast milk and stimulate appetite; and for diarrhea, asthma, nerve pain, painful urination, period pain, gallbladder disease, trouble sleeping, hiatus hernia and kidney stones.\nThe WHO states that none of these uses is supported by clinical data (studies in people).\n\nTechnical detail: WHO terms: dyspepsia, gastritis, flatulence; aphrodisiac, analgesic, antipyretic, diuretic, emmenagogue, galactagogue; neuralgia, dysuria, dysmenorrhoea.",
       sourceId: who.id,
     },
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Dill has a documented history of use dating back roughly 5,000 years, with use by ancient Egyptian physicians and archaeological traces found in Roman ruins in Great Britain. In Ayurvedic medicine, dill seed and herb are used as a carminative, stomachic, and diuretic. Dill is a traditional ingredient in gripe water, given to relieve colic pain in babies and flatulence in young children.",
+        "Dill has been used for about 5,000 years. Ancient Egyptian physicians used it, and traces have been found in Roman ruins in Britain. In Ayurvedic medicine, the seed and leaf are used to relieve gas, settle the stomach and increase urination. Dill is a traditional ingredient in gripe water, given for colic in babies and gas in young children.",
       sourceId: phytochemistryReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Per the WHO monograph's experimental pharmacology summary: a 50% ethanol extract of dill fruit inhibited acetylcholine- and histamine-induced contractions of guinea-pig ileum in vitro, and the essential oil reduced contractions of rabbit intestine and had carminative, antifoaming activity in vitro, supporting traditional antispasmodic/carminative use. A topical ethanol extract of the fruits reduced TPA-induced mouse ear inflammation by 60%, and aqueous fruit extract and essential oil solution had analgesic effects in mouse hot-plate and acetic-acid writhing tests, comparable to acetylsalicylic acid. Intravenous extract and essential oil administration produced diuretic effects and reduced blood pressure in dogs and cats, and a single intragastric dose of ethanol extract reduced blood glucose by 30% in fasted rats. These are animal/in vitro findings, not established human clinical effects.",
+        "The World Health Organization summarizes these lab and animal findings:\n- In lab tests, a dill seed extract relaxed gut muscle, and the essential oil reduced gut contractions and helped break up gas bubbles. This fits dill's traditional use for cramps and gas.\n- Applied to the skin of mice, a seed extract reduced inflammation by 60%.\n- In mice, a water-based seed extract and the essential oil reduced pain about as well as aspirin.\n- Given by injection to dogs and cats, extracts increased urination and lowered blood pressure.\n- One dose of extract lowered blood sugar by 30% in fasting rats.\nThese results come from animals and lab tests. They are not established effects in people.\n\nTechnical detail: 50% ethanol extract inhibited acetylcholine- and histamine-induced contractions of guinea-pig ileum; essential oil reduced rabbit intestine contractions with carminative, antifoaming activity; TPA-induced mouse ear inflammation; hot-plate and acetic-acid writhing tests, comparable to acetylsalicylic acid; intravenous administration in dogs and cats; single intragastric dose in fasted rats.",
       sourceId: who.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "The Jana & Shekhawat review reports antimicrobial activity of dill against multiple bacterial species, antioxidant activity attributed to isolated flavonoids (including quercetin and isorhamnetin), and mucosal-protective, antisecretory, and anti-ulcer activity against HCl- and ethanol-induced stomach lesions in preclinical testing, alongside antispasmodic effects consistent with dill's traditional gastrointestinal use. These are in vitro/animal findings, not established clinical effects in humans.",
+        "A research review reports that, in lab and animal testing, dill acted against several kinds of bacteria, showed antioxidant activity from natural plant compounds, relaxed gut muscle, and protected the stomach lining against acid- and alcohol-induced damage and ulcers. These are lab and animal findings, not established effects in people.\n\nTechnical detail: antioxidant flavonoids include quercetin and isorhamnetin; mucosal-protective, antisecretory and anti-ulcer activity against HCl- and ethanol-induced lesions.",
       sourceId: phytochemistryReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A randomized, single-blind clinical trial in 91 patients with hyperlipidemia compared gemfibrozil (900 mg/day) with dill tablets (six tablets daily) for 2 months; 42 patients completed the gemfibrozil arm and 35 completed the dill arm after exclusions for non-compliance. Dill reduced total cholesterol by 18% versus 9.41% for gemfibrozil, while gemfibrozil reduced triglycerides more (32.7% vs. 7.38% for dill) and increased HDL-cholesterol by 3.91% (dill did not significantly affect HDL). The authors concluded dill may be beneficial for hypercholesterolemic and hypertriglyceridemic patients, while noting the need for further study of mechanism and efficacy.",
+        "In one trial, 91 people with high blood fats (cholesterol or triglycerides) took either dill tablets or the cholesterol drug gemfibrozil for 2 months. Among those who completed it, dill lowered total cholesterol more (18% vs. about 9%), while gemfibrozil lowered triglycerides more (about 33% vs. 7%) and raised \"good\" HDL cholesterol slightly (dill didn't change HDL). The authors said dill may help people with high cholesterol and triglycerides, but more research is needed.\n\nTechnical detail: randomized, single-blind; gemfibrozil 900 mg/day vs. six dill tablets daily; 42 completed the gemfibrozil arm and 35 the dill arm; total cholesterol −18% vs. −9.41%; triglycerides −32.7% vs. −7.38%; HDL +3.91% with gemfibrozil.",
       sourceId: hyperlipidemiaTrial.id,
     },
   ];
@@ -236,43 +236,43 @@ async function main() {
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "Extracts of dill fruit (seed) have traditionally been used as a contraceptive and to induce labour.",
+        "Dill seed extracts have traditionally been used to prevent pregnancy and to bring on labor.",
       sourceId: who.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "Extracts of the fruit may have teratogenic effects in animal studies; use of Fructus Anethi during pregnancy is not recommended.",
+        "In animal studies, dill seed extracts may cause birth defects. Using dill seed as a medicine during pregnancy is not recommended.\n\nTechnical detail: possible teratogenic effects.",
       sourceId: who.id,
     },
     {
       category: "BREASTFEEDING" as const,
       description:
-        "Use of Fructus Anethi during nursing is not recommended (the WHO monograph applies the same pregnancy contraindication to nursing mothers, citing traditional contraceptive/labour-inducing use and potential teratogenic effects).",
+        "Using dill seed as a medicine while breastfeeding is not recommended. The WHO applies the same caution as for pregnancy, because of its traditional use to prevent pregnancy and bring on labor, and possible birth defects seen in animals.",
       sourceId: who.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Allergic reactions to Fructus Anethi — including oral pruritus, tongue and throat swelling, urticaria, vomiting, and diarrhoea — were reported in one patient with a history of allergic rhinitis.",
+        "One person with hay fever had an allergic reaction to dill seed, including an itchy mouth, a swollen tongue and throat, hives, vomiting and diarrhea.",
       sourceId: who.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "In a 2-month randomized clinical trial for hyperlipidemia, patients taking dill tablets (six daily) reported no adverse effects, compared with gastrointestinal complications reported by 21.4% of patients taking gemfibrozil.",
+        "In the 2-month trial for high blood fats, people taking dill tablets (six a day) reported no side effects. By comparison, 21.4% of people taking gemfibrozil reported digestive problems.",
       sourceId: hyperlipidemiaTrial.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "Ethanol extracts of dill fruit were not mutagenic in the Salmonella/microsome (Ames) assay. However, an essential oil prepared from the fruits was cytotoxic to human lymphocytes in vitro and produced chromosome aberrations and sister chromatid exchange in that system, though it was inactive in an in vivo Drosophila melanogaster genotoxicity assay. \"Generally regarded as safe\" (GRAS) status was granted to Fructus Anethi as a flavouring agent by a national regulatory authority in 1976.",
+        "Lab tests on alcohol-based dill seed extracts found no DNA damage. However, dill seed essential oil damaged human white blood cells and their chromosomes in the lab, though it caused no DNA damage in a fruit-fly test. In 1976, a national regulator classed dill seed as \"generally regarded as safe\" (GRAS) for use as a food flavoring.\n\nTechnical detail: not mutagenic in the Salmonella/microsome (Ames) assay; essential oil was cytotoxic to human lymphocytes in vitro and produced chromosome aberrations and sister chromatid exchange; inactive in an in vivo Drosophila melanogaster genotoxicity assay.",
       sourceId: who.id,
     },
     {
       category: "DOSAGE" as const,
       description:
-        "WHO-referenced average daily dose: 3 g dried fruit (Fructus Anethi), or 0.1-0.3 g essential oil, or an equivalent amount of other preparations.",
+        "Typical daily amount referenced by the WHO: 3 g of dried dill seed, or 0.1–0.3 g of essential oil, or an equivalent amount of another preparation.",
       sourceId: who.id,
     },
   ];

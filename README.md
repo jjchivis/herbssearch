@@ -36,6 +36,12 @@ Open [http://localhost:3000](http://localhost:3000) to search and browse herbs.
 
 Herbs are defined in `prisma/schema.prisma` (name, scientific name, category, summary, uses, properties, cautions). Sample data lives in `prisma/seed.ts`.
 
+## Writing content
+
+Herb text is written in plain language for readers with no herbal or scientific
+background. Follow [`docs/CONTENT_STYLE.md`](docs/CONTENT_STYLE.md) for every new
+or edited herb, and run `npm run content:check` before committing.
+
 ## Deploying
 
 `npm run build` runs `prisma migrate deploy` before `next build`, so pointing

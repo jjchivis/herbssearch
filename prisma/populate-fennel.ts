@@ -41,8 +41,8 @@ async function main() {
       family: "Apiaceae",
       genus: "Foeniculum",
       species: "vulgare",
-      nativeRange: "Mediterranean region to Ethiopia and western Nepal; now cultivated and naturalized worldwide, including throughout Asia, Europe, and North America",
-      partsUsed: "Dried ripe fruit (seed, \"Foeniculi fructus\"), the officinal part per the EMA monograph; leaf, stem, root, and bulb are also used culinarily",
+      nativeRange: "From the Mediterranean region east to Ethiopia and western Nepal; now grown and growing wild worldwide, including across Asia, Europe and North America",
+      partsUsed: "The dried ripe seeds (botanically small fruits, called \"Foeniculi fructus\" in herbal references), which are the official medicinal part in the European monograph. The leaves, stems, root and bulb are eaten as food.",
       contentStatus: "VERIFIED",
     },
   });
@@ -190,12 +190,12 @@ async function main() {
     {
       traditionId: ayurveda.id,
       notes:
-        "Fennel fruit is documented in the Ayurvedic Pharmacopoeia of India as an important component of polyherbal formulations. Sanskrit names recorded in the ethnomedical literature include Madhurika and Shatapushpa, and it is widely known in Hindi as saunf/badi saunf.",
+        "Fennel seed is listed in the Ayurvedic Pharmacopoeia of India as an important ingredient in multi-herb formulas. Its Sanskrit names include Madhurika and Shatapushpa, and in Hindi it is widely known as saunf or badi saunf.",
     },
     {
       traditionId: mediterraneanFolkMedicine.id,
       notes:
-        "Native to the Mediterranean region (per Kew POWO and GBIF, native range \"Mediterranean to Ethiopia and W. Nepal\"). Mediterranean and European folk medicine has long used fennel as a digestive aid and carminative for gastrointestinal disturbances and constipation, for respiratory ailments, in anti-inflammatory preparations, and as a galactagogue for nursing mothers.",
+        "Fennel is native to the Mediterranean region (from the Mediterranean to Ethiopia and western Nepal, according to Kew and GBIF). Mediterranean and European folk medicine has long used it to aid digestion and relieve gas, for stomach upsets and constipation, for breathing problems, to reduce inflammation, and to increase breast milk in nursing mothers.\n\nTechnical detail: carminative, galactagogue.",
     },
   ];
   for (const link of traditionLinks) {
@@ -212,37 +212,37 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "The EMA/HMPC traditional-use monograph recognizes fennel (as herbal tea) based exclusively on long-standing use for three indications: symptomatic treatment of mild, spasmodic gastro-intestinal complaints including bloating and flatulence; symptomatic treatment of minor spasm associated with menstrual periods; and as an expectorant in cough associated with cold. No well-established (clinically substantiated) use was recognized in this monograph.",
+        "The European Medicines Agency recognizes fennel tea for three uses, based only on its long history of traditional use:\n- Mild digestive cramps, including bloating and gas\n- Minor cramps during menstrual periods\n- To help loosen mucus in a cough that comes with a cold\nThe agency did not recognize any use as proven by clinical studies.\n\nTechnical detail: \"traditional-use\" registration; expectorant; no \"well-established use\" recognized.",
       sourceId: ema.id,
     },
     {
       category: "TRADITIONAL" as const,
       summary:
-        "The Badgujar et al. review documents traditional/ethnomedical use of fennel across more than forty types of disorders in Ayurvedic, Unani, Siddha, and Mediterranean/European folk traditions, including as a digestive aid and carminative, for abdominal pain and flatulence, diarrhoea, respiratory ailments, eye problems, kidney ailments, fever, arthritis, and as a galactagogue for nursing mothers, alongside culinary use as a spice.",
+        "A research review found fennel has been used traditionally for more than 40 kinds of health problems in Ayurvedic, Unani, Siddha and Mediterranean/European folk medicine. These include aiding digestion and relieving gas, stomach pain, diarrhea, breathing problems, eye problems, kidney problems, fever and arthritis, and increasing breast milk. It is also widely used as a cooking spice.\n\nTechnical detail: carminative, galactagogue.",
       sourceId: phytochemistryReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "The Badgujar et al. review reports fennel methanolic extract showed inhibitory effects against acute and subacute inflammation in animal models (200 mg/kg oral), essential oil reduced elevated liver enzymes (AST, ALT, ALP) and bilirubin in carbon-tetrachloride-induced liver injury models (hepatoprotective), essential oil corrected hyperglycemia in streptozotocin-induced diabetic rats (30 mg/kg), aqueous extract improved memory in scopolamine-induced amnesia rodent models (50-200 mg/kg), essential oil and extracts inhibited growth of Staphylococcus aureus, Escherichia coli, and Bacillus species in vitro, and essential oil showed antithrombotic activity in mice. These are animal/in vitro findings, not established human clinical effects.",
+        "A research review describes these lab and animal findings:\n- In animals, a fennel extract reduced inflammation.\n- The essential oil protected the liver in rats with chemical liver damage, bringing liver enzyme levels down.\n- The essential oil lowered high blood sugar in diabetic rats.\n- A water-based extract improved memory in rodents with drug-induced memory loss.\n- In lab tests, the oil and extracts slowed the growth of bacteria such as Staphylococcus aureus, E. coli and Bacillus.\n- In mice, the essential oil helped prevent blood clots.\nThese are animal and lab findings, not established effects in people.\n\nTechnical detail: methanolic extract 200 mg/kg oral (acute and subacute inflammation); reduced AST, ALT, ALP and bilirubin in carbon-tetrachloride-induced liver injury (hepatoprotective); 30 mg/kg in streptozotocin-induced diabetic rats; aqueous extract 50–200 mg/kg in scopolamine-induced amnesia; antithrombotic activity in mice.",
       sourceId: phytochemistryReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Animal studies reviewed by Badgujar et al. document estrogenic activity of fennel: acetone extracts induced vaginal cornification, increased mammary gland weight, and elevated nucleic acid concentrations in reproductive tissues, with the active estrogenic components identified as anethole polymers (dianethole and photoanethole). This preclinical mechanism is cited as a basis for fennel's traditional use as a galactagogue and for menopausal/menstrual complaints, but has not been established as a clinical mechanism in humans.",
+        "In animal studies, fennel acted like the hormone estrogen, causing estrogen-like changes in the reproductive tissues and breast glands. The compounds responsible are forms of anethole, the main flavor compound in fennel. This is cited as a possible reason for fennel's traditional use to increase breast milk and for menstrual and menopausal complaints, but it has not been shown to work this way in people.\n\nTechnical detail: acetone extracts induced vaginal cornification, increased mammary gland weight and raised nucleic acid levels; active components identified as the anethole polymers dianethole and photoanethole.",
       sourceId: phytochemistryReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A randomized, placebo-controlled trial in 125 infants aged 2-12 weeks meeting Wessel's criteria for infantile colic compared a fennel (Foeniculum vulgare) seed oil emulsion with placebo. Colic resolved in 65% (40/62) of infants in the fennel group versus 23.7% (14/59) in the placebo group (p<0.01); Absolute Risk Reduction 41% (95% CI 25-57), Number Needed to Treat 2 (95% CI 2-4). No adverse effects were reported for infants in either group during the trial. The authors concluded fennel seed oil emulsion was superior to placebo in decreasing the intensity of infantile colic.",
+        "In one trial, 125 babies aged 2–12 weeks with colic were given either a fennel seed oil emulsion or a placebo. Colic went away in 65% of babies given fennel, compared with about 24% given placebo. No side effects were reported in either group. The authors concluded fennel seed oil worked better than placebo for reducing colic. This was a supervised clinical trial; see the safety section about giving fennel to young children.\n\nTechnical detail: randomized, placebo-controlled; infants met Wessel's criteria for colic; 40/62 vs. 14/59 (p<0.01); absolute risk reduction 41% (95% CI 25–57); number needed to treat 2 (95% CI 2–4).",
       sourceId: colicTrial.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A systematic review and meta-analysis of 12 randomized controlled trials found fennel had favorable effects on reducing pain in primary dysmenorrhea versus placebo (n=468; standardized mean difference -3.27, 95% CI -5.28 to -1.26, p=0.001). Pooled results of 7 trials comparing fennel with conventional drug therapies (e.g. mefenamic acid, ibuprofen) found no significant difference in pain relief (n=502; standardized mean difference 0.07, 95% CI -0.08 to 0.21, p=0.37), suggesting comparable efficacy. Only 3 of the 12 trials assessed adverse events; one reported minor adverse events (nausea and vomiting) occurring equally in fennel and placebo groups. The authors noted a significant evidence gap in fennel's safety data.",
+        "A review that combined 12 trials found fennel reduced period pain (primary dysmenorrhea) more than placebo. In 7 trials comparing fennel with standard pain relievers such as mefenamic acid or ibuprofen, fennel worked about as well. Only 3 of the 12 trials looked at side effects; one reported minor nausea and vomiting, equally common with fennel and placebo. The authors noted that there is a big gap in safety data for fennel.\n\nTechnical detail: systematic review and meta-analysis of randomized controlled trials. Fennel vs. placebo: n=468, SMD −3.27 (95% CI −5.28 to −1.26), p=0.001. Fennel vs. conventional drugs: n=502, SMD 0.07 (95% CI −0.08 to 0.21), p=0.37.",
       sourceId: dysmenorrheaMetaAnalysis.id,
     },
   ];
@@ -260,49 +260,49 @@ async function main() {
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "Contraindicated in hypersensitivity to the active substance or to plants of the Apiaceae (Umbelliferae) family (e.g. aniseed, caraway, celery, coriander, dill) or to anethole. Also contraindicated in hypersensitivity to mugwort pollen, due to cross-reactivity with fennel.",
+        "Don't use fennel if you are allergic to it, to anethole (its main flavor compound), or to other plants in the carrot family (Apiaceae), such as aniseed, caraway, celery, coriander or dill. People allergic to mugwort pollen should also avoid it, because the allergies can overlap.\n\nTechnical detail: the Apiaceae family is also called Umbelliferae.",
       sourceId: ema.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "Safety during pregnancy has not been established; in the absence of sufficient data, use during pregnancy is not recommended. No fertility data are available. An aqueous extract of fennel seeds given daily to pregnant BALB/c mice (days 6-15 of gestation) showed a dose-dependent teratogenic/embryotoxic effect (morphological changes, skeletal disorders, cellular alterations); adequate reproductive-toxicity tests in humans have not been performed.",
+        "Fennel has not been shown to be safe during pregnancy, so using it as a medicine while pregnant is not recommended. There is no data on its effects on fertility. In a study in pregnant mice, a water-based fennel seed extract caused birth defects and harm to the developing embryos, and the effect grew with the dose. Proper reproductive-safety testing has not been done in people.\n\nTechnical detail: BALB/c mice, days 6–15 of gestation; dose-dependent teratogenic/embryotoxic effects (morphological changes, skeletal disorders, cellular alterations).",
       sourceId: ema.id,
     },
     {
       category: "BREASTFEEDING" as const,
       description:
-        "Safety during lactation has not been established; in the absence of sufficient data, use during breastfeeding is not recommended. There is evidence that trans-anethole is excreted in human breast milk.",
+        "Fennel has not been shown to be safe while breastfeeding, so using it as a medicine while breastfeeding is not recommended. There is evidence that trans-anethole, fennel's main flavor compound, passes into breast milk.",
       sourceId: ema.id,
     },
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "Use in children under 4 years of age is not recommended due to lack of adequate data. Use for menstrual-spasm indications in children under 12 years of age has not been established due to lack of adequate data. This official EU regulatory guidance for fennel herbal tea products contrasts with the folk/traditional use of fennel preparations for infant colic (see HUMAN_RESEARCH evidence citing a supervised clinical trial in infants aged 2-12 weeks); fennel should not be given to infants or young children without medical guidance.",
+        "European guidance does not recommend fennel tea products for children under 4, because there isn't enough data. Its use for period cramps in children under 12 has not been established either. This official guidance differs from the traditional use of fennel for baby colic (see the infant trial under research in people, which was medically supervised). Don't give fennel to babies or young children without medical advice.",
       sourceId: ema.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Allergic reactions to fennel, affecting the skin or the respiratory system, may occur; frequency is not known.",
+        "Allergic reactions to fennel, affecting the skin or breathing, can happen. How often is not known.",
       sourceId: ema.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "Estragole, a constituent of fennel essential oil, has shown carcinogenic effects in mice (liver tumours) and suggestive but indirect evidence of carcinogenicity in rats, and is considered a genotoxic carcinogen in rodents. Studies in laboratory animals showed weak mutagenic activity of anethole, though a fennel aqueous extract tested negative in an Ames test (Salmonella typhimurium strains TA98, TA100). Guidance values: in the general population, exposure to estragole should be kept as low as practically achievable; in pregnant and breastfeeding women, daily estragole intake should be below 0.05 mg/person/day; in children under 12, daily estragole intake should be below 1.0 microgram/kg body weight.",
+        "Fennel essential oil contains estragole, a natural compound that caused liver tumors in mice and damages DNA in rodents. Anethole, fennel's main flavor compound, showed weak DNA-damaging activity in lab animals, although a water-based fennel extract tested negative in a standard lab test for DNA damage. Suggested limits for estragole:\n- Everyone: keep exposure as low as practically possible.\n- Pregnant or breastfeeding women: under 0.05 mg a day.\n- Children under 12: under 1 microgram per kg of body weight a day.\n\nTechnical detail: estragole is considered a genotoxic carcinogen in rodents, with suggestive but indirect evidence of carcinogenicity in rats; fennel aqueous extract was negative in the Ames test (Salmonella typhimurium TA98, TA100).",
       sourceId: ema.id,
     },
     {
       category: "DOSAGE" as const,
       description:
-        "EMA traditional-use posology (herbal tea/infusion): adults and adolescents, 1.5 g herbal substance in 250 ml boiling water (steep 15 minutes), 3 times daily (4.5 g/day); children 4-12 years, 1.0 g in 100 ml boiling water, 3 times daily (3.0 g/day). Not to be taken for more than 2 weeks in adults/adolescents; in children 4-12, for short-term use in mild transitory symptoms only (less than one week). If symptoms persist or worsen, a doctor or qualified healthcare practitioner should be consulted.",
+        "How much to use, according to the European Medicines Agency (as a tea):\n- Adults and teens: 1.5 g of fennel seed in 250 ml of boiling water, steeped for 15 minutes, 3 times a day (4.5 g a day). Don't use for more than 2 weeks.\n- Children 4–12: 1.0 g in 100 ml of boiling water, 3 times a day (3.0 g a day), only for mild, short-lived symptoms and for less than a week.\nIf symptoms last or get worse, see a doctor or qualified health professional.",
       sourceId: ema.id,
     },
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "Animal studies document estrogenic activity of fennel (acetone extracts induced vaginal cornification and increased mammary gland weight in reproductive tissue, attributed to the anethole polymers dianethole and photoanethole). While this is animal-derived preclinical data rather than established human clinical evidence, it is the traditional basis for caution around fennel use in individuals with hormone-sensitive conditions.",
+        "In animal studies, fennel acted like the hormone estrogen (from forms of anethole, its main flavor compound). This comes from animals, not from studies in people, but it is the traditional reason for caution about fennel for people with hormone-sensitive conditions.\n\nTechnical detail: acetone extracts induced vaginal cornification and increased mammary gland weight; attributed to dianethole and photoanethole.",
       sourceId: phytochemistryReview.id,
     },
   ];

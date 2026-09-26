@@ -22,8 +22,8 @@ async function main() {
       genus: "Mentha",
       species: "× piperita",
       nativeRange:
-        "Native to Europe and Central Asia; a naturally occurring hybrid of Mentha aquatica (watermint) and Mentha spicata (spearmint), now cultivated and naturalized worldwide, including throughout North America.",
-      partsUsed: "Leaf and flowering aerial parts (source of peppermint essential oil)",
+        "Native to Europe and Central Asia. Peppermint is a natural cross between watermint (Mentha aquatica) and spearmint (Mentha spicata). It is now grown and growing wild around the world, including across North America.",
+      partsUsed: "The leaves and flowering above-ground parts, which are also the source of peppermint essential oil",
       contentStatus: "VERIFIED",
     },
   });
@@ -110,7 +110,7 @@ async function main() {
         herbId: peppermint.id,
         traditionId: westernHerbalism.id,
         notes:
-          "The medicinal use of mint plants for digestive disorders dates back to ancient Greece, Rome, and Egypt; peppermint oil has been used for centuries in Western herbal medicine to treat gastrointestinal ailments.",
+          "People in ancient Greece, Rome and Egypt used mint plants for digestive problems. Peppermint oil has been used for centuries in Western herbal medicine for stomach and gut complaints.",
       },
     });
   }
@@ -120,37 +120,37 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "The medicinal use of mint plants for digestive disorders dates back to ancient Greece, Rome, and Egypt, and peppermint oil has been used for centuries to treat gastrointestinal ailments. Today peppermint is traditionally promoted for irritable bowel syndrome (IBS), indigestion, headaches, muscle tension, and nausea.",
+        "People in ancient Greece, Rome and Egypt used mint plants for digestive problems, and peppermint oil has been used for centuries for stomach and gut complaints. Today, peppermint is traditionally promoted for irritable bowel syndrome (IBS), indigestion, headaches, muscle tension and nausea.",
       sourceId: nccih.id,
     },
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Beyond its traditional culinary flavoring use, Mentha × piperita has long been used in traditional medicine to treat fever, colds, digestive complaints, and oral mucosa and throat inflammation, and is traditionally regarded as having antiviral and antifungal properties.",
+        "Besides flavoring food, peppermint has long been used in traditional medicine for fever, colds, digestive complaints, and sore or inflamed mouth and throat. It is traditionally thought to fight viruses and fungi.",
       sourceId: phytoPharmacologyReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Laboratory and preclinical (in vitro and animal) research on M. × piperita extracts and essential oil has reported antioxidant, antimicrobial, antiviral, anti-inflammatory, biopesticidal, larvicidal, anticancer, radioprotective, and anti-diabetic activity, attributed to a wide range of bioactive phytochemicals including flavonoids, phenolics, lignans, stilbenes, and essential oil components.",
+        "In lab and animal studies, peppermint extracts and oil showed antioxidant, germ-fighting and antiviral activity, and reduced inflammation. They also killed or repelled insects and their larvae, slowed cancer cells, protected against radiation damage and lowered blood sugar. These effects are credited to the many natural compounds in the plant.\n\nTechnical detail: biopesticidal, larvicidal, anticancer, radioprotective, anti-diabetic; flavonoids, phenolics, lignans, stilbenes and essential oil components.",
       sourceId: phytoPharmacologyReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A small amount of clinical research, primarily on IBS, suggests peppermint oil in enteric-coated capsules may improve IBS symptoms in adults. A 2022 review of 10 studies (1,030 participants) found peppermint oil was better than placebo at improving overall IBS symptoms and reducing abdominal pain, though it caused more mild side effects (chiefly acid reflux and indigestion) than placebo. A 2021 American College of Gastroenterology clinical guideline recommends peppermint oil, preferably enteric-coated, for relief of overall IBS symptoms.",
+        "A small amount of research, mostly on irritable bowel syndrome (IBS), suggests peppermint oil in enteric-coated capsules (capsules designed to open in the intestine rather than the stomach) may improve IBS symptoms in adults. A 2022 review of 10 studies with 1,030 people found peppermint oil worked better than placebo (a dummy pill) for overall IBS symptoms and stomach pain, though it caused more mild side effects, mainly acid reflux and indigestion. A 2021 guideline from the American College of Gastroenterology recommends peppermint oil, preferably enteric-coated, for overall IBS symptoms.",
       sourceId: nccih.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A small amount of research suggests taking peppermint extract by mouth or inhaling peppermint oil can help reduce nausea and vomiting in people undergoing chemotherapy for cancer. A 2024 review of aromatherapy studies, including 4 trials (290 participants) on peppermint oil specifically, found inhaled peppermint oil was particularly effective at reducing chemotherapy-related nausea and vomiting.",
+        "A small amount of research suggests that taking peppermint extract by mouth, or breathing in peppermint oil, can help reduce nausea and vomiting during cancer chemotherapy. A 2024 review of aromatherapy studies, including 4 trials with 290 people using peppermint oil, found breathing in peppermint oil was especially effective for chemotherapy-related nausea and vomiting.",
       sourceId: nccih.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Evidence for indigestion is limited to specific products combining peppermint oil with caraway oil, or combination products containing peppermint leaf; there is no evidence that peppermint oil taken alone helps indigestion, and it may worsen indigestion in some people. A limited amount of evidence suggests topically applied peppermint oil might relieve tension headaches.",
+        "For indigestion, the evidence only covers specific products that combine peppermint oil with caraway oil, or combination products that contain peppermint leaf. There is no evidence that peppermint oil on its own helps indigestion, and it may make indigestion worse for some people. A limited amount of evidence suggests peppermint oil rubbed on the skin might relieve tension headaches.",
       sourceId: nccih.id,
     },
   ];
@@ -168,27 +168,27 @@ async function main() {
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Possible side effects of peppermint oil taken orally include heartburn, nausea, abdominal pain, and dry mouth; rarely, peppermint oil can cause allergic reactions. Side effects of applying peppermint oil to the skin can include skin rashes and irritation.",
+        "Peppermint oil taken by mouth can cause heartburn, nausea, stomach pain and dry mouth. Rarely, it can cause allergic reactions. On the skin, it can cause rashes and irritation.",
     },
     {
       category: "PREPARATION_SPECIFIC" as const,
       description:
-        "Peppermint oil appears to be safe when taken orally or applied topically in the doses commonly used, and has been safely used in multiple clinical trials. Capsules containing peppermint oil are often enteric-coated to reduce the likelihood of heartburn.",
+        "Peppermint oil appears to be safe when taken by mouth or used on the skin in commonly used doses, and it has been used safely in many clinical trials. Peppermint oil capsules are often enteric-coated (designed to open in the intestine) to make heartburn less likely.",
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "Use of oral peppermint in amounts commonly found in food is likely safe during pregnancy, but little is known about whether oral peppermint is safe to use in medicinal amounts during pregnancy.",
+        "Peppermint in normal food amounts is likely safe during pregnancy. Little is known about whether larger, medicinal amounts are safe during pregnancy.",
     },
     {
       category: "BREASTFEEDING" as const,
       description:
-        "Oral peppermint in amounts commonly found in food is likely safe while breastfeeding, though safety data for medicinal amounts are lacking. A gel, water, or cream containing peppermint oil applied topically to the nipple area may help reduce pain and cracked skin, but should be used only after breastfeeding and wiped off before the next feeding.",
+        "Peppermint in normal food amounts is likely safe while breastfeeding, but there is no safety data for medicinal amounts. A gel, water or cream with peppermint oil put on the nipple area may help reduce pain and cracked skin. Use it only after breastfeeding, and wipe it off before the next feeding.",
     },
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "Menthol, which is in peppermint oil, should not be inhaled by or applied to the face of an infant or small child, because it may negatively affect their breathing.",
+        "Don't let a baby or young child breathe in menthol (found in peppermint oil), and don't put it on their face. It may affect their breathing.",
     },
   ];
   for (const record of safetyRecords) {

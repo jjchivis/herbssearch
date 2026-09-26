@@ -22,8 +22,8 @@ async function main() {
       family: "Asteraceae",
       genus: "Echinacea",
       species: "purpurea",
-      nativeRange: "Central & Eastern United States",
-      partsUsed: "Root, aerial parts (leaf, flower, stem)",
+      nativeRange: "Central and eastern United States",
+      partsUsed: "The root and the above-ground parts (leaves, flowers and stems)",
       contentStatus: "VERIFIED",
     },
   });
@@ -134,7 +134,7 @@ async function main() {
         herbId: echinacea.id,
         traditionId: nativeAmerican.id,
         notes:
-          "Used by Native American peoples for toothache relief and as an antitussive and sialagogue in alkamide-rich preparations; carried into early 20th-century Eclectic medical practice in the United States.",
+          "Native American peoples used echinacea to relieve toothache, calm coughs and increase saliva, using preparations rich in natural compounds called alkamides. This use carried over into Eclectic medicine, a branch of American medicine in the early 1900s that relied heavily on plants.\n\nTechnical detail: antitussive, sialagogue.",
       },
     });
   }
@@ -144,25 +144,25 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Historically used by Native American peoples for toothache relief and as an antitussive and sialagogue, applications carried into early 20th-century American Eclectic medical practice.",
+        "Historically, Native American peoples used echinacea to relieve toothache, calm coughs and increase saliva. These uses were later taken up by Eclectic doctors in early-1900s America, who relied heavily on plant medicines.\n\nTechnical detail: antitussive, sialagogue.",
       sourceId: bioPharmReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "In vitro and animal studies show Echinacea purpurea constituents (alkylamides, caffeic acid derivatives such as chicoric acid, polysaccharides, and glycoproteins) activate phagocytosis and fibroblast stimulation, increase leukocyte motility, and enhance neutrophil, macrophage, and natural killer cell activity, with increased production of cytokines including TNF-alpha, IL-1, and IFN-beta; alkylamides also interact with cannabinoid CB2 receptors.",
+        "In lab and animal studies, natural compounds in echinacea (Echinacea purpurea) made several types of immune cells more active, including cells that swallow germs and \"natural killer\" cells, and increased the chemical signals immune cells use to communicate. Some of these compounds also act on the same receptors (CB2) that respond to cannabis compounds.\n\nTechnical detail: constituents: alkylamides, caffeic acid derivatives such as chicoric acid, polysaccharides and glycoproteins. Effects: activated phagocytosis and fibroblast stimulation; increased leukocyte motility; enhanced neutrophil, macrophage and natural killer cell activity; increased TNF-alpha, IL-1 and IFN-beta; alkylamides interact with cannabinoid CB2 receptors.",
       sourceId: bioPharmReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A 2014 Cochrane systematic review of 24 double-blind randomized controlled trials (4,631 participants, 33 comparisons) found Echinacea products have not been shown to provide clinically relevant benefits for treating colds, though results of individual prevention trials consistently pointed toward small, non-significant preventive effects (a post hoc analysis suggested a 10-20% relative risk reduction of questionable clinical relevance). Adverse-event rates did not differ significantly from placebo.",
+        "A 2014 Cochrane review pooled 24 high-quality trials with 4,631 people. It found that echinacea products have not been shown to help treat colds in a meaningful way. Trials on preventing colds pointed toward a small benefit, but the results weren't statistically significant; one extra analysis suggested it might lower the risk of a cold by 10–20%, which may not matter much in practice. Side effects were no more common than with placebo (a dummy pill).\n\nTechnical detail: 24 double-blind randomized controlled trials, 33 comparisons; the 10–20% relative risk reduction came from a post hoc analysis.",
       sourceId: cochraneReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Taking echinacea may slightly reduce the chances of catching a cold, but evidence is unclear on whether it shortens cold duration; research on whether certain echinacea species stimulate immune response is inconclusive.",
+        "Taking echinacea may slightly lower your chances of catching a cold, but it's unclear whether it makes a cold go away faster. Research on whether some types of echinacea boost the immune system is inconclusive.",
       sourceId: nccih.id,
     },
   ];
@@ -180,31 +180,31 @@ async function main() {
     {
       category: "ALLERGY" as const,
       description:
-        "Echinacea species are closely related to sunflowers, daisies, and ragweed; some people have allergic reactions to echinacea, which may be severe.",
+        "Echinacea is closely related to sunflowers, daisies and ragweed. Some people are allergic to echinacea, and reactions can be severe.",
       sourceId: nccih.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Common side effects include digestive symptoms such as abdominal pain, nausea, and stomach discomfort; few side effects overall have been reported in studies, though one study in children linked echinacea to an increase in rashes.",
+        "The most common side effects are digestive, such as stomach pain, nausea and an upset stomach. Studies have reported few side effects overall, but one study in children linked echinacea to more rashes.",
       sourceId: nccih.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "There is conflicting evidence about whether echinacea interacts with some drugs metabolized by the liver, and theoretical reasons to suspect it might interact with immunosuppressants or caffeine.",
+        "It's unclear whether echinacea affects some medicines that are broken down by the liver; studies disagree. There are also theoretical reasons it might interact with medicines that suppress the immune system (immunosuppressants) or with caffeine.",
       sourceId: nccih.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "Some solid or liquid extracts of E. purpurea, and some mixtures of E. purpurea and E. angustifolia, are possibly safe for up to 7 days during the first trimester of pregnancy, but data are limited; consult a health care provider before use.",
+        "Some solid or liquid extracts of Echinacea purpurea, and some mixtures of E. purpurea and E. angustifolia, are possibly safe for up to 7 days during the first 3 months of pregnancy, but there is little data. Talk to a health care provider before using it while pregnant.",
       sourceId: nccih.id,
     },
     {
       category: "DOSAGE" as const,
       description:
-        "Likely safe for most adults to consume products with extracts of E. purpurea, and some mixtures of E. purpurea and E. angustifolia, for short periods of time; safety of long-term use is unknown.",
+        "Products with extracts of Echinacea purpurea, and some mixtures of E. purpurea and E. angustifolia, are likely safe for most adults for short periods. Whether long-term use is safe is unknown.",
       sourceId: nccih.id,
     },
   ];

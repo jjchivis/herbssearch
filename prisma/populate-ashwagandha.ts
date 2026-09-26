@@ -34,8 +34,8 @@ async function main() {
       family: "Solanaceae",
       genus: "Withania",
       species: "somnifera",
-      nativeRange: "Middle East, North Africa, southern Europe, Indian subcontinent, and Southeast Asia",
-      partsUsed: "Root (traditionally preferred); root and leaf powders/extracts also used",
+      nativeRange: "The Middle East, North Africa, southern Europe, the Indian subcontinent and Southeast Asia",
+      partsUsed: "Mainly the root, which is traditionally preferred. Powders and extracts of the root and leaf are also used.",
       contentStatus: "VERIFIED",
     },
   });
@@ -137,7 +137,7 @@ async function main() {
       name: "Withanolides",
       slug: "withanolides",
       type: "steroidal lactone",
-      description: "Class of C28 steroidal lactones; the principal bioactive constituents of Withania somnifera, with roughly 40 withanolides isolated from the plant.",
+      description: "The main group of natural compounds thought to give ashwagandha its effects. About 40 different withanolides have been found in the plant.\n\nTechnical detail: C28 steroidal lactones; principal bioactive constituents of Withania somnifera.",
     },
   });
   const withaferinA = await prisma.constituent.upsert({
@@ -147,7 +147,7 @@ async function main() {
       name: "Withaferin A",
       slug: "withaferin-a",
       type: "steroidal lactone",
-      description: "The most studied withanolide in Withania somnifera; investigated in preclinical research for neuroprotective and anticancer activity.",
+      description: "The most studied withanolide in ashwagandha. It has been investigated in lab and animal research for protecting nerve cells and for effects on cancer cells.",
     },
   });
 
@@ -174,7 +174,7 @@ async function main() {
         herbId: ashwagandha.id,
         traditionId: ayurveda.id,
         notes:
-          "One of the principal rasayana (rejuvenative) herbs in Ayurveda, used for nearly 3000 years as a nervine tonic, aphrodisiac, and general strengthening agent; its Sanskrit name (\"smell of horse\") refers to the root's characteristic odor and to the vigor it was traditionally believed to confer.",
+          "One of the main rasayana (rejuvenating) herbs in Ayurveda, used for nearly 3,000 years to strengthen the nervous system, boost sex drive and build general strength. Its Sanskrit name means \"smell of horse\", referring to the root's distinctive smell and to the vigor it was traditionally believed to give.\n\nTechnical detail: nervine tonic, aphrodisiac.",
       },
     });
   }
@@ -184,25 +184,25 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Used in Ayurvedic medicine for nearly 3000 years as a rasayana (rejuvenative) herb believed to strengthen the nervous system; the root has traditionally been used as an aphrodisiac, narcotic, tonic, diuretic, anthelmintic, and stimulant.",
+        "Ashwagandha has been used in Ayurvedic medicine for nearly 3,000 years as a rasayana, a rejuvenating herb believed to strengthen the nervous system. The root has traditionally been used to boost sex drive, bring on sleep, restore strength, increase urination, expel intestinal worms and stimulate the body.\n\nTechnical detail: aphrodisiac, narcotic, tonic, diuretic, anthelmintic, stimulant.",
       sourceId: mikulskaReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Withaferin A and other withanolides have shown neuroprotective activity in laboratory and animal models, including reduced beta-amyloid aggregation and inhibited tau protein accumulation relevant to Alzheimer's disease, activation of the heat shock response in Huntington's disease models, and antibacterial activity against organisms including methicillin-resistant Staphylococcus aureus. Withanolides have also shown pro-apoptotic activity against breast, colon, lung, and prostate cancer cell lines.",
+        "In lab and animal studies, withaferin A and related compounds (withanolides) protected nerve cells. This included reducing the buildup of proteins linked to Alzheimer's disease, and switching on the cell's protective stress response in models of Huntington's disease. They also acted against bacteria, including the antibiotic-resistant \"superbug\" MRSA, and caused breast, colon, lung and prostate cancer cells to die in the lab.\n\nTechnical detail: reduced beta-amyloid aggregation; inhibited tau accumulation; heat shock response activation; methicillin-resistant Staphylococcus aureus; pro-apoptotic activity against cancer cell lines.",
       sourceId: mikulskaReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A systematic review and meta-analysis of 9 randomized controlled trials (558 participants) found that Ashwagandha formulations produced statistically significant reductions in perceived stress, anxiety (Hamilton Anxiety Rating Scale), and serum cortisol compared with placebo, with limited reported adverse effects; the authors noted more data are needed on long-term safety.",
+        "A review that combined 9 trials with 558 people found ashwagandha products lowered stress, anxiety and levels of the stress hormone cortisol more than placebo (a dummy pill), with few reported side effects. The authors noted that more data is needed on long-term safety.\n\nTechnical detail: systematic review and meta-analysis of randomized controlled trials; Hamilton Anxiety Rating Scale; serum cortisol.",
       sourceId: stressAnxietyMeta.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Research indicates that some ashwagandha preparations may be effective for insomnia and stress, though evidence for anxiety specifically remains unclear. Limited evidence suggests taking ashwagandha for 2 to 4 months may improve testosterone levels and sperm quality in men, though more research is needed. There isn't enough reliable evidence to show whether ashwagandha is helpful for asthma, athletic performance, cognitive function, diabetes, menopause symptoms, female infertility, or COVID-19.",
+        "Research suggests some ashwagandha products may help with insomnia and stress, but it's unclear whether they help anxiety specifically. Limited evidence suggests taking ashwagandha for 2 to 4 months may improve testosterone levels and sperm quality in men, but more research is needed. There isn't enough reliable evidence to know whether it helps asthma, athletic performance, memory and thinking, diabetes, menopause symptoms, female infertility or COVID-19.",
       sourceId: nccih.id,
     },
   ];
@@ -220,31 +220,31 @@ async function main() {
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Can cause drowsiness, stomach upset, diarrhea, and vomiting. Appears safe for most people when used for up to 3 months, but data on longer-term safety are insufficient.",
+        "Ashwagandha can cause drowsiness, stomach upset, diarrhea and vomiting. It appears safe for most people for up to 3 months, but there isn't enough data on longer use.",
       sourceId: nccih.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "Rare but documented cases of clinically apparent liver injury have been reported, typically presenting 2 to 12 weeks (and in some reported cases as early as ~30 hours) after starting ashwagandha-containing products, usually with a cholestatic or mixed pattern of injury, jaundice, and pruritus. Most cases were mild-to-moderate and self-limited, resolving within 1 to 5 months of stopping the product, though a minority of cases in patients with underlying chronic liver disease have been severe. Because commercial products are sometimes mixed with other herbs or mislabeled, it is not always certain the injury was caused by ashwagandha itself rather than a contaminant.",
+        "Rarely, ashwagandha products have caused liver damage. It usually appeared 2 to 12 weeks after starting (in some cases as early as about 30 hours), often with yellowing of the skin or eyes (jaundice) and itching. Most cases were mild to moderate and cleared up within 1 to 5 months of stopping. A few cases in people who already had long-term liver disease were severe. Because products are sometimes mixed with other herbs or mislabeled, it isn't always certain that ashwagandha itself caused the damage.\n\nTechnical detail: clinically apparent liver injury, usually cholestatic or mixed pattern, with pruritus; self-limited.",
       sourceId: liverTox.id,
     },
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "NCCIH advises avoiding ashwagandha if pregnant or breastfeeding, before or after surgery, or if you have an autoimmune disorder, a thyroid disorder, or hormone-sensitive prostate cancer.",
+        "The US National Center for Complementary and Integrative Health (NCCIH) advises avoiding ashwagandha if you are pregnant or breastfeeding, before or after surgery, or if you have an autoimmune disease, a thyroid condition, or hormone-sensitive prostate cancer.",
       sourceId: nccih.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "NCCIH lists pregnancy and breastfeeding as reasons to avoid ashwagandha. Older herbal and regulatory sources, including the WHO monograph, contraindicate use in pregnancy in part because the crude drug was historically documented as being used to induce abortion. A 2025 critical review traced that historical claim mainly to a single 1869 anecdotal source (Stewart's Punjab Plants) and found no abortifacient or antifertility effect in modern animal studies using doses up to 3000 mg/kg body weight; it also noted most historical reports referred to the above-ground plant parts rather than the root, which is the part used in Ayurveda and in most modern preparations. Given the lack of controlled human pregnancy safety data either way, avoidance during pregnancy remains the prevailing guidance.",
+        "NCCIH lists pregnancy and breastfeeding as reasons to avoid ashwagandha. Older herbal and official sources, including the WHO, also advise against it in pregnancy, partly because the plant was historically recorded as being used to cause miscarriage. A 2025 review traced that claim mainly to a single 1869 anecdote (Stewart's Punjab Plants) and found no miscarriage or fertility effects in modern animal studies at high doses. It also noted that most historical reports were about the above-ground parts, not the root used in Ayurveda and most modern products. Because there is no controlled safety data in pregnant people either way, avoiding it during pregnancy is still the standard advice.\n\nTechnical detail: modern animal studies used doses up to 3000 mg/kg body weight; abortifacient and antifertility effects.",
       sourceId: abortifacientReview.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "May interact with medications for diabetes, high blood pressure, and thyroid conditions, as well as immunosuppressants, sedatives, and anticonvulsants. Ashwagandha has sedative effects and there is preliminary evidence it may increase the effects of benzodiazepines and other sedative/anti-anxiety drugs.",
+        "Ashwagandha may interact with medicines for diabetes, high blood pressure and thyroid conditions, as well as medicines that suppress the immune system, sedatives and seizure medicines. It has a calming, sleep-inducing effect, and early evidence suggests it may strengthen the effects of benzodiazepines and other sedative or anti-anxiety medicines.",
       sourceId: nccih.id,
     },
   ];

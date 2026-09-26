@@ -223,8 +223,8 @@ export default async function HomePage() {
             Herbal knowledge is scattered — traditional practice in one place, scientific
             research in another, safety information somewhere else entirely, if it's written
             down at all. This library exists to put them in one place, clearly labeled as what
-            they are: traditional use, preclinical research, human evidence, and safety
-            considerations, never blended into a single unproven claim.
+            they are: traditional use, lab and animal research, research in people, and safety
+            information, never blended into a single unproven claim.
           </p>
           <p className="text-[15px] leading-relaxed text-[var(--muted)]">
             It's an educational resource, not medical advice — always talk to a healthcare

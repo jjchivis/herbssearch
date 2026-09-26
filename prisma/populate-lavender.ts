@@ -25,8 +25,8 @@ async function main() {
       family: "Lamiaceae",
       genus: "Lavandula",
       species: "angustifolia",
-      partsUsed: "Flower (flowering spikes/tops); essential oil is steam-distilled from the flowers",
-      nativeRange: "Mediterranean basin (native to northeastern Spain, southern France, Andorra, and Italy)",
+      partsUsed: "The flowers (the flowering spikes). The essential oil is made by steam-distilling the flowers.",
+      nativeRange: "The Mediterranean region: native to northeastern Spain, southern France, Andorra and Italy",
       contentStatus: "VERIFIED",
     },
   });
@@ -129,7 +129,7 @@ async function main() {
         herbId: lavender.id,
         traditionId: mediterraneanFolk.id,
         notes:
-          "Used for medicinal and aromatic purposes by the ancient Greeks, Romans, and Egyptians for its antiseptic, calming, anti-inflammatory, and antioxidative properties; these traditional uses continued into European herbal medicine through the Middle Ages.",
+          "The ancient Greeks, Romans and Egyptians used lavender as a medicine and for its scent. They valued it for fighting germs, calming, and easing inflammation. These traditional uses continued in European herbal medicine through the Middle Ages.\n\nTechnical detail: traditionally described as antiseptic, calming, anti-inflammatory and antioxidative.",
       },
     });
   }
@@ -139,25 +139,25 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Lavender has been used for medicinal and aromatic purposes since antiquity by the ancient Greeks, Romans, and Egyptians for its antiseptic, calming, anti-inflammatory, and antioxidative properties. These traditional uses persisted into European herbal medicine through the Middle Ages, and lavender was historically used to treat conditions such as stomach ulcers and asthma.",
+        "Since ancient times, the Greeks, Romans and Egyptians used lavender as a medicine and for its scent. They valued it for fighting germs, calming, and easing inflammation. These traditional uses continued in European herbal medicine through the Middle Ages, and lavender was historically used for conditions such as stomach ulcers and asthma.\n\nTechnical detail: traditionally described as antiseptic, calming, anti-inflammatory and antioxidative.",
       sourceId: anxiolyticReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "In a mouse model of social defeat stress, Lavandula angustifolia essential oil (200 mg/kg, intraperitoneal) blocked stress-induced anxiety-like behavior, and both the essential oil and its main constituent linalool (100 mg/kg) reversed social avoidance caused by social defeat, acting similarly to antidepressant agents; neither compound showed anxiolytic effects in non-stressed animals. In vitro, linalool (100-200 micrograms/mL) inhibited pERK and PKA signaling in SH-SY5Y neuroblastoma cells, suggesting a molecular mechanism for its central nervous system effects.",
+        "In mice under social stress, lavender essential oil reduced anxious behavior. Both the oil and linalool, its main natural compound, reversed the mice's tendency to avoid other mice, acting much like antidepressants. Neither had a calming effect on mice that weren't stressed. In lab tests on nerve cells, linalool blocked certain chemical signals inside the cells, which may help explain how it affects the brain.\n\nTechnical detail: social defeat stress model; Lavandula angustifolia essential oil 200 mg/kg intraperitoneal; linalool 100 mg/kg; in vitro linalool 100–200 µg/mL inhibited pERK and PKA signaling in SH-SY5Y neuroblastoma cells.",
       sourceId: socialDefeatStudy.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Research suggests oral lavender oil products, including the proprietary preparation Silexan, might be beneficial for anxiety, including anxiety with co-occurring symptoms of depression, though the supporting studies have limitations such as small sample sizes and a lack of independent funding. Evidence on whether aromatherapy with lavender improves sleep quality or insomnia remains unclear. Preliminary findings suggest oral lavender capsules or tea may reduce depressive symptoms in some people, but should be interpreted with caution; one study found topical application had no effect on depression.",
+        "Research suggests lavender oil taken by mouth, including a branded product called Silexan, might help with anxiety, including anxiety that comes with depression. But the studies have limitations, such as being small and not being independently funded. It's unclear whether breathing in lavender (aromatherapy) improves sleep or insomnia. Early findings suggest lavender capsules or tea may ease depression in some people, but these results should be treated with caution. One study found that putting lavender on the skin had no effect on depression.",
       sourceId: nccih.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Clinical trials report reduced anxiety scores after lavender essential oil inhalation in hospitalized patients undergoing bone marrow biopsy, reduced depression and anxiety measures in elderly subjects given oral lavender tea, and reduced preoperative anxiety with lavender aromatherapy without the sedative side effects associated with benzodiazepines. Effective oral dosing used in trials included approximately 80 mg per day of lavender oil (Silexan).",
+        "Clinical trials have reported:\n- Less anxiety after breathing in lavender essential oil, in hospital patients having a bone marrow biopsy.\n- Less depression and anxiety in older adults who drank lavender tea.\n- Less anxiety before surgery with lavender aromatherapy, without the sleepiness caused by anti-anxiety medicines called benzodiazepines.\nTrials of lavender oil taken by mouth used about 80 mg a day (Silexan).",
       sourceId: anxiolyticReview.id,
     },
   ];
@@ -175,37 +175,37 @@ async function main() {
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Oral lavender products may cause diarrhea, headache, nausea, or burping. Aromatherapy use can cause headache or coughing. Topical application carries a risk of allergic skin reactions.",
+        "Lavender taken by mouth may cause diarrhea, headache, nausea or burping. Breathing it in (aromatherapy) can cause headache or coughing. Putting it on the skin can cause allergic skin reactions.",
       sourceId: nccih.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "There are theoretical reasons to suspect that lavender might interact with some sedative drugs or herbs, which is particularly relevant before surgery.",
+        "In theory, lavender might add to the effects of medicines or herbs that make you sleepy (sedatives). This matters especially before surgery.",
       sourceId: nccih.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "Safety data on use during pregnancy or while breastfeeding is inadequate; little is known about its safety in these situations.",
+        "There isn't enough safety information about using lavender during pregnancy or while breastfeeding. Little is known about its safety in these situations.",
       sourceId: nccih.id,
     },
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "A few case reports describe breast tissue swelling in children following topical use of lavender-containing products; causality has not been established.",
+        "A few reports describe breast swelling in children after lavender-containing products were used on their skin. It has not been shown that lavender caused it.",
       sourceId: nccih.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "Ingesting roughly 5 mL of diluted lavender essential oil can cause toxicity in adults, and as little as 2-3 mL may be toxic in children, with symptoms including nausea, vomiting, diarrhea, difficulty breathing, and confusion. Reported toxicity cases are rare, and the essential oil's oral LD50 in animal studies is 13.5 g/kg.",
+        "Swallowing about 5 mL (one teaspoon) of diluted lavender essential oil can poison an adult, and as little as 2–3 mL may poison a child. Symptoms include nausea, vomiting, diarrhea, trouble breathing and confusion. Reported poisonings are rare.\n\nTechnical detail: oral LD50 of the essential oil in animal studies is 13.5 g/kg.",
       sourceId: anxiolyticReview.id,
     },
     {
       category: "ALLERGY" as const,
       description:
-        "Prolonged skin exposure to linalool, a major constituent of lavender essential oil, may elicit allergic reactions; linalool must be listed as a potential allergen under European Union cosmetics regulations.",
+        "Long-term skin contact with linalool, a major natural compound in lavender oil, can cause allergic reactions. European Union cosmetics rules require linalool to be listed as a possible allergen.",
       sourceId: anxiolyticReview.id,
     },
   ];

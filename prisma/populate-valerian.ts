@@ -27,8 +27,8 @@ async function main() {
       family: "Caprifoliaceae",
       genus: "Valeriana",
       species: "officinalis",
-      partsUsed: "Root and rhizome",
-      nativeRange: "Europe and Asia (from Iceland to Iran); naturalized in North America",
+      partsUsed: "The root and rhizome (underground stem)",
+      nativeRange: "Europe and Asia (from Iceland to Iran); now grows wild in North America",
       contentStatus: "VERIFIED",
     },
   });
@@ -132,7 +132,7 @@ async function main() {
         herbId: valerian.id,
         traditionId: westernHerbalism.id,
         notes:
-          "The roots and rhizomes have been used in official Western medicine for more than 240 years, traditionally regarded as a mild sedative, anxiolytic, and antispasmodic, with regional variation in emphasis: mainly for anxiety and restlessness in Europe, and mainly for sleep promotion in the United States.",
+          "Valerian root has been part of official Western medicine for more than 240 years. It is traditionally seen as mildly calming, anxiety-easing and cramp-relieving. In Europe it has mainly been used for anxiety and restlessness, and in the United States mainly to help with sleep.\n\nTechnical detail: traditionally described as a mild sedative, anxiolytic and antispasmodic.",
       },
     });
   }
@@ -142,25 +142,25 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Valerian root has been used in official medicine for more than 240 years and is traditionally regarded as a mild sedative, anxiolytic, and antispasmodic. Traditional use patterns differ regionally: in Europe it has been used mainly for anxiety and restlessness, in the United States mainly for its sleep-promoting activity, and in Brazilian traditional medicine for hypnotic, anticonvulsant, and anxiolytic purposes.",
+        "Valerian root has been part of official medicine for more than 240 years. It is traditionally seen as mildly calming, anxiety-easing and cramp-relieving. Its use differs by region: in Europe mainly for anxiety and restlessness, in the United States mainly to help with sleep, and in Brazilian traditional medicine to bring on sleep, prevent seizures and ease anxiety.\n\nTechnical detail: traditionally described as a mild sedative, anxiolytic and antispasmodic; in Brazil, hypnotic, anticonvulsant and anxiolytic.",
       sourceId: cnsReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Preclinical studies indicate that Valeriana officinalis extract and its constituents, including valerenic acid and valepotriates, modulate GABAergic neurotransmission — in part by inhibiting GABA-transaminase (increasing CNS GABA levels) and through allosteric modulation of GABA-A receptors — and that adenosine A1 receptor activation separately contributes to valerian's sleep-inducing capacity. In animal models the extract has shown anxiolytic activity (e.g., in the elevated plus-maze) without myorelaxant effects, anticonvulsant activity in seizure models, neuroprotection against ischemic hippocampal damage, and modulation of stress-related norepinephrine, serotonin, and corticosterone changes in the amygdala and hippocampus. The review notes that research on which specific compounds drive these effects remains controversial, and that some Valeriana species with low valerenic acid content show similar pharmacological activity.",
+        "Lab and animal studies suggest valerian and its natural compounds (such as valerenic acid) raise levels of GABA, a brain chemical that calms nerve activity, and act on GABA receptors. Separately, valerian acts on adenosine receptors, which help make us sleepy. In animals, valerian reduced anxious behavior without relaxing the muscles, reduced seizures, protected the brain after blocked blood flow, and changed stress-related brain chemicals. Researchers still disagree about which compounds are responsible, and some types of valerian with little valerenic acid have similar effects.\n\nTechnical detail: valerenic acid and valepotriates; GABA-transaminase inhibition; allosteric modulation of GABA-A receptors; adenosine A1 receptor activation; elevated plus-maze; no myorelaxant effect; neuroprotection against ischemic hippocampal damage; modulation of norepinephrine, serotonin and corticosterone in the amygdala and hippocampus.",
       sourceId: cnsReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Evidence on whether valerian is useful for sleep problems is inconsistent, and the American Academy of Sleep Medicine's 2017 clinical practice guideline recommended against using valerian for chronic insomnia in adults. Overall, there is not enough evidence to determine whether valerian is useful for any health condition. Three small studies suggest valerian might help with menopause symptoms, but evidence is insufficient to know for certain, and there is not enough evidence to draw conclusions about its use for anxiety, depression, premenstrual syndrome, menstrual cramps, or stress.",
+        "Research on whether valerian helps sleep problems is inconsistent. In 2017, the American Academy of Sleep Medicine recommended against using valerian for long-term insomnia in adults. Overall, there isn't enough evidence to say whether valerian helps any health condition. Three small studies suggest it might help menopause symptoms, but that isn't certain. There isn't enough evidence to draw conclusions about anxiety, depression, PMS, period cramps or stress.",
       sourceId: nccih.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A 2020 systematic review and meta-analysis of 60 studies (n=6,894) found valerian showed modest, inconsistent benefit for subjective sleep quality (10 studies, n=1,065; combined effect size 0.36) and for anxiety (8 studies, n=535; combined effect size 0.36). Effects were substantially stronger for whole root/rhizome preparations (effect size 0.83 for sleep) than for extracts (effect size 0.10), which the authors attributed to variable quality of herbal extracts, concluding that more reliable effects could be expected from the whole root/rhizome. The review also reported potential benefit for obsessive-compulsive disorder, cognitive dysfunction, menopausal hot flashes, and menstrual problems, though human evidence for these remains limited.",
+        "A 2020 review of 60 studies with 6,894 people found valerian gave a modest and inconsistent improvement in how well people felt they slept, and in anxiety. The effect on sleep was much stronger with the whole dried root than with extracts, which the authors put down to the uneven quality of extracts. They concluded the whole root is likely to give more reliable results. The review also reported possible benefits for obsessive-compulsive disorder, problems with thinking and memory, menopausal hot flashes and menstrual problems, but evidence in people for these is limited.\n\nTechnical detail: systematic review and meta-analysis; sleep quality 10 studies, n=1,065, effect size 0.36; anxiety 8 studies, n=535, effect size 0.36; whole root/rhizome effect size 0.83 vs. extracts 0.10.",
       sourceId: sleepMetaAnalysis.id,
     },
   ];
@@ -178,43 +178,43 @@ async function main() {
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Reported side effects include headache, stomach upset, mental dullness, excitability, uneasiness, and vivid dreams.",
+        "Reported side effects include headache, stomach upset, feeling mentally dull, feeling excitable or uneasy, and vivid dreams.",
       sourceId: nccih.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "If stopped abruptly after being taken for a long time, valerian may cause withdrawal symptoms such as anxiety, irritability, heart disturbances, and insomnia, and in rare cases hallucinations.",
+        "If you stop valerian suddenly after taking it for a long time, you may get withdrawal symptoms such as anxiety, irritability, heart problems and trouble sleeping, and rarely hallucinations.",
       sourceId: nccih.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Across 60 studies in subjects aged 7 to 80, no severe adverse events were associated with valerian intake; reported side effects were mild and infrequent.",
+        "Across 60 studies in people aged 7 to 80, valerian caused no serious side effects. The side effects reported were mild and uncommon.",
       sourceId: sleepMetaAnalysis.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "Valerian should not be combined with alcohol or sedatives.",
+        "Don't combine valerian with alcohol or with sedatives (medicines that make you sleepy).",
       sourceId: nccih.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "Little is known about whether it's safe to use valerian during pregnancy or while breastfeeding.",
+        "Little is known about whether valerian is safe during pregnancy or while breastfeeding.",
       sourceId: nccih.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "In very rare cases, liver injury has been reported with valerian use; its long-term effects on the liver are unknown.",
+        "In very rare cases, liver damage has been reported with valerian. Its long-term effects on the liver are unknown.",
       sourceId: nccih.id,
     },
     {
       category: "DOSAGE" as const,
       description:
-        "Research suggests valerian is generally safe for short-term use by most healthy adults at doses of 300 to 600 milligrams daily for up to 6 weeks; its safety with longer-term use is unknown.",
+        "Research suggests valerian is generally safe for most healthy adults at 300 to 600 mg a day for up to 6 weeks. Whether longer use is safe is unknown.",
       sourceId: nccih.id,
     },
   ];

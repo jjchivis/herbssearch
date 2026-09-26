@@ -37,8 +37,8 @@ async function main() {
       family: "Lamiaceae",
       genus: "Melissa",
       species: "officinalis",
-      partsUsed: "Leaf (leaves and aerial parts)",
-      nativeRange: "Southern Europe, the Mediterranean basin, and Central Asia/Iran; naturalized worldwide",
+      partsUsed: "The leaves and other above-ground parts",
+      nativeRange: "Southern Europe, the Mediterranean region, and Central Asia and Iran; now grows wild around the world",
       contentStatus: "VERIFIED",
     },
   });
@@ -167,7 +167,7 @@ async function main() {
         herbId: lemonBalm.id,
         traditionId: westernHerbalism.id,
         notes:
-          "Documented for roughly 2000 years, appearing in the Historia Plantarum (c. 300 BC) and in Dioscorides' De Materia Medica (c. 50-80 AD); still included in the British Herbal Pharmacopoeia and European Pharmacopoeia for anxiety, sleep, cognitive, antiviral, and digestive uses.",
+          "Lemon balm has been written about for about 2,000 years. It appears in the Historia Plantarum (around 300 BC) and in Dioscorides' De Materia Medica (around 50–80 AD). It is still listed in the British Herbal Pharmacopoeia and the European Pharmacopoeia for anxiety, sleep, memory and thinking, viral infections and digestion.",
       },
     });
   }
@@ -177,31 +177,31 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Lemon balm has a roughly 2000-year documented history, appearing in the Historia Plantarum (c. 300 BC) and in Dioscorides' De Materia Medica (c. 50-80 AD). In herbal medicine systems it has traditionally been used to ease digestive complaints, promote relaxation and sleep, improve mood, soothe skin irritation, and support wound healing, and it remains listed in the British Herbal Pharmacopoeia, European Pharmacopoeia, and Iranian Herbal Pharmacopoeia.",
+        "Lemon balm has been written about for about 2,000 years, appearing in the Historia Plantarum (around 300 BC) and in Dioscorides' De Materia Medica (around 50–80 AD). Herbalists have traditionally used it to ease digestive complaints, help people relax and sleep, lift mood, soothe irritated skin and help wounds heal. It is still listed in the British, European and Iranian herbal pharmacopoeias (official herbal reference books).",
       sourceId: mathews2024.id,
     },
     {
       category: "TRADITIONAL" as const,
       summary:
-        "The leaves of lemon balm are used in Iranian folk medicine for their digestive, carminative, antispasmodic, sedative, analgesic, tonic, and diuretic properties, including for functional gastrointestinal disorders.",
+        "In Iranian folk medicine, lemon balm leaves are used to relieve gas, ease cramps, calm, relieve pain, restore strength and increase urination, including for ongoing digestive problems with no clear physical cause.\n\nTechnical detail: carminative, antispasmodic, sedative, analgesic, tonic, diuretic; functional gastrointestinal disorders.",
       sourceId: miraj2016.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Mechanistic and animal studies suggest lemon balm's calming effects may involve inhibition of GABA transaminase (raising brain GABA availability) and binding of essential-oil constituents such as trans-ocimene to GABA-A receptors; aqueous extracts have also been shown to lower plasma corticosterone, a stress hormone, in animal models. In vitro, lemon balm extracts and essential oil inhibited herpes simplex virus type 1 (HSV-1) and influenza A virus. In animal toxicity testing, no adverse effects were seen at doses up to 2000 mg/kg, though the essential oil showed a neurotoxic effect in primary cell cultures at 0.1 mg/mL.",
+        "Lab and animal studies suggest lemon balm's calming effect may come from raising levels of GABA, a brain chemical that quiets nerve activity, and from compounds in the oil acting on GABA receptors. Water-based extracts lowered a stress hormone in animals. In lab tests, lemon balm extracts and oil stopped the cold-sore virus (herpes simplex type 1) and flu A virus. Animal safety tests found no harm at high doses, but in the lab the essential oil damaged nerve cells at a certain concentration.\n\nTechnical detail: inhibition of GABA transaminase; trans-ocimene binding to GABA-A receptors; lowered plasma corticosterone; no adverse effects up to 2000 mg/kg; neurotoxic effect in primary cell cultures at 0.1 mg/mL.",
       sourceId: awlqadr2025.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Clinical trials reviewed found anxiolytic effects across age groups: 1200 mg/day over three menstrual cycles reduced anxiety in adolescents with premenstrual syndrome, acute dosing improved calmness ratings in young adults, and older adults with cardiac conditions had reduced anxiety measures. Cognitive results were mixed, with one study finding improved attention accuracy at a 600 mg dose. Sleep quality improved after 6 weeks of 80 mg/day in middle-aged adults with moderate sleep problems, and mood/depression scores improved with 2000 mg/day over 8 weeks and with 1500 mg over 10 days in postpartum women. Doses up to 5000 mg/day were reported as well tolerated, with no serious adverse events across the trials reviewed.",
+        "A review of trials in people found:\n- Anxiety: lemon balm reduced anxiety in several age groups, including teenagers with PMS (1200 mg a day over three menstrual cycles), young adults (who felt calmer after a single dose) and older adults with heart conditions.\n- Memory and thinking: results were mixed; one study found better attention accuracy with a 600 mg dose.\n- Sleep: sleep improved after 6 weeks of 80 mg a day in middle-aged adults with moderate sleep problems.\n- Mood: depression scores improved with 2000 mg a day for 8 weeks, and with 1500 mg for 10 days in women who had recently given birth.\nDoses up to 5000 mg a day were well tolerated, with no serious side effects in the trials reviewed.",
       sourceId: mathews2024.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "In a double-blind randomized trial of 60 people with recurrent herpes labialis, topical 1% Melissa officinalis gel applied three times daily for 7 days was compared to 5% acyclovir cream. Melissa gel reduced pain significantly more than acyclovir on days 2 and 4, and showed better reduction in erythema (redness) on day 4, but lesion size and overall healing time did not differ significantly between the two treatments; the authors concluded Melissa gel was not more effective than acyclovir overall despite the pain-relief advantage.",
+        "In a trial of 60 people with repeated cold sores, a 1% lemon balm gel used three times a day for 7 days was compared with 5% acyclovir cream, a standard antiviral treatment. The lemon balm gel relieved pain better on days 2 and 4 and reduced redness more on day 4. But cold sore size and healing time were the same with both. The authors concluded lemon balm gel was not more effective than acyclovir overall, despite better pain relief.\n\nTechnical detail: double-blind randomized trial; herpes labialis; Melissa officinalis gel.",
       sourceId: ahadian2015.id,
     },
   ];
@@ -219,39 +219,39 @@ async function main() {
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "No side effects have generally been reported with topical or oral use at recommended doses for up to 30 days in healthy adults. Lemon balm has GRAS (Generally Recognized as Safe) status in the United States, with a maximum level of 0.5% in baked goods.",
+        "In healthy adults, no side effects have generally been reported when lemon balm is used on the skin or by mouth at recommended doses for up to 30 days. In the United States, lemon balm is classed as \"Generally Recognized as Safe\" (GRAS), with a maximum level of 0.5% in baked goods.",
       sourceId: miraj2016.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Across the human trials reviewed, lemon balm appeared safe and well tolerated, including in vulnerable populations such as infants and hospitalized patients, with no serious adverse events reported at doses up to 5000 mg/day and minimal dropout due to tolerability issues.",
+        "Across the trials reviewed, lemon balm appeared safe and well tolerated, including in more vulnerable groups such as babies and hospital patients. There were no serious side effects at doses up to 5000 mg a day, and very few people stopped because of side effects.",
       sourceId: mathews2024.id,
     },
     {
       category: "PREGNANCY" as const,
-      description: "Reported as unsafe for use during pregnancy.",
+      description: "Reported as unsafe to use during pregnancy.",
       sourceId: miraj2016.id,
     },
     {
       category: "BREASTFEEDING" as const,
-      description: "Reported as unsafe for use during lactation/breastfeeding.",
+      description: "Reported as unsafe to use while breastfeeding.",
       sourceId: miraj2016.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
-      description: "Reported as unsafe to combine with sedative medications.",
+      description: "Reported as unsafe to combine with sedatives (medicines that make you sleepy).",
       sourceId: miraj2016.id,
     },
     {
       category: "CONTRAINDICATION" as const,
-      description: "Reported as unsafe for pediatric use and for people with thyroid disorders.",
+      description: "Reported as unsafe for children and for people with thyroid conditions.",
       sourceId: miraj2016.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "In animal studies, no adverse effects were observed at doses up to 2000 mg/kg body weight; however, the essential oil produced a neurotoxic effect in primary cell cultures at a concentration of 0.1 mg/mL in vitro.",
+        "Animal studies found no harmful effects at doses up to 2000 mg per kg of body weight. However, in lab tests the essential oil damaged nerve cells at a concentration of 0.1 mg/mL.",
       sourceId: awlqadr2025.id,
     },
   ];

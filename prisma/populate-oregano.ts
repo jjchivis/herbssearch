@@ -39,8 +39,8 @@ async function main() {
       genus: "Origanum",
       species: "vulgare",
       nativeRange:
-        "Europe, the Mediterranean region, North Africa, and temperate Asia (native range spans Macaronesia to China); introduced and naturalized in North America",
-      partsUsed: "Leaf and flower (dried leaves and flowering tops)",
+        "Europe, the Mediterranean region, North Africa and temperate Asia (from the Atlantic islands off Africa east to China); introduced and growing wild in North America",
+      partsUsed: "The dried leaves and flowering tops",
       contentStatus: "VERIFIED",
     },
   });
@@ -190,7 +190,7 @@ async function main() {
         herbId: oregano.id,
         traditionId: mediterraneanFolkMedicine.id,
         notes:
-          "Native to the Mediterranean region; long-standing use across Mediterranean and Iranian folk medicine as a culinary spice and as a traditional remedy for respiratory ailments, digestive complaints, and infections.",
+          "Native to the Mediterranean region. It has long been used in Mediterranean and Iranian folk medicine, both as a cooking spice and as a traditional remedy for breathing problems, digestive complaints and infections.",
       },
     });
   }
@@ -200,19 +200,19 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Oregano has a long history of traditional use for respiratory disorders (colds, fever, cough, bronchitis), stomachache and digestive upset, painful menstruation, rheumatoid arthritis, urinary problems, and as an antiparasitic and antibacterial agent. In Iranian traditional medicine specifically it has been used as a tonic, expectorant, carminative, and stimulant. Historically it has also been used as a culinary spice and, in oil form, applied for bacterial and fungal infections.",
+        "Oregano has a long history of traditional use for:\n- Breathing problems: colds, fever, cough and bronchitis\n- Stomach ache and digestive upset\n- Painful periods\n- Rheumatoid arthritis\n- Urinary problems\n- Parasites and bacterial infections\nIn Iranian traditional medicine, it has been used to restore strength, loosen mucus, relieve gas and stimulate the body. It has also long been used as a cooking spice, and oregano oil has been applied for bacterial and fungal infections.\n\nTechnical detail: tonic, expectorant, carminative, stimulant; antiparasitic and antibacterial.",
       sourceId: phytochemistryReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "A phenolic-rich hydroalcoholic extract of Origanum vulgare ssp. vulgare (dominated by rosmarinic acid, 12.83 mg/g, plus chlorogenic acid and the flavonoids hyperoside, isoquercitrin, rutin, quercitrin, and luteolin; total polyphenol content 94.69 mg/g) showed strong antioxidant activity in vitro (CUPRAC, FRAP, and superoxide-scavenging assays) and antimicrobial activity against tested bacterial strains (inhibition zones 16-19 mm) and antifungal activity against Aspergillus niger (MIC 19.53 micrograms/mL). In a carbon-tetrachloride-induced hepatotoxicity mouse model, the extract reduced liver damage markers and restored antioxidant enzyme activity (catalase, superoxide dismutase, glutathione peroxidase) and reduced lipid peroxidation. The essential-oil constituents carvacrol and thymol are separately reported as major active components of oregano (constituting up to roughly 70% combined in some subspecies), with gamma-terpinene and p-cymene as other significant volatile constituents; the review's antimicrobial-mechanism discussion (enzyme inhibition, efflux-pump inhibition, biofilm disruption, cytoplasmic membrane damage) is based on in vitro and food-model studies. These are in vitro and animal findings, not established clinical effects in humans.",
+        "In lab tests, an oregano extract rich in natural plant compounds (mainly rosmarinic acid) showed strong antioxidant activity and slowed the growth of bacteria and of a common mold (Aspergillus niger). In mice with chemically damaged livers, the extract reduced signs of liver damage and restored the liver's own protective enzymes. Oregano's essential oil is rich in carvacrol and thymol, which can make up about 70% of the oil in some types. Research on how these compounds fight germs comes from lab and food studies. These are lab and animal findings, not established effects in people.\n\nTechnical detail: Origanum vulgare ssp. vulgare hydroalcoholic extract: rosmarinic acid 12.83 mg/g, plus chlorogenic acid, hyperoside, isoquercitrin, rutin, quercitrin and luteolin; total polyphenols 94.69 mg/g. CUPRAC, FRAP and superoxide-scavenging assays; bacterial inhibition zones 16–19 mm; Aspergillus niger MIC 19.53 µg/mL. Carbon-tetrachloride hepatotoxicity model: restored catalase, superoxide dismutase and glutathione peroxidase and reduced lipid peroxidation. Other volatiles: gamma-terpinene, p-cymene. Proposed antimicrobial mechanisms: enzyme inhibition, efflux-pump inhibition, biofilm disruption, membrane damage.",
       sourceId: chemicalCompositionStudy.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "In a small, open-label (non-blinded, non-placebo-controlled) clinical study, 14 adult patients with stool tests positive for the enteric parasites Blastocystis hominis, Entamoeba hartmanni, and Endolimax nana were given 600 mg of emulsified oil of Mediterranean oregano (Origanum vulgare) daily for 6 weeks. Entamoeba hartmanni cleared completely in all 4 affected patients, Endolimax nana cleared in the 1 affected patient, and Blastocystis hominis cleared completely in 8 of 11 cases (with scores declining in 3 more). Gastrointestinal symptoms improved in 7 of the 11 patients who had tested positive for Blastocystis hominis. Because the study was small, uncontrolled, and not blinded, it should be read as preliminary evidence rather than definitive proof of efficacy.",
+        "In a small study, 14 adults with gut parasites found in stool tests took 600 mg of oregano oil a day for 6 weeks. One parasite (Entamoeba hartmanni) cleared in all 4 people who had it, another (Endolimax nana) cleared in the 1 person who had it, and a third (Blastocystis hominis) cleared in 8 of 11 people, with levels falling in 3 more. Digestive symptoms improved in 7 of the 11 people with Blastocystis. The study was small, had no comparison group and everyone knew what they were taking, so it is early evidence, not proof.\n\nTechnical detail: open-label, not blinded, not placebo-controlled; emulsified oil of Mediterranean oregano (Origanum vulgare).",
       sourceId: parasiteTrial.id,
     },
   ];
@@ -230,27 +230,27 @@ async function main() {
     {
       category: "PREGNANCY" as const,
       description:
-        "Oregano, in doses used as a dietary supplement, is an abortifacient and should not be used during pregnancy or by women of childbearing age not using effective contraception.",
+        "At the doses used in supplements, oregano can cause miscarriage. It should not be used as a supplement during pregnancy, or by women who could become pregnant and aren't using effective birth control.\n\nTechnical detail: abortifacient.",
     },
     {
       category: "ALLERGY" as const,
       description:
-        "Rare hypersensitivity reactions have been reported. A published case describes a 45-year-old man with asthma who had an immediate systemic hypersensitivity reaction (rash, lip swelling, stridor, mild hypotension responding to epinephrine) after eating foods containing oregano and then thyme, with positive skin-prick and in-vitro testing to multiple plants of the mint family (Lamiaceae), indicating cross-reactivity risk for people sensitive to other Lamiaceae herbs.",
+        "Rare allergic reactions have been reported. In one case, a 45-year-old man with asthma had a sudden whole-body allergic reaction (rash, swollen lips, noisy breathing and a drop in blood pressure that needed an epinephrine injection) after eating foods with oregano and then thyme. Tests showed he was allergic to several plants in the mint family (Lamiaceae). People allergic to other mint-family herbs may also react to oregano.\n\nTechnical detail: stridor, mild hypotension; positive skin-prick and in-vitro tests; cross-reactivity.",
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Oregano oil is usually well tolerated, but higher doses can cause abdominal discomfort, heartburn, constipation or diarrhea, nausea and vomiting, dizziness, and headache.",
+        "Oregano oil is usually well tolerated, but higher doses can cause stomach discomfort, heartburn, constipation or diarrhea, nausea and vomiting, dizziness and headache.",
     },
     {
       category: "TOXICITY" as const,
       description:
-        "Despite widespread use as a culinary herb and dietary supplement, there are no published reports of serum aminotransferase elevations or clinically apparent liver injury attributable to oregano oil; LiverTox assigns it a hepatotoxicity likelihood score of E (unlikely cause of clinically apparent liver injury), though limited prospective human dosing data exist and the mechanism by which oregano extracts might theoretically cause liver injury is unknown.",
+        "Although oregano is widely used in food and supplements, there are no published reports of oregano oil causing liver damage. The NIH's LiverTox database rates it as an unlikely cause of liver injury. However, there is little data from careful studies of people taking it.\n\nTechnical detail: no reports of serum aminotransferase elevations or clinically apparent liver injury; LiverTox hepatotoxicity likelihood score E; mechanism of any potential liver injury is unknown.",
     },
     {
       category: "DOSAGE" as const,
       description:
-        "Oregano oil has not been approved as therapy for any disease or medical condition in the United States, but is available over-the-counter as a dietary supplement in multiple formulations (capsules, oil solutions). The typical recommended dose varies widely, in part based on the relative concentration of essential oils in the product.",
+        "Oregano oil is not approved to treat any disease or medical condition in the United States. It is sold over the counter as a supplement, as capsules or oil. The usual recommended dose varies a lot, partly because products contain different amounts of essential oil.",
     },
   ];
   for (const record of safetyRecords) {

@@ -35,7 +35,7 @@ async function main() {
       family: "Lamiaceae",
       genus: "Salvia",
       species: "rosmarinus",
-      partsUsed: "Leaf (fresh or dried); essential oil distilled from leaf/flowering top",
+      partsUsed: "The leaves, fresh or dried. The essential oil is distilled from the leaves and flowering tops.",
       contentStatus: "VERIFIED",
     },
   });
@@ -153,7 +153,7 @@ async function main() {
         herbId: rosemary.id,
         traditionId: mediterraneanFolkMedicine.id,
         notes:
-          "Native to the Mediterranean region; long-standing culinary and folk-medicinal use there for digestive complaints, muscle and joint pain, minor wounds, and circulation problems.",
+          "Native to the Mediterranean region, where it has long been used in cooking and in folk medicine for digestive complaints, muscle and joint pain, minor wounds and poor circulation.",
       },
     });
   }
@@ -163,19 +163,19 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "In traditional medicine, rosemary leaves have been used for their antibacterial properties and as a carminative and analgesic for muscle and joint pain. Essential oils and extracts from the flowers and leaves have traditionally been applied to minor wounds and rashes, and used for headache, dyspepsia, circulation problems, and as an expectorant, diuretic, and antispasmodic for renal colic. Widely used in Mediterranean cooking as well as folk medicine to prevent and treat colds, rheumatism, and muscle/joint pain.",
+        "In traditional medicine, rosemary leaves have been used to fight bacteria, relieve gas, and ease muscle and joint pain. Oils and extracts from the flowers and leaves have traditionally been put on minor wounds and rashes, and used for headache, indigestion and poor circulation, to loosen mucus, to increase urination, and to ease cramping pain from kidney stones. Rosemary is widely used in Mediterranean cooking, and in folk medicine to prevent and treat colds, rheumatism, and muscle and joint pain.\n\nTechnical detail: carminative, analgesic, expectorant, diuretic, antispasmodic for renal colic; dyspepsia.",
       sourceId: phytochemistryReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "In vitro and animal studies of rosemary's major constituents report: carnosic acid decreasing viability of several human cancer cell lines (HepG2, COLO 205, HL-60) and breast/colon cancer cells in a dose-dependent manner, inhibiting gastric lipase in Zucker rats with improved triglyceride profiles, and showing antiviral activity against human respiratory syncytial virus; carnosol showing cytotoxicity against various human cancer cell lines, antioxidant activity via inhibition of lipid peroxidation, and anti-inflammatory effects through COX-1/COX-2 inhibition; and rosmarinic acid showing cholinergic and neuroprotective effects, including inhibition of acetylcholinesterase and reduced pro-inflammatory cytokine expression. These are preclinical (cell-culture and animal) findings, not established clinical effects in humans.",
+        "Lab and animal studies of rosemary's main natural compounds report:\n- Carnosic acid slowed or killed several kinds of human cancer cells in the lab, including breast and colon cancer cells, improved blood fat levels in rats, and acted against a common respiratory virus (RSV).\n- Carnosol was toxic to several kinds of cancer cells, showed antioxidant activity, and reduced inflammation.\n- Rosmarinic acid protected nerve cells and blocked an enzyme that breaks down a memory-related brain chemical (acetylcholine).\nThese are lab and animal findings, not established effects in people.\n\nTechnical detail: carnosic acid: HepG2, COLO 205 and HL-60 cell lines, dose-dependent; inhibited gastric lipase in Zucker rats. Carnosol: inhibited lipid peroxidation; COX-1/COX-2 inhibition. Rosmarinic acid: cholinergic effects, acetylcholinesterase inhibition, reduced pro-inflammatory cytokines.",
       sourceId: phytochemistryReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A randomized controlled study of 144 healthy adults exposed to rosemary essential oil aroma, lavender essential oil aroma, or no odor while completing a computerized cognitive test battery found that the olfactory properties of rosemary produced measurable objective effects on cognitive task performance as well as subjective effects on mood, compared with lavender and controls.",
+        "In a study of 144 healthy adults doing computer tests of memory and thinking, people smelled rosemary oil, lavender oil or nothing. The scent of rosemary had measurable effects on how people performed on the tests, and on how they said they felt, compared with lavender and no scent.\n\nTechnical detail: randomized controlled study; objective effects on cognitive performance and subjective effects on mood.",
       sourceId: mossCognitionTrial.id,
     },
   ];
@@ -192,29 +192,29 @@ async function main() {
   const safetyRecords = [
     {
       category: "ALLERGY" as const,
-      description: "Should not be used by individuals with a known allergy (hypersensitivity) to rosemary leaf.",
+      description: "Don't use rosemary leaf if you are allergic to it.",
     },
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "Not recommended for use by children and adolescents under 12 years of age, or by people with bile duct obstruction, gallbladder inflammation, gallstones, or liver disease.",
+        "Rosemary medicines are not recommended for children under 12, or for people with a blocked bile duct, an inflamed gallbladder, gallstones or liver disease.",
     },
     {
       category: "PREGNANCY" as const,
-      description: "Not recommended for use during pregnancy, per the EU traditional-use herbal monograph assessment.",
+      description: "Rosemary medicines are not recommended during pregnancy, according to the European Medicines Agency's traditional-use assessment.",
     },
     {
       category: "BREASTFEEDING" as const,
-      description: "Not recommended for use during breastfeeding, per the EU traditional-use herbal monograph assessment.",
+      description: "Rosemary medicines are not recommended while breastfeeding, according to the European Medicines Agency's traditional-use assessment.",
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Hypersensitivity reactions, including contact dermatitis, may occur; frequency not known. Oral preparations should not be applied to broken or irritated skin.",
+        "Allergic reactions, including skin rashes from contact, can happen; how often is not known. Preparations meant to be taken by mouth should not be put on broken or irritated skin.",
     },
     {
       category: "DRUG_INTERACTION" as const,
-      description: "No interactions between rosemary leaf and other medicines have been described in the literature as of this assessment.",
+      description: "No interactions between rosemary leaf and medicines had been described in the research at the time of this assessment.",
     },
   ];
   for (const record of safetyRecords) {

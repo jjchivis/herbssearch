@@ -32,8 +32,8 @@ async function main() {
       genus: "Hypericum",
       species: "perforatum",
       nativeRange:
-        "Native to Europe, Western Asia, and North Africa; naturalized worldwide, including North America and Australia",
-      partsUsed: "Aerial parts (flowering tops, leaves, flowers)",
+        "Native to Europe, Western Asia and North Africa. It now grows wild in many places, including North America and Australia.",
+      partsUsed: "The parts above ground: flowering tops, leaves and flowers",
       contentStatus: "VERIFIED",
     },
   });
@@ -153,17 +153,17 @@ async function main() {
     {
       slug: "western-herbalism",
       notes:
-        "Historically used for depression, stomach ulcers, colds, and to aid wound healing; the common name is thought to derive from the plant's tendency to bloom around the feast of St. John the Baptist in late June.",
+        "Historically used for depression, stomach ulcers, colds and wound healing. The name probably comes from the plant blooming around the feast of St. John the Baptist in late June.",
     },
     {
       slug: "mediterranean-folk-medicine",
       notes:
-        "In ancient Greek medicine, used for snake or reptile bites, gastrointestinal distress, menstrual cramping, melancholy/depression, and wound healing.",
+        "In ancient Greek medicine, used for snake bites, stomach upset, menstrual cramps, low mood and wounds.",
     },
     {
       slug: "traditional-chinese-medicine",
       notes:
-        "Known as Guan Ye Lian Qiao (贯叶连翘); historically used for hematemesis, hemoptysis, metrorrhagia, irregular menstruation, traumatic hemorrhage, and wound care.",
+        "Known as Guan Ye Lian Qiao (贯叶连翘). Historically used for vomiting or coughing up blood, bleeding between periods, irregular periods, bleeding from injuries and wound care.\n\nTechnical detail: hematemesis, hemoptysis, metrorrhagia, traumatic hemorrhage.",
     },
   ];
   for (const t of traditionSlugs) {
@@ -183,37 +183,37 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "St. John's wort has been widely used in various systems of traditional medicine, including Greek, Islamic, and Chinese medicine, historically for depression, stomach ulcers, colds, and to aid wound healing.",
+        "St. John's wort has been widely used in Greek, Islamic and Chinese medicine. Historically, it has been used for depression, stomach ulcers, colds and wound healing.",
       sourceId: nccih.id,
     },
     {
       category: "TRADITIONAL" as const,
       summary:
-        "In Islamic traditional medicine it was documented for infectious wounds, burns, and bruises, and used as a diuretic and emmenagogue, an antipyretic, and a treatment for sciatica. In Traditional Chinese Medicine (as Guan Ye Lian Qiao) it was used for hematemesis, hemoptysis, metrorrhagia, irregular menstruation, traumatic hemorrhage, and wound care.",
+        "In Islamic traditional medicine, it was used for infected wounds, burns and bruises; to increase urination; to bring on menstruation; to lower fever; and for sciatica (nerve pain down the leg). In Traditional Chinese Medicine (as Guan Ye Lian Qiao), it was used for vomiting or coughing up blood, bleeding between periods, irregular periods, bleeding from injuries and wound care.\n\nTechnical detail: diuretic, emmenagogue, antipyretic; hematemesis, hemoptysis, metrorrhagia, traumatic hemorrhage.",
       sourceId: nobakhtReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Hyperforin activates the pregnane X receptor (PXR), which induces cytochrome P450 enzymes — including CYP3A4, CYP2C19, CYP2C9, CYP1A2, and CYP2D6 — as well as the drug efflux transporter P-glycoprotein (P-gp/ABCB1). The degree of CYP3A4 induction correlates with the hyperforin content of the preparation, providing the pharmacological basis for St. John's wort's extensive herb-drug interaction profile; low-hyperforin extracts show minimal induction while high-hyperforin products show significant induction.",
+        "This research explains St. John's wort's drug interactions. A compound in the plant called hyperforin switches on a sensor in the body that speeds up the liver enzymes and \"pump\" proteins that clear many medicines out of the body. The more hyperforin a product has, the stronger this effect. Low-hyperforin extracts showed little effect.\n\nTechnical detail: hyperforin activates the pregnane X receptor (PXR), inducing CYP3A4, CYP2C19, CYP2C9, CYP1A2 and CYP2D6, and the efflux transporter P-glycoprotein (P-gp/ABCB1); CYP3A4 induction correlates with hyperforin content.",
       sourceId: nobakhtReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A 2008 Cochrane systematic review of 29 randomized, double-blind trials (5,489 patients) found the hypericum extracts tested were superior to placebo in patients with major depression, similarly effective to standard antidepressants, and had fewer side effects than standard antidepressants. However, trials from German-speaking countries showed clearly more positive effects than trials from elsewhere, complicating interpretation, and the authors noted results apply only to the specific extracts tested, since marketed products vary considerably in pharmaceutical quality.",
+        "A 2008 Cochrane review pooled 29 high-quality trials with 5,489 people with major depression. The extracts tested worked better than placebo (a dummy pill), about as well as standard antidepressants, and caused fewer side effects. But trials from German-speaking countries were much more positive than trials elsewhere, which makes the results harder to interpret. The findings only apply to the specific extracts tested, and products on the shelf vary a lot in quality.\n\nTechnical detail: randomized, double-blind trials of hypericum extracts.",
       sourceId: cochraneReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Individual trial results have been mixed: a 12-week 2011 trial found neither St. John's wort nor citalopram outperformed placebo for minor depression; a 26-week 2012 trial found St. John's wort, sertraline, and placebo similarly effective for moderate major depression; and a 2002 trial found St. John's wort no more effective than placebo for moderate major depression. A 2008 review concluded it may be better than placebo and as effective as standard prescription antidepressants for mild-to-moderate major depression.",
+        "Individual trials have had mixed results:\n- 2011, 12 weeks, minor depression: neither St. John's wort nor the antidepressant citalopram did better than placebo.\n- 2012, 26 weeks, moderate major depression: St. John's wort, the antidepressant sertraline and placebo all worked about equally.\n- 2002, moderate major depression: St. John's wort did no better than placebo.\nA 2008 review concluded it may be better than placebo, and as effective as standard antidepressants, for mild to moderate major depression.",
       sourceId: nccihDepthDepression.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "Research suggests St. John's wort may be helpful for mild or moderate depression and appears about as effective as standard antidepressant medications for mild or moderate depression over periods of up to 12 weeks, though effectiveness for severe depression or use beyond 12 weeks remains uncertain. Limited evidence suggests possible benefit for menopausal hot flashes and somatic symptom disorder; minimal research supports its use for ADHD, irritable bowel syndrome, obsessive-compulsive disorder, premenstrual syndrome, smoking cessation, or topical wound healing.",
+        "St. John's wort may help mild or moderate depression, and seems about as effective as standard antidepressants over periods of up to 12 weeks. It's unclear whether it helps severe depression or works beyond 12 weeks. Limited evidence suggests it might help menopausal hot flashes and somatic symptom disorder (intense distress about physical symptoms). There is little research support for ADHD, irritable bowel syndrome, obsessive-compulsive disorder, PMS, quitting smoking or healing wounds on the skin.",
       sourceId: nccih.id,
     },
   ];
@@ -231,73 +231,73 @@ async function main() {
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "Hyperforin-driven activation of the pregnane X receptor (PXR) induces cytochrome P450 enzymes (CYP3A4, CYP2C19, CYP2C9, CYP1A2, CYP2D6) and the P-glycoprotein drug transporter, which is the pharmacological mechanism behind St. John's wort's broad drug-interaction profile; the strength of the interaction correlates with the hyperforin content of the specific product used.",
+        "Why St. John's wort interacts with so many medicines: a compound in it called hyperforin speeds up the liver enzymes and \"pump\" proteins that clear medicines from the body. The stronger the product's hyperforin content, the stronger the interaction.\n\nTechnical detail: PXR activation inducing CYP3A4, CYP2C19, CYP2C9, CYP1A2, CYP2D6 and P-glycoprotein.",
       sourceId: nobakhtReview.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "Can weaken the effects of many medicines, including antidepressants, birth control pills, cyclosporine, digoxin, oxycodone, HIV drugs such as indinavir and nevirapine, cancer medications such as irinotecan, imatinib, and docetaxel, warfarin, seizure medications such as phenytoin and carbamazepine, heart medications such as digoxin and ivabradine, and statins such as simvastatin.",
+        "St. John's wort can make many medicines work less well, including:\n- Antidepressants\n- Birth control pills\n- Transplant medicines such as cyclosporine\n- Heart medicines such as digoxin and ivabradine\n- The pain medicine oxycodone\n- HIV medicines such as indinavir and nevirapine\n- Cancer medicines such as irinotecan, imatinib and docetaxel\n- The blood thinner warfarin\n- Seizure medicines such as phenytoin and carbamazepine\n- Cholesterol medicines (statins) such as simvastatin",
       sourceId: nccih.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "Combining St. John's wort with certain antidepressants and other serotonergic medications can lead to a potentially life-threatening increase in serotonin (serotonin syndrome), with symptoms including agitation, diarrhea, fast heartbeat, high blood pressure, hallucinations, and elevated body temperature.",
+        "Taken with certain antidepressants or other medicines that raise serotonin, St. John's wort can cause serotonin to build up to dangerous, possibly life-threatening levels (serotonin syndrome). Signs include agitation, diarrhea, a fast heartbeat, high blood pressure, hallucinations and a high body temperature.",
       sourceId: nccihDepthDepression.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "Reduces blood levels of the immunosuppressants cyclosporine and tacrolimus through CYP3A4/P-gp induction, creating a risk of transplant organ rejection if co-administered without monitoring.",
+        "St. John's wort lowers blood levels of the transplant medicines cyclosporine and tacrolimus. This can lead to organ rejection if they're taken together without monitoring.\n\nTechnical detail: via CYP3A4/P-gp induction.",
       sourceId: nobakhtReview.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "Reduces the effectiveness of oral contraceptives, increasing the chance of ovulation and breakthrough bleeding.",
+        "St. John's wort makes birth control pills less effective, raising the chance of ovulation and breakthrough bleeding.",
       sourceId: nobakhtReview.id,
     },
     {
       category: "DRUG_INTERACTION" as const,
       description:
-        "A photosensitizing interaction has been observed when St. John's wort is combined with rifampicin, particularly in women.",
+        "Sun-sensitivity reactions have been seen when St. John's wort is combined with the antibiotic rifampicin, especially in women.",
       sourceId: nobakhtReview.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "Possible side effects include upset stomach, diarrhea, dry mouth, headache, fatigue, dizziness, confusion, sexual dysfunction, trouble sleeping, restlessness, and skin tingling.",
+        "Possible side effects include upset stomach, diarrhea, dry mouth, headache, tiredness, dizziness, confusion, sexual problems, trouble sleeping, restlessness and skin tingling.",
       sourceId: nccih.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "St. John's wort is a stimulant and may worsen feelings of anxiety in some people.",
+        "St. John's wort can be stimulating and may make anxiety worse in some people.",
       sourceId: nccihDepthDepression.id,
     },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
-        "When taken orally in large doses or applied topically, St. John's wort might cause severe skin reactions after sun exposure (photosensitivity).",
+        "Large doses by mouth, or use on the skin, might cause severe skin reactions after time in the sun (photosensitivity).",
       sourceId: nccih.id,
     },
     {
       category: "CONTRAINDICATION" as const,
       description:
-        "Case reports document worsening of psychotic symptoms in people with bipolar disorder or schizophrenia; St. John's wort should not be used to replace conventional care or to postpone seeing a health care provider about a mental health problem.",
+        "There are reports of St. John's wort worsening psychotic symptoms in people with bipolar disorder or schizophrenia. Don't use it to replace regular care, or as a reason to put off seeing a health professional about a mental health problem.",
       sourceId: nccihDepthDepression.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "May be unsafe to use during pregnancy because it may increase the risk of birth defects; there is little safety information on its use in pregnant women.",
+        "St. John's wort may be unsafe during pregnancy because it may raise the risk of birth defects. There is little safety information on its use by pregnant women.",
       sourceId: nccih.id,
     },
     {
       category: "BREASTFEEDING" as const,
       description:
-        "Breastfed infants of mothers taking St. John's wort may experience colic, drowsiness, and lethargy; little safety information exists overall for use while breastfeeding.",
+        "Babies of mothers taking St. John's wort may have colic, drowsiness or low energy. There is little safety information overall on its use while breastfeeding.",
       sourceId: nccih.id,
     },
   ];

@@ -28,8 +28,8 @@ async function main() {
       genus: "Coriandrum",
       species: "sativum",
       nativeRange:
-        "Eastern Mediterranean, Middle East, and North Caucasus (native range per Kew Plants of the World Online); long cultivated and naturalized worldwide.",
-      partsUsed: "Leaf (cilantro, fresh) and fruit/seed (coriander, dried)",
+        "Originally from the eastern Mediterranean, the Middle East and the North Caucasus (according to Kew's Plants of the World Online). It has long been grown, and now grows wild, around the world.",
+      partsUsed: "The fresh leaves (cilantro) and the dried seeds (coriander). Botanically, the \"seeds\" are tiny fruits.",
       contentStatus: "VERIFIED",
     },
   });
@@ -185,25 +185,25 @@ async function main() {
     {
       slug: "ayurveda",
       notes:
-        "Documented traditional use in India for gastrointestinal discomfort, rheumatoid arthritis, inflammation, and joint pain.",
+        "Traditionally used in India for digestive discomfort, rheumatoid arthritis, inflammation and joint pain.",
     },
     {
       slug: "traditional-chinese-medicine",
-      notes: "Traditionally used in Chinese medicine for influenza and to treat bad breath.",
+      notes: "Traditionally used in Chinese medicine for flu and bad breath.",
     },
     {
       slug: "mediterranean-folk-medicine",
       notes:
-        "Native to the eastern Mediterranean; used traditionally in Turkey as a digestive aid and appetizer.",
+        "Native to the eastern Mediterranean. Traditionally used in Turkey to aid digestion and boost appetite.",
     },
     {
       slug: "european-folk-medicine",
       notes:
-        "A minor ingredient (roughly 13-40% by weight, alongside fennel, caraway, chamomile, peppermint, or yarrow) in traditional German and Spanish herbal tea combinations for gastrointestinal complaints such as fullness and flatulence, per an EMA/HMPC assessment report; coriander itself has no standalone EU herbal monograph.",
+        "Coriander seed is a minor ingredient (about 13–40% by weight) in traditional German and Spanish herbal tea blends for digestive complaints such as fullness and gas, alongside fennel, caraway, chamomile, peppermint or yarrow. This is documented in a European Medicines Agency report. Coriander has no official European herbal profile of its own.",
     },
     {
       slug: "african-traditional-medicine",
-      notes: "Traditional use documented in Morocco as a diuretic and for diabetes and loss of appetite.",
+      notes: "Traditionally used in Morocco to increase urination, and for diabetes and poor appetite.",
     },
   ];
   for (const link of traditionLinks) {
@@ -223,37 +223,37 @@ async function main() {
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Coriander/cilantro has a long history of regionally varied traditional use: in India for gastrointestinal discomfort, rheumatoid arthritis, and joint pain; in Pakistan for flatulence, dysentery, diarrhea, and vomiting; in Iran for insomnia, anxiety, convulsion, and liver disease; in Turkey as a digestive aid; in Morocco as a diuretic and for diabetes and appetite loss; and in Traditional Chinese Medicine for influenza and bad breath.",
+        "People in many parts of the world have used coriander in folk medicine:\n- India: digestive discomfort, rheumatoid arthritis and joint pain\n- Pakistan: gas, dysentery, diarrhea and vomiting\n- Iran: trouble sleeping, anxiety, seizures and liver disease\n- Turkey: to aid digestion\n- Morocco: to increase urination, and for diabetes and poor appetite\n- Traditional Chinese Medicine: flu and bad breath",
       sourceId: mahleyuddinReview.id,
     },
     {
       category: "TRADITIONAL" as const,
       summary:
-        "Coriandri fructus (coriander fruit/seed) is not covered by its own EU herbal monograph, but appears as a minor ingredient (about 20-40 g per formulation) in traditional German and Spanish herbal tea combinations used for gastrointestinal complaints such as fullness and flatulence, as documented in an EMA/HMPC assessment report on digestive herbal tea combinations (Species digestivae).",
+        "Coriander seed doesn't have its own official European herbal profile. But it appears as a minor ingredient (about 20–40 g per blend) in traditional German and Spanish herbal teas for digestive complaints such as fullness and gas, as documented in a European Medicines Agency report on digestive tea blends.\n\nTechnical detail: Coriandri fructus; EMA/HMPC assessment report on Species digestivae.",
       sourceId: emaDigestivae.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "In animal and cell studies, coriander preparations show hypolipidemic activity (reduced triacylglycerol and total cholesterol in rats/rabbits), anti-atherogenic effects (inhibited foam-cell formation and oxidized-LDL accumulation), antihypertensive activity (ACE inhibition, IC50 = 28.91 micrograms/mL for a leaf extract; arterial relaxation), antiarrhythmic effects (normalized ECG, reduced cardiac injury biomarkers), and cardioprotective effects against isoproterenol-induced myocardial injury, alongside antidiabetic (alpha-amylase/alpha-glucosidase inhibition) and antioxidant activity.",
+        "In lab tests, coriander leaf extract blocked an enzyme (ACE) that raises blood pressure, and coriander blocked enzymes that turn starch into sugar and showed antioxidant activity. In rats and rabbits, coriander lowered blood fats (triglycerides and total cholesterol), relaxed arteries, helped keep heart rhythm normal and protected the heart from drug-induced injury.\n\nTechnical detail: hypolipidemic, anti-atherogenic (inhibited foam-cell formation and oxidized-LDL accumulation), antihypertensive (ACE inhibition, IC50 = 28.91 µg/mL for a leaf extract; arterial relaxation), antiarrhythmic (normalized ECG, reduced cardiac injury biomarkers), cardioprotective against isoproterenol-induced myocardial injury; alpha-amylase and alpha-glucosidase inhibition.",
       sourceId: mahleyuddinReview.id,
     },
     {
       category: "PRECLINICAL" as const,
       summary:
-        "Coriander essential oil (linalool-rich) shows broad-spectrum antimicrobial activity against gram-positive and gram-negative bacteria and fungi including Candida species, antioxidant activity in DPPH/FRAP assays, anthelmintic activity against Haemonchus contortus, hepatoprotective effects in CCl4-induced liver injury in rats, and anticonvulsant/anxiolytic effects in rodent seizure and elevated-plus-maze models. All of these findings are preclinical (in vitro or animal); the review reports no human clinical trials for these specific effects.",
+        "In lab tests, coriander essential oil slowed or killed many kinds of bacteria and fungi, including Candida yeast, and showed antioxidant activity. In animals, it protected rat livers from chemical damage, reduced seizures and anxious behavior in rodents, and acted against a parasitic worm. The review found no human trials for any of these effects.\n\nTechnical detail: linalool-rich oil; gram-positive and gram-negative bacteria; DPPH/FRAP assays; anthelmintic against Haemonchus contortus; hepatoprotective in CCl4-induced liver injury; anticonvulsant and anxiolytic in rodent seizure and elevated-plus-maze models.",
       sourceId: alKhayriReview.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "In a randomized, placebo-controlled trial of 86 university students given 500 mg of Coriandrum sativum seeds versus placebo, the coriander group showed statistically significant improvement in memory (Prospective and Retrospective Memory Questionnaire, p=0.006), reduced anxiety (p=0.04), reduced depression (Hospital Anxiety and Depression Scale, p=0.002), and improved sleep quality (Pittsburgh Sleep Quality Index, p=0.03) compared to placebo.",
+        "In one trial, 86 university students took either 500 mg of coriander seed or a placebo (a dummy pill). Compared with placebo, the coriander group reported better memory, less anxiety, less depression and better sleep on standard questionnaires.\n\nTechnical detail: randomized, placebo-controlled; memory (PRMQ) p=0.006; anxiety p=0.04; depression (HADS) p=0.002; sleep (PSQI) p=0.03.",
       sourceId: alqudahRct.id,
     },
     {
       category: "HUMAN_RESEARCH" as const,
       summary:
-        "A review identified only two small human studies of oral coriander seed: one reporting reduced blood pressure and cholesterol with 2 g/day of seed powder, and another reporting hypolipidemic and antioxidant effects with 5 g/day of powdered seed in people with type 2 diabetes. The review's authors describe cardiovascular human-trial evidence as sparse and state that further clinical trials are warranted.",
+        "Only two small studies have looked at coriander seed and heart health in people. One linked 2 g of seed powder a day to lower blood pressure and cholesterol. The other, in people with type 2 diabetes, found 5 g a day lowered blood fats and had antioxidant effects. The reviewers call this evidence sparse and say more trials are needed.",
       sourceId: mahleyuddinReview.id,
     },
   ];
@@ -271,19 +271,19 @@ async function main() {
     {
       category: "ALLERGY" as const,
       description:
-        "Coriander can cause food or skin allergy in sensitized individuals and shows cross-reactivity within the 'celery-birch-mugwort-spice syndrome': people with respiratory sensitization to mugwort (Artemisia) pollen may develop food allergy to coriander and related Apiaceae spices/vegetables (celery, carrot, parsley, fennel, cumin) via shared allergen epitopes (Bet v 1 homologues and profilins). Documented reactions include gastrointestinal symptoms (nausea, abdominal pain, vomiting, diarrhea) and, in some reported cases, anaphylaxis.",
+        "Coriander can cause food or skin allergies. People allergic to mugwort pollen are more likely to react to coriander and its relatives: celery, carrot, parsley, fennel and cumin. Reactions include nausea, stomach pain, vomiting and diarrhea. In rare reported cases, people have had a severe whole-body allergic reaction (anaphylaxis).\n\nTechnical detail: \"celery-birch-mugwort-spice syndrome\"; shared allergens are Bet v 1 homologues and profilins.",
       sourceId: bergheaAllergyReview.id,
     },
     {
       category: "TOXICITY" as const,
       description:
-        "A food-safety review concluded coriander essential oil is safe as a food ingredient based on its long history of culinary use without recorded adverse effects and on toxicology data: an oral no-observed-effect level (NOEL) of approximately 160 mg/kg/day in a 28-day rat study, non-mutagenicity of linalool (the oil's major constituent, about 70%), and no evidence of clastogenicity. The oil caused irritation in rabbit skin models but showed no sensitizing properties in human testing.",
+        "A food-safety review judged coriander essential oil safe as a food ingredient, based on its long history in cooking with no recorded problems and on lab testing. It irritated skin in rabbit tests but did not cause skin allergies in human testing.\n\nTechnical detail: no-observed-effect level about 160 mg/kg/day (28-day rat study); linalool (about 70% of the oil) is not mutagenic; no evidence of clastogenicity.",
       sourceId: burdockSafetyAssessment.id,
     },
     {
       category: "PREGNANCY" as const,
       description:
-        "In rats, aqueous coriander seed extract given at 250-500 mg/kg orally produced a dose-dependent anti-implantation effect early in pregnancy (linked to reduced serum progesterone on day 5) but did not cause complete infertility. When the same extract was given later in pregnancy (days 8-12 and 12-20), it did not produce abortifacient activity, and no abnormalities in fetal weight, length, or organ development were observed. These are animal-study findings at concentrated, pharmacological doses, not human safety data on culinary-level coriander use.",
+        "In rats, a strong water-based seed extract made it harder for a fertilized egg to implant early in pregnancy, but did not cause complete infertility. Given later in pregnancy, it did not cause miscarriage or affect how the babies developed. These were concentrated doses in animals, not the amounts used in cooking, and there is no human data.\n\nTechnical detail: 250–500 mg/kg orally; dose-dependent anti-implantation effect linked to lower serum progesterone on day 5; no abortifacient activity on days 8–12 or 12–20; no abnormalities in fetal weight, length or organ development.",
       sourceId: alSaidAntifertilityStudy.id,
     },
   ];

@@ -142,16 +142,26 @@ professional care.
 
 ## Adding a new herb: checklist
 
-1. Add the herb's basic row to `prisma/seed.ts` and a `prisma/populate-<herb>.ts`
-   script, following an existing one such as `populate-fennel.ts`.
-2. Research from verified sources first; write the content in plain language from
+1. Add the herb's basic row to `prisma/seed.ts` (summary, uses, properties,
+   cautions, `imageUrl`) and put its illustration in `public/herbs/<name>.jpg`.
+2. Create `prisma/populate-<herb>.ts` as a data-only file that calls `run()` from
+   `prisma/lib/populate-herb.ts` (see `populate-hawthorn.ts`). Every evidence and
+   safety entry names the source it comes from.
+3. Research from verified sources first; write the content in plain language from
    the start, using the conventions above.
-3. Check each rewritten sentence against its source: nothing removed, nothing added,
-   the same level of certainty.
-4. Run `npm run content:check` and fix what it flags.
-5. If the herb's plant family is new, add it to `FAMILY_COMMON_NAMES`.
-6. Run the populate script, then open the page locally and read it top to bottom
-   on a phone-width screen.
+4. Link the herb to symptom-search topics with `symptoms: [{ slug, notes }]`. The
+   note says plainly whether the link is traditional use or research, and what the
+   research found, even if it found no effect. New topics go in
+   `prisma/seed-taxonomy.ts` with a description that says when to get medical care.
+5. Check each sentence against its source: nothing removed, nothing added, the same
+   level of certainty. Leave out anything the sources don't cover (for example a
+   native range or pregnancy advice) rather than filling the gap.
+6. Run `npm run content:check` and fix what it flags.
+7. If the herb's plant family is new, add it to `FAMILY_COMMON_NAMES`.
+8. Back up (`npx tsx prisma/backup-content.ts backups/<file>.json`), then run
+   `npx tsx prisma/seed-taxonomy.ts`, `npx tsx --env-file=.env prisma/seed.ts` and
+   the populate script. Open the page locally and read it top to bottom on a
+   phone-width screen.
 
 ## Final test
 

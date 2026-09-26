@@ -26,7 +26,9 @@ const bodySystems = [
   { name: "General Wellness", slug: "general-wellness", description: "General health and wellbeing." },
 ];
 
-const symptoms: { name: string; slug: string; bodySystem: string }[] = [
+// Descriptions are shown to visitors. For symptoms that can signal something
+// serious, say when to get medical care (docs/CONTENT_STYLE.md, "Symptom search").
+const symptoms: { name: string; slug: string; bodySystem: string; description?: string }[] = [
   { name: "Bloating", slug: "bloating", bodySystem: "digestive" },
   { name: "Indigestion", slug: "indigestion", bodySystem: "digestive" },
   { name: "Occasional Sleeplessness", slug: "occasional-sleeplessness", bodySystem: "nervous-system" },
@@ -39,6 +41,48 @@ const symptoms: { name: string; slug: string; bodySystem: string }[] = [
   { name: "Occasional Nausea", slug: "occasional-nausea", bodySystem: "digestive" },
   { name: "Seasonal Immune Support", slug: "seasonal-immune-support", bodySystem: "immune" },
   { name: "Headache", slug: "headache", bodySystem: "nervous-system" },
+  {
+    name: "High Blood Pressure",
+    slug: "high-blood-pressure",
+    bodySystem: "cardiovascular",
+    description:
+      "Blood pressure that stays higher than normal. It often causes no symptoms but raises the risk of heart attack and stroke, so it needs diagnosis and regular checks by a health professional. Don't stop or replace prescribed blood pressure medicine with herbs.",
+  },
+  {
+    name: "High Cholesterol",
+    slug: "high-cholesterol",
+    bodySystem: "cardiovascular",
+    description:
+      "Higher-than-healthy levels of fats such as LDL (\"bad\") cholesterol in the blood, which can build up in the arteries. It's found with a blood test; talk to a health professional about how to manage it.",
+  },
+  {
+    name: "Poor Circulation",
+    slug: "poor-circulation",
+    bodySystem: "cardiovascular",
+    description:
+      "Cold hands and feet, or heavy, tired legs, that can come with minor circulation problems. Leg pain when walking, sudden swelling, or changes in skin color need medical attention.",
+  },
+  {
+    name: "Heart Palpitations",
+    slug: "heart-palpitations",
+    bodySystem: "cardiovascular",
+    description:
+      "A heartbeat you can notice, which may feel fast, fluttering or pounding. It's often harmless, for example with stress, but get medical help right away if it comes with chest pain, fainting or shortness of breath.",
+  },
+  {
+    name: "Heart Failure",
+    slug: "heart-failure",
+    bodySystem: "cardiovascular",
+    description:
+      "A long-term condition in which the heart doesn't pump as well as it should. It must be treated by a doctor. Herbs studied for it have only been tested alongside standard treatment.",
+  },
+  {
+    name: "High Blood Sugar",
+    slug: "high-blood-sugar",
+    bodySystem: "metabolic",
+    description:
+      "Blood sugar (glucose) above the healthy range, as in diabetes or prediabetes. It needs diagnosis and monitoring by a health professional. Some herbs may add to the effects of diabetes medicines.",
+  },
 ];
 
 // Descriptions double as the plain-language definitions shown to visitors.
@@ -66,6 +110,7 @@ const traditions = [
   { name: "Mediterranean Folk Medicine", slug: "mediterranean-folk-medicine" },
   { name: "European Folk Medicine", slug: "european-folk-medicine" },
   { name: "African Traditional Medicine", slug: "african-traditional-medicine" },
+  { name: "Caribbean Folk Medicine", slug: "caribbean-folk-medicine" },
 ];
 
 // A small, deliberately conservative starter list of well-established
@@ -99,8 +144,8 @@ async function main() {
     const bodySystem = await prisma.bodySystem.findUnique({ where: { slug: s.bodySystem } });
     await prisma.symptom.upsert({
       where: { slug: s.slug },
-      update: { name: s.name, bodySystemId: bodySystem?.id },
-      create: { name: s.name, slug: s.slug, bodySystemId: bodySystem?.id },
+      update: { name: s.name, description: s.description, bodySystemId: bodySystem?.id },
+      create: { name: s.name, slug: s.slug, description: s.description, bodySystemId: bodySystem?.id },
     });
   }
   console.log(`Seeded ${symptoms.length} symptoms.`);

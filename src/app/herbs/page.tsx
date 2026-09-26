@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion/fade-in";
 import { HerbGrid, HerbCardMotion } from "@/components/motion/herb-grid";
 import { HerbImage } from "@/components/herb-image";
+import { BODY_SYSTEM_NOTES } from "@/lib/plain-language";
 
 export const metadata: Metadata = {
   title: "The Herbal Library",
@@ -46,10 +47,20 @@ export default async function HerbLibraryPage({
                   { scientificName: { contains: q, mode: "insensitive" } },
                   { uses: { contains: q, mode: "insensitive" } },
                   { summary: { contains: q, mode: "insensitive" } },
+                  // Other names (e.g. "lingzhi", "bitter melon") and symptom topics (e.g. "blood pressure")
+                  { synonyms: { some: { name: { contains: q, mode: "insensitive" } } } },
+                  { symptoms: { some: { symptom: { name: { contains: q, mode: "insensitive" } } } } },
                 ],
               }
             : {},
         ],
+      },
+      // Topics shown on each card when browsing a body system (none otherwise).
+      include: {
+        symptoms: {
+          where: bodySystem ? { symptom: { bodySystem: { slug: bodySystem } } } : { id: { in: [] } },
+          include: { symptom: true },
+        },
       },
       orderBy: { name: "asc" },
     }),
@@ -63,6 +74,7 @@ export default async function HerbLibraryPage({
 
   const isFiltered = Boolean(q || category || bodySystem);
   const activeBodySystem = bodySystems.find((b) => b.slug === bodySystem);
+  const bodySystemNote = activeBodySystem ? BODY_SYSTEM_NOTES[activeBodySystem.slug] : undefined;
 
   return (
     <main className="flex flex-1 flex-col">
@@ -137,6 +149,14 @@ export default async function HerbLibraryPage({
                 </a>
               </div>
             )}
+            {bodySystemNote && (
+              <p
+                role="note"
+                className="max-w-2xl rounded-xl border border-[var(--caution-border)] bg-[var(--caution-bg)] p-4 text-sm leading-relaxed text-[var(--caution)]"
+              >
+                {bodySystemNote}
+              </p>
+            )}
           </FadeIn>
         </div>
       </section>
@@ -170,6 +190,11 @@ export default async function HerbLibraryPage({
                 {herb.scientificName}
               </p>
               <p className="text-sm text-[var(--foreground)]/80">{herb.summary}</p>
+              {herb.symptoms.length > 0 && (
+                <p className="font-mono text-[11px] tracking-wide text-[var(--highlight)] uppercase">
+                  {herb.symptoms.map((hs) => hs.symptom.name).join(" · ")}
+                </p>
+              )}
             </HerbCardMotion>
           ))}
         </HerbGrid>

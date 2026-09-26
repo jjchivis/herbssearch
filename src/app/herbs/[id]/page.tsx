@@ -59,6 +59,7 @@ export default async function HerbDetailPage({
     where: { id },
     include: {
       synonyms: true,
+      symptoms: { include: { symptom: true }, orderBy: { symptom: { name: "asc" } } },
       constituents: { include: { constituent: true } },
       preparations: { include: { preparation: true } },
       actions: { include: { action: true, source: true } },
@@ -207,6 +208,34 @@ export default async function HerbDetailPage({
         </h2>
         <TagList tags={properties} />
       </section>
+
+      {/* HEALTH TOPICS (symptom search) */}
+      {herbData.symptoms.length > 0 && (
+        <section className="flex flex-col gap-3">
+          <h2 className="font-serif text-xl text-[var(--foreground)]">Health topics</h2>
+          <p className="text-sm text-[var(--muted)]">
+            Where {herbData.name} appears in symptom search, and why. Being listed doesn&apos;t mean it&apos;s a
+            proven treatment.
+          </p>
+          <ul className="flex flex-col gap-3">
+            {herbData.symptoms.map((hs) => (
+              <li key={hs.id} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4">
+                <Link
+                  href={`/herbs?q=${encodeURIComponent(hs.symptom.name)}`}
+                  className="font-medium text-[var(--foreground)] hover:text-[var(--highlight)]"
+                >
+                  {hs.symptom.name}
+                </Link>
+                {hs.notes && (
+                  <div className="mt-1 text-sm text-[var(--muted)]">
+                    <PlainText glossaryUsed={glossaryUsed} text={hs.notes} />
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* TRADITIONS */}
       {herbData.traditions.length > 0 && (

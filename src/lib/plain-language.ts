@@ -12,14 +12,32 @@ export function splitTechnical(text: string): { plain: string; technical: string
 
 // Everyday names for plant families, shown next to the botanical name.
 export const FAMILY_COMMON_NAMES: Record<string, string> = {
+  Amaryllidaceae: "the amaryllis and onion family",
   Apiaceae: "the carrot and parsley family",
+  Araliaceae: "the ginseng family",
   Asteraceae: "the daisy family",
   Caprifoliaceae: "the honeysuckle family",
+  Cucurbitaceae: "the gourd and cucumber family",
+  Ginkgoaceae: "the ginkgo family",
   Hypericaceae: "the St. John's wort family",
   Lamiaceae: "the mint family",
+  Lauraceae: "the laurel family",
+  Linaceae: "the flax family",
+  Malvaceae: "the mallow family",
+  Polyporaceae: "a family of bracket fungi (mushrooms that grow on wood)",
+  Rosaceae: "the rose family",
   Solanaceae: "the nightshade family",
   Urticaceae: "the nettle family",
   Zingiberaceae: "the ginger family",
+};
+
+// Shown above the herb list when a visitor browses a body system whose
+// conditions can be serious (docs/CONTENT_STYLE.md, "Symptom search").
+export const BODY_SYSTEM_NOTES: Record<string, string> = {
+  cardiovascular:
+    "Heart and blood vessel problems can be serious. These herbs are listed because people have traditionally used them or researchers have studied them, not because they're proven treatments. Don't use them in place of medicine your doctor prescribed, and check with your doctor or pharmacist first: several can interact with heart, blood pressure and blood-thinning medicines.",
+  metabolic:
+    "Blood sugar problems such as diabetes need diagnosis and care from a health professional. Some of these herbs may add to the effects of diabetes medicines, so check with your doctor or pharmacist before using them.",
 };
 
 // Terms that can't always be avoided. The first use in each block of herb text
@@ -43,6 +61,9 @@ export const GLOSSARY: Record<string, string> = {
     "A concentrated herbal preparation made by soaking plant material in alcohol, glycerin or another liquid.",
   "Commission E": "An expert panel set up by the German government to assess the safety and use of herbal medicines.",
   rhizome: "An underground stem that grows sideways and sends out roots, like ginger or turmeric.",
+  atherosclerosis: "A buildup of fatty deposits (plaque) inside the arteries that narrows and hardens them.",
+  "mm Hg": "Millimeters of mercury, the unit blood pressure is measured in.",
+  "LDL": "Low-density lipoprotein, often called \"bad\" cholesterol because high levels can build up in the arteries.",
 };
 
 export const EVIDENCE_LABELS: Record<string, string> = {

@@ -248,7 +248,9 @@ async function main() {
   ];
   for (const entry of evidenceEntries) {
     const existing = await prisma.evidenceEntry.findFirst({
-      where: { herbId: fennel.id, category: entry.category, sourceId: entry.sourceId },
+      // Match on summary too: one source can back several entries in the same
+      // category (two Badgujar et al. preclinical entries here).
+      where: { herbId: fennel.id, category: entry.category, sourceId: entry.sourceId, summary: entry.summary },
     });
     if (!existing) {
       await prisma.evidenceEntry.create({ data: { herbId: fennel.id, ...entry } });

@@ -31,8 +31,20 @@ const bodySystems = [
 const symptoms: { name: string; slug: string; bodySystem: string; description?: string }[] = [
   { name: "Bloating", slug: "bloating", bodySystem: "digestive" },
   { name: "Indigestion", slug: "indigestion", bodySystem: "digestive" },
-  { name: "Occasional Sleeplessness", slug: "occasional-sleeplessness", bodySystem: "nervous-system" },
-  { name: "Stress", slug: "stress", bodySystem: "nervous-system" },
+  {
+    name: "Sleep Problems (Insomnia)",
+    slug: "occasional-sleeplessness",
+    bodySystem: "nervous-system",
+    description:
+      "Trouble falling asleep or staying asleep. See a doctor if sleep problems last for weeks or affect your daily life.",
+  },
+  {
+    name: "Stress",
+    slug: "stress",
+    bodySystem: "nervous-system",
+    description:
+      "Feeling tense, pressured or overwhelmed. If stress feels unmanageable, or comes with low mood or thoughts of harming yourself, talk to a health professional straight away.",
+  },
   { name: "Fatigue", slug: "fatigue", bodySystem: "general-wellness" },
   { name: "Cough", slug: "cough", bodySystem: "respiratory" },
   {
@@ -192,6 +204,27 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
     bodySystem: "skin",
     description:
       "Tiny parasites that live on the scalp (lice) or burrow into the skin (scabies), causing itching. A health professional or pharmacist can confirm the problem and recommend treatment.",
+  },
+  {
+    name: "Anxiety",
+    slug: "anxiety",
+    bodySystem: "nervous-system",
+    description:
+      "Ongoing worry, nervousness or unease. Anxiety can be treated; see a health professional if it is severe, doesn't go away, or gets in the way of daily life. Don't stop prescribed anxiety medicines without advice.",
+  },
+  {
+    name: "Memory and Thinking",
+    slug: "memory-and-thinking",
+    bodySystem: "nervous-system",
+    description:
+      "Concerns about memory, focus or mental sharpness. Memory problems that get worse over time should be checked by a doctor.",
+  },
+  {
+    name: "Asthma and Wheezing",
+    slug: "asthma-and-wheezing",
+    bodySystem: "respiratory",
+    description:
+      "Asthma needs diagnosis and treatment by a health professional. Never use herbs in place of your inhaler. Get emergency help for severe breathlessness, trouble speaking, or blue lips.",
   },
   {
     name: "Kidney Stones",

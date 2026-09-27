@@ -25,13 +25,16 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Equisetaceae: "the horsetail family",
   Fabaceae: "the pea and bean family",
   Ginkgoaceae: "the ginkgo family",
+  Hericiaceae: "a family of tooth fungi (mushrooms with hanging spines)",
   Hypericaceae: "the St. John's wort family",
   Lamiaceae: "the mint family",
   Lauraceae: "the laurel family",
   Linaceae: "the flax family",
   Malvaceae: "the mallow family",
   Meliaceae: "the mahogany family",
+  Passifloraceae: "the passionflower family",
   Phyllanthaceae: "the leafflower family",
+  Piperaceae: "the pepper family",
   Plantaginaceae: "the plantain family",
   Polyporaceae: "a family of bracket fungi (mushrooms that grow on wood)",
   Primulaceae: "the primrose family",
@@ -55,6 +58,10 @@ export const BODY_SYSTEM_NOTES: Record<string, string> = {
     "Liver and gallbladder problems need diagnosis and care from a health professional. These herbs are listed because of traditional use or research, not because they're proven treatments. Some herbs and supplements can themselves harm the liver, and several shouldn't be used if you have gallstones. Check with your doctor or pharmacist first, especially if you have liver disease or take regular medicines.",
   skin:
     "Most minor skin problems can be cared for at home, but see a doctor for deep, infected or slow-healing wounds, serious burns, or rashes that come with a fever. Several of these herbs can cause skin allergies, especially plants in the daisy family such as calendula and mugwort. These herbs are listed because of traditional use or research, not because they're proven treatments.",
+  "nervous-system":
+    "Several of these herbs can make you sleepy and add to the effects of alcohol and of sleep or anxiety medicines, so don't drive if they make you drowsy. Some, such as kava, have been linked to liver damage. For ongoing anxiety, low mood or sleep problems, talk to a health professional. These herbs are listed because of traditional use or research, not because they're proven treatments.",
+  respiratory:
+    "Get emergency help for severe breathlessness, chest pain or blue lips. Don't use herbs in place of asthma inhalers or other prescribed medicines. These herbs are listed because of traditional use or research, not because they're proven treatments.",
   metabolic:
     "Blood sugar problems such as diabetes need diagnosis and care from a health professional. Some of these herbs may add to the effects of diabetes medicines, so check with your doctor or pharmacist before using them.",
 };

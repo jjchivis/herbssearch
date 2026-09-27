@@ -36,7 +36,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
   { name: "Fatigue", slug: "fatigue", bodySystem: "general-wellness" },
   { name: "Cough", slug: "cough", bodySystem: "respiratory" },
   { name: "Skin Irritation", slug: "skin-irritation", bodySystem: "skin" },
-  { name: "Menstrual Discomfort", slug: "menstrual-discomfort", bodySystem: "reproductive" },
+  {
+    name: "Menstrual Discomfort",
+    slug: "menstrual-discomfort",
+    bodySystem: "reproductive",
+    description:
+      "Period pain, cramps and related discomfort. See a doctor for severe pain, very heavy bleeding, bleeding between periods, or any bleeding after menopause.",
+  },
   { name: "Joint Discomfort", slug: "joint-discomfort", bodySystem: "musculoskeletal" },
   { name: "Occasional Nausea", slug: "occasional-nausea", bodySystem: "digestive" },
   { name: "Seasonal Immune Support", slug: "seasonal-immune-support", bodySystem: "immune" },
@@ -75,6 +81,48 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
     bodySystem: "cardiovascular",
     description:
       "A long-term condition in which the heart doesn't pump as well as it should. It must be treated by a doctor. Herbs studied for it have only been tested alongside standard treatment.",
+  },
+  {
+    name: "PMS (Premenstrual Syndrome)",
+    slug: "premenstrual-syndrome",
+    bodySystem: "reproductive",
+    description:
+      "Physical and emotional symptoms, such as breast tenderness, bloating, irritability and mood changes, in the days before a period. See a doctor if symptoms are severe or get in the way of daily life.",
+  },
+  {
+    name: "Menopause Symptoms",
+    slug: "menopause-symptoms",
+    bodySystem: "reproductive",
+    description:
+      "Hot flashes, night sweats and other changes around menopause. Talk to a health professional about your options, especially if you've had a hormone-sensitive cancer. Any bleeding after menopause needs medical attention.",
+  },
+  {
+    name: "Fertility",
+    slug: "fertility",
+    bodySystem: "reproductive",
+    description:
+      "Trying to conceive, or concerns about fertility in men or women. Fertility problems have many possible causes and need a medical assessment. Herbs are not a reliable way to prevent pregnancy, and some can harm a pregnancy.",
+  },
+  {
+    name: "Sexual Health",
+    slug: "sexual-health",
+    bodySystem: "reproductive",
+    description:
+      "Low sex drive or problems with sexual function in men or women. These can have medical causes, including medicines, that are worth checking with a health professional.",
+  },
+  {
+    name: "Breast Milk Supply",
+    slug: "breast-milk-supply",
+    bodySystem: "reproductive",
+    description:
+      "Concerns about making enough breast milk. A lactation consultant or health professional can first check things like feeding frequency and the baby's latch, which often make the biggest difference.",
+  },
+  {
+    name: "Pregnancy and Childbirth",
+    slug: "pregnancy-and-childbirth",
+    bodySystem: "reproductive",
+    description:
+      "Many herbs aren't safe in pregnancy. Herbs are listed here either because they're traditionally used in pregnancy or because they carry specific pregnancy warnings. Always check with your midwife or doctor before using any herb while pregnant.",
   },
   {
     name: "High Blood Sugar",

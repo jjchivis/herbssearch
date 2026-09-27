@@ -15,9 +15,12 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Amaryllidaceae: "the amaryllis and onion family",
   Apiaceae: "the carrot and parsley family",
   Araliaceae: "the ginseng family",
+  Asparagaceae: "the asparagus family",
   Asteraceae: "the daisy family",
+  Brassicaceae: "the mustard and cabbage family",
   Caprifoliaceae: "the honeysuckle family",
   Cucurbitaceae: "the gourd and cucumber family",
+  Fabaceae: "the pea and bean family",
   Ginkgoaceae: "the ginkgo family",
   Hypericaceae: "the St. John's wort family",
   Lamiaceae: "the mint family",
@@ -25,6 +28,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Linaceae: "the flax family",
   Malvaceae: "the mallow family",
   Polyporaceae: "a family of bracket fungi (mushrooms that grow on wood)",
+  Ranunculaceae: "the buttercup family",
   Rosaceae: "the rose family",
   Solanaceae: "the nightshade family",
   Urticaceae: "the nettle family",
@@ -36,6 +40,8 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
 export const BODY_SYSTEM_NOTES: Record<string, string> = {
   cardiovascular:
     "Heart and blood vessel problems can be serious. These herbs are listed because people have traditionally used them or researchers have studied them, not because they're proven treatments. Don't use them in place of medicine your doctor prescribed, and check with your doctor or pharmacist first: several can interact with heart, blood pressure and blood-thinning medicines.",
+  reproductive:
+    "Many herbs affect hormones, and several aren't safe during pregnancy or breastfeeding or with hormone-sensitive cancers. These herbs are listed because of traditional use or research, not because they're proven treatments. Check with your doctor, midwife or pharmacist before using them, especially if you're pregnant, trying to conceive or taking hormonal medicines.",
   metabolic:
     "Blood sugar problems such as diabetes need diagnosis and care from a health professional. Some of these herbs may add to the effects of diabetes medicines, so check with your doctor or pharmacist before using them.",
 };

@@ -4,8 +4,9 @@ import { run } from "./lib/populate-herb";
 // of herbal remedy use in western Jamaica (Owusu et al. 2020), a Cochrane
 // review in type 2 diabetes (Ooi et al. 2012), Memorial Sloan Kettering's
 // About Herbs entry on bitter melon, and a 2023 review (Richter et al., Int J
-// Mol Sci). Family per GBIF / Catalogue of Life. No sourced native range was
-// found, so none is given.
+// Mol Sci), plus a 2022 safety review (Çiçek, Front Pharmacol) and a review
+// of Jamaican medicinal plants (Lowe et al. 2021, source of the native range
+// and Jamaican preparation). Family per GBIF / Catalogue of Life.
 
 run({
   name: "Cerasee",
@@ -13,7 +14,9 @@ run({
     family: "Cucurbitaceae",
     genus: "Momordica",
     species: "charantia",
-    partsUsed: "Different parts of the plant are used in herbal preparations. The fruit is known as bitter melon; its seeds are toxic.",
+    nativeRange: "Native to Africa and the Middle East; cultivated in Jamaica",
+    partsUsed:
+      "Different parts of the plant are used in herbal preparations. In Jamaica, cerasee tea is made from the leaves and stems. The fruit is known as bitter melon; its seeds are toxic.",
   },
   sources: {
     owusu: {
@@ -60,6 +63,30 @@ run({
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
+    cicek: {
+      title: "Momordica charantia L.—Diabetes-Related Bioactivities, Quality Control, and Safety Considerations",
+      author: "Çiçek SS",
+      journal: "Frontiers in Pharmacology",
+      organization: "Frontiers in Pharmacology",
+      publicationDate: "2022-01-01",
+      doi: "10.3389/fphar.2022.904643",
+      pmid: "35656300",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9152207/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
+    lowe: {
+      title: "Antiviral Activity of Jamaican Medicinal Plants and Isolated Bioactive Compounds",
+      author: "Lowe H, Steele B, Bryant J, Fouad E, Toyang N, Ngwa W",
+      journal: "Molecules",
+      organization: "Molecules",
+      publicationDate: "2021-01-01",
+      doi: "10.3390/molecules26030607",
+      pmid: "33503834",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7865499/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
   },
   synonyms: [
     { name: "Bitter Melon", type: "COMMON_NAME" },
@@ -98,6 +125,18 @@ run({
       source: "mskcc",
     },
     {
+      category: "TRADITIONAL",
+      summary:
+        "In Jamaica, cerasee is also an anecdotal remedy for colds and flu: a handful of leaves and stems is steeped in a cup of water for about 10 minutes and sweetened as desired.",
+      source: "lowe",
+    },
+    {
+      category: "PRECLINICAL",
+      summary:
+        "In animal studies, fresh bitter melon leaf juice reduced fertility in female mice, and fresh fruit juice caused bleeding from the womb in pregnant rats and rabbits. Some of its natural compounds (triterpenoids) act like the hormone estrogen.",
+      source: "cicek",
+    },
+    {
       category: "PRECLINICAL",
       summary:
         "Lab and animal studies suggest natural compounds in bitter melon may lower blood sugar and increase insulin release. More studies are needed to show whether this happens in people.",
@@ -123,6 +162,12 @@ run({
   ],
   safety: [
     {
+      category: "PREGNANCY",
+      description:
+        "A 2022 safety review advises avoiding bitter melon preparations during pregnancy, because they caused bleeding from the womb in pregnant animals and some of their compounds act like estrogen.",
+      source: "cicek",
+    },
+    {
       category: "DRUG_INTERACTION",
       description:
         "Bitter melon may add to the effects of insulin and other diabetes medicines. It may also make some medicines more toxic by interfering with the proteins that clear them from the body.\n\nTechnical detail: P-glycoprotein substrates (increased toxicity); inhibits CYP2C9.",
@@ -145,6 +190,11 @@ run({
     },
   ],
   symptoms: [
+    {
+      slug: "pregnancy-and-childbirth",
+      notes: "Avoid during pregnancy: in animal studies it caused bleeding from the womb, and it may cause birth defects.",
+    },
+    { slug: "fertility", notes: "Not a fertility herb. In animal studies, bitter melon leaf juice reduced fertility in female mice." },
     { slug: "high-blood-pressure", notes: "A common traditional remedy for high blood pressure in Jamaica. This use hasn't been confirmed by research." },
     {
       slug: "high-blood-sugar",

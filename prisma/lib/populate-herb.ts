@@ -29,7 +29,9 @@ type SafetyCategory =
 
 export type HerbContent = {
   name: string;
-  profile: {
+  // Omit profile to add entries to an existing herb without touching its
+  // botanical fields (see populate-reproductive-links.ts).
+  profile?: {
     family: string;
     genus: string;
     species: string;
@@ -54,8 +56,8 @@ export type HerbContent = {
   synonyms?: { name: string; type: "SCIENTIFIC_SYNONYM" | "COMMON_NAME" | "REGIONAL_NAME" | "TRADITIONAL_NAME"; region?: string }[];
   constituents?: { name: string; slug: string; type: string }[];
   traditions?: { slug: string; notes: string }[];
-  evidence: { category: "TRADITIONAL" | "PRECLINICAL" | "HUMAN_RESEARCH"; summary: string; source: string }[];
-  safety: { category: SafetyCategory; description: string; source: string }[];
+  evidence?: { category: "TRADITIONAL" | "PRECLINICAL" | "HUMAN_RESEARCH"; summary: string; source: string }[];
+  safety?: { category: SafetyCategory; description: string; source: string }[];
   // Links to symptom-search topics (see prisma/seed-taxonomy.ts), with a plain
   // note on whether the link is traditional use or research.
   symptoms?: { slug: string; notes: string }[];
@@ -67,10 +69,12 @@ async function populateHerb(c: HerbContent) {
   const herb = await prisma.herb.findUniqueOrThrow({ where: { name: c.name } });
   const herbId = herb.id;
 
-  await prisma.herb.update({
-    where: { id: herbId },
-    data: { ...c.profile, contentStatus: "VERIFIED" },
-  });
+  if (c.profile) {
+    await prisma.herb.update({
+      where: { id: herbId },
+      data: { ...c.profile, contentStatus: "VERIFIED" },
+    });
+  }
 
   const sourceIds: Record<string, string> = {};
   for (const [key, s] of Object.entries(c.sources)) {
@@ -110,13 +114,13 @@ async function populateHerb(c: HerbContent) {
     else if (existing.notes !== t.notes) await prisma.herbTradition.update({ where: { id: existing.id }, data: { notes: t.notes } });
   }
 
-  for (const e of c.evidence) {
+  for (const e of c.evidence ?? []) {
     const data = { herbId, category: e.category, summary: e.summary, sourceId: sourceId(e.source) };
     const existing = await prisma.evidenceEntry.findFirst({ where: data });
     if (!existing) await prisma.evidenceEntry.create({ data });
   }
 
-  for (const s of c.safety) {
+  for (const s of c.safety ?? []) {
     const data = { herbId, category: s.category, description: s.description, sourceId: sourceId(s.source) };
     const existing = await prisma.safetyRecord.findFirst({ where: data });
     if (!existing) await prisma.safetyRecord.create({ data });
@@ -131,11 +135,17 @@ async function populateHerb(c: HerbContent) {
     });
   }
 
-  console.log(`${c.name} populated from ${Object.keys(c.sources).length} verified sources.`);
+  console.log(
+    c.profile
+      ? `${c.name} populated from ${Object.keys(c.sources).length} verified sources.`
+      : `${c.name}: added ${c.evidence?.length ?? 0} evidence entries and ${c.symptoms?.length ?? 0} topic links.`,
+  );
 }
 
-export function run(content: HerbContent) {
-  populateHerb(content)
+export function run(...contents: HerbContent[]) {
+  (async () => {
+    for (const c of contents) await populateHerb(c);
+  })()
     .catch((e) => {
       console.error(e);
       process.exit(1);

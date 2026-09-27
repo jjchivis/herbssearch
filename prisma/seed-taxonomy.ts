@@ -131,6 +131,41 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
     description:
       "Blood sugar (glucose) above the healthy range, as in diabetes or prediabetes. It needs diagnosis and monitoring by a health professional. Some herbs may add to the effects of diabetes medicines.",
   },
+  {
+    name: "Fatty Liver (NAFLD)",
+    slug: "fatty-liver",
+    bodySystem: "liver-gallbladder",
+    description:
+      "A buildup of fat in the liver that isn't caused by alcohol (non-alcoholic fatty liver disease, or NAFLD). It often causes no symptoms and is found with blood tests or scans. It needs diagnosis and follow-up by a health professional; exercise and weight loss are the main treatments.",
+  },
+  {
+    name: "Liver Disease (Hepatitis, Cirrhosis)",
+    slug: "liver-disease",
+    bodySystem: "liver-gallbladder",
+    description:
+      "Long-term liver problems such as hepatitis B or C, alcohol-related liver disease and cirrhosis. These need diagnosis and treatment by a doctor. Get medical help quickly for yellow skin or eyes, dark urine, or severe pain in the upper belly.",
+  },
+  {
+    name: "Gallbladder, Gallstones and Bile Flow",
+    slug: "gallstones-and-bile-flow",
+    bodySystem: "liver-gallbladder",
+    description:
+      "Gallstones are hard lumps that form in the gallbladder, where bile is stored. Get medical help right away for severe pain in the upper belly, fever, or yellow skin or eyes. Several herbs traditionally used for bile flow shouldn't be used if you have gallstones or a blocked bile duct.",
+  },
+  {
+    name: "Liver Safety Warnings",
+    slug: "liver-safety-warnings",
+    bodySystem: "liver-gallbladder",
+    description:
+      "Herbs listed here have been linked to liver damage in some people. Most cases are rare, but they can be serious. Stop the product and see a doctor if you notice tiredness, loss of appetite, nausea, dark urine, or yellow skin or eyes.",
+  },
+  {
+    name: "Kidney Stones",
+    slug: "kidney-stones",
+    bodySystem: "urinary",
+    description:
+      "Hard deposits that form in the kidneys and can cause severe pain in the side or back. See a doctor for severe pain, fever, or blood in the urine.",
+  },
 ];
 
 // Descriptions double as the plain-language definitions shown to visitors.

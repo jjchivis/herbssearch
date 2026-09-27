@@ -489,12 +489,12 @@ const herbs = [
   },
   {
     name: "Gold Coin Grass",
-    scientificName: "Lysimachia christinae",
+    scientificName: "Lysimachia christinae, Desmodium styracifolium",
     category: "Medicinal",
-    summary: "A plant known in Chinese as jin qian cao, widely used in traditional Chinese medicine for gallstones and kidney stones. It has only been studied in the lab and in animals.",
-    uses: "Gallstones, Kidney stones, Bile flow",
-    properties: "Traditionally used for gallstones",
-    cautions: "No studies in people have tested its safety or effects; gallstones and kidney stones need medical care.",
+    summary: "A name used in traditional Chinese medicine for two plants, Lysimachia christinae (jin qian cao) and Desmodium styracifolium (guang jin qian cao). Both are used for gallstones and urinary stones; a large trial found a Desmodium extract helped small stones pass.",
+    uses: "Gallstones, Kidney stones, Bile flow, Urinary complaints, Jaundice",
+    properties: "Traditionally used for gallstones and kidney stones",
+    cautions: "These are different plants, and research on one may not apply to the other. Gallstones and kidney stones need medical care.",
     imageUrl: "/herbs/gold-coin-grass.jpg",
   },
 ];

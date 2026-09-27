@@ -16,10 +16,13 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Apiaceae: "the carrot and parsley family",
   Araliaceae: "the ginseng family",
   Asparagaceae: "the asparagus family",
+  Acanthaceae: "the acanthus family",
   Asteraceae: "the daisy family",
   Brassicaceae: "the mustard and cabbage family",
+  Caryophyllaceae: "the pink and carnation family",
   Caprifoliaceae: "the honeysuckle family",
   Cucurbitaceae: "the gourd and cucumber family",
+  Equisetaceae: "the horsetail family",
   Fabaceae: "the pea and bean family",
   Ginkgoaceae: "the ginkgo family",
   Hypericaceae: "the St. John's wort family",
@@ -27,7 +30,9 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Lauraceae: "the laurel family",
   Linaceae: "the flax family",
   Malvaceae: "the mallow family",
+  Meliaceae: "the mahogany family",
   Phyllanthaceae: "the leafflower family",
+  Plantaginaceae: "the plantain family",
   Polyporaceae: "a family of bracket fungi (mushrooms that grow on wood)",
   Primulaceae: "the primrose family",
   Ranunculaceae: "the buttercup family",
@@ -48,6 +53,8 @@ export const BODY_SYSTEM_NOTES: Record<string, string> = {
     "Many herbs affect hormones, and several aren't safe during pregnancy or breastfeeding or with hormone-sensitive cancers. These herbs are listed because of traditional use or research, not because they're proven treatments. Check with your doctor, midwife or pharmacist before using them, especially if you're pregnant, trying to conceive or taking hormonal medicines.",
   "liver-gallbladder":
     "Liver and gallbladder problems need diagnosis and care from a health professional. These herbs are listed because of traditional use or research, not because they're proven treatments. Some herbs and supplements can themselves harm the liver, and several shouldn't be used if you have gallstones. Check with your doctor or pharmacist first, especially if you have liver disease or take regular medicines.",
+  skin:
+    "Most minor skin problems can be cared for at home, but see a doctor for deep, infected or slow-healing wounds, serious burns, or rashes that come with a fever. Several of these herbs can cause skin allergies, especially plants in the daisy family such as calendula and mugwort. These herbs are listed because of traditional use or research, not because they're proven treatments.",
   metabolic:
     "Blood sugar problems such as diabetes need diagnosis and care from a health professional. Some of these herbs may add to the effects of diabetes medicines, so check with your doctor or pharmacist before using them.",
 };

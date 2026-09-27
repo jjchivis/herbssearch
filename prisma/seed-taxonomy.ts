@@ -35,7 +35,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
   { name: "Stress", slug: "stress", bodySystem: "nervous-system" },
   { name: "Fatigue", slug: "fatigue", bodySystem: "general-wellness" },
   { name: "Cough", slug: "cough", bodySystem: "respiratory" },
-  { name: "Skin Irritation", slug: "skin-irritation", bodySystem: "skin" },
+  {
+    name: "Skin Irritation, Rashes and Itching",
+    slug: "skin-irritation",
+    bodySystem: "skin",
+    description:
+      "Redness, itching, rashes or minor inflammation of the skin, including sunburn. See a doctor if a rash spreads quickly, blisters, comes with a fever, or doesn't get better.",
+  },
   {
     name: "Menstrual Discomfort",
     slug: "menstrual-discomfort",
@@ -158,6 +164,34 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
     bodySystem: "liver-gallbladder",
     description:
       "Herbs listed here have been linked to liver damage in some people. Most cases are rare, but they can be serious. Stop the product and see a doctor if you notice tiredness, loss of appetite, nausea, dark urine, or yellow skin or eyes.",
+  },
+  {
+    name: "Cuts, Wounds, Burns and Skin Ulcers",
+    slug: "wounds-and-burns",
+    bodySystem: "skin",
+    description:
+      "Minor cuts, scrapes and burns, and slow-healing sores such as leg ulcers. Get medical care for deep or large wounds, serious burns, signs of infection (spreading redness, warmth, pus or fever), or sores that don't heal, especially if you have diabetes or poor circulation.",
+  },
+  {
+    name: "Fungal Skin and Nail Infections (Athlete's Foot, Nail Fungus)",
+    slug: "fungal-skin-infections",
+    bodySystem: "skin",
+    description:
+      "Infections such as athlete's foot, ringworm and nail fungus. A health professional can confirm the diagnosis. People with diabetes should get foot and nail problems checked.",
+  },
+  {
+    name: "Scars, Wrinkles and Skin Aging",
+    slug: "scars-and-skin-aging",
+    bodySystem: "skin",
+    description:
+      "Changes in how the skin looks, such as scars, wrinkles and dryness. See a doctor about any mole or skin spot that changes, bleeds or grows.",
+  },
+  {
+    name: "Head Lice and Scabies",
+    slug: "lice-and-scabies",
+    bodySystem: "skin",
+    description:
+      "Tiny parasites that live on the scalp (lice) or burrow into the skin (scabies), causing itching. A health professional or pharmacist can confirm the problem and recommend treatment.",
   },
   {
     name: "Kidney Stones",

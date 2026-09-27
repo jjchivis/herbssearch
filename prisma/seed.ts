@@ -365,7 +365,7 @@ const herbs = [
     uses: "Menopause, Hot flashes",
     properties: "May ease hot flashes",
     cautions: "Stop and see a doctor if you notice dark urine, yellow skin or eyes, or unusual tiredness.",
-    imageUrl: null,
+    imageUrl: "/herbs/black-cohosh.jpg",
   },
   {
     name: "Dong Quai",

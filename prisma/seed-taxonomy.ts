@@ -248,6 +248,47 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
       "Phlegm (mucus) in the chest and a productive cough, as with a chest cold or bronchitis. See a doctor if you're short of breath, have a fever, cough up colored or bloody phlegm, or the cough lasts more than 3 weeks.",
   },
   {
+    name: "Irritable Bowel Syndrome (IBS)",
+    slug: "ibs",
+    bodySystem: "digestive",
+    description:
+      "Ongoing belly pain, bloating and changes in bowel habits without another cause. A doctor should confirm the diagnosis. Get checked promptly for blood in your stool, weight loss you can't explain, or symptoms that start after age 50.",
+  },
+  {
+    name: "Constipation",
+    slug: "constipation",
+    bodySystem: "digestive",
+    description:
+      "Hard or infrequent bowel movements. See a doctor if it lasts more than a few weeks, is severe, or comes with blood in the stool, weight loss or severe belly pain.",
+  },
+  {
+    name: "Diarrhea",
+    slug: "diarrhea",
+    bodySystem: "digestive",
+    description:
+      "Loose or watery stools. Drink plenty of fluids. Get medical help for signs of dehydration, blood in the stool, a high fever, or diarrhea lasting more than a couple of days, especially in babies, young children and older adults.",
+  },
+  {
+    name: "Stomach Ulcers and H. pylori",
+    slug: "stomach-ulcers",
+    bodySystem: "digestive",
+    description:
+      "Sores in the lining of the stomach or upper gut, often caused by the bacterium H. pylori. They need diagnosis and treatment by a doctor. Get urgent help for vomiting blood, black or tarry stools, or sudden severe belly pain.",
+  },
+  {
+    name: "Loss of Appetite",
+    slug: "loss-of-appetite",
+    bodySystem: "digestive",
+    description: "Not feeling like eating. See a doctor if it lasts more than a couple of weeks or comes with weight loss you can't explain.",
+  },
+  {
+    name: "SIBO and Intestinal Parasites",
+    slug: "sibo-and-parasites",
+    bodySystem: "digestive",
+    description:
+      "Too many bacteria in the small intestine (SIBO) or infection with worms or other parasites. Both need testing and treatment by a health professional.",
+  },
+  {
     name: "Kidney Stones",
     slug: "kidney-stones",
     bodySystem: "urinary",

@@ -227,6 +227,27 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
       "Asthma needs diagnosis and treatment by a health professional. Never use herbs in place of your inhaler. Get emergency help for severe breathlessness, trouble speaking, or blue lips.",
   },
   {
+    name: "Colds and Nasal Congestion",
+    slug: "colds-and-congestion",
+    bodySystem: "respiratory",
+    description:
+      "A runny or blocked nose, sneezing and cough from a cold or flu. See a doctor if you have trouble breathing, a high fever, or symptoms that last more than about 10 days or get worse.",
+  },
+  {
+    name: "Sore Throat",
+    slug: "sore-throat",
+    bodySystem: "respiratory",
+    description:
+      "A painful, scratchy or irritated throat, often with a cold. See a doctor if it's severe, lasts more than a week, or comes with trouble swallowing or breathing, or a high fever.",
+  },
+  {
+    name: "Chest Congestion and Bronchitis",
+    slug: "chest-congestion",
+    bodySystem: "respiratory",
+    description:
+      "Phlegm (mucus) in the chest and a productive cough, as with a chest cold or bronchitis. See a doctor if you're short of breath, have a fever, cough up colored or bloody phlegm, or the cough lasts more than 3 weeks.",
+  },
+  {
     name: "Kidney Stones",
     slug: "kidney-stones",
     bodySystem: "urinary",

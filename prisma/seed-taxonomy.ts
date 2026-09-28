@@ -63,7 +63,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
   },
   { name: "Joint Discomfort", slug: "joint-discomfort", bodySystem: "musculoskeletal" },
   { name: "Occasional Nausea", slug: "occasional-nausea", bodySystem: "digestive" },
-  { name: "Seasonal Immune Support", slug: "seasonal-immune-support", bodySystem: "immune" },
+  {
+    name: "Immune Support (Colds and Flu)",
+    slug: "seasonal-immune-support",
+    bodySystem: "immune",
+    description:
+      "Herbs used to help the body resist or recover from colds, flu and other infections. No herb replaces vaccines or medical treatment. See a doctor for a high fever, trouble breathing, or an illness that lasts or keeps coming back.",
+  },
   { name: "Headache", slug: "headache", bodySystem: "nervous-system" },
   {
     name: "High Blood Pressure",

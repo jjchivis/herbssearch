@@ -30,6 +30,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Fabaceae: "the pea and bean family",
   Ginkgoaceae: "the ginkgo family",
   Hericiaceae: "a family of tooth fungi (mushrooms with hanging spines)",
+  Hymenochaetaceae: "a family of bracket fungi that grow on trees",
   Hypericaceae: "the St. John's wort family",
   Juglandaceae: "the walnut family",
   Lamiaceae: "the mint family",
@@ -37,6 +38,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Linaceae: "the flax family",
   Malvaceae: "the mallow family",
   Meliaceae: "the mahogany family",
+  Menispermaceae: "the moonseed family",
   Moringaceae: "the moringa family",
   Myrtaceae: "the myrtle family",
   Namaceae: "the nama family",
@@ -55,6 +57,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Theaceae: "the tea family",
   Ulmaceae: "the elm family",
   Urticaceae: "the nettle family",
+  Viburnaceae: "the viburnum and elder family",
   Zingiberaceae: "the ginger family",
 };
 
@@ -73,6 +76,8 @@ export const BODY_SYSTEM_NOTES: Record<string, string> = {
     "Several of these herbs can make you sleepy and add to the effects of alcohol and of sleep or anxiety medicines, so don't drive if they make you drowsy. Some, such as kava, have been linked to liver damage. For ongoing anxiety, low mood or sleep problems, talk to a health professional. These herbs are listed because of traditional use or research, not because they're proven treatments.",
   respiratory:
     "Get emergency help for severe breathlessness, chest pain or blue lips. Don't use herbs in place of asthma inhalers or other prescribed medicines. These herbs are listed because of traditional use or research, not because they're proven treatments.",
+  immune:
+    "Herbs can't replace vaccines or medical treatment for infections. Several herbs promoted as immune boosters have caused liver or kidney damage, and some affect medicines that suppress the immune system. Check with your doctor or pharmacist, especially if you have an autoimmune disease or take regular medicines. These herbs are listed because of traditional use or research, not because they're proven treatments.",
   metabolic:
     "Blood sugar problems such as diabetes need diagnosis and care from a health professional. Some of these herbs may add to the effects of diabetes medicines, so check with your doctor or pharmacist before using them.",
 };

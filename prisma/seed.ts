@@ -1137,6 +1137,36 @@ const herbs = [
     cautions: "No specific safety concerns were found in the sources reviewed.",
     imageUrl: "/herbs/gungo-peas.jpg",
   },
+  {
+    name: "Noni",
+    scientificName: "Morinda citrifolia",
+    category: "Medicinal",
+    summary: "A small tropical tree whose fruit is sold as juice and promoted for immune health, and one of Jamaica's popular bush medicines. It hasn't been shown to help any condition in people, and liver damage has been reported.",
+    uses: "Colds (traditional), Fever (traditional), Digestion (traditional), Juice",
+    properties: "Antioxidant (in lab tests)",
+    cautions: "Liver damage has been reported after weeks of noni juice or tea; high in potassium, so avoid with kidney disease.",
+    imageUrl: "/herbs/noni.jpg",
+  },
+  {
+    name: "Shame O' Lady",
+    scientificName: "Mimosa pudica",
+    category: "Medicinal",
+    summary: "The sensitive plant, whose leaves fold up when touched. TRAMIL, the Caribbean traditional-medicine network, recommends it as a tea for period cramps.",
+    uses: "Period cramps, Dysentery (traditional), Wounds (traditional), Piles (traditional)",
+    properties: "Fights bacteria (in lab tests)",
+    cautions: "Not for use during pregnancy or breastfeeding, or in children under 12.",
+    imageUrl: "/herbs/shame-o-lady.jpg",
+  },
+  {
+    name: "Vervine",
+    scientificName: "Stachytarpheta jamaicensis",
+    category: "Medicinal",
+    summary: "Called vervain in Jamaica, a weedy plant whose leaves make a \"cooling\" tea used for the stomach, colds and coughs, and to clean wounds.",
+    uses: "Cooling tea, Indigestion, Colds, Cough, Wounds",
+    properties: "Fights bacteria and fungi (in lab tests)",
+    cautions: "Not recommended during pregnancy or if you have low blood pressure.",
+    imageUrl: "/herbs/vervine.jpg",
+  },
 ];
 
 async function main() {

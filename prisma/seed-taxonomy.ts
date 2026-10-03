@@ -302,6 +302,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
       "Too many bacteria in the small intestine (SIBO) or infection with worms or other parasites. Both need testing and treatment by a health professional.",
   },
   {
+    name: "Bladder and Urinary Tract Infections",
+    slug: "urinary-tract-infections",
+    bodySystem: "urinary",
+    description:
+      "Burning when you urinate, needing to go often, or cloudy urine, often from a bladder infection. See a doctor for fever, back or side pain, blood in the urine, symptoms in a man or child, during pregnancy, or if symptoms don't improve in a few days.",
+  },
+  {
     name: "Kidney Stones",
     slug: "kidney-stones",
     bodySystem: "urinary",

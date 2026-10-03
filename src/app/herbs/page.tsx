@@ -182,6 +182,7 @@ export default async function HerbLibraryPage({
                 src={herb.imageUrl}
                 alt={`Botanical illustration of ${herb.name}`}
                 className="aspect-[4/3] w-full bg-[var(--surface-2)]"
+                sizes="(min-width: 1280px) 170px, (min-width: 1024px) 19vw, (min-width: 640px) 28vw, 56vw"
               />
               <h3 className="font-serif text-xl text-[var(--foreground)] group-hover:text-[var(--highlight)]">
                 {herb.name}

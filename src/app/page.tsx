@@ -110,6 +110,7 @@ export default async function HomePage() {
               src={featured.imageUrl}
               alt={`Botanical illustration of ${featured.name}`}
               className="aspect-[4/5] w-full max-w-[240px]"
+              sizes="240px"
               priority
             />
             <div className="flex flex-col gap-2">
@@ -194,6 +195,7 @@ export default async function HomePage() {
                     src={herb.imageUrl}
                     alt={`Botanical illustration of ${herb.name}`}
                     className="aspect-[4/3] w-full bg-[var(--surface-2)]"
+                    sizes="(min-width: 1024px) 180px, (min-width: 640px) 28vw, 56vw"
                   />
                   <h3 className="font-serif text-xl text-[var(--foreground)] group-hover:text-[var(--highlight)]">
                     {herb.name}

@@ -138,6 +138,7 @@ export default async function HerbDetailPage({
           src={herbData.imageUrl}
           alt={`Botanical illustration of ${herbData.name}`}
           className="aspect-[4/5] w-full max-w-sm"
+          sizes="(min-width: 640px) 360px, 90vw"
           priority
         />
         <header className="flex flex-col gap-2">

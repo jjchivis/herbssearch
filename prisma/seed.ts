@@ -1108,16 +1108,6 @@ const herbs = [
     imageUrl: "/herbs/john-charles.jpg",
   },
   {
-    name: "Black Mint",
-    scientificName: "Mentha spicata var. jamaicensis",
-    category: "Medicinal",
-    summary: "A Jamaican form of spearmint, made into a bush tea. Trials of ordinary spearmint suggest effects on hormones in PCOS, memory and chemotherapy nausea, but black mint itself hasn't been studied.",
-    uses: "Bush tea, Nausea, Memory, PCOS",
-    properties: "Spearmint tea lowered testosterone (in a small trial)",
-    cautions: "Research is on ordinary spearmint, not black mint; its safety as a medicine hasn't been studied.",
-    imageUrl: "/herbs/black-mint.jpg",
-  },
-  {
     name: "Strong Back Root",
     scientificName: "Morinda royoc",
     category: "Medicinal",

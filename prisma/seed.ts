@@ -1001,10 +1001,10 @@ const herbs = [
     name: "Search Mi Heart",
     scientificName: "Rhytidophyllum tomentosum",
     category: "Medicinal",
-    summary: "A Jamaican plant whose dried leaves are made into a bush tea, an anecdotal remedy for colds and flu. It hasn't been studied in research.",
-    uses: "Colds, Flu, Bush tea",
+    summary: "A Jamaican plant whose dried leaves are made into a bush tea, traditionally used for colds and flu, the heart, breathing problems and digestion. It hasn't been studied in research.",
+    uses: "Colds, Flu, Heart (traditional), Blood pressure (traditional), Asthma, Chest congestion, Indigestion, Bush tea",
     properties: "Folk remedy (not studied)",
-    cautions: "Its safety hasn't been studied.",
+    cautions: "Its safety hasn't been studied; check with a doctor first if you're pregnant, breastfeeding, or have heart disease or high blood pressure.",
     imageUrl: "/herbs/search-mi-heart.jpg",
   },
   {

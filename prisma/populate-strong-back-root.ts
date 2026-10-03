@@ -1,12 +1,12 @@
 import { run } from "./lib/populate-herb";
 
-// Strong Black Root (Morinda royoc, called "redgal" in Jamaica and used in the
+// Strong Back Root (Morinda royoc, called "redgal" in Jamaica and used in the
 // "strong back" roots tonic), from a review of Jamaican medicinal plants (Lowe
 // et al. 2021) and a lab study of its root against Giardia (Quintal-Novelo et
 // al. 2022). No studies in people, or of its safety, were found.
 
 run({
-  name: "Strong Black Root",
+  name: "Strong Back Root",
   profile: {
     family: "Rubiaceae",
     genus: "Morinda",
@@ -42,7 +42,6 @@ run({
   synonyms: [
     { name: "Redgal", type: "REGIONAL_NAME", region: "Jamaica" },
     { name: "Strong Back", type: "REGIONAL_NAME", region: "Jamaica" },
-    { name: "Strong Back Root", type: "COMMON_NAME" },
   ],
   traditions: [
     { slug: "caribbean-folk-medicine", notes: "One of the roots in Jamaica's \"strong back\" roots tonic, used by men for impotence and stamina." },

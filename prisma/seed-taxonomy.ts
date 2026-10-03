@@ -302,6 +302,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
       "Too many bacteria in the small intestine (SIBO) or infection with worms or other parasites. Both need testing and treatment by a health professional.",
   },
   {
+    name: "Polycystic Ovary Syndrome (PCOS)",
+    slug: "pcos",
+    bodySystem: "reproductive",
+    description:
+      "A common hormone condition that can cause irregular periods, extra body or facial hair, acne and trouble getting pregnant. PCOS needs diagnosis and care from a health professional.",
+  },
+  {
     name: "Kidney Stones",
     slug: "kidney-stones",
     bodySystem: "urinary",

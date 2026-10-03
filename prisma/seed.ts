@@ -1148,14 +1148,14 @@ const herbs = [
     imageUrl: "/herbs/shame-o-lady.jpg",
   },
   {
-    name: "Vervine",
+    name: "Vervain",
     scientificName: "Stachytarpheta jamaicensis",
     category: "Medicinal",
-    summary: "Called vervain in Jamaica, a weedy plant whose leaves make a \"cooling\" tea used for the stomach, colds and coughs, and to clean wounds.",
+    summary: "Called vervain in Jamaica and vervine in Antigua and Trinidad, a weedy plant whose leaves make a \"cooling\" tea used for the stomach, colds and coughs, and to clean wounds.",
     uses: "Cooling tea, Indigestion, Colds, Cough, Wounds",
     properties: "Fights bacteria and fungi (in lab tests)",
     cautions: "Not recommended during pregnancy or if you have low blood pressure.",
-    imageUrl: "/herbs/vervine.jpg",
+    imageUrl: "/herbs/vervain.jpg",
   },
   {
     name: "Dog's Blood",

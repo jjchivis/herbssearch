@@ -1,12 +1,12 @@
 import { run } from "./lib/populate-herb";
 
-// Vervine (Stachytarpheta jamaicensis, Jamaica vervain), from a 2016 review of
+// Vervain (Stachytarpheta jamaicensis, Jamaica vervain), from a 2016 review of
 // its traditional uses, pharmacology and toxicology (Liew & Yong, eCAM), the
 // TRAMIL Caribbean entry (source of the Jamaican name) and a review of
 // ethnomedicines in Trinidad and Tobago (Lans 2006).
 
 run({
-  name: "Vervine",
+  name: "Vervain",
   profile: {
     family: "Verbenaceae",
     genus: "Stachytarpheta",
@@ -47,7 +47,7 @@ run({
     },
   },
   synonyms: [
-    { name: "Vervain", type: "REGIONAL_NAME", region: "Jamaica" },
+    { name: "Vervine", type: "REGIONAL_NAME", region: "Antigua and Barbuda, Trinidad and Tobago" },
     { name: "Blue Porterweed", type: "COMMON_NAME" },
     { name: "Brazilian Tea", type: "COMMON_NAME" },
   ],

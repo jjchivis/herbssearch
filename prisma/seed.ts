@@ -1138,16 +1138,6 @@ const herbs = [
     imageUrl: "/herbs/gungo-peas.jpg",
   },
   {
-    name: "Noni",
-    scientificName: "Morinda citrifolia",
-    category: "Medicinal",
-    summary: "A small tropical tree whose fruit is sold as juice and promoted for immune health, and one of Jamaica's popular bush medicines. It hasn't been shown to help any condition in people, and liver damage has been reported.",
-    uses: "Colds (traditional), Fever (traditional), Digestion (traditional), Juice",
-    properties: "Antioxidant (in lab tests)",
-    cautions: "Liver damage has been reported after weeks of noni juice or tea; high in potassium, so avoid with kidney disease.",
-    imageUrl: "/herbs/noni.jpg",
-  },
-  {
     name: "Shame O' Lady",
     scientificName: "Mimosa pudica",
     category: "Medicinal",

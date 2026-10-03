@@ -1,13 +1,13 @@
 import { run } from "./lib/populate-herb";
 
-// Dogs Blood (Rivina humilis, pigeon berry or blood berry), from the Natural
+// Dog's Blood (Rivina humilis, pigeon berry or blood berry), from the Natural
 // History Museum of Jamaica's common name database, a 2023 study of its
 // nutrients and antioxidants (Riya et al., ACS Omega), a rat study of blood
 // sugar (C R et al. 2023) and a 2026 study of leafy vegetables eaten in French
 // Guiana and Suriname (Tareau et al.). No studies in people were found.
 
 run({
-  name: "Dogs Blood",
+  name: "Dog's Blood",
   profile: {
     family: "Petiveriaceae",
     genus: "Rivina",
@@ -61,7 +61,7 @@ run({
     },
   },
   synonyms: [
-    { name: "Dog's Blood", type: "COMMON_NAME" },
+    { name: "Dogs Blood", type: "COMMON_NAME" },
     { name: "Dogberry", type: "REGIONAL_NAME", region: "Jamaica" },
     { name: "Pigeon Berry", type: "COMMON_NAME" },
     { name: "Blood Berry", type: "COMMON_NAME" },

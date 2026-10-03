@@ -1158,7 +1158,7 @@ const herbs = [
     imageUrl: "/herbs/vervine.jpg",
   },
   {
-    name: "Dogs Blood",
+    name: "Dog's Blood",
     scientificName: "Rivina humilis",
     category: "Culinary",
     summary: "A small plant with red berries, known in Jamaica as dogberry and elsewhere as pigeon berry or blood berry. Its leaves are cooked as a leafy green; research so far is in the lab and in rats.",

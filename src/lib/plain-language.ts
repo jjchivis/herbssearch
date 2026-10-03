@@ -14,6 +14,7 @@ export function splitTechnical(text: string): { plain: string; technical: string
 export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Acanthaceae: "the acanthus family",
   Acoraceae: "the sweet flag family",
+  Aizoaceae: "the ice plant family",
   Amaranthaceae: "the amaranth family",
   Amaryllidaceae: "the amaryllis and onion family",
   Annonaceae: "the custard-apple family",

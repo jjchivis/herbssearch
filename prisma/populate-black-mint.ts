@@ -6,7 +6,8 @@ import { run } from "./lib/populate-herb";
 // uses in Jamaica was found. Research below is on spearmint (Mentha spicata)
 // tea, extract and oil: a PCOS tea trial (Grant 2010), a memory trial
 // (Herrlinger et al. 2018) and a chemotherapy nausea trial (Tayarani-Najaran
-// et al. 2013). None of it tested black mint itself.
+// et al. 2013). None of it tested black mint itself. Biology Insights (2026)
+// is cited only for other plants that share the name.
 
 run({
   name: "Black Mint",
@@ -17,6 +18,14 @@ run({
     partsUsed: "The leaves, usually made into a bush tea",
   },
   sources: {
+    biologyinsights: {
+      title: "What Is Black Mint? Its Unique Traits and Uses",
+      organization: "Biology Insights",
+      publicationDate: "2026-01-17",
+      url: "https://biologyinsights.com/what-is-black-mint-its-unique-traits-and-uses/",
+      sourceType: "secondary",
+      tier: "TIER_5_SECONDARY",
+    },
     grant: {
       title: "Spearmint herbal tea has significant anti-androgen effects in polycystic ovarian syndrome. A randomized controlled trial",
       author: "Grant P",
@@ -60,6 +69,12 @@ run({
     { name: "Spearmint", type: "COMMON_NAME" },
   ],
   evidence: [
+    {
+      category: "TRADITIONAL",
+      summary:
+        "The name \"black mint\" is also used for two other plants: 'Black Mitcham', a peppermint with dark purple stems and leaves (Mentha × piperita), and huacatay (Tagetes minuta), a Peruvian plant that is actually a kind of marigold. This page is about the Jamaican spearmint. Make sure you know which plant you have.",
+      source: "biologyinsights",
+    },
     {
       category: "HUMAN_RESEARCH",
       summary:

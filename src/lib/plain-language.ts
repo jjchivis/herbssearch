@@ -28,6 +28,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Cucurbitaceae: "the gourd and cucumber family",
   Equisetaceae: "the horsetail family",
   Fabaceae: "the pea and bean family",
+  Gesneriaceae: "the gesneriad family, which includes African violets",
   Ginkgoaceae: "the ginkgo family",
   Hericiaceae: "a family of tooth fungi (mushrooms with hanging spines)",
   Hymenochaetaceae: "a family of bracket fungi that grow on trees",

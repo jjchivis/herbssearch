@@ -70,6 +70,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
     description:
       "Herbs used to help the body resist or recover from colds, flu and other infections. No herb replaces vaccines or medical treatment. See a doctor for a high fever, trouble breathing, or an illness that lasts or keeps coming back.",
   },
+  {
+    name: "Fever",
+    slug: "fever",
+    bodySystem: "immune",
+    description:
+      "A raised body temperature, usually a sign the body is fighting an infection. Get medical help for a fever in a baby, a very high fever, a fever that lasts more than a few days, or a fever with a stiff neck, confusion, a rash or trouble breathing.",
+  },
   { name: "Headache", slug: "headache", bodySystem: "nervous-system" },
   {
     name: "High Blood Pressure",

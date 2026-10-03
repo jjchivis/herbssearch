@@ -56,6 +56,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Ranunculaceae: "the buttercup family",
   Rhamnaceae: "the buckthorn family",
   Rosaceae: "the rose family",
+  Rubiaceae: "the coffee family",
   Schisandraceae: "the magnolia-vine family",
   Scrophulariaceae: "the figwort family",
   Solanaceae: "the nightshade family",

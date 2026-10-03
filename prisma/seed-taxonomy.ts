@@ -315,6 +315,20 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
     description:
       "Hard deposits that form in the kidneys and can cause severe pain in the side or back. See a doctor for severe pain, fever, or blood in the urine.",
   },
+  {
+    name: "Sprains and Bruises",
+    slug: "sprains-and-bruises",
+    bodySystem: "musculoskeletal",
+    description:
+      "Minor twists of a joint and bumps that leave a bruise. See a doctor if you can't put weight on the joint, it looks out of shape, the pain or swelling is severe, or it isn't getting better after a few days.",
+  },
+  {
+    name: "Hair Loss",
+    slug: "hair-loss",
+    bodySystem: "skin",
+    description:
+      "Thinning hair or bald patches. See a doctor if hair falls out suddenly or in patches, or comes with other symptoms such as tiredness or weight change, since some causes need treatment.",
+  },
 ];
 
 // Descriptions double as the plain-language definitions shown to visitors.

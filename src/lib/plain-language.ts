@@ -63,6 +63,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Passifloraceae: "the passionflower family",
   Petiveriaceae: "the guinea hen weed family",
   Phyllanthaceae: "the leafflower family",
+  Phytolaccaceae: "the pokeweed family",
   Pinaceae: "the pine family",
   Piperaceae: "the pepper family",
   Plantaginaceae: "the plantain family",

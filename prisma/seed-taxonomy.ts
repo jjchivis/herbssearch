@@ -302,7 +302,7 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
       "Too many bacteria in the small intestine (SIBO) or infection with worms or other parasites. Both need testing and treatment by a health professional.",
   },
   {
-    name: "Bladder and Urinary Tract Infections",
+    name: "Bladder and Urinary Tract Infections (UTIs)",
     slug: "urinary-tract-infections",
     bodySystem: "urinary",
     description:

@@ -12,6 +12,13 @@ export const metadata: Metadata = {
 
 type SearchParams = { q?: string; category?: string; bodySystem?: string };
 
+// Common abbreviations people type, searched as the topic name they stand for.
+// Short terms like "uti" would otherwise match inside unrelated words ("therapeutic").
+const SEARCH_ALIASES: Record<string, string> = {
+  uti: "urinary tract infection",
+  utis: "urinary tract infection",
+};
+
 function libraryHref(params: { category?: string; q?: string; bodySystem?: string }) {
   const sp = new URLSearchParams();
   if (params.category) sp.set("category", params.category);
@@ -27,6 +34,7 @@ export default async function HerbLibraryPage({
   searchParams: Promise<SearchParams>;
 }) {
   const { q = "", category = "", bodySystem = "" } = await searchParams;
+  const term = SEARCH_ALIASES[q.trim().toLowerCase()] ?? q;
 
   const [herbs, categories, bodySystems] = await Promise.all([
     prisma.herb.findMany({
@@ -40,16 +48,16 @@ export default async function HerbLibraryPage({
                 },
               }
             : {},
-          q
+          term
             ? {
                 OR: [
-                  { name: { contains: q, mode: "insensitive" } },
-                  { scientificName: { contains: q, mode: "insensitive" } },
-                  { uses: { contains: q, mode: "insensitive" } },
-                  { summary: { contains: q, mode: "insensitive" } },
+                  { name: { contains: term, mode: "insensitive" } },
+                  { scientificName: { contains: term, mode: "insensitive" } },
+                  { uses: { contains: term, mode: "insensitive" } },
+                  { summary: { contains: term, mode: "insensitive" } },
                   // Other names (e.g. "lingzhi", "bitter melon") and symptom topics (e.g. "blood pressure")
-                  { synonyms: { some: { name: { contains: q, mode: "insensitive" } } } },
-                  { symptoms: { some: { symptom: { name: { contains: q, mode: "insensitive" } } } } },
+                  { synonyms: { some: { name: { contains: term, mode: "insensitive" } } } },
+                  { symptoms: { some: { symptom: { name: { contains: term, mode: "insensitive" } } } } },
                 ],
               }
             : {},

@@ -58,6 +58,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Namaceae: "the nama family",
   Nymphaeaceae: "the water lily family",
   Oleaceae: "the olive family",
+  Orchidaceae: "the orchid family",
   Orobanchaceae: "the broomrape family",
   Papaveraceae: "the poppy family",
   Passifloraceae: "the passionflower family",

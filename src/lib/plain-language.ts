@@ -35,6 +35,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Combretaceae: "the combretum family",
   Crassulaceae: "the stonecrop and jade plant family",
   Cucurbitaceae: "the gourd and cucumber family",
+  Cupressaceae: "the cypress family",
   Equisetaceae: "the horsetail family",
   Ericaceae: "the heather family",
   Euphorbiaceae: "the spurge family",

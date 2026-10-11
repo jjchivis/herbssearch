@@ -22,6 +22,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Apocynaceae: "the dogbane and milkweed family",
   Araliaceae: "the ginseng family",
   Arecaceae: "the palm family",
+  Aristolochiaceae: "the birthwort family",
   Asparagaceae: "the asparagus family",
   Asteraceae: "the daisy family",
   Berberidaceae: "the barberry family",
@@ -42,6 +43,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Ericaceae: "the heather family",
   Euphorbiaceae: "the spurge family",
   Fabaceae: "the pea and bean family",
+  Fucaceae: "the rockweed family of brown seaweeds",
   Gesneriaceae: "the gesneriad family, which includes African violets",
   Ginkgoaceae: "the ginkgo family",
   Hericiaceae: "a family of tooth fungi (mushrooms with hanging spines)",
@@ -57,6 +59,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Menispermaceae: "the moonseed family",
   Moraceae: "the fig and mulberry family",
   Moringaceae: "the moringa family",
+  Myricaceae: "the bayberry family",
   Myrtaceae: "the myrtle family",
   Namaceae: "the nama family",
   Nymphaeaceae: "the water lily family",
@@ -90,6 +93,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Urticaceae: "the nettle family",
   Verbenaceae: "the verbena family",
   Viburnaceae: "the viburnum and elder family",
+  Vitaceae: "the grape family",
   Zingiberaceae: "the ginger family",
 };
 

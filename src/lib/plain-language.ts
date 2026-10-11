@@ -33,6 +33,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Caprifoliaceae: "the honeysuckle family",
   Caryophyllaceae: "the pink and carnation family",
   Combretaceae: "the combretum family",
+  Convolvulaceae: "the morning glory family",
   Cornaceae: "the dogwood family",
   Crassulaceae: "the stonecrop and jade plant family",
   Cucurbitaceae: "the gourd and cucumber family",

@@ -30,6 +30,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Boraginaceae: "the borage family",
   Brassicaceae: "the mustard and cabbage family",
   Burseraceae: "the frankincense and myrrh family",
+  Campanulaceae: "the bellflower family",
   Cannabaceae: "the hemp family, which includes hops",
   Caprifoliaceae: "the honeysuckle family",
   Caryophyllaceae: "the pink and carnation family",

@@ -55,6 +55,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Lamiaceae: "the mint family",
   Lauraceae: "the laurel family",
   Linaceae: "the flax family",
+  Magnoliaceae: "the magnolia family",
   Malvaceae: "the mallow family",
   Meliaceae: "the mahogany family",
   Menispermaceae: "the moonseed family",

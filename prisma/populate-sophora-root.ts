@@ -51,6 +51,8 @@ run({
   synonyms: [
     { name: "Ku Shen", type: "TRADITIONAL_NAME" },
     { name: "Shrubby Sophora", type: "COMMON_NAME" },
+    { name: "Sephora Flavescens", type: "COMMON_NAME" },
+    { name: "Sephora Flavascens", type: "COMMON_NAME" },
   ],
   traditions: [
     { slug: "traditional-chinese-medicine", notes: "Called ku shen; recorded in the Shennong Bencao Jing and used for over 1,700 years for dysentery, jaundice and skin diseases." },

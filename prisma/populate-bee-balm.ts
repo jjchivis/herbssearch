@@ -62,6 +62,7 @@ run({
     { name: "Scarlet Beebalm", type: "COMMON_NAME" },
     { name: "Oswego Tea", type: "COMMON_NAME" },
     { name: "Monarda", type: "COMMON_NAME" },
+    { name: "Bergamot Flower", type: "COMMON_NAME" },
   ],
   traditions: [
     { slug: "native-american-ethnobotany", notes: "Monarda plants were used by many tribes for fever, headache, cough and pain; the Cherokee used bee balm as a poultice for colds and headaches." },

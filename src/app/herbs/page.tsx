@@ -19,6 +19,8 @@ const SEARCH_ALIASES: Record<string, string> = {
   utis: "urinary tract infection",
   hypertension: "high blood pressure",
   hypertensive: "high blood pressure",
+  hypotension: "low blood pressure",
+  hypotensive: "low blood pressure",
 };
 
 function libraryHref(params: { category?: string; q?: string; bodySystem?: string }) {

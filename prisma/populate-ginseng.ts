@@ -14,6 +14,18 @@ run({
     partsUsed: "The root",
   },
   sources: {
+    chenIdh: {
+      title: "Korean red ginseng improves blood pressure stability in patients with intradialytic hypotension",
+      author: "Chen IJ, Chang MY, Chiao SL, et al.",
+      journal: "Evidence-Based Complementary and Alternative Medicine",
+      organization: "Evidence-Based Complementary and Alternative Medicine",
+      publicationDate: "2012-05-08",
+      doi: "10.1155/2012/595271",
+      pmid: "22645630",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3356894/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
     nccih: {
       title: "Asian Ginseng: Usefulness and Safety",
       organization: "National Center for Complementary and Integrative Health (NIH)",
@@ -61,6 +73,12 @@ run({
     },
   ],
   evidence: [
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "Blood pressure often drops too low during kidney dialysis. In a 2012 study, 38 people with this problem chewed 3.5 g of Korean red ginseng slices at each dialysis session for 4 weeks. Their blood pressure fell less during dialysis, and they had fewer sessions disrupted by symptoms of low blood pressure. The study compared people with themselves before treatment, without a dummy-treatment group.\n\nTechnical detail: intradialytic hypotension; raised endothelin-1 and angiotensin II after dialysis (p < 0.01).",
+      source: "chenIdh",
+    },
     {
       category: "TRADITIONAL",
       summary:
@@ -112,6 +130,7 @@ run({
     },
   ],
   symptoms: [
+    { slug: "low-blood-pressure", notes: "In a small study without a comparison group, chewing Korean red ginseng reduced drops in blood pressure during kidney dialysis." },
     {
       slug: "high-blood-sugar",
       notes: "Some studies in people with prediabetes or diabetes found lower fasting blood sugar, but the results conflict.",

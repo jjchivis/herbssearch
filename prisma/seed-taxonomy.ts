@@ -86,6 +86,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
       "Blood pressure that stays higher than normal. It often causes no symptoms but raises the risk of heart attack and stroke, so it needs diagnosis and regular checks by a health professional. Don't stop or replace prescribed blood pressure medicine with herbs.",
   },
   {
+    name: "Low Blood Pressure",
+    slug: "low-blood-pressure",
+    bodySystem: "cardiovascular",
+    description:
+      "Blood pressure that is lower than normal (hypotension). It can cause dizziness or fainting, especially when standing up, and sometimes has a cause that needs treating, so it should be checked by a health professional. Herbs that lower blood pressure, such as hibiscus and garlic, could make it worse.",
+  },
+  {
     name: "High Cholesterol",
     slug: "high-cholesterol",
     bodySystem: "cardiovascular",

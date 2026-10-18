@@ -2512,7 +2512,7 @@ const herbs = [
     scientificName: "Cetraria islandica",
     category: "Medicinal",
     summary: "A lichen, not a true moss, recognized in Europe as a traditional medicine to soothe throat irritation and dry cough, and for temporary loss of appetite.",
-    uses: "Sore throat and dry cough (traditional), Loss of appetite (traditional)",
+    uses: "Sore throat and dry cough (traditional), Loss of appetite (traditional), Food (jellies and breads), Tuberculosis and fevers (historical)",
     properties: "",
     cautions: "",
     imageUrl: "/herbs/iceland-moss.jpg",

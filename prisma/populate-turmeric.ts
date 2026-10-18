@@ -207,7 +207,45 @@ async function main() {
   }
 
   // --- evidence, kept strictly separated by category ---
+  const dhillonPancreaticTrial = await findOrCreateSource("https://pubmed.ncbi.nlm.nih.gov/18628464/", {
+    title: "Phase II trial of curcumin in patients with advanced pancreatic cancer",
+    author: "Dhillon N, Aggarwal BB, Newman RA, et al.",
+    journal: "Clinical Cancer Research",
+    organization: "Clinical Cancer Research",
+    publicationDate: new Date("2008-07-01"),
+    doi: "10.1158/1078-0432.CCR-08-0024",
+    pmid: "18628464",
+    url: "https://pubmed.ncbi.nlm.nih.gov/18628464/",
+    sourceType: "peer_reviewed",
+    tier: "TIER_3_PEER_REVIEWED",
+  });
+
+  const howellsFolfoxTrial = await findOrCreateSource("https://pubmed.ncbi.nlm.nih.gov/31132111/", {
+    title: "Curcumin Combined with FOLFOX Chemotherapy Is Safe and Tolerable in Patients with Metastatic Colorectal Cancer in a Randomized Phase IIa Trial",
+    author: "Howells LM, Iwuji COO, Irving GRB, et al.",
+    journal: "The Journal of Nutrition",
+    organization: "The Journal of Nutrition",
+    publicationDate: new Date("2019-07-01"),
+    doi: "10.1093/jn/nxz029",
+    pmid: "31132111",
+    url: "https://pubmed.ncbi.nlm.nih.gov/31132111/",
+    sourceType: "peer_reviewed",
+    tier: "TIER_3_PEER_REVIEWED",
+  });
+
   const evidenceEntries = [
+    {
+      category: "HUMAN_RESEARCH" as const,
+      summary:
+        "In a 2008 trial, 25 people with advanced pancreatic cancer took 8 g of curcumin by mouth every day. Of the 21 who could be assessed, 2 showed some response: one person's cancer stayed stable for more than 18 months, and another had a brief but large tumour shrinkage. No side effects were seen, but very little curcumin reached the blood, suggesting it's poorly absorbed.\n\nTechnical detail: phase II; one patient had a 73% tumour regression; plasma curcumin peaked at 22–41 ng/mL.",
+      sourceId: dhillonPancreaticTrial.id,
+    },
+    {
+      category: "HUMAN_RESEARCH" as const,
+      summary:
+        "In a 2019 trial, 28 people with bowel cancer that had spread were randomly given standard chemotherapy (FOLFOX) alone or with 2 g of curcumin a day. Adding curcumin was safe, with similar side effects in both groups. People taking curcumin lived longer on average (502 days versus 200), and the cancer took longer to grow, though that difference wasn't clear. Quality of life and nerve damage didn't differ. This was a small, early-stage trial.\n\nTechnical detail: randomized open-label phase IIa; overall survival HR 0.34 (95% CI 0.14 to 0.82); progression-free survival HR 0.57 (95% CI 0.24 to 1.36).",
+      sourceId: howellsFolfoxTrial.id,
+    },
     {
       category: "TRADITIONAL" as const,
       summary:
@@ -315,7 +353,7 @@ async function main() {
     }
   }
 
-  console.log("Turmeric populated from 6 verified sources.");
+  console.log("Turmeric populated from 8 verified sources.");
 }
 
 main()

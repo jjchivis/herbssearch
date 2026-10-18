@@ -34,6 +34,18 @@ run({
       sourceType: "systematic_review",
       tier: "TIER_2_SYSTEMATIC_REVIEW",
     },
+    zhu: {
+      title: "Efficacy of ginseng and its ingredients as adjuvants to chemotherapy in non-small cell lung cancer",
+      author: "Zhu H, Liu H, Zhu JH, Wang SY, Zhou SS, Kong M, et al.",
+      journal: "Food & Function",
+      organization: "Food & Function",
+      publicationDate: "2021-03-01",
+      doi: "10.1039/d0fo03341c",
+      pmid: "33595586",
+      url: "https://pubmed.ncbi.nlm.nih.gov/33595586/",
+      sourceType: "systematic_review",
+      tier: "TIER_2_SYSTEMATIC_REVIEW",
+    },
   },
   synonyms: [
     { name: "Asian Ginseng", type: "COMMON_NAME" },
@@ -66,6 +78,12 @@ run({
       summary:
         "A 2016 review of 17 trials with 1,381 people found ginseng had no significant effect on blood pressure, up or down. The authors concluded people don't need to avoid ginseng out of concern that it raises blood pressure, and called for better trials.\n\nTechnical detail: randomized controlled trials lasting 4 weeks or more; systolic, diastolic and mean arterial pressure; genus Panax.",
       source: "komishon",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "A 2021 review combined 28 trials with 2,503 people with the most common type of lung cancer (non-small cell). Adding ginseng or its compounds to chemotherapy was linked to:\n- More tumours shrinking or staying stable\n- Fewer side effects, such as low blood counts, liver damage, nausea and vomiting, and diarrhoea\n- Better quality of life\n- More people alive at 1 and 2 years\nMost of the trials were of low to moderate quality, so stronger trials are needed to confirm this.\n\nTechnical detail: objective response rate RR 1.35 (95% CI 1.21 to 1.50); disease control rate RR 1.20 (1.14 to 1.28); leucopenia RR 0.59 (0.50 to 0.70); hepatotoxicity RR 0.67 (0.52 to 0.87); 1-year survival RR 1.35 (1.13 to 1.60); 2-year survival RR 3.21 (1.51 to 6.81); quality of life 1.31 (1.22 to 1.41). Included whole ginseng, ginsenosides and ginseng polysaccharides.",
+      source: "zhu",
     },
   ],
   safety: [

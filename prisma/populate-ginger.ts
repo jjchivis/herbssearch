@@ -157,7 +157,25 @@ async function main() {
   }
 
   // --- evidence, kept strictly separated by category ---
+  const khandouziDiabetesTrial = await findOrCreateSource("https://pubmed.ncbi.nlm.nih.gov/25561919/", {
+    title: "The effects of ginger on fasting blood sugar, hemoglobin a1c, apolipoprotein B, apolipoprotein a-I and malondialdehyde in type 2 diabetic patients",
+    author: "Khandouzi N, Shidfar F, Rajab A, Rahideh T, Hosseini P, Mir Taheri M",
+    journal: "Iranian Journal of Pharmaceutical Research",
+    organization: "Iranian Journal of Pharmaceutical Research",
+    publicationDate: new Date("2015-01-01"),
+    pmid: "25561919",
+    url: "https://pubmed.ncbi.nlm.nih.gov/25561919/",
+    sourceType: "peer_reviewed",
+    tier: "TIER_3_PEER_REVIEWED",
+  });
+
   const evidenceEntries = [
+    {
+      category: "HUMAN_RESEARCH" as const,
+      summary:
+        "In a 2015 trial, 41 people with type 2 diabetes took 2 g of ginger powder or a dummy pill every day for 12 weeks. Ginger lowered fasting blood sugar and long-term blood sugar, and improved some markers of blood fats. It was a small trial.\n\nTechnical detail: HbA1c, apolipoprotein B, apolipoprotein A-I and malondialdehyde improved (p < 0.05).",
+      sourceId: khandouziDiabetesTrial.id,
+    },
     {
       category: "TRADITIONAL" as const,
       summary:
@@ -235,7 +253,7 @@ async function main() {
     }
   }
 
-  console.log("Ginger populated from 4 verified sources.");
+  console.log("Ginger populated from 5 verified sources.");
 }
 
 main()

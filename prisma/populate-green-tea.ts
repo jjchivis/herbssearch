@@ -14,6 +14,18 @@ run({
     partsUsed: "The leaves, steamed, pan-fried and dried without being fermented",
   },
   sources: {
+    fanAnemia: {
+      title: "Iron deficiency anemia due to excessive green tea drinking",
+      author: "Fan FS",
+      journal: "Clinical Case Reports",
+      organization: "Clinical Case Reports",
+      publicationDate: "2016-10-05",
+      doi: "10.1002/ccr3.707",
+      pmid: "27830072",
+      url: "https://pubmed.ncbi.nlm.nih.gov/27830072/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
     nccih: {
       title: "Green Tea: Usefulness and Safety",
       organization: "National Center for Complementary and Integrative Health (NIH)",
@@ -84,6 +96,12 @@ run({
     },
   ],
   safety: [
+    {
+      category: "ADVERSE_EFFECT",
+      description:
+        "Tea can block the body from absorbing iron. A case report described a middle-aged man whose iron-deficiency anaemia was linked to drinking large amounts of green tea; it came back when he started drinking it again.",
+      source: "fanAnemia",
+    },
     {
       category: "TOXICITY",
       description:

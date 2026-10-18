@@ -15,6 +15,18 @@ run({
     partsUsed: "The bulb (the cloves), used fresh, dried or powdered",
   },
   sources: {
+    wangGiCancer: {
+      title: "Association and mechanism of garlic consumption with gastrointestinal cancer risk: A systematic review and meta-analysis",
+      author: "Wang Y, Huang P, Wu Y, Liu D, Ji M, Li H, Wang Y",
+      journal: "Oncology Letters",
+      organization: "Oncology Letters",
+      publicationDate: "2022-02-17",
+      doi: "10.3892/ol.2022.13245",
+      pmid: "35222725",
+      url: "https://pubmed.ncbi.nlm.nih.gov/35222725/",
+      sourceType: "systematic_review",
+      tier: "TIER_2_SYSTEMATIC_REVIEW",
+    },
     nccih: {
       title: "Garlic: Usefulness and Safety",
       organization: "National Center for Complementary and Integrative Health (NIH)",
@@ -76,6 +88,12 @@ run({
     },
   ],
   evidence: [
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "A 2022 review of studies comparing people's diets found that people who ate more garlic were less likely to get stomach cancer or bowel cancer. These studies show a link, not proof that garlic prevents cancer.\n\nTechnical detail: gastric cancer OR 0.65 (95% CI 0.49 to 0.87); colorectal cancer OR 0.75 (95% CI 0.65 to 0.87; 9 studies).",
+      source: "wangGiCancer",
+    },
     {
       category: "TRADITIONAL",
       summary:

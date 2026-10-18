@@ -13,6 +13,18 @@ run({
     partsUsed: "The ripe, dried fruit (chili pepper); as medicine, an extract in skin plasters and creams",
   },
   sources: {
+    aniwanIbs: {
+      title: "Effects of Chili Treatment on Gastrointestinal and Rectal Sensation in Diarrhea-predominant Irritable Bowel Syndrome: A Randomized, Double-blinded, Crossover Study",
+      author: "Aniwan S, Gonlachanvit S",
+      journal: "Journal of Neurogastroenterology and Motility",
+      organization: "Journal of Neurogastroenterology and Motility",
+      publicationDate: "2014-07-01",
+      doi: "10.5056/jnm14022",
+      pmid: "24867591",
+      url: "https://pubmed.ncbi.nlm.nih.gov/24867591/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
     ema: {
       title: "European Union herbal monograph on Capsicum annuum L. var. minimum (Miller) Heiser and small fruited varieties of Capsicum frutescens L., fructus (EMA/HMPC/674139/2013)",
       organization: "European Medicines Agency, Committee on Herbal Medicinal Products (HMPC)",
@@ -30,6 +42,12 @@ run({
     { name: "Capsaicin", type: "COMMON_NAME" },
   ],
   evidence: [
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "In a small 2014 trial, 16 people with irritable bowel syndrome with diarrhoea took chili capsules and dummy capsules before meals 3 times a day, for 6 weeks each. Chili reduced burning belly pain after meals and made the rectum less sensitive to stretching.\n\nTechnical detail: randomized, double-blind crossover; rectal sensory threshold measured with a barostat.",
+      source: "aniwanIbs",
+    },
     {
       category: "HUMAN_RESEARCH",
       summary:
@@ -58,5 +76,8 @@ run({
       description: "There's no information on its use in pregnancy. Capsaicin crosses the placenta and may pass into breast milk, and very high doses harmed reproduction in animal studies. It should only be used in pregnancy or breastfeeding after carefully weighing the risks and benefits.",
       source: "ema",
     },
+  ],
+  symptoms: [
+    { slug: "ibs", notes: "In a small trial, chili capsules eased burning belly pain after meals in irritable bowel syndrome with diarrhoea." },
   ],
 });

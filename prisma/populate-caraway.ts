@@ -14,6 +14,18 @@ run({
     partsUsed: "The fruit (often called seeds), usually as a herbal tea",
   },
   sources: {
+    kazemipoor: {
+      title: "Antiobesity effect of caraway extract on overweight and obese women: a randomized, triple-blind, placebo-controlled clinical trial",
+      author: "Kazemipoor M, Radzi CW, Hajifaraji M, Haerian BS, Mosaddegh MH, Cordell GA",
+      journal: "Evidence-Based Complementary and Alternative Medicine",
+      organization: "Evidence-Based Complementary and Alternative Medicine",
+      publicationDate: "2013-11-10",
+      doi: "10.1155/2013/928582",
+      pmid: "24319489",
+      url: "https://pubmed.ncbi.nlm.nih.gov/24319489/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
     ema: {
       title: "Caraway fruit (Carum carvi L., fructus): summary for the public (EMA/498568/2015)",
       organization: "European Medicines Agency, Committee on Herbal Medicinal Products (HMPC)",
@@ -42,6 +54,12 @@ run({
     { slug: "european-folk-medicine", notes: "Recognized in Europe as a traditional herbal medicine for bloating and wind, based on long-standing use." },
   ],
   evidence: [
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "In a 2013 trial, 70 overweight or obese women who exercised took 30 mL of caraway extract or a dummy drink every day for 90 days, without changing their diet. The caraway group lost more weight and body fat and had a smaller waist-to-hip ratio. Cholesterol and blood pressure didn't change, and no side effects were seen.\n\nTechnical detail: body mass index and body fat percentage fell versus placebo.",
+      source: "kazemipoor",
+    },
     {
       category: "TRADITIONAL",
       summary:

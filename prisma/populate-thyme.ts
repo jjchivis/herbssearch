@@ -175,7 +175,26 @@ async function main() {
   }
 
   // --- evidence, kept strictly separated by category ---
+  const thymeHoneyTrial = await findOrCreateSource("https://pubmed.ncbi.nlm.nih.gov/29784145/", {
+    title: "The effect of the use of thyme honey in minimizing radiation - induced oral mucositis in head and neck cancer patients: A randomized controlled trial",
+    author: "Charalambous M, Raftopoulos V, Paikousis L, et al.",
+    journal: "European Journal of Oncology Nursing",
+    organization: "European Journal of Oncology Nursing",
+    publicationDate: new Date("2018-04-30"),
+    doi: "10.1016/j.ejon.2018.04.003",
+    pmid: "29784145",
+    url: "https://pubmed.ncbi.nlm.nih.gov/29784145/",
+    sourceType: "peer_reviewed",
+    tier: "TIER_3_PEER_REVIEWED",
+  });
+
   const evidenceEntries = [
+    {
+      category: "HUMAN_RESEARCH" as const,
+      summary:
+        "In a 2018 trial, 72 people having radiation for head and neck cancer rinsed their mouths with either thyme honey or salt water. Those using thyme honey had less severe mouth sores and better quality of life. This tested honey made by bees from thyme flowers, not thyme itself.\n\nTechnical detail: radiation-induced oral mucositis graded by RTOG criteria; NCT01465308.",
+      sourceId: thymeHoneyTrial.id,
+    },
     {
       category: "TRADITIONAL" as const,
       summary:
@@ -243,7 +262,7 @@ async function main() {
     }
   }
 
-  console.log("Thyme populated from 4 verified sources.");
+  console.log("Thyme populated from 5 verified sources.");
 }
 
 main()

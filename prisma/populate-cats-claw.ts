@@ -20,6 +20,17 @@ run({
       sourceType: "government",
       tier: "TIER_1_GOVERNMENT",
     },
+    sheng: {
+      title: "DNA repair enhancement of aqueous extracts of Uncaria tomentosa in a human volunteer study",
+      author: "Sheng Y, Li L, Holmgren K, Pero RW",
+      journal: "Phytomedicine",
+      publicationDate: "2001-07-01",
+      doi: "10.1078/0944-7113-00045",
+      pmid: "11515717",
+      url: "https://pubmed.ncbi.nlm.nih.gov/11515717/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
   },
   synonyms: [
     { name: "Cats Claw", type: "COMMON_NAME" },
@@ -38,6 +49,12 @@ run({
       summary:
         "There's no conclusive evidence from studies in people that cat's claw helps any health condition. Many of the existing studies were poorly designed or too small.",
       source: "nccih",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "In a small 2001 study, 12 healthy adults were split into 3 groups: 250 mg or 350 mg a day of a water extract of cat's claw (Uncaria tomentosa) for 8 weeks, or nothing. When their blood cells were exposed to a chemical that damages DNA, the cells of people taking cat's claw had less DNA damage and repaired it better. No harmful effects showed up in symptoms or blood tests. The study was very small and didn't test whether this prevents or treats any disease.\n\nTechnical detail: C-Med-100 extract; DNA damage induced by hydrogen peroxide; p < 0.05 versus non-supplemented controls.",
+      source: "sheng",
     },
   ],
   safety: [

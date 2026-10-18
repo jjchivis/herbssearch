@@ -2,7 +2,8 @@ import { run } from "./lib/populate-herb";
 
 // Milk thistle (Silybum marianum), from verified sources: NCCIH (2025), the
 // EMA/HMPC public summary (2018) and a Cochrane review for alcohol-related and
-// viral liver disease (Rambaldi et al. 2007). Family per GBIF / Catalogue of Life.
+// viral liver disease (Rambaldi et al. 2007), and the NCI PDQ Milk Thistle
+// summary for health professionals (updated 2022-02-17). Family per GBIF / Catalogue of Life.
 
 run({
   name: "Milk Thistle",
@@ -42,11 +43,23 @@ run({
       sourceType: "systematic_review",
       tier: "TIER_2_SYSTEMATIC_REVIEW",
     },
+    nciPdq: {
+      title: "Milk Thistle (PDQ®)–Health Professional Version",
+      organization: "National Cancer Institute (NIH)",
+      publicationDate: "2022-02-17",
+      url: "https://www.cancer.gov/about-cancer/treatment/cam/hp/milk-thistle-pdq",
+      sourceType: "government",
+      tier: "TIER_1_GOVERNMENT",
+    },
   },
   synonyms: [
     { name: "Carduus marianus", type: "SCIENTIFIC_SYNONYM" },
     { name: "Mary Thistle", type: "COMMON_NAME" },
     { name: "Holy Thistle", type: "COMMON_NAME" },
+    { name: "Marian Thistle", type: "COMMON_NAME" },
+    { name: "Our Lady's Thistle", type: "COMMON_NAME" },
+    { name: "St. Mary Thistle", type: "COMMON_NAME" },
+    { name: "Wild Artichoke", type: "COMMON_NAME" },
   ],
   constituents: [{ name: "Silymarin", slug: "silymarin", type: "mixture of plant compounds" }],
   traditions: [
@@ -66,6 +79,24 @@ run({
       summary:
         "Based on long-standing use, the European Medicines Agency recognizes milk thistle fruit as a traditional herbal medicine for adults. It can be used to relieve indigestion and a feeling of fullness, and to support liver function after a doctor has ruled out serious conditions. This rests on at least 30 years of safe use, not on proof from clinical trials.",
       source: "ema",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "Milk thistle has been used for more than 2,000 years, mainly for the liver:\n- The ancient Greek physician Dioscorides recommended it for snake bites\n- The Roman writer Pliny the Elder said the plant's juice mixed with honey helped carry off bile\n- In the Middle Ages it was valued as an antidote to substances that poison the liver\n- American Indian or Alaska Native people use it for boils and other skin problems\nThe leaves have also been eaten in salads, and the roasted fruit used as a coffee substitute.",
+      source: "nciPdq",
+    },
+    {
+      category: "PRECLINICAL",
+      summary:
+        "In lab and animal studies, silymarin (the main active mix in milk thistle) protected liver cells from toxic chemicals and helped the liver regrow. It also slowed the growth of some cancer cells, including prostate, breast, colon and skin cancer cells, and in some tests made certain chemotherapy drugs work better. None of these findings have been repeated in human trials.\n\nTechnical detail: silybin potentiated cisplatin and doxorubicin in ovarian (A2780) and breast (MCF-7) cancer cells and etoposide in LN229 glioma cells; animal models included tongue, skin, bladder, colon and small-intestine tumors.",
+      source: "nciPdq",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "The US National Cancer Institute says there's too little human research to recommend milk thistle for people with cancer outside of well-designed clinical trials. Small studies have found:\n- Children with leukemia whose chemotherapy was harming their liver: 50 children took silymarin or a dummy pill for 4 weeks, and the silymarin group had better results on one liver blood test\n- Head and neck cancer: in 30 people, silymarin lowered and delayed mouth sores caused by radiation\n- Breast cancer: in 101 women having radiation, a silymarin cream delayed skin damage and fewer women had moderate or severe skin reactions than with the usual cream\n- Advanced liver cancer: all 3 people in a small safety study died within 23 to 69 days, likely from liver failure, though the study product couldn't be ruled out\nIn Europe, a form of silymarin is given into a vein as an antidote to death cap mushroom poisoning.\n\nTechnical detail: acute lymphoblastic leukemia trial, AST significantly lower (P = .05), trend for ALT (P = .07); breast trial (Leviaderm vs panthenol cream), median time to skin toxicity 45 vs 29 days, grade 2 toxicity in week 5 9.8% vs 52%; hepatocellular carcinoma phase I study of silybin phosphatidylcholine 2 g/day; Amanita phalloides antidote is intravenous silybin.",
+      source: "nciPdq",
     },
     {
       category: "HUMAN_RESEARCH",
@@ -105,6 +136,12 @@ run({
       source: "ema",
     },
     {
+      category: "ADVERSE_EFFECT",
+      description:
+        "Large human studies have found few side effects. A mild laxative effect is rare, and mild allergic reactions have been seen at high doses (over 1,500 mg a day).",
+      source: "nciPdq",
+    },
+    {
       category: "ALLERGY",
       description:
         "Milk thistle may cause allergic reactions, especially in people allergic to related plants such as ragweed, chrysanthemum, marigold and daisy.",
@@ -126,6 +163,12 @@ run({
       category: "DRUG_INTERACTION",
       description: "If you take any medicine, talk with your health care provider before using milk thistle. Some herbs and medicines interact in harmful ways.",
       source: "nccih",
+    },
+    {
+      category: "DRUG_INTERACTION",
+      description:
+        "It isn't known whether milk thistle weakens, strengthens or has no effect on chemotherapy. Lab tests suggest it could slow the body's clearing of some cancer drugs, but only at doses higher than you'd get by mouth. One study found normal doses didn't change how the body handled the cancer drug irinotecan.",
+      source: "nciPdq",
     },
     {
       category: "PREGNANCY",

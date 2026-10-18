@@ -412,7 +412,7 @@ const herbs = [
     scientificName: "Silybum marianum",
     category: "Medicinal",
     summary: "A tall, purple-flowered thistle from Europe, long used for liver problems. Studies of it and its extract silymarin in liver disease have been conflicting or too limited to show a clear benefit.",
-    uses: "Liver support, Indigestion, Breast milk",
+    uses: "Liver support, Indigestion, Breast milk, Cancer research (not enough evidence yet)",
     properties: "Traditionally used to support the liver",
     cautions: "May cause allergic reactions in people allergic to ragweed, daisies or related plants.",
     imageUrl: "/herbs/milk-thistle.jpg",

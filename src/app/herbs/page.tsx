@@ -17,6 +17,8 @@ type SearchParams = { q?: string; category?: string; bodySystem?: string };
 const SEARCH_ALIASES: Record<string, string> = {
   uti: "urinary tract infection",
   utis: "urinary tract infection",
+  hypertension: "high blood pressure",
+  hypertensive: "high blood pressure",
 };
 
 function libraryHref(params: { category?: string; q?: string; bodySystem?: string }) {

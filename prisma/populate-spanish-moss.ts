@@ -4,7 +4,8 @@ import { run } from "./lib/populate-herb";
 // not a true moss), from a 2022 mouse study of its extract in breast cancer and
 // melanoma (Lasso et al.), a 2021 lab and mouse study of its effect on blood sugar
 // (Miranda-Nuñez et al.) and a 2024 review of Humboldt's records of useful North
-// American plants (Baratto & Päßler). No safety sources, so none are listed.
+// American plants (Baratto & Päßler), and a 2025 study of its effect on rat brain
+// cells (Villarreal Romero et al.). No safety sources, so none are listed.
 
 run({
   name: "Spanish Moss",
@@ -49,6 +50,17 @@ run({
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
+    villarreal: {
+      title: "Active Fraction of Tillandsia usneoides Induces Structural Neuroplasticity in Cortical Neuron Cultures from Wistar Rats",
+      author: "Villarreal Romero WL, Sutachan JJ, Costa GM, Albarracín SL",
+      journal: "International Journal of Molecular Sciences",
+      publicationDate: "2025-12-02",
+      doi: "10.3390/ijms262311668",
+      pmid: "41373815",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12692342/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
   },
   synonyms: [
     { name: "Tillandsia usneoides", type: "COMMON_NAME" },
@@ -65,6 +77,18 @@ run({
       summary:
         "Early records from the United States describe Spanish moss being fed to cattle in winter. When rotted in water it leaves a springy fibre, which was used to stuff mattresses, saddles and chairs and to make ropes.",
       source: "baratto",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "In traditional medicine the whole plant has been used for heart conditions, rheumatism, bronchitis, fever, ulcers and diabetes, and to increase urine flow. It's widespread in Colombia, growing up to 3,000 metres above sea level.",
+      source: "villarreal",
+    },
+    {
+      category: "PRECLINICAL",
+      summary:
+        "In a 2025 lab study, an extract of Spanish moss made rat brain cells grow more and longer branches (the connections nerve cells use to link up), at very low doses. The researchers think this could one day help protect the brain's ability to adapt, but it has only been tested on cells in a dish. At higher doses, some extracts reduced the number of living cells by about 20%.\n\nTechnical detail: ethyl acetate fraction increased dendritic branching and dendrite length in primary cortical neurons from E18 Wistar rat embryos at 0.03–1 μg/mL, likely via PI3K/Akt and ERK1/2 signalling; contains 14 phenolic acids, 6 flavonoids and a triterpene; viability fell about 20% above 1 μg/mL for the ethanol extract and ethyl acetate fraction.",
+      source: "villarreal",
     },
     {
       category: "PRECLINICAL",

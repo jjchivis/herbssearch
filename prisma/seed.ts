@@ -2542,7 +2542,7 @@ const herbs = [
     scientificName: "Tillandsia usneoides",
     category: "Medicinal",
     summary: "A flowering plant in the pineapple family, not a true moss, that hangs from trees. Traditionally used for diabetes, high blood pressure and rheumatism; research so far is only in the lab and in mice.",
-    uses: "Diabetes (traditional), High blood pressure (traditional), Rheumatism (traditional)",
+    uses: "Diabetes (traditional), High blood pressure (traditional), Rheumatism (traditional), Bronchitis and fever (traditional)",
     properties: "Lowered blood sugar (in mice), Shrank breast tumours (in mice)",
     cautions: "Not tested in people.",
     imageUrl: "/herbs/spanish-moss.jpg",

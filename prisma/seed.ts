@@ -102,7 +102,7 @@ const herbs = [
     scientificName: "Curcuma longa",
     category: "Medicinal",
     summary: "A golden root used in curries, known for its natural compound curcumin and traditionally used for inflammation.",
-    uses: "Curries, Golden milk, Joints",
+    uses: "Curries, Golden milk, Joints, Cancer research (not enough evidence yet)",
     properties: "May help reduce inflammation, Antioxidant",
     cautions: "May interact with blood thinners; high doses can upset the stomach.",
     imageUrl: "/herbs/turmeric.jpg",

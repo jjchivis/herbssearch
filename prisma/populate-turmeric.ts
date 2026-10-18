@@ -138,6 +138,15 @@ async function main() {
     }
   );
 
+  const nciCurcuminPdq = await findOrCreateSource("https://www.cancer.gov/about-cancer/treatment/cam/patient/curcumin-pdq", {
+    title: "Curcumin (Curcuma, Turmeric) and Cancer (PDQ®)–Patient Version",
+    organization: "National Cancer Institute (NIH)",
+    publicationDate: new Date("2024-05-28"),
+    url: "https://www.cancer.gov/about-cancer/treatment/cam/patient/curcumin-pdq",
+    sourceType: "government",
+    tier: "TIER_1_GOVERNMENT",
+  });
+
   // --- constituents (curcumin already exists in the taxonomy seed; add
   // demethoxycurcumin and bisdemethoxycurcumin, the other two curcuminoids,
   // and turmerone, the main essential-oil sesquiterpene — all documented in
@@ -235,6 +244,12 @@ async function main() {
         "Several research reviews show early positive evidence that turmeric or curcumin taken by mouth may help knee arthritis (pain, stiffness, strength and movement), but better-quality studies are needed. It's unclear whether curcumin ointment on the skin helps knee pain. Early research suggests turmeric or curcumin by mouth might improve some measures of fatty liver disease not caused by alcohol (NAFLD), and, by mouth or as a mouthwash, mouth sores caused by cancer treatment. Overall, there isn't enough evidence to say for certain that turmeric or curcumin helps with any health condition.\n\nTechnical detail: oral mucositis.",
       sourceId: nccih.id,
     },
+    {
+      category: "HUMAN_RESEARCH" as const,
+      summary:
+        "The US National Cancer Institute says there isn't enough evidence to know whether curcumin products can prevent or treat cancer. Early, small trials have found:\n- Possible early signs of bowel polyps: fewer in people taking curcumin, but not clearly different from people who didn't take it\n- White patches inside the mouth (oral leukoplakia): in a trial of 223 people, a curcumin product improved the patches more than a dummy pill, and the improvement lasted at 6 months\n- Fatty liver disease not caused by alcohol: in a trial of 102 people, curcumin lowered weight measures and improved liver scans and blood tests\n- Alongside cancer treatment: mixed results in adrenal gland, breast, prostate, pancreatic and bowel cancers\n- Side effects of cancer treatment: a curcumin mouthwash or capsule delayed and eased mouth sores, and a small study found a turmeric cream reduced skin damage from radiation\nThe US Food and Drug Administration hasn't approved curcumin to treat cancer or any other condition.\n\nTechnical detail: aberrant crypt foci; adrenocortical carcinoma; oral mucositis; radiation dermatitis; NAFLD (body mass index and waist circumference fell). A pooled analysis of 4 randomized controlled trials (228 people) found similar liver results.",
+      sourceId: nciCurcuminPdq.id,
+    },
   ];
   for (const entry of evidenceEntries) {
     const existing = await prisma.evidenceEntry.findFirst({
@@ -247,6 +262,12 @@ async function main() {
 
   // --- safety ---
   const safetyRecords = [
+    {
+      category: "ADVERSE_EFFECT" as const,
+      description:
+        "Few side effects have been reported in cancer studies; stomach and gut problems are the most common. In one small study of people taking curcumin with a cancer drug, 1 in 3 stopped the curcumin because of constant bloating. The amount of curcumin varies between products, and batches and brands may differ.",
+      sourceId: nciCurcuminPdq.id,
+    },
     {
       category: "ADVERSE_EFFECT" as const,
       description:
@@ -294,7 +315,7 @@ async function main() {
     }
   }
 
-  console.log("Turmeric populated from 5 verified sources.");
+  console.log("Turmeric populated from 6 verified sources.");
 }
 
 main()

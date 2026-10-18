@@ -2533,8 +2533,8 @@ const herbs = [
     category: "Medicinal",
     summary: "Rough-stalked feather-moss, a common lawn and garden moss probably used in 17th- and 18th-century Europe for dressing wounds and stopping bleeding.",
     uses: "Wound dressing (traditional), Stopping bleeding (traditional)",
-    properties: "",
-    cautions: "Never tested for active substances or safety.",
+    properties: "Very absorbent, Killed some bacteria and fungi (in lab studies)",
+    cautions: "Not tested in people.",
     imageUrl: "/herbs/common-garden-moss.jpg",
   },
   {

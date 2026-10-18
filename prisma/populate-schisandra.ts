@@ -55,6 +55,8 @@ run({
     { name: "Gomishi", type: "COMMON_NAME" },
     { name: "Omija", type: "COMMON_NAME" },
     { name: "Omicha", type: "COMMON_NAME" },
+    { name: "Schisandra Berry", type: "COMMON_NAME" },
+    { name: "Wananfu Schisandra Berry", type: "COMMON_NAME" },
   ],
   traditions: [
     {

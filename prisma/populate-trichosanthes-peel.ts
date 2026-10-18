@@ -52,6 +52,7 @@ run({
     { name: "Gua Lou Pi", type: "TRADITIONAL_NAME" },
     { name: "Gualoupi", type: "TRADITIONAL_NAME" },
     { name: "Trichosanthis Pericarpium", type: "COMMON_NAME" },
+    { name: "Pericarpium Trichosanthis", type: "COMMON_NAME" },
     { name: "Trichosanthes Fruit Peel", type: "COMMON_NAME" },
   ],
   traditions: [

@@ -12,7 +12,7 @@ const herbs = [
     scientificName: "Ocimum basilicum",
     category: "Culinary",
     summary: "A fragrant, warm-weather kitchen herb central to Italian and Southeast Asian cooking.",
-    uses: "Pesto, Tomato dishes, Teas, Aromatherapy",
+    uses: "Pesto, Tomato dishes, Teas, Aromatherapy, Basil seed drinks and desserts",
     properties: "May help reduce inflammation, Antioxidant, May fight bacteria",
     cautions: "Generally safe in cooking amounts.",
     imageUrl: "/herbs/basil.jpg",

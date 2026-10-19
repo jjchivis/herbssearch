@@ -35,6 +35,9 @@ async function main() {
     { name: "Sweet Basil", type: "COMMON_NAME" },
     { name: "Genovese Basil", type: "COMMON_NAME" },
     { name: "Saint Joseph's Wort", type: "COMMON_NAME" },
+    { name: "Basil Seeds", type: "COMMON_NAME" },
+    { name: "Sabja Seeds", type: "COMMON_NAME" },
+    { name: "Tukmaria Seeds", type: "COMMON_NAME" },
   ];
   for (const syn of synonyms) {
     const existing = await prisma.herbSynonym.findFirst({
@@ -148,7 +151,42 @@ async function main() {
   }
 
   // --- evidence, kept strictly separated by category ---
+  const basilSeedReview = await findOrCreateSource("https://pmc.ncbi.nlm.nih.gov/articles/PMC8303141/", {
+    title: "Basil Seeds as a Novel Food, Source of Nutrients and Functional Ingredients with Beneficial Properties: A Review",
+    author: "Calderón Bravo H, Vera Céspedes N, Zura-Bravo L, Muñoz LA",
+    organization: "Foods",
+    journal: "Foods",
+    publicationDate: new Date("2021-06-24"),
+    doi: "10.3390/foods10071467",
+    pmid: "34202798",
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8303141/",
+    sourceType: "peer_reviewed",
+    tier: "TIER_3_PEER_REVIEWED",
+  });
+
+  const healthlineSeeds = await findOrCreateSource("https://www.healthline.com/nutrition/basil-seeds", {
+    title: "Basil Seeds: Benefits, Nutrition, and How to Use Them",
+    author: "McCulloch M; medically reviewed by Richter A",
+    organization: "Healthline",
+    publicationDate: new Date("2026-10-15"),
+    url: "https://www.healthline.com/nutrition/basil-seeds",
+    sourceType: "secondary",
+    tier: "TIER_5_SECONDARY",
+  });
+
   const evidenceEntries = [
+    {
+      category: "TRADITIONAL" as const,
+      summary:
+        "Basil seeds (also called sabja or tukmaria seeds) have traditionally been soaked in water as a refreshing, nourishing food. In Middle Eastern countries they're added to drinks (sharbat) and frozen desserts (faloodeh). In traditional medicine they've been used for:\n- Indigestion and ulcers\n- Diarrhoea\n- Sore throats\n- Kidney problems\n- Long-term constipation and piles\n- Washed and pounded into poultices for sores and sinus problems",
+      sourceId: basilSeedReview.id,
+    },
+    {
+      category: "PRECLINICAL" as const,
+      summary:
+        "Lab analyses show basil seeds are rich in protein, fibre and fats (mostly linoleic acid and alpha-linolenic acid, a plant omega-3), plus calcium, potassium and magnesium, though amounts vary a lot between samples. About a fifth of the seed is a gel-forming fibre (mucilage) that swells when soaked; food makers use it to thicken and stabilize ice cream, puddings and low-fat yogurt and to replace fat in cakes. In lab tests, compounds from the seeds blocked a starch-digesting enzyme, a possible way they could affect blood sugar. These effects haven't been tested in people.\n\nTechnical detail: protein 11.4–22.5 g/100 g; dietary fibre 7.1–26.2 g/100 g; mucilage about 17–20%; α-amylase inhibitory peptides.",
+      sourceId: basilSeedReview.id,
+    },
     {
       category: "TRADITIONAL" as const,
       summary:
@@ -179,6 +217,12 @@ async function main() {
 
   // --- safety ---
   const safetyRecords = [
+    {
+      category: "PREPARATION_SPECIFIC" as const,
+      description:
+        "Basil seeds are usually soaked before eating, because they're hard to chew dry: about 1 tablespoon (13 g) in 1 cup (237 ml) of water for 15 minutes, until they swell to about three times their size. Buy seeds sold for eating; seeds packaged for planting may have been treated with pesticides. Their high fibre can cause bloating, so add them to your diet gradually.",
+      sourceId: healthlineSeeds.id,
+    },
     {
       category: "TOXICITY" as const,
       description:
@@ -221,7 +265,7 @@ async function main() {
     }
   }
 
-  console.log("Basil populated from 3 verified sources.");
+  console.log("Basil populated from 5 verified sources.");
 }
 
 main()

@@ -86,6 +86,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
       "Blood pressure that stays higher than normal. It often causes no symptoms but raises the risk of heart attack and stroke, so it needs diagnosis and regular checks by a health professional. Don't stop or replace prescribed blood pressure medicine with herbs.",
   },
   {
+    name: "Poisonous Plants",
+    slug: "poisonous-plants",
+    bodySystem: "general-wellness",
+    description:
+      "Plants listed here, or certain parts of them, are poisonous and can cause serious harm or death if eaten. Each page says which parts are dangerous. If someone swallows one, get emergency help right away; in the US, Poison Help is 1-800-222-1222.",
+  },
+  {
     name: "Low Blood Pressure",
     slug: "low-blood-pressure",
     bodySystem: "cardiovascular",

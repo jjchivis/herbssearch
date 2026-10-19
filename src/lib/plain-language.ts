@@ -45,6 +45,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Cucurbitaceae: "the gourd and cucumber family",
   Cupressaceae: "the cypress family",
   Cynomoriaceae: "the cynomorium family of parasitic plants",
+  Elaeagnaceae: "the oleaster family, which includes sea buckthorn",
   Equisetaceae: "the horsetail family",
   Ericaceae: "the heather family",
   Euphorbiaceae: "the spurge family",

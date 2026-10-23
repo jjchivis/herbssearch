@@ -3,7 +3,9 @@ import { run } from "./lib/populate-herb";
 // Cayenne (Capsicum fruit), from the European Medicines Agency's EU herbal
 // monograph on Capsicum annuum var. minimum and small-fruited Capsicum frutescens
 // (2015), a chili trial in IBS (Aniwan 2014) and a study of a cayenne poultice
-// on the skin in healthy volunteers (Sarabon et al. 2018).
+// on the skin in healthy volunteers (Sarabon et al. 2018), two cohort studies of
+// chili and death (Chopan & Littenberg 2017; Bonaccio et al. 2019), an umbrella
+// review (Ao et al. 2022) and NHS heart attack advice.
 
 run({
   name: "Cayenne",
@@ -46,6 +48,50 @@ run({
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
+    chopan: {
+      title: "The Association of Hot Red Chili Pepper Consumption and Mortality: A Large Population-Based Cohort Study",
+      author: "Chopan M, Littenberg B",
+      journal: "PLoS One",
+      organization: "PLoS One",
+      publicationDate: "2017-01-09",
+      doi: "10.1371/journal.pone.0169876",
+      pmid: "28068423",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5222470/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
+    bonaccio: {
+      title: "Chili Pepper Consumption and Mortality in Italian Adults",
+      author: "Bonaccio M, Di Castelnuovo A, Costanzo S, et al.; Moli-sani Study Investigators",
+      journal: "Journal of the American College of Cardiology",
+      organization: "Journal of the American College of Cardiology",
+      publicationDate: "2019-12-24",
+      doi: "10.1016/j.jacc.2019.09.068",
+      pmid: "31856971",
+      url: "https://pubmed.ncbi.nlm.nih.gov/31856971/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
+    ao: {
+      title: "Spicy Food and Chili Peppers and Multiple Health Outcomes: Umbrella Review",
+      author: "Ao Z, Huang Z, Liu H",
+      journal: "Molecular Nutrition & Food Research",
+      organization: "Molecular Nutrition & Food Research",
+      publicationDate: "2022-10-19",
+      doi: "10.1002/mnfr.202200167",
+      pmid: "36111960",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10078540/",
+      sourceType: "systematic_review",
+      tier: "TIER_2_SYSTEMATIC_REVIEW",
+    },
+    nhsHeartAttack: {
+      title: "Heart attack",
+      organization: "NHS (UK National Health Service)",
+      publicationDate: "2026-03-31",
+      url: "https://www.nhs.uk/conditions/heart-attack/",
+      sourceType: "government",
+      tier: "TIER_1_GOVERNMENT",
+    },
   },
   synonyms: [
     { name: "Cayenne Pepper", type: "COMMON_NAME" },
@@ -55,6 +101,24 @@ run({
     { name: "Capsaicin", type: "COMMON_NAME" },
   ],
   evidence: [
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "A US study followed 16,179 adults for about 19 years. People who said they ate hot red chili peppers were 13% less likely to die during that time, after allowing for other differences between them. There was a similar trend for deaths from heart and blood vessel disease, but it was too small to be sure of. A study like this shows a link, not that chili causes the lower risk.\n\nTechnical detail: NHANES III, surveyed 1988–1994; median follow-up 18.9 years; 4,946 deaths; adjusted hazard ratio 0.87 (95% CI 0.77 to 0.97); vascular deaths: similar but not statistically significant trend.",
+      source: "chopan",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "An Italian study followed 22,811 adults for about 8 years. People who ate chili pepper more than 4 times a week were about 23% less likely to die than those who rarely ate it. They were also about 34% less likely to die of heart and blood vessel disease, after allowing for other risk factors. A study like this shows a link, not proof that chili prevents heart disease.\n\nTechnical detail: Moli-sani cohort, enrolled 2005–2010; median follow-up 8.2 years; 1,236 deaths; >4 times/week vs none or rare: all-cause HR 0.77 (95% CI 0.66 to 0.90), cardiovascular HR 0.66 (0.50 to 0.86), ischemic heart disease HR 0.56 (0.35 to 0.87), cerebrovascular HR 0.39 (0.20 to 0.75).",
+      source: "bonaccio",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "A 2022 review of 11 earlier reviews looked at spicy food and chili peppers. Eating them was linked with a lower risk of death and of heart and metabolic disease. It was also linked with a higher risk of cancers of the esophagus (food pipe), stomach and gallbladder. The authors say the overall health effects are unclear.\n\nTechnical detail: umbrella review of 11 systematic reviews and meta-analyses (27 findings); significant nonlinear dose-response between capsaicin intake and gastric cancer risk.",
+      source: "ao",
+    },
     {
       category: "TRADITIONAL",
       summary:
@@ -81,6 +145,12 @@ run({
     },
   ],
   safety: [
+    {
+      category: "CONTRAINDICATION",
+      description:
+        "Don't use cayenne to try to treat a heart attack. The chili studies on this page looked at everyday diets over many years, not at emergencies. If you have chest pain that feels tight or like squeezing, call your emergency number straight away (999 in the UK, 911 in the US), and don't drive yourself to hospital.",
+      source: "nhsHeartAttack",
+    },
     {
       category: "CONTRAINDICATION",
       description: "Don't use cayenne plasters or creams on broken skin, wounds or eczema, or if you're allergic to chili or peppers. Keep them away from the eyes and the inside of the mouth and nose, and wash your hands after touching them.",

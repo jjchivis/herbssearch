@@ -3,8 +3,9 @@ import { run } from "./lib/populate-herb";
 // Wild cherry (Prunus serotina, black cherry / capulín), from verified sources:
 // studies of its seeds (García-Aguilar et al. 2015), its traditional use as a
 // crude drug (Rivero-Cruz 2014), cyanogenic compounds in its leaves (Santos
-// Pimenta et al. 2014) and cyanide release from its fruits (Swain et al. 1992).
-// Family per GBIF / Catalogue of Life. No studies in people were found.
+// Pimenta et al. 2014), cyanide release from its fruits (Swain et al. 1992) and
+// an EBSCO CAM Review Board summary of its uses and safety (2024). Family per
+// GBIF / Catalogue of Life. No studies in people were found.
 
 run({
   name: "Wild Cherry",
@@ -13,7 +14,7 @@ run({
     genus: "Prunus",
     species: "serotina",
     nativeRange: "Native to North America; introduced into Europe, where it has become invasive",
-    partsUsed: "The leaves and seeds",
+    partsUsed: "The bark, leaves and seeds",
   },
   sources: {
     garcia: {
@@ -64,6 +65,15 @@ run({
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
+    ebsco: {
+      title: "Wild cherry's therapeutic uses",
+      author: "EBSCO CAM Review Board",
+      organization: "EBSCO Research Starters",
+      publicationDate: "2024-01-01",
+      url: "https://www.ebsco.com/research-starters/complementary-and-alternative-medicine/wild-cherrys-therapeutic-uses",
+      sourceType: "secondary",
+      tier: "TIER_5_SECONDARY",
+    },
   },
   synonyms: [
     { name: "Black Cherry", type: "COMMON_NAME" },
@@ -83,6 +93,18 @@ run({
       summary: "Capulín is sold and used in folk medicine for high blood pressure, digestive illnesses and cough, most often as an infusion (tea) of the leaves.",
       source: "rivero",
     },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "Wild cherry bark was a traditional Native American remedy for breathing infections and anxiety, and European settlers adopted it for the same purposes. Today it's mainly used as an ingredient in cough syrups. Herbal references also list it for:\n- Whooping cough, bronchitis and colds\n- Digestive problems and diarrhea\n- Gout\n- Relaxation and sleep, as a mild calming aid",
+      source: "ebsco",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "No double-blind, placebo-controlled trials have tested wild cherry in people. That doesn't mean it doesn't work, only that it needs more study.",
+      source: "ebsco",
+    },
   ],
   safety: [
     {
@@ -97,8 +119,25 @@ run({
         "The seeds of ripening black cherries build up amygdalin and release hydrogen cyanide when they are crushed or chewed. The ripe fruit flesh doesn't release cyanide.",
       source: "swain",
     },
+    {
+      category: "DOSAGE",
+      description:
+        "Wild cherry is generally regarded as safe at recommended doses, but it contains small amounts of cyanide, so don't take more than recommended. Take syrups that contain it as directed on the label.",
+      source: "ebsco",
+    },
+    {
+      category: "CONTRAINDICATION",
+      description: "Wild cherry isn't recommended for:\n- Young children\n- Pregnant or breastfeeding women\n- People with severe liver or kidney disease",
+      source: "ebsco",
+    },
+    {
+      category: "DRUG_INTERACTION",
+      description:
+        "Wild cherry may change how the liver breaks down some medicines. Use caution if you take medicines processed by the liver, such as lovastatin (for cholesterol), fexofenadine (for allergies) or triazolam (for sleep).",
+      source: "ebsco",
+    },
   ],
   symptoms: [
-    { slug: "cough", notes: "Traditionally used for cough in Mexico. It hasn't been studied in people, and its seeds and leaves can release cyanide." },
+    { slug: "cough", notes: "Traditionally used for cough by Native Americans and in Mexico, and now an ingredient in cough syrups. It hasn't been properly tested in people, and its seeds and leaves can release cyanide." },
   ],
 });

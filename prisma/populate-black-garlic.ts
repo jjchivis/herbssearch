@@ -6,7 +6,7 @@ import { run } from "./lib/populate-herb";
 // Villaño 2023). Family per the Garlic entry. No source gives a native range,
 // pregnancy advice or medicine interactions for black garlic itself, so none are
 // given; garlic's own warnings (populate-garlic.ts) were studied on other garlic
-// products and aren't copied here.
+// products, so the page only points to them (NCCIH) rather than repeating them.
 
 run({
   name: "Black Garlic",
@@ -89,6 +89,14 @@ run({
       sourceType: "peer_reviewed",
       tier: "TIER_2_SYSTEMATIC_REVIEW",
     },
+    nccih: {
+      title: "Garlic: Usefulness and Safety",
+      organization: "National Center for Complementary and Integrative Health (NIH)",
+      publicationDate: "2025-02-01",
+      url: "https://www.nccih.nih.gov/health/garlic",
+      sourceType: "government",
+      tier: "TIER_1_GOVERNMENT",
+    },
     villano: {
       title: "Effect of Black Garlic Consumption on Endothelial Function and Lipid Profile: A Before-and-After Study in Hypercholesterolemic and Non-Hypercholesterolemic Subjects",
       author: "Villaño D, Marhuenda J, Arcusa R, Moreno-Rojas JM, Cerdá B, Pereira-Caro G, Zafrilla P",
@@ -155,6 +163,12 @@ run({
     },
   ],
   safety: [
+    {
+      category: "PREPARATION_SPECIFIC",
+      description:
+        "Black garlic is made from ordinary garlic, but the black garlic studies here didn't look at garlic's known safety warnings. Garlic supplements may raise the risk of bleeding. If you take a blood thinner, aspirin or other medicines, talk to your health care provider first, and see the safety section on the Garlic page.",
+      source: "nccih",
+    },
     {
       category: "ADVERSE_EFFECT",
       description: "In a 12-week trial of 6 g of aged black garlic a day, no side effects were reported.",

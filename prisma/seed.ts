@@ -781,10 +781,10 @@ const herbs = [
     name: "Wild Cherry",
     scientificName: "Prunus serotina",
     category: "Medicinal",
-    summary: "Black cherry (capulín), a North American tree used in Mexican folk medicine for cough, high blood pressure and digestive problems. Its seeds and leaves contain compounds that can release cyanide.",
-    uses: "Cough (traditional), Digestion (traditional)",
+    summary: "Black cherry (capulín), a North American tree whose bark was a Native American remedy for breathing infections and is now used in cough syrups. Its seeds and leaves contain compounds that can release cyanide.",
+    uses: "Cough (traditional), Colds (traditional), Digestion (traditional), Cough syrups",
     properties: "Traditionally used for cough",
-    cautions: "Seeds and leaves contain compounds that release cyanide when crushed.",
+    cautions: "Contains small amounts of cyanide; not recommended for young children, during pregnancy or breastfeeding, or with severe liver or kidney disease.",
     imageUrl: "/herbs/wild-cherry.jpg",
   },
   {

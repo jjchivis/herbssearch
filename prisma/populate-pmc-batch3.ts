@@ -152,7 +152,7 @@ run(
       {
         category: "HUMAN_RESEARCH",
         summary:
-          "In an Iranian trial, 60 men with unexplained infertility took 300 mg a day of lesser galangal extract or a dummy pill for 3 months. Sperm count and the share of normally shaped sperm rose in the galangal group, and the researchers reported no adverse effects.",
+          "In an Iranian trial, 60 men with unexplained infertility took 300 mg a day of lesser galangal extract or a dummy pill for 3 months. Sperm count and the share of normally shaped sperm rose in the galangal group, and the researchers didn't report any side effects.",
         source: "kolangi",
       },
     ],

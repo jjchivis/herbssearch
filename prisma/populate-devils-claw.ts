@@ -33,6 +33,17 @@ run({
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
+    bargsten: {
+      title: "Devil's claw (Harpagophytum procumbens): is the buzz in Google justified?",
+      author: "Bargsten FE, Seifert R",
+      journal: "Naunyn-Schmiedeberg's Archives of Pharmacology",
+      publicationDate: "2025-03-05",
+      doi: "10.1007/s00210-025-03974-7",
+      pmid: "40042557",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12350520/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
   },
   synonyms: [
     { name: "Devils Claw", type: "COMMON_NAME" },
@@ -65,6 +76,17 @@ run({
     },
   ],
   safety: [
+    {
+      category: "DRUG_INTERACTION",
+      description:
+        "In animal studies, devil's claw changed heart rate, the strength of heart contractions and blood pressure, and affected some types of irregular heartbeat. It hasn't been shown to interact with heart medicines in people, but if you take medicine for heart rhythm or blood pressure, or have heart disease, talk to your doctor before using it.\n\nTechnical detail: negative chronotropic and dose-dependent inotropic effects; protection against hyperkinetic ventricular arrhythmias in isolated rat hearts.",
+      source: "brendler",
+    },
+    {
+      category: "CONTRAINDICATION",
+      description: "Many devil's claw products list heart disease as a reason not to use them.",
+      source: "bargsten",
+    },
     {
       category: "CONTRAINDICATION",
       description: "Don't use devil's claw if you have an active stomach or duodenal ulcer. People with gallstones should ask a doctor first. Joint pain with swelling, redness or fever should be checked by a doctor. It hasn't been shown to be safe for under-18s.",

@@ -1964,7 +1964,7 @@ const herbs = [
     summary: "A southern African root recognised in the EU as a traditional medicine for minor joint pain and mild digestive problems. Trials of variable quality suggest it helps osteoarthritis and back pain.",
     uses: "Joint pain, Osteoarthritis and back pain (studied), Bloating and loss of appetite (traditional)",
     properties: "",
-    cautions: "Not with an active stomach ulcer; ask a doctor first if you have gallstones. Not recommended in pregnancy.",
+    cautions: "Not with an active stomach ulcer; ask a doctor first if you have gallstones, heart disease or take heart-rhythm or blood pressure medicine. Not recommended in pregnancy.",
     imageUrl: "/herbs/devils-claw.jpg",
   },
   {

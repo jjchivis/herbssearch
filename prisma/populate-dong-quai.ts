@@ -2,7 +2,8 @@ import { run } from "./lib/populate-herb";
 
 // Dong quai (Angelica sinensis), from verified sources: Memorial Sloan
 // Kettering's About Herbs entry, a 2014 ethnopharmacology review (Hook, J
-// Ethnopharmacol) and a small randomized trial in men (Al-Bareeq et al. 2010).
+// Ethnopharmacol), a small randomized trial in men (Al-Bareeq et al. 2010) and
+// two menopause trials (Hirata et al. 1997; Haines et al. 2008).
 // NCCIH has no dong quai page. Family per GBIF / Catalogue of Life.
 
 run({
@@ -40,6 +41,30 @@ run({
       url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2811999/",
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
+    },
+    hirata: {
+      title: "Does dong quai have estrogenic effects in postmenopausal women? A double-blind, placebo-controlled trial",
+      author: "Hirata JD, Swiersz LM, Zell B, Small R, Ettinger B",
+      journal: "Fertility and Sterility",
+      organization: "Fertility and Sterility",
+      publicationDate: "1997-12-01",
+      doi: "10.1016/s0015-0282(97)00397-x",
+      pmid: "9418683",
+      url: "https://pubmed.ncbi.nlm.nih.gov/9418683/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_2_SYSTEMATIC_REVIEW",
+    },
+    haines: {
+      title: "A randomized, double-blind, placebo-controlled study of the effect of a Chinese herbal medicine preparation (Dang Gui Buxue Tang) on menopausal symptoms in Hong Kong Chinese women",
+      author: "Haines CJ, Lam PM, Chung TK, Cheng KF, Leung PC",
+      journal: "Climacteric",
+      organization: "Climacteric",
+      publicationDate: "2008-06-01",
+      doi: "10.1080/13697130802073029",
+      pmid: "18568789",
+      url: "https://pubmed.ncbi.nlm.nih.gov/18568789/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_2_SYSTEMATIC_REVIEW",
     },
   },
   synonyms: [
@@ -91,6 +116,18 @@ run({
         "In a small trial of 22 men with hot flashes caused by prostate cancer hormone treatment, dong quai taken daily for 3 months made no difference to how often, how badly or how long they had hot flashes, compared with placebo.\n\nTechnical detail: randomized, double-blind, placebo-controlled pilot; 17 of 22 completed.",
       source: "albareeq",
     },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "In a US trial, 71 women past menopause who had hot flashes took dong quai on its own or a placebo for 24 weeks. Dong quai worked no better than placebo for hot flashes or other menopausal symptoms. It also didn't act like estrogen on the lining of the womb or the vagina.\n\nTechnical detail: double-blind, randomized, placebo-controlled; no significant differences in endometrial thickness, vaginal maturation index, vasomotor flush count or Kupperman index.",
+      source: "hirata",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "In a 6-month trial in Hong Kong, 100 women with menopausal symptoms took a traditional formula (Dang Gui Buxue Tang, 1 part dong quai to 5 parts astragalus) or a placebo. Overall it worked no better than placebo for hot flashes and night sweats; it did better only for mild hot flashes. No serious side effects were linked to it.\n\nTechnical detail: randomized, double-blind, placebo-controlled; 103 enrolled, 50 per group; mild flushes per month 18.9 to 8.6 (p < 0.01) vs placebo 26.0 to 12.4 (p = 0.062).",
+      source: "haines",
+    },
   ],
   safety: [
     {
@@ -120,7 +157,8 @@ run({
   symptoms: [
     {
       slug: "menopause-symptoms",
-      notes: "Traditionally used for hot flashes, but studies of it for menopausal symptoms are inconclusive.",
+      notes:
+        "Traditionally used for hot flashes, but in a 24-week trial of 71 women dong quai on its own worked no better than placebo. A formula combining it with astragalus also did no better overall.",
     },
     {
       slug: "menstrual-discomfort",

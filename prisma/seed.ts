@@ -452,7 +452,7 @@ const herbs = [
     scientificName: "Arctium lappa",
     category: "Medicinal",
     summary: "A plant whose root has been eaten as food in Asia for centuries. It is traditionally used as a \"blood purifier\" and for skin problems, but there is little evidence in people.",
-    uses: "Skin problems, Appetite, Urinary complaints, Blood purifier (traditional)",
+    uses: "Skin problems, Appetite, Urinary complaints, Blood purifier (traditional), Skin brightening (seed oil lotion, studied)",
     properties: "Traditionally used as a blood purifier",
     cautions: "Avoid during pregnancy; can cause severe allergic reactions, and one case of liver injury has been reported.",
     imageUrl: "/herbs/burdock.jpg",

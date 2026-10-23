@@ -16,6 +16,17 @@ run({
     partsUsed: "The root; the fruit is used in traditional Chinese medicine",
   },
   sources: {
+    ishii: {
+      title: "Arctigenin-Enriched Burdock Seed Oil (ABSO): A New Skin Brightening Botanical Extract",
+      author: "Ishii T, Shimizu T, Imai M, Healy J, Rouzard K, Tamura M, Fitzgerald C",
+      journal: "Cosmetics",
+      organization: "Cosmetics",
+      publicationDate: "2023-01-04",
+      doi: "10.3390/cosmetics10010010",
+      url: "https://www.mdpi.com/2079-9284/10/1/10",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
     mskcc: {
       title: "Burdock",
       organization: "Memorial Sloan Kettering Cancer Center, About Herbs",
@@ -52,6 +63,18 @@ run({
     },
   ],
   evidence: [
+    {
+      category: "PRECLINICAL",
+      summary:
+        "Burdock seeds are rich in arctiin and arctigenin, plant compounds called lignans. In lab-grown human skin, an oil made from burdock seeds and enriched in arctigenin reduced melanin, the pigment that darkens skin, more than plain burdock seed oil. A lotion with this oil didn't irritate lab-grown skin.\n\nTechnical detail: MelanoDerm and EpiDerm 3D tissue models; the enriched oil (ABSO) had about 5 times more arctigenin than burdock seed oil.",
+      source: "ishii",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "In an 8-week trial, 45 adults of Asian descent with uneven skin tone used a 1% lotion of arctigenin-enriched burdock seed oil or the same lotion without it, twice a day. Skin brightness and evenness improved compared with the start, and at week 4 brightness was better than with the plain lotion. Both lotions were well tolerated. The study was paid for and run by the two companies developing the ingredient, and all authors work for them and own stock in them.\n\nTechnical detail: double-blind, vehicle-controlled; visual brightness +22.7% at week 4 vs vehicle (p = 0.0243); other gains were reported against baseline; Rohto Pharmaceutical and Signum Biosciences.",
+      source: "ishii",
+    },
     {
       category: "TRADITIONAL",
       summary:

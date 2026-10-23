@@ -2,7 +2,8 @@ import { run } from "./lib/populate-herb";
 
 // Cayenne (Capsicum fruit), from the European Medicines Agency's EU herbal
 // monograph on Capsicum annuum var. minimum and small-fruited Capsicum frutescens
-// (2015).
+// (2015), a chili trial in IBS (Aniwan 2014) and a study of a cayenne poultice
+// on the skin in healthy volunteers (Sarabon et al. 2018).
 
 run({
   name: "Cayenne",
@@ -33,6 +34,18 @@ run({
       sourceType: "government",
       tier: "TIER_1_GOVERNMENT",
     },
+    sarabon: {
+      title: "Acute effect of different concentrations of cayenne pepper cataplasm on sensory-motor functions and serum levels of inflammation-related biomarkers in healthy subjects",
+      author: "Sarabon N, Löfler S, Cvecka J, Hübl W, Zampieri S",
+      journal: "European Journal of Translational Myology",
+      organization: "European Journal of Translational Myology",
+      publicationDate: "2018-03-01",
+      doi: "10.4081/ejtm.2018.7333",
+      pmid: "29686821",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5895990/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
   },
   synonyms: [
     { name: "Cayenne Pepper", type: "COMMON_NAME" },
@@ -42,6 +55,18 @@ run({
     { name: "Capsaicin", type: "COMMON_NAME" },
   ],
   evidence: [
+    {
+      category: "TRADITIONAL",
+      summary:
+        "Cayenne poultices have long been put on the skin for pain. A skin-reddening cayenne treatment was described in 1830 for pain, cramps and muscle and joint problems. In 1909 an Austrian doctor, Giuseppe Munari, first prescribed a cayenne and clay poultice. It's still used in Vienna and Lower Austria for back pain, rheumatic conditions and osteoarthritis pain.",
+      source: "sarabon",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "In a small study, 20 healthy adults had a cayenne and clay poultice (0%, 2.5%, 5% or 10% cayenne) put on their back for 20 minutes, a week or more apart. At 5% and 10%, people became less sensitive to pain and light touch at that spot. At 10%, back strength dropped for a while. Blood pressure didn't change. In 6 more healthy men, one 5% poultice didn't raise signs of inflammation in the blood over 24 hours. People felt warmth, burning and tingling. It wasn't tested in people with back pain, and the authors say repeated use needs study.\n\nTechnical detail: randomized order of concentrations within subjects; pressure-pain threshold increased at 5% and 10%; maximal trunk extension force fell at 10% (p = .001); IL-6 fell at 1 hour and sE-selectin fell; the 5% mix contains about 0.0045% capsaicin.",
+      source: "sarabon",
+    },
     {
       category: "HUMAN_RESEARCH",
       summary:

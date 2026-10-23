@@ -66,6 +66,8 @@ run({
   },
   synonyms: [
     { name: "Mexican Bluebell", type: "COMMON_NAME" },
+    { name: "Minnie Root", type: "COMMON_NAME" },
+    { name: "Minnieroot", type: "COMMON_NAME" },
   ],
   traditions: [
     {

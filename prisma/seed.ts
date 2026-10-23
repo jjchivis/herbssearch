@@ -2708,6 +2708,16 @@ const herbs = [
     imageUrl: "/herbs/wild-lettuce.jpg",
   },
   {
+    name: "Lespedeza",
+    scientificName: "Lespedeza spp.",
+    category: "Medicinal",
+    summary: "Bush clover, a group of about 40 plants used in East Asian folk medicine for skin rashes, inflammation and the liver. Research so far is in the lab.",
+    uses: "Skin rashes (traditional), Liver support (traditional), Kidney supplements (unproven)",
+    properties: "Antioxidant (in lab studies)",
+    cautions: "Not tested in people.",
+    imageUrl: "/herbs/lespedeza.jpg",
+  },
+  {
     name: "Solomon's Seal",
     scientificName: "Polygonatum odoratum",
     category: "Medicinal",

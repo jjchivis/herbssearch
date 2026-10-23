@@ -21,6 +21,7 @@ const SEARCH_ALIASES: Record<string, string> = {
   hypertensive: "high blood pressure",
   hypotension: "low blood pressure",
   hypotensive: "low blood pressure",
+  "atopic dermatitis": "eczema",
 };
 
 function libraryHref(params: { category?: string; q?: string; bodySystem?: string }) {

@@ -15,6 +15,18 @@ run({
     partsUsed: "The flowers",
   },
   sources: {
+    crncevic: {
+      title: "Double-blind randomised controlled trial of an emollient cream with and without 1 % supercritical CO2 extract of Calendula officinalis in contact dermatitis",
+      author: "Crnčević MŠ, Durdov T, Rušić D, et al.",
+      journal: "Acta Pharmaceutica",
+      organization: "Acta Pharmaceutica",
+      publicationDate: "2025-12-01",
+      doi: "10.2478/acph-2025-0035",
+      pmid: "41527980",
+      url: "https://pubmed.ncbi.nlm.nih.gov/41527980/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
     emaSummary: {
       title: "Calendula flower (Calendula officinalis L., flos): summary of the HMPC conclusions (EMA/267467/2018)",
       organization: "European Medicines Agency, Committee on Herbal Medicinal Products (HMPC)",
@@ -66,6 +78,12 @@ run({
     },
   ],
   evidence: [
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "In a 2025 trial, 20 healthy volunteers had patches of skin deliberately irritated, as happens in contact dermatitis. A moisturising cream with 1% calendula extract kept the skin better hydrated than the same cream without calendula, and helped the skin barrier recover faster. It didn't reduce redness, and there were no side effects.\n\nTechnical detail: double-blind randomised within-person trial; hydration better than placebo cream on day 4 (p = 0.035); transepidermal water loss lower than untreated on day 3 (p = 0.022).",
+      source: "crncevic",
+    },
     {
       category: "TRADITIONAL",
       summary:

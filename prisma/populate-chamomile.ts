@@ -118,7 +118,25 @@ async function main() {
   }
 
   // --- evidence, kept strictly separated by category ---
+  const kamillosanTrial = await findOrCreateSource("https://pubmed.ncbi.nlm.nih.gov/10799352/", {
+    title: "Proof of efficacy of Kamillosan cream in atopic eczema",
+    author: "Patzelt-Wenczler R, Ponce-Pöschl E",
+    organization: "European Journal of Medical Research",
+    journal: "European Journal of Medical Research",
+    publicationDate: new Date("2000-04-01"),
+    pmid: "10799352",
+    url: "https://pubmed.ncbi.nlm.nih.gov/10799352/",
+    sourceType: "peer_reviewed",
+    tier: "TIER_3_PEER_REVIEWED",
+  });
+
   const evidenceEntries = [
+    {
+      category: "HUMAN_RESEARCH" as const,
+      summary:
+        "In a small 2000 study of people with moderate atopic eczema, each person used a chamomile cream on one side of the body and either a mild steroid cream (0.5% hydrocortisone) or a plain cream on the other, for 2 weeks. The chamomile cream did slightly better than the hydrocortisone, but only marginally better than the plain cream.\n\nTechnical detail: partially double-blind, randomized half-side comparison; Kamillosan cream.",
+      sourceId: kamillosanTrial.id,
+    },
     {
       category: "TRADITIONAL" as const,
       summary:
@@ -180,7 +198,7 @@ async function main() {
     }
   }
 
-  console.log("Chamomile populated from 2 verified sources.");
+  console.log("Chamomile populated from 3 verified sources.");
 }
 
 main()

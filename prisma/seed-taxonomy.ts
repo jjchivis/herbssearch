@@ -86,6 +86,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
       "Blood pressure that stays higher than normal. It often causes no symptoms but raises the risk of heart attack and stroke, so it needs diagnosis and regular checks by a health professional. Don't stop or replace prescribed blood pressure medicine with herbs.",
   },
   {
+    name: "Eczema",
+    slug: "eczema",
+    bodySystem: "skin",
+    description:
+      "Dry, itchy, inflamed patches of skin, including atopic dermatitis and contact dermatitis. See a health professional if it's widespread, weeping, infected or not improving. Herbal products can themselves cause allergic skin reactions, so test a small patch first.",
+  },
+  {
     name: "Poisonous Plants",
     slug: "poisonous-plants",
     bodySystem: "general-wellness",

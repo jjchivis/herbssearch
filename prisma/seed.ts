@@ -2737,6 +2737,16 @@ const herbs = [
     cautions: "Its safety hasn't been studied in detail.",
     imageUrl: "/herbs/sophora-root.jpg",
   },
+  {
+    name: "Black Garlic",
+    scientificName: "Allium sativum",
+    category: "Culinary",
+    summary: "Garlic bulbs aged with gentle heat for weeks until the cloves turn black, soft and sweet, long eaten in Korea, Japan and Thailand. A few small trials suggest it may slightly improve some blood fat and blood pressure measures.",
+    uses: "Food, Cholesterol, High blood pressure",
+    properties: "Antioxidant (in lab studies), May slightly lower blood pressure",
+    cautions: "Its safety hasn't been studied in detail, and the trials so far are small and short.",
+    imageUrl: "/herbs/black-garlic.jpg",
+  },
 ];
 
 async function main() {

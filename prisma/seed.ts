@@ -2747,6 +2747,26 @@ const herbs = [
     cautions: "Its safety hasn't been studied in detail, and the trials so far are small and short.",
     imageUrl: "/herbs/black-garlic.jpg",
   },
+  {
+    name: "Spearmint",
+    scientificName: "Mentha spicata",
+    category: "Culinary",
+    summary: "A mint grown worldwide as a flavoring and tea, traditionally used for colds, coughs and digestive problems. Small trials suggest spearmint tea may lower testosterone in women with PCOS, and an extract may slightly help memory and attention.",
+    uses: "Flavoring, Tea, Colds (traditional), Digestion (traditional), Excess hair growth in PCOS (small trials), Memory (small trials)",
+    properties: "May lower testosterone (small trials), Antioxidant (in lab studies)",
+    cautions: "Safe as a flavoring, but very strong spearmint tea damaged the kidneys and liver of rats.",
+    imageUrl: "/herbs/spearmint.jpg",
+  },
+  {
+    name: "Tremella",
+    scientificName: "Tremella fuciformis",
+    category: "Culinary",
+    summary: "Snow fungus, an edible white, frilly fungus eaten and used in Chinese medicine for centuries. Most research is in the lab; one small trial suggests it may help with memory complaints.",
+    uses: "Food, Stomach and lungs (traditional), Weakness (traditional), Memory (one small trial)",
+    properties: "Antioxidant (in lab studies)",
+    cautions: "Spoiled snow fungus can contain a bacterial toxin that causes severe food poisoning.",
+    imageUrl: "/herbs/tremella.jpg",
+  },
 ];
 
 async function main() {

@@ -111,6 +111,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Sphagnaceae: "the peat moss family",
   Stemonaceae: "the stemona family",
   Theaceae: "the tea family",
+  Tremellaceae: "a family of jelly fungi",
   Ulmaceae: "the elm family",
   Urticaceae: "the nettle family",
   Verbenaceae: "the verbena family",

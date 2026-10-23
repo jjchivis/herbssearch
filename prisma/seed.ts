@@ -2777,6 +2777,16 @@ const herbs = [
     cautions: "Never swallow tea tree oil; it can cause confusion and coma. It can irritate the skin.",
     imageUrl: "/herbs/tea-tree.jpg",
   },
+  {
+    name: "Mexican Oregano",
+    scientificName: "Poliomintha longiflora",
+    category: "Culinary",
+    summary: "A Mexican plant known as oregano. It's a different plant from common oregano, but its oil contains the same compounds, carvacrol and thymol. Its oil has only been studied in the lab, not in animals or people.",
+    uses: "Flavoring",
+    properties: "Antioxidant (in lab studies), Kills some germs (in lab studies)",
+    cautions: "Not tested in animals or people.",
+    imageUrl: "/herbs/mexican-oregano.jpg",
+  },
 ];
 
 async function main() {

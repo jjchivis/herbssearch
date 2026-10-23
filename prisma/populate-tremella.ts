@@ -111,6 +111,7 @@ run({
     },
   ],
   symptoms: [
+    { slug: "fatigue", notes: "Valued in Chinese medicine for weakness. Not tested in trials." },
     {
       slug: "memory-and-thinking",
       notes: "In one small 8-week trial, adults with memory complaints who took tremella did better on memory tests than with a placebo.",

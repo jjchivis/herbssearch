@@ -172,6 +172,15 @@ run({
     },
   ],
   symptoms: [
+    { slug: "colds-and-congestion", notes: "A traditional remedy for colds. Not tested in trials." },
+    { slug: "cough", notes: "A traditional remedy for cough. Not tested in trials." },
+    { slug: "fever", notes: "A traditional remedy for fever. Not tested in trials." },
+    { slug: "asthma-and-wheezing", notes: "A traditional remedy for asthma. Not tested in trials; asthma needs medical care." },
+    { slug: "indigestion", notes: "A traditional remedy for digestive problems. Not tested in trials." },
+    {
+      slug: "occasional-sleeplessness",
+      notes: "In one trial funded by its maker, older adults taking 900 mg of a spearmint extract said they fell asleep more easily than with a placebo.",
+    },
     {
       slug: "memory-and-thinking",
       notes:

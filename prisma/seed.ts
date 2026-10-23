@@ -2767,6 +2767,16 @@ const herbs = [
     cautions: "Spoiled snow fungus can contain a bacterial toxin that causes severe food poisoning.",
     imageUrl: "/herbs/tremella.jpg",
   },
+  {
+    name: "Tea Tree",
+    scientificName: "Melaleuca alternifolia",
+    category: "Medicinal",
+    summary: "An Australian tree whose leaves Aboriginal Australians used for wounds, burns and insect bites. Its oil, used on the skin, may modestly help acne. Never swallow it.",
+    uses: "Acne, Athlete's foot, Wounds and burns (traditional), Insect bites (traditional)",
+    properties: "May modestly reduce acne, Kills some germs (in lab studies)",
+    cautions: "Never swallow tea tree oil; it can cause confusion and coma. It can irritate the skin.",
+    imageUrl: "/herbs/tea-tree.jpg",
+  },
 ];
 
 async function main() {

@@ -195,6 +195,8 @@ model HerbPreparation {
   preparationId String
   preparation   Preparation @relation(fields: [preparationId], references: [id], onDelete: Cascade)
   notes         String?
+  sourceId      String?
+  source        Source?     @relation(fields: [sourceId], references: [id])
 
   @@unique([herbId, preparationId])
   @@index([preparationId])
@@ -267,6 +269,7 @@ model Source {
   evidenceEntries  EvidenceEntry[]
   safetyRecords    SafetyRecord[]
   herbActions      HerbAction[]
+  herbPreparations HerbPreparation[]
 
   @@index([tier])
   @@index([doi])

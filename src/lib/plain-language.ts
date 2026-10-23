@@ -207,6 +207,34 @@ export const TIER_LABELS: Record<string, string> = {
   TIER_5_SECONDARY: "General reference",
 };
 
+// Short form of TIER_LABELS, shown as a badge next to each citation number.
+export const TIER_BADGES: Record<string, string> = {
+  TIER_1_GOVERNMENT: "Health agency",
+  TIER_2_SYSTEMATIC_REVIEW: "Review or trial",
+  TIER_3_PEER_REVIEWED: "Study",
+  TIER_4_TRADITIONAL_TEXT: "Traditional text",
+  TIER_5_SECONDARY: "General reference",
+};
+
+export const TIER_ORDER = [
+  "TIER_1_GOVERNMENT",
+  "TIER_2_SYSTEMATIC_REVIEW",
+  "TIER_3_PEER_REVIEWED",
+  "TIER_4_TRADITIONAL_TEXT",
+  "TIER_5_SECONDARY",
+];
+
+// Safety categories summarized in the "Safety at a glance" strip at the top of
+// each herb page, in display order.
+export const SAFETY_GLANCE = [
+  { category: "PREGNANCY", label: "Pregnancy" },
+  { category: "BREASTFEEDING", label: "Breastfeeding" },
+  { category: "DRUG_INTERACTION", label: "Medicines" },
+  { category: "CONTRAINDICATION", label: "Who should avoid it" },
+  { category: "ALLERGY", label: "Allergies" },
+  { category: "TOXICITY", label: "Toxicity" },
+];
+
 export function herbPageTitle(name: string, scientificName: string, hasInteractions: boolean) {
   return `${name} (${scientificName}): Uses, Research${hasInteractions ? ", Drug Interactions" : ""} & Safety`;
 }

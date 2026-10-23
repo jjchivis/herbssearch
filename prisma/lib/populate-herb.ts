@@ -61,6 +61,9 @@ export type HerbContent = {
   // Links to symptom-search topics (see prisma/seed-taxonomy.ts), with a plain
   // note on whether the link is traditional use or research.
   symptoms?: { slug: string; notes: string }[];
+  // Common ways the herb is prepared (slugs from the preparations list in
+  // prisma/seed-taxonomy.ts), each with a plain note and its source.
+  preparations?: { slug: string; notes: string; source: string }[];
 };
 
 const prisma = new PrismaClient({ adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL }) });
@@ -135,10 +138,20 @@ async function populateHerb(c: HerbContent) {
     });
   }
 
+  for (const prep of c.preparations ?? []) {
+    const preparation = await prisma.preparation.findUniqueOrThrow({ where: { slug: prep.slug } });
+    const data = { notes: prep.notes, sourceId: sourceId(prep.source) };
+    await prisma.herbPreparation.upsert({
+      where: { herbId_preparationId: { herbId, preparationId: preparation.id } },
+      update: data,
+      create: { herbId, preparationId: preparation.id, ...data },
+    });
+  }
+
   console.log(
     c.profile
       ? `${c.name} populated from ${Object.keys(c.sources).length} verified sources.`
-      : `${c.name}: added ${c.evidence?.length ?? 0} evidence entries and ${c.symptoms?.length ?? 0} topic links.`,
+      : `${c.name}: added ${c.evidence?.length ?? 0} evidence entries, ${c.symptoms?.length ?? 0} topic links and ${c.preparations?.length ?? 0} preparations.`,
   );
 }
 

@@ -1,20 +1,22 @@
+import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion/fade-in";
 import { HerbImage } from "@/components/herb-image";
 
 const CURATED_NAMES = ["Ashwagandha", "Chamomile", "Ginger", "Lavender", "Peppermint", "Turmeric"];
 
-const ROADMAP_CATEGORIES = [
-  "Symptoms",
-  "Conditions",
-  "Constituents",
-  "Preparations",
-  "Traditional Uses",
-  "Evidence",
+const EXPLORE_LINKS = [
+  { label: "Herbs", href: "/herbs" },
+  { label: "Health topics", href: "/topics" },
+  { label: "Compounds", href: "/compounds" },
+  { label: "Traditions", href: "/traditions" },
+  { label: "Preparations", href: "/preparations" },
+  { label: "Sources", href: "/sources" },
+  { label: "Glossary", href: "/glossary" },
 ];
 
 export default async function HomePage() {
-  const [featured, curated, bodySystems, herbCount] = await Promise.all([
+  const [featured, curated, bodySystems, herbCount, sourceCount, evidenceCount, safetyCount, unsourcedCount, topicCount] = await Promise.all([
     prisma.herb.findFirst({ where: { name: "Echinacea" } }),
     prisma.herb.findMany({
       where: { name: { in: CURATED_NAMES } },
@@ -22,7 +24,17 @@ export default async function HomePage() {
     }),
     prisma.bodySystem.findMany({ orderBy: { name: "asc" } }),
     prisma.herb.count(),
+    prisma.source.count({ where: { OR: [{ evidenceEntries: { some: {} } }, { safetyRecords: { some: {} } }] } }),
+    prisma.evidenceEntry.count(),
+    prisma.safetyRecord.count(),
+    Promise.all([
+      prisma.evidenceEntry.count({ where: { sourceId: null } }),
+      prisma.safetyRecord.count({ where: { sourceId: null } }),
+    ]).then(([a, b]) => a + b),
+    prisma.symptom.count({ where: { herbs: { some: {} } } }),
   ]);
+  const statementCount = evidenceCount + safetyCount;
+  const sourcedShare = statementCount ? Math.floor(((statementCount - unsourcedCount) / statementCount) * 100) : 0;
 
   return (
     <main className="flex flex-1 flex-col">
@@ -86,19 +98,60 @@ export default async function HomePage() {
               Explore the Herbal World
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-sm">
-              <a
-                href="/herbs"
-                className="font-medium text-[var(--on-band)] underline decoration-[var(--highlight)] underline-offset-4 hover:text-[var(--highlight)]"
-              >
-                Herbs
-              </a>
-              {ROADMAP_CATEGORIES.map((label) => (
-                <span key={label} className="text-[var(--on-band-soft)]">
-                  {label}
-                </span>
+              {EXPLORE_LINKS.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="font-medium text-[var(--on-band)] underline decoration-[var(--highlight)] underline-offset-4 hover:text-[var(--highlight)]"
+                >
+                  {l.label}
+                </Link>
               ))}
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* TRANSPARENCY COUNTER */}
+      <section className="border-b border-[var(--border)]">
+        <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-12">
+          <div className="flex flex-col gap-1">
+            <h2 className="font-serif text-2xl text-[var(--foreground)]">Every statement has a source</h2>
+            <p className="text-sm text-[var(--muted)]">
+              Each traditional use, research finding and safety warning in the library links to the source it came
+              from. These numbers update as the library grows.
+            </p>
+          </div>
+          <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {[
+              { value: herbCount, label: "Herbs", href: "/herbs" },
+              { value: statementCount, label: "Findings and warnings" },
+              { value: sourceCount, label: "Sources cited", href: "/sources" },
+              { value: `${sourcedShare}%`, label: "Linked to a source" },
+            ].map((stat) => (
+              <div key={stat.label} className="flex flex-col gap-1 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4">
+                <dt className="font-mono order-2 text-xs uppercase tracking-wide text-[var(--muted)]">
+                  {stat.href ? (
+                    <Link href={stat.href} className="hover:text-[var(--highlight)]">
+                      {stat.label} →
+                    </Link>
+                  ) : (
+                    stat.label
+                  )}
+                </dt>
+                <dd className="font-serif order-1 text-3xl text-[var(--foreground)]">
+                  {typeof stat.value === "number" ? stat.value.toLocaleString("en-US") : stat.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+          <p className="text-xs text-[var(--muted)]">
+            {topicCount} health topics, each herb linked with a note on what the link is based on.{" "}
+            <Link href="/topics" className="underline underline-offset-2 hover:text-[var(--highlight)]">
+              Browse health topics
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

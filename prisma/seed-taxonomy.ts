@@ -368,7 +368,7 @@ const preparations = [
   { name: "Powder", slug: "powder", description: "Dried plant material ground into a fine powder." },
   { name: "Capsule", slug: "capsule", description: "Powdered herb or extract sealed in a capsule to swallow." },
   { name: "Extract", slug: "extract", description: "A concentrated preparation made by drawing a plant's compounds out with a liquid such as water or alcohol." },
-  { name: "Oil", slug: "oil", description: "Plant material soaked in a carrier oil, such as olive oil. This is different from an essential oil." },
+  { name: "Oil", slug: "oil", description: "An oil pressed from seeds or fruits, or made by soaking plant material in a carrier oil such as olive oil. This is different from an essential oil." },
   { name: "Essential Oil", slug: "essential-oil", description: "A concentrated oil containing the aromatic compounds from a plant." },
   { name: "Salve", slug: "salve", description: "A thick ointment for the skin, made from herb-infused oil and wax." },
   { name: "Poultice", slug: "poultice", description: "Mashed or moistened plant material placed directly on the skin." },

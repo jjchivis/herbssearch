@@ -2787,6 +2787,16 @@ const herbs = [
     cautions: "Not tested in animals or people.",
     imageUrl: "/herbs/mexican-oregano.jpg",
   },
+  {
+    name: "Lippia Graveolens",
+    scientificName: "Lippia graveolens",
+    category: "Culinary",
+    summary: "A plant from northern Mexico also sold as Mexican oregano. It's in the verbena family, not the mint family, but its oil contains carvacrol and thymol like common oregano. Its oil has only been studied in the lab, not in animals or people.",
+    uses: "Flavoring",
+    properties: "Antioxidant (in lab studies), Kills some bacteria (in lab studies)",
+    cautions: "Not tested in animals or people.",
+    imageUrl: "/herbs/lippia-graveolens.jpg",
+  },
 ];
 
 async function main() {

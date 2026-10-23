@@ -2718,6 +2718,16 @@ const herbs = [
     imageUrl: "/herbs/lespedeza.jpg",
   },
   {
+    name: "Tepezcohuite",
+    scientificName: "Mimosa tenuiflora",
+    category: "Medicinal",
+    summary: "A tree from southern Mexico to Brazil whose bark is used on wounds and burns. Two small trials of a bark gel for leg ulcers disagreed.",
+    uses: "Wounds and burns (traditional), Leg ulcers (mixed trial results), Skin aging (unproven)",
+    properties: "Rich in tannins, Contains DMT (a hallucinogen)",
+    cautions: "Caused birth defects in animals; avoid in pregnancy. Don't take by mouth.",
+    imageUrl: "/herbs/tepezcohuite.jpg",
+  },
+  {
     name: "Solomon's Seal",
     scientificName: "Polygonatum odoratum",
     category: "Medicinal",

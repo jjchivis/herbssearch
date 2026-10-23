@@ -93,6 +93,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
       "Dry, itchy, inflamed patches of skin, including atopic dermatitis and contact dermatitis. See a health professional if it's widespread, weeping, infected or not improving. Herbal products can themselves cause allergic skin reactions, so test a small patch first.",
   },
   {
+    name: "Acne",
+    slug: "acne",
+    bodySystem: "skin",
+    description:
+      "Pimples, blackheads, whiteheads and deeper painful lumps on the face, chest or back. See a health professional if it's severe or painful, leaves scars, or isn't improving. Herbal products can themselves irritate the skin, so test a small patch first.",
+  },
+  {
     name: "Poisonous Plants",
     slug: "poisonous-plants",
     bodySystem: "general-wellness",

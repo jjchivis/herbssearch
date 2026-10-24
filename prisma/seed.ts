@@ -1245,7 +1245,7 @@ const herbs = [
     uses: "Appetite, Digestion, Bloating, Period cramps, Small wounds",
     properties: "May ease cramps",
     cautions: "Don't use if you're allergic to plants in the daisy family; only for those over 12.",
-    imageUrl: "/herbs/yarrow.jpg",
+    imageUrl: "/herbs/yarrow-v2.jpg",
   },
   {
     name: "Star Anise",

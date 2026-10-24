@@ -56,7 +56,7 @@
     --band-2: #0f1a0a;
     --on-band: #f1e9d4;
     --on-band-soft: #a9b596;
-    --section-bar: rgb(34 48 32 / 0.9);
+    --section-bar: rgb(20 31 14 / 0.95);
   }
 }
 
@@ -67,7 +67,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: linear-gradient(180deg, #1b2716 0%, #223020 50%, #2c3d28 100%) fixed;
+    background: var(--background);
   }
 }
 

@@ -305,3 +305,155 @@ model SafetyRecord {
   @@index([herbId])
   @@index([category])
 }
+
+// ---------------------------------------------------------------------------
+// Marketplace, Phase 2: accounts, seller applications and sellers.
+// Additive only; the herb tables above are untouched.
+//
+// User, Session, Account and Verification follow Better Auth's schema
+// (generated with `npx auth generate --config src/lib/auth.ts`). If you
+// regenerate them, keep the marketplace relations on User.
+// ---------------------------------------------------------------------------
+
+model User {
+  id            String    @id
+  name          String
+  email         String
+  emailVerified Boolean   @default(false)
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  // "customer" or "admin"; never settable from sign-up or profile updates.
+  role          String?   @default("customer")
+  sessions      Session[]
+  accounts      Account[]
+
+  sellerApplications   SellerApplication[] @relation("SellerApplicant")
+  reviewedApplications SellerApplication[] @relation("SellerApplicationReviewer")
+  seller               Seller?
+
+  @@unique([email])
+  @@map("user")
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([token])
+  @@index([userId])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@index([userId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verification")
+}
+
+enum SellerApplicationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum SellerStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+enum BusinessType {
+  INDIVIDUAL
+  COMPANY
+}
+
+// What a seller plans to sell. Supplements carry the strictest claim rules.
+enum ProductGroup {
+  DRIED_HERBS_TEAS
+  SUPPLEMENTS_EXTRACTS
+  NON_INGESTIBLE
+}
+
+model SellerApplication {
+  id                String                  @id @default(cuid())
+  userId            String
+  user              User                    @relation("SellerApplicant", fields: [userId], references: [id], onDelete: Cascade)
+  storeName         String
+  legalBusinessName String
+  businessType      BusinessType
+  contactEmail      String
+  phone             String?
+  website           String?
+  country           String
+  region            String?
+  description       String
+  plannedGroups     ProductGroup[]
+  termsVersion      String
+  termsAcceptedAt   DateTime
+  status            SellerApplicationStatus @default(PENDING)
+  reviewNote        String?
+  reviewedById      String?
+  reviewedBy        User?                   @relation("SellerApplicationReviewer", fields: [reviewedById], references: [id], onDelete: SetNull)
+  reviewedAt        DateTime?
+  createdAt         DateTime                @default(now())
+  updatedAt         DateTime                @updatedAt
+  seller            Seller?
+
+  @@index([userId])
+  @@index([status])
+}
+
+// Created only when an admin approves an application. One store per user.
+model Seller {
+  id               String            @id @default(cuid())
+  userId           String            @unique
+  user             User              @relation(fields: [userId], references: [id], onDelete: Restrict)
+  applicationId    String            @unique
+  application      SellerApplication @relation(fields: [applicationId], references: [id], onDelete: Restrict)
+  storeName        String
+  slug             String            @unique
+  description      String
+  logoUrl          String? // upload arrives in Phase 3 with Vercel Blob
+  website          String?
+  contactEmail     String
+  status           SellerStatus      @default(ACTIVE)
+  isFoundingSeller Boolean           @default(false)
+  stripeAccountId  String?           @unique // set in Phase 5 (Stripe Connect)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  @@index([status])
+}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LeafMark } from "@/components/leaf-mark";
+import { AuthNav } from "@/components/marketplace/auth-nav";
 
 export function SiteHeader() {
   return (
@@ -24,6 +25,7 @@ export function SiteHeader() {
           <Link href="/sources" className="hover:text-[var(--foreground)]">
             Sources
           </Link>
+          <AuthNav />
         </nav>
       </div>
     </header>

@@ -33,6 +33,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Balsaminaceae: "the balsam and touch-me-not family",
   Berberidaceae: "the barberry family",
   Bignoniaceae: "the trumpet-creeper family",
+  Bixaceae: "the annatto family",
   Boraginaceae: "the borage family",
   Brachytheciaceae: "a family of feather mosses",
   Brassicaceae: "the mustard and cabbage family",

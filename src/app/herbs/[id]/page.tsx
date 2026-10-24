@@ -216,7 +216,7 @@ export default async function HerbDetailPage({
       {jumpLinks.length > 1 && (
         <nav
           aria-label="On this page"
-          className="sticky top-0 z-10 -mx-6 overflow-x-auto border-y border-[var(--border)] bg-[var(--background)]/95 px-6 py-2 backdrop-blur"
+          className="sticky top-0 z-10 -mx-6 overflow-x-auto border-y border-[var(--border)] bg-[var(--section-bar)] px-6 py-2 backdrop-blur"
         >
           <ul className="flex gap-4 whitespace-nowrap text-sm">
             {jumpLinks.map((l) => (

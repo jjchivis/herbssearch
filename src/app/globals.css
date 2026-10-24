@@ -78,3 +78,16 @@ body {
 .font-mono {
   font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
+
+/* Forest-green text boxes and section bar (the site accent green).
+   Herb images and Herbal Library cards keep the cream surface. */
+.bg-\[var\(--surface\)\]:not(.overflow-hidden, .library-card),
+.bg-\[var\(--section-bar\)\] {
+  --surface: #33512c;
+  --section-bar: rgb(51 81 44 / 0.95);
+  --highlight: #e8c9a0;
+  --foreground: #f6f1e2;
+  --muted: #d3dcc2;
+  --border: #4a6a40;
+  color: var(--foreground);
+}

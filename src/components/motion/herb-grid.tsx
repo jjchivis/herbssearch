@@ -30,7 +30,7 @@ export function HerbCardMotion({
     >
       <Link
         href={href}
-        className="group flex h-full flex-col gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--highlight)]"
+        className="library-card group flex h-full flex-col gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--highlight)]"
       >
         {children}
       </Link>

@@ -1,4 +1,4 @@
-// Prints the shape of the database settings at build time, never the values:
+// Prints the shape of the database and sign-in settings at build time, never the values:
 // whether each is set, whether it starts with a valid scheme, stray quotes or
 // whitespace, and the first characters of the Neon endpoint. Helps diagnose
 // Prisma P1013 ("scheme is not recognized") on Vercel, where values are hidden.
@@ -15,3 +15,12 @@ for (const key of ["DATABASE_URL", "DATABASE_URL_UNPOOLED"]) {
     `[db-env] ${key}: length ${v.length}, scheme ${scheme}, quotes ${/["'“”]/.test(v)}, whitespace ${/\s/.test(v)}, endpoint ${host.slice(0, 12) || "?"}…`,
   );
 }
+
+// Sign-in settings: the secret's length only, and the site address (not secret).
+const secret = process.env.BETTER_AUTH_SECRET;
+console.log(
+  `[auth-env] BETTER_AUTH_SECRET: ${secret === undefined ? "not set" : `length ${secret.length}, whitespace ${/\s/.test(secret)}`}`,
+);
+const url = process.env.BETTER_AUTH_URL;
+console.log(`[auth-env] BETTER_AUTH_URL: ${url === undefined ? "not set" : /^https?:\/\/[^\s"']+$/.test(url) ? url : `malformed (length ${url.length})`}`);
+console.log(`[auth-env] RESEND_API_KEY: ${process.env.RESEND_API_KEY ? "set" : "not set"}, EMAIL_FROM: ${process.env.EMAIL_FROM ?? "not set"}`);

@@ -5,7 +5,7 @@
   --surface: #f3ead7;
   --surface-2: #ece0c8;
   --foreground: #1f3616;
-  --muted: #6b6558;
+  --muted: #3f5a36;
   --border: #dccdaa;
   --accent: #33512c;
   --accent-foreground: #fbf6e8;
@@ -80,8 +80,9 @@ body {
 }
 
 /* Forest-green text boxes and section bar (the site accent green).
-   Herb images and Herbal Library cards keep the cream surface. */
-.bg-\[var\(--surface\)\]:not(.overflow-hidden, .library-card),
+   Herb images, Herbal Library cards, full-width sections and inputs keep the
+   cream surface. */
+.bg-\[var\(--surface\)\]:not(.overflow-hidden, .library-card, section, input),
 .bg-\[var\(--section-bar\)\] {
   --surface: #33512c;
   --section-bar: rgb(51 81 44 / 0.95);
@@ -90,4 +91,11 @@ body {
   --muted: #d3dcc2;
   --border: #4a6a40;
   color: var(--foreground);
+}
+
+/* Forest-green frames behind the herb card pictures. */
+.bg-\[var\(--surface\)\].overflow-hidden,
+.bg-\[var\(--surface-2\)\] {
+  background-color: #33512c;
+  border-color: #4a6a40;
 }

@@ -48,6 +48,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
   { name: "Fatigue", slug: "fatigue", bodySystem: "general-wellness" },
   { name: "Cough", slug: "cough", bodySystem: "respiratory" },
   {
+    name: "Hay Fever",
+    slug: "hay-fever",
+    bodySystem: "respiratory",
+    description:
+      "Sneezing, a runny or blocked nose and itchy eyes caused by an allergy to pollen or other things in the air (allergic rhinitis). See a health professional if symptoms are severe or you also have wheezing or trouble breathing.",
+  },
+  {
     name: "Skin Irritation, Rashes and Itching",
     slug: "skin-irritation",
     bodySystem: "skin",
@@ -335,6 +342,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
     bodySystem: "urinary",
     description:
       "Burning when you urinate, needing to go often, or cloudy urine, often from a bladder infection. See a doctor for fever, back or side pain, blood in the urine, symptoms in a man or child, during pregnancy, or if symptoms don't improve in a few days.",
+  },
+  {
+    name: "Enlarged Prostate (BPH)",
+    slug: "enlarged-prostate",
+    bodySystem: "urinary",
+    description:
+      "Urinary symptoms in men caused by a non-cancerous enlarged prostate, such as a weak stream, needing to go often, or getting up at night. See a doctor to rule out other causes, and urgently if you can't pass urine or see blood in it.",
   },
   {
     name: "Kidney Stones",

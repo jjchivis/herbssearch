@@ -22,6 +22,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Annonaceae: "the custard-apple family",
   Apiaceae: "the carrot and parsley family",
   Apocynaceae: "the dogbane and milkweed family",
+  Aquifoliaceae: "the holly family",
   Araceae: "the arum family, which includes duckweeds",
   Araliaceae: "the ginseng family",
   Arecaceae: "the palm family",

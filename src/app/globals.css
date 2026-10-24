@@ -18,7 +18,7 @@
   --band-2: #1e321a;
   --on-band: #f1e9d4;
   --on-band-soft: #b8c2a3;
-  --section-bar: rgb(221 230 209 / 0.9);
+  --section-bar: rgb(248 242 226 / 0.9);
 }
 
 @theme inline {
@@ -62,7 +62,7 @@
 
 body {
   font-family: var(--font-sans), sans-serif;
-  background: linear-gradient(180deg, #f1f4ea 0%, #dde6d1 45%, #bccbaa 100%) fixed;
+  background: #f8f2e2;
 }
 
 @media (prefers-color-scheme: dark) {

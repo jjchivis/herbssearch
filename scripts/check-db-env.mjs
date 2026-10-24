@@ -23,4 +23,7 @@ console.log(
 );
 const url = process.env.BETTER_AUTH_URL;
 console.log(`[auth-env] BETTER_AUTH_URL: ${url === undefined ? "not set" : /^https?:\/\/[^\s"']+$/.test(url) ? url : `malformed (length ${url.length})`}`);
-console.log(`[auth-env] RESEND_API_KEY: ${process.env.RESEND_API_KEY ? "set" : "not set"}, EMAIL_FROM: ${process.env.EMAIL_FROM ?? "not set"}`);
+const resend = process.env.RESEND_API_KEY;
+console.log(
+  `[auth-env] RESEND_API_KEY: ${resend === undefined ? "not set" : `starts with re_ ${resend.startsWith("re_")}, length ${resend.length}, whitespace ${/\s/.test(resend)}`}, EMAIL_FROM: ${process.env.EMAIL_FROM ?? "not set"}`,
+);

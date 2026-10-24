@@ -2,8 +2,9 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 
 export default async function AdminOverviewPage() {
-  const [pending, active, suspended, founding] = await Promise.all([
+  const [pending, productsWaiting, active, suspended, founding] = await Promise.all([
     prisma.sellerApplication.count({ where: { status: "PENDING" } }),
+    prisma.product.count({ where: { status: "PENDING_REVIEW" } }),
     prisma.seller.count({ where: { status: "ACTIVE" } }),
     prisma.seller.count({ where: { status: "SUSPENDED" } }),
     prisma.seller.count({ where: { isFoundingSeller: true } }),
@@ -11,6 +12,7 @@ export default async function AdminOverviewPage() {
 
   const stats = [
     { label: "Applications waiting", value: pending, href: "/admin/applications" },
+    { label: "Products waiting", value: productsWaiting, href: "/admin/products" },
     { label: "Active sellers", value: active, href: "/admin/sellers" },
     { label: "Suspended sellers", value: suspended, href: "/admin/sellers" },
     { label: "Founding Sellers", value: founding, href: "/admin/sellers" },
@@ -19,7 +21,7 @@ export default async function AdminOverviewPage() {
   return (
     <>
       <h1 className="font-serif text-4xl text-[var(--foreground)]">Overview</h1>
-      <ul className="grid grid-cols-2 gap-4 md:grid-cols-4">
+      <ul className="grid grid-cols-2 gap-4 md:grid-cols-5">
         {stats.map((s) => (
           <li key={s.label}>
             <Link
@@ -33,7 +35,7 @@ export default async function AdminOverviewPage() {
         ))}
       </ul>
       <p className="text-[15px] text-[var(--muted)]">
-        Products, orders, commission settings and payouts will appear here in later phases.
+        Orders, commission settings and payouts will appear here in later phases.
       </p>
     </>
   );

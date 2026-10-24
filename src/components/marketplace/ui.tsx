@@ -63,6 +63,11 @@ const BADGE_STYLES: Record<string, string> = {
   REJECTED: "border-[var(--border)] text-[var(--muted)]",
   SUSPENDED: "border-[var(--caution-border)] text-[var(--caution)]",
   FOUNDING: "border-[var(--highlight)] text-[var(--highlight)]",
+  DRAFT: "border-[var(--border)] text-[var(--muted)]",
+  PENDING_REVIEW: "border-[var(--caution-border)] text-[var(--caution)]",
+  LIVE: "border-[var(--accent)] text-[var(--accent)]",
+  HIDDEN: "border-[var(--caution-border)] text-[var(--caution)]",
+  RESTRICTED: "border-[var(--caution-border)] text-[var(--caution)]",
 };
 
 const BADGE_LABELS: Record<string, string> = {
@@ -72,6 +77,11 @@ const BADGE_LABELS: Record<string, string> = {
   REJECTED: "Not approved",
   SUSPENDED: "Suspended",
   FOUNDING: "Founding Seller",
+  DRAFT: "Draft",
+  PENDING_REVIEW: "Waiting for review",
+  LIVE: "Live",
+  HIDDEN: "Hidden by admin",
+  RESTRICTED: "Not for eating or drinking",
 };
 
 export function Badge({ kind }: { kind: keyof typeof BADGE_LABELS }) {
@@ -83,6 +93,12 @@ export function Badge({ kind }: { kind: keyof typeof BADGE_LABELS }) {
     </span>
   );
 }
+
+export const PRODUCT_CATEGORY_LABELS: Record<string, string> = {
+  DRIED_HERBS_TEAS: "Dried herbs and teas",
+  SUPPLEMENTS_EXTRACTS: "Supplements and extracts",
+  NON_INGESTIBLE: "Prints, books, seeds and tools",
+};
 
 export const PRODUCT_GROUP_LABELS: Record<string, string> = {
   DRIED_HERBS_TEAS: "Dried herbs and teas",

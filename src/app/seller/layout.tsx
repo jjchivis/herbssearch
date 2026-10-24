@@ -10,7 +10,7 @@ export const metadata: Metadata = { title: "Seller Dashboard", robots: { index: 
 const SECTIONS: { label: string; href?: string; phase?: string }[] = [
   { label: "Overview", href: "/seller" },
   { label: "Store profile", href: "/seller/profile" },
-  { label: "Products", phase: "Coming soon" },
+  { label: "Products", href: "/seller/products" },
   { label: "Orders", phase: "Coming soon" },
   { label: "Reviews", phase: "Coming soon" },
   { label: "Sales", phase: "Coming soon" },

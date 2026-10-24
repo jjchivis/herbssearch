@@ -12,6 +12,7 @@ const POINTS = [
   "You own, ship and are responsible for the products you sell, including their safety, labeling and legality where you sell them.",
   "Listings must not claim that a product treats, cures, mitigates or prevents any disease. Supplements must carry the required FDA disclaimer.",
   "Some herbs can't be sold to eat or drink here, including plants the library flags as poisonous.",
+  "No CBD or other extracted cannabinoids, THC, synthetic cannabinoid derivatives (such as delta-8 or HHC), or raw or unrefined hemp plant material, in any category. Refined hemp products such as seeds, seed oil, protein and fabric are allowed, as are prints, books and artwork of the plant.",
   "The marketplace keeps a commission on each sale, shown to you before you list anything. Payments and payouts are handled by our payment provider.",
   "Your listings never change the library's herb information, which stays independent and sourced.",
 ];

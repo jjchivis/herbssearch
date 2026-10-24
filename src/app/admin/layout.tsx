@@ -20,6 +20,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <Link href="/admin/sellers" className="hover:text-[var(--highlight)]">
           Sellers
         </Link>
+        <Link href="/admin/products" className="hover:text-[var(--highlight)]">
+          Products
+        </Link>
       </nav>
       <main className="flex flex-col gap-8">{children}</main>
     </div>

@@ -95,6 +95,10 @@ model Herb {
   evidence      EvidenceEntry[]
   safetyRecords SafetyRecord[]
 
+  // --- marketplace (relations only; no columns on Herb) ---
+  products    ProductHerb[]
+  restriction RestrictedHerb?
+
   @@index([name])
   @@index([category])
   @@index([family])
@@ -331,6 +335,7 @@ model User {
   sellerApplications   SellerApplication[] @relation("SellerApplicant")
   reviewedApplications SellerApplication[] @relation("SellerApplicationReviewer")
   seller               Seller?
+  reviewedProducts     Product[]           @relation("ProductReviewer")
 
   @@unique([email])
   @@map("user")
@@ -454,6 +459,83 @@ model Seller {
   stripeAccountId  String?           @unique // set in Phase 5 (Stripe Connect)
   createdAt        DateTime          @default(now())
   updatedAt        DateTime          @updatedAt
+  products         Product[]
 
   @@index([status])
+}
+
+// ---------------------------------------------------------------------------
+// Marketplace, Phase 3: products, photos, herb links and restricted herbs.
+// ---------------------------------------------------------------------------
+
+enum ProductStatus {
+  DRAFT
+  PENDING_REVIEW
+  LIVE
+  REJECTED
+  HIDDEN // hidden by an admin
+}
+
+model Product {
+  id                  String         @id @default(cuid())
+  sellerId            String
+  seller              Seller         @relation(fields: [sellerId], references: [id], onDelete: Restrict)
+  name                String
+  slug                String         @unique
+  description         String
+  group               ProductGroup
+  priceCents          Int
+  compareAtPriceCents Int?
+  sku                 String?
+  inventory           Int            @default(0)
+  weightGrams         Int?
+  shippingNote        String?
+  status              ProductStatus  @default(DRAFT)
+  submittedAt         DateTime?
+  reviewNote          String?
+  reviewedById        String?
+  reviewedBy          User?          @relation("ProductReviewer", fields: [reviewedById], references: [id], onDelete: SetNull)
+  reviewedAt          DateTime?
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+  images              ProductImage[]
+  herbs               ProductHerb[]
+
+  @@index([sellerId])
+  @@index([status])
+}
+
+model ProductImage {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url       String
+  pathname  String // Vercel Blob pathname, used to delete the file
+  alt       String
+  position  Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@index([productId])
+}
+
+// Links a product to existing herb records, so it can appear on herb pages.
+model ProductHerb {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  herbId    String
+  herb      Herb    @relation(fields: [herbId], references: [id], onDelete: Restrict)
+  isPrimary Boolean @default(false)
+
+  @@unique([productId, herbId])
+  @@index([herbId])
+}
+
+// Herbs that can't be sold to eat or drink (non-ingestible goods are allowed).
+model RestrictedHerb {
+  id        String   @id @default(cuid())
+  herbId    String   @unique
+  herb      Herb     @relation(fields: [herbId], references: [id], onDelete: Cascade)
+  reason    String
+  createdAt DateTime @default(now())
 }

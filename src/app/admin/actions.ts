@@ -12,6 +12,7 @@ import {
   setFoundingSeller,
   setSellerStatus,
 } from "@/lib/marketplace/sellers";
+import { approveProduct, rejectProduct, setProductHerbsAsAdmin, setProductHidden } from "@/lib/marketplace/products";
 
 // Every action re-checks the signed-in user on the server, and the
 // marketplace functions check again that the actor is an admin.
@@ -81,5 +82,37 @@ export async function setFoundingSellerAction(form: FormData) {
   const on = field(form, "founding") === "on";
   await attempt("/admin/sellers", on ? "Founding Seller badge added." : "Founding Seller badge removed.", async () =>
     setFoundingSeller(await adminActor(), field(form, "sellerId"), on),
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Product review
+// ---------------------------------------------------------------------------
+
+export async function approveProductAction(form: FormData) {
+  const id = field(form, "productId");
+  await attempt(`/admin/products/${id}`, "Approved. The product is live.", async () => approveProduct(await adminActor(), id));
+}
+
+export async function rejectProductAction(form: FormData) {
+  const id = field(form, "productId");
+  await attempt(`/admin/products/${id}`, "Not approved. The seller can see your note.", async () =>
+    rejectProduct(await adminActor(), id, field(form, "note")),
+  );
+}
+
+export async function setProductHiddenAction(form: FormData) {
+  const id = field(form, "productId");
+  const hide = field(form, "hidden") === "on";
+  await attempt(`/admin/products/${id}`, hide ? "Hidden from shoppers." : "Unhidden. It's back in the review queue.", async () =>
+    setProductHidden(await adminActor(), id, hide, field(form, "note") || null),
+  );
+}
+
+export async function setProductHerbsAction(form: FormData) {
+  const id = field(form, "productId");
+  const herbIds = form.getAll("herbIds").map(String).filter(Boolean);
+  await attempt(`/admin/products/${id}`, "Herb links updated.", async () =>
+    setProductHerbsAsAdmin(await adminActor(), id, herbIds, field(form, "primaryHerbId") || null),
   );
 }

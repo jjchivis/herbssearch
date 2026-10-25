@@ -38,6 +38,10 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
     const qs = params.toString();
     return qs ? `/shop?${qs}` : "/shop";
   };
+  // Filters other than the search words, so the panel opens when one is in use.
+  const activeFilters = [query.group, query.herbId, query.minCents, query.maxCents, query.inStock || null, query.founding || null].filter(
+    (v) => v !== null && v !== undefined && v !== "",
+  ).length;
   const dollars = (cents: number | null) => (cents === null ? "" : (cents / 100).toFixed(2));
 
   return (
@@ -75,48 +79,59 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
             Search
           </button>
         </div>
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-6">
-          <select name="category" defaultValue={query.group ?? ""} aria-label="Category" className={`${inputClass} col-span-2 md:col-span-1`}>
-            <option value="">All categories</option>
-            {Object.entries(PRODUCT_CATEGORY_LABELS).map(([v, l]) => (
-              <option key={v} value={v}>
-                {l}
-              </option>
-            ))}
-          </select>
-          <select name="herb" defaultValue={activeHerb?.id ?? ""} aria-label="Herb" className={`${inputClass} col-span-2 md:col-span-1`}>
-            <option value="">All herbs</option>
-            {herbsWithProducts.map((h) => (
-              <option key={h.id} value={h.id}>
-                {h.name}
-              </option>
-            ))}
-          </select>
-          <input name="min" inputMode="decimal" placeholder="Min $" defaultValue={dollars(query.minCents)} aria-label="Minimum price" className={inputClass} />
-          <input name="max" inputMode="decimal" placeholder="Max $" defaultValue={dollars(query.maxCents)} aria-label="Maximum price" className={inputClass} />
-          <select name="sort" defaultValue={query.sort} aria-label="Sort by" className={`${inputClass} col-span-2 md:col-span-2`}>
-            {Object.entries(SORTS)
-              .filter(([k]) => k !== "match" || query.q)
-              .map(([k, l]) => (
-                <option key={k} value={k}>
-                  {l}
-                </option>
-              ))}
-          </select>
-        </div>
-        <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          <label className="flex items-center gap-2">
-            <input type="checkbox" name="instock" value="1" defaultChecked={query.inStock} className="h-4 w-4 accent-[var(--accent)]" />
-            In stock only
-          </label>
-          <label className="flex items-center gap-2">
-            <input type="checkbox" name="founding" value="1" defaultChecked={query.founding} className="h-4 w-4 accent-[var(--accent)]" />
-            Founding Sellers only
-          </label>
-          <Link href="/shop" className="text-[var(--muted)] underline underline-offset-2 hover:text-[var(--highlight)]">
-            Clear filters
-          </Link>
-        </div>
+        <details open={activeFilters > 0} className="group flex flex-col">
+          <summary className="flex w-fit cursor-pointer list-none items-center gap-2 rounded-full border border-[var(--border)] px-4 py-2 text-sm text-[var(--foreground)] transition hover:border-[var(--highlight)] [&::-webkit-details-marker]:hidden">
+            <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
+              <path d="M3 5h14M6 10h8M8.5 15h3" />
+            </svg>
+            Filters{activeFilters > 0 && ` (${activeFilters})`}
+            <span aria-hidden="true" className="text-xs transition group-open:rotate-180">▾</span>
+          </summary>
+          <div className="mt-4 flex flex-col gap-4">
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-6">
+              <select name="category" defaultValue={query.group ?? ""} aria-label="Category" className={`${inputClass} col-span-2 md:col-span-1`}>
+                <option value="">All categories</option>
+                {Object.entries(PRODUCT_CATEGORY_LABELS).map(([v, l]) => (
+                  <option key={v} value={v}>
+                    {l}
+                  </option>
+                ))}
+              </select>
+              <select name="herb" defaultValue={activeHerb?.id ?? ""} aria-label="Herb" className={`${inputClass} col-span-2 md:col-span-1`}>
+                <option value="">All herbs</option>
+                {herbsWithProducts.map((h) => (
+                  <option key={h.id} value={h.id}>
+                    {h.name}
+                  </option>
+                ))}
+              </select>
+              <input name="min" inputMode="decimal" placeholder="Min $" defaultValue={dollars(query.minCents)} aria-label="Minimum price" className={inputClass} />
+              <input name="max" inputMode="decimal" placeholder="Max $" defaultValue={dollars(query.maxCents)} aria-label="Maximum price" className={inputClass} />
+              <select name="sort" defaultValue={query.sort} aria-label="Sort by" className={`${inputClass} col-span-2 md:col-span-2`}>
+                {Object.entries(SORTS)
+                  .filter(([k]) => k !== "match" || query.q)
+                  .map(([k, l]) => (
+                    <option key={k} value={k}>
+                      {l}
+                    </option>
+                  ))}
+              </select>
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <label className="flex items-center gap-2">
+                <input type="checkbox" name="instock" value="1" defaultChecked={query.inStock} className="h-4 w-4 accent-[var(--accent)]" />
+                In stock only
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="checkbox" name="founding" value="1" defaultChecked={query.founding} className="h-4 w-4 accent-[var(--accent)]" />
+                Founding Sellers only
+              </label>
+              <Link href="/shop" className="text-[var(--muted)] underline underline-offset-2 hover:text-[var(--highlight)]">
+                Clear filters
+              </Link>
+            </div>
+          </div>
+        </details>
       </form>
 
       <section className="flex flex-col gap-4">

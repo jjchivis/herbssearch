@@ -15,6 +15,7 @@ export type ProductDefaults = {
   inventory: string;
   weightGrams: string;
   shippingNote: string;
+  shippingClass: string;
   herbIds: string[];
   primaryHerbId: string | null;
 };
@@ -29,6 +30,7 @@ export const EMPTY_PRODUCT: ProductDefaults = {
   inventory: "0",
   weightGrams: "",
   shippingNote: "",
+  shippingClass: "STANDARD",
   herbIds: [],
   primaryHerbId: null,
 };
@@ -102,10 +104,21 @@ export function ProductForm({
           <Field label="SKU" htmlFor="sku" hint="Optional: your own product code." error={e.sku}>
             <input id="sku" name="sku" defaultValue={val("sku")} className={inputClass} />
           </Field>
-          <Field label="Weight (grams)" htmlFor="weightGrams" hint="Optional, for shipping." error={e.weightGrams}>
+          <Field label="Packed weight (grams)" htmlFor="weightGrams" hint="Needed for weight-priced shipping." error={e.weightGrams}>
             <input id="weightGrams" name="weightGrams" inputMode="numeric" defaultValue={val("weightGrams")} className={inputClass} />
           </Field>
         </div>
+        <Field
+          label="Shipping"
+          htmlFor="shippingClass"
+          hint="Standard items share your one flat shipping charge. Use weight-priced shipping for heavy, oversized, fragile or costly items."
+          error={e.shippingClass}
+        >
+          <select id="shippingClass" name="shippingClass" defaultValue={val("shippingClass")} className={inputClass}>
+            <option value="STANDARD">Standard (lightweight)</option>
+            <option value="CALCULATED">Priced by weight (heavy, oversized, fragile or costly)</option>
+          </select>
+        </Field>
         <Field label="Shipping note" htmlFor="shippingNote" hint="Optional, e.g. ships in 2 business days." error={e.shippingNote}>
           <input id="shippingNote" name="shippingNote" defaultValue={val("shippingNote")} maxLength={500} className={inputClass} />
         </Field>
@@ -113,7 +126,7 @@ export function ProductForm({
 
       {liveNote && (
         <p className="text-xs text-[var(--muted)]">
-          This product is live. Changing price, stock, SKU, weight or the shipping note keeps it live. Changing anything else sends it
+          This product is live. Changing price, stock, SKU, weight or shipping keeps it live. Changing anything else sends it
           back for review.
         </p>
       )}

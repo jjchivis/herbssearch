@@ -68,6 +68,12 @@ const BADGE_STYLES: Record<string, string> = {
   LIVE: "border-[var(--accent)] text-[var(--accent)]",
   HIDDEN: "border-[var(--caution-border)] text-[var(--caution)]",
   RESTRICTED: "border-[var(--caution-border)] text-[var(--caution)]",
+  PENDING_PAYMENT: "border-[var(--border)] text-[var(--muted)]",
+  PAID: "border-[var(--caution-border)] text-[var(--caution)]",
+  SHIPPED: "border-[var(--accent)] text-[var(--accent)]",
+  CANCELED: "border-[var(--border)] text-[var(--muted)]",
+  REFUNDED: "border-[var(--border)] text-[var(--muted)]",
+  PARTIALLY_REFUNDED: "border-[var(--border)] text-[var(--muted)]",
 };
 
 const BADGE_LABELS: Record<string, string> = {
@@ -82,6 +88,12 @@ const BADGE_LABELS: Record<string, string> = {
   LIVE: "Live",
   HIDDEN: "Hidden by admin",
   RESTRICTED: "Not for eating or drinking",
+  PENDING_PAYMENT: "Waiting for payment",
+  PAID: "Paid, not shipped yet",
+  SHIPPED: "Shipped",
+  CANCELED: "Canceled",
+  REFUNDED: "Refunded",
+  PARTIALLY_REFUNDED: "Partly refunded",
 };
 
 export function Badge({ kind }: { kind: keyof typeof BADGE_LABELS }) {

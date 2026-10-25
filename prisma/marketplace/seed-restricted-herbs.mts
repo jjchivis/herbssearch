@@ -17,6 +17,7 @@ const RESTRICTED: Record<string, string> = {
   Comfrey: "Contains liver-damaging pyrrolizidine alkaloids when taken internally.",
   Mitragyna: "Kratom; banned or restricted in several states.",
   Yohimbe: "Serious heart and blood pressure risks; restricted in some countries.",
+  Kava: "Prohibited by our payment provider (Stripe) and linked to liver damage.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

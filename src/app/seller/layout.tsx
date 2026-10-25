@@ -11,10 +11,11 @@ const SECTIONS: { label: string; href?: string; phase?: string }[] = [
   { label: "Overview", href: "/seller" },
   { label: "Store profile", href: "/seller/profile" },
   { label: "Products", href: "/seller/products" },
-  { label: "Orders", phase: "Coming soon" },
+  { label: "Shipping", href: "/seller/shipping" },
+  { label: "Orders", href: "/seller/orders" },
+  { label: "Payouts", href: "/seller/payouts" },
   { label: "Reviews", phase: "Coming soon" },
   { label: "Sales", phase: "Coming soon" },
-  { label: "Payouts", phase: "Coming soon" },
 ];
 
 export default async function SellerLayout({ children }: { children: React.ReactNode }) {

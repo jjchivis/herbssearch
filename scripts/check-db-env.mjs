@@ -27,3 +27,11 @@ const resend = process.env.RESEND_API_KEY;
 console.log(
   `[auth-env] RESEND_API_KEY: ${resend === undefined ? "not set" : `starts with re_ ${resend.startsWith("re_")}, length ${resend.length}, whitespace ${/\s/.test(resend)}`}, EMAIL_FROM: ${process.env.EMAIL_FROM ?? "not set"}`,
 );
+
+// Stripe: prefixes and lengths only. Test sites must use test-mode keys.
+const sk = process.env.STRIPE_SECRET_KEY;
+const wh = process.env.STRIPE_WEBHOOK_SECRET;
+const shape = (v, prefix) =>
+  v === undefined ? "not set" : `starts with ${prefix} ${v.startsWith(prefix)}, length ${v.length}, whitespace ${/\s/.test(v)}, quotes ${/["'“”]/.test(v)}`;
+console.log(`[stripe-env] STRIPE_SECRET_KEY: ${shape(sk, sk?.startsWith("sk_live_") ? "sk_live_" : "sk_test_")}`);
+console.log(`[stripe-env] STRIPE_WEBHOOK_SECRET: ${shape(wh, "whsec_")}`);

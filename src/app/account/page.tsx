@@ -55,7 +55,14 @@ export default async function AccountPage() {
 
       <section className="flex flex-col gap-3 border-t border-[var(--border)] pt-8">
         <h2 className="font-serif text-2xl text-[var(--foreground)]">Orders</h2>
-        <p className="text-[15px] text-[var(--muted)]">Your orders will appear here once the shop opens.</p>
+        <p className="flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
+          <Link href="/orders" className="underline underline-offset-2 hover:text-[var(--highlight)]">
+            Your orders
+          </Link>
+          <Link href="/cart" className="underline underline-offset-2 hover:text-[var(--highlight)]">
+            Your cart
+          </Link>
+        </p>
       </section>
 
       {user.role === "admin" && (

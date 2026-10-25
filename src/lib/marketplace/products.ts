@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { ProductGroup, type ProductStatus } from "@/generated/prisma/enums";
+import { ProductGroup, ShippingClass, type ProductStatus } from "@/generated/prisma/enums";
 import { type Actor, MarketplaceError } from "@/lib/marketplace/sellers";
 
 // Product rules. As with sellers, every function takes the acting user, and a
@@ -78,6 +78,7 @@ export type ProductInput = {
   inventory: number;
   weightGrams: number | null;
   shippingNote: string | null;
+  shippingClass: ShippingClass;
   herbIds: string[];
   primaryHerbId: string | null;
 };
@@ -120,6 +121,7 @@ export function parseProduct(form: FormData): { ok: true; data: ProductInput } |
     inventory: inventory ?? 0,
     weightGrams: weight,
     shippingNote: text(form.get("shippingNote")) || null,
+    shippingClass: (text(form.get("shippingClass")) || "STANDARD") as ShippingClass,
     herbIds,
     primaryHerbId: primary && herbIds.includes(primary) ? primary : herbIds[0] ?? null,
   };
@@ -135,6 +137,9 @@ export function parseProduct(form: FormData): { ok: true; data: ProductInput } |
   if (inventory !== null && (!Number.isFinite(inventory) || inventory > 100_000))
     errors.inventory = "Enter how many you have in stock, as a whole number.";
   if (weight !== null && (!Number.isFinite(weight) || weight > 100_000)) errors.weightGrams = "Enter the weight in grams, as a whole number.";
+  if (!Object.values(ShippingClass).includes(data.shippingClass)) errors.shippingClass = "Choose how this product ships.";
+  else if (data.shippingClass === "CALCULATED" && !data.weightGrams && !errors.weightGrams)
+    errors.weightGrams = "Enter the packed weight in grams; shipping for this product is priced by weight.";
   if (data.sku && data.sku.length > 64) errors.sku = "Keep the SKU under 64 characters.";
   if (data.shippingNote && data.shippingNote.length > 500) errors.shippingNote = "Keep the shipping note under 500 characters.";
   if (data.herbIds.length === 0) errors.herbIds = "Link the product to at least one herb from the library.";
@@ -210,8 +215,8 @@ async function uniqueProductSlug(base: string) {
 
 /** The product's own columns (herb links are stored separately). */
 function productFields(data: ProductInput) {
-  const { name, description, group, priceCents, compareAtPriceCents, sku, inventory, weightGrams, shippingNote } = data;
-  return { name, description, group, priceCents, compareAtPriceCents, sku, inventory, weightGrams, shippingNote };
+  const { name, description, group, priceCents, compareAtPriceCents, sku, inventory, weightGrams, shippingNote, shippingClass } = data;
+  return { name, description, group, priceCents, compareAtPriceCents, sku, inventory, weightGrams, shippingNote, shippingClass };
 }
 
 function herbRows(data: ProductInput) {
@@ -240,8 +245,8 @@ export async function createProduct(actor: Actor, data: ProductInput) {
 const CONTENT_FIELDS = ["name", "description", "group"] as const;
 
 /**
- * Saves the actor's own product. Changing price, stock, SKU, weight or the
- * shipping note keeps a live product live; changing what the product is (name,
+ * Saves the actor's own product. Changing price, stock, SKU, weight or
+ * shipping keeps a live product live; changing what the product is (name,
  * description, category, linked herbs) sends it back for review.
  */
 export async function updateProduct(actor: Actor, productId: string, data: ProductInput) {

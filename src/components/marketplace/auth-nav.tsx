@@ -15,9 +15,14 @@ export function AuthNav() {
       {isPending ? (
         <span className="w-14" aria-hidden="true" />
       ) : session ? (
-        <Link href="/account" className="hover:text-[var(--foreground)]">
-          Account
-        </Link>
+        <>
+          <Link href="/cart" className="hover:text-[var(--foreground)]">
+            Cart
+          </Link>
+          <Link href="/account" className="hover:text-[var(--foreground)]">
+            Account
+          </Link>
+        </>
       ) : (
         <Link href="/sign-in" className="hover:text-[var(--foreground)]">
           Sign in

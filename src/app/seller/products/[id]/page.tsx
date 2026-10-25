@@ -112,6 +112,7 @@ export default async function EditProductPage({
             inventory: String(product.inventory),
             weightGrams: product.weightGrams === null ? "" : String(product.weightGrams),
             shippingNote: product.shippingNote ?? "",
+            shippingClass: product.shippingClass,
             herbIds: product.herbs.map((h) => h.herbId),
             primaryHerbId: product.herbs.find((h) => h.isPrimary)?.herbId ?? null,
           }}

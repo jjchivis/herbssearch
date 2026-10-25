@@ -210,9 +210,9 @@ model HerbPreparation {
 // Every classification should trace to a source or be explicitly traditional
 // terminology — hence the optional sourceId here.
 model HerbalAction {
-  id          String        @id @default(cuid())
-  name        String        @unique
-  slug        String        @unique
+  id          String       @id @default(cuid())
+  name        String       @unique
+  slug        String       @unique
   description String?
   herbs       HerbAction[]
 
@@ -245,12 +245,12 @@ model TraditionSystem {
 }
 
 model HerbTradition {
-  id         String          @id @default(cuid())
-  herbId     String
-  herb       Herb            @relation(fields: [herbId], references: [id], onDelete: Cascade)
+  id          String          @id @default(cuid())
+  herbId      String
+  herb        Herb            @relation(fields: [herbId], references: [id], onDelete: Cascade)
   traditionId String
-  tradition  TraditionSystem @relation(fields: [traditionId], references: [id], onDelete: Cascade)
-  notes      String?
+  tradition   TraditionSystem @relation(fields: [traditionId], references: [id], onDelete: Cascade)
+  notes       String?
 
   @@unique([herbId, traditionId])
   @@index([traditionId])
@@ -258,7 +258,7 @@ model HerbTradition {
 
 // Section 7/8: citations and the source-quality tier system
 model Source {
-  id               String     @id @default(cuid())
+  id               String            @id @default(cuid())
   title            String
   author           String?
   organization     String?
@@ -269,7 +269,7 @@ model Source {
   url              String?
   sourceType       String? // government, systematic_review, peer_reviewed, historical_text, secondary
   tier             SourceTier
-  citationDate     DateTime   @default(now())
+  citationDate     DateTime          @default(now())
   evidenceEntries  EvidenceEntry[]
   safetyRecords    SafetyRecord[]
   herbActions      HerbAction[]
@@ -282,14 +282,14 @@ model Source {
 
 // Section 6: evidence, separated by category and never blended together
 model EvidenceEntry {
-  id        String            @id @default(cuid())
+  id        String           @id @default(cuid())
   herbId    String
-  herb      Herb              @relation(fields: [herbId], references: [id], onDelete: Cascade)
+  herb      Herb             @relation(fields: [herbId], references: [id], onDelete: Cascade)
   category  EvidenceCategory
   summary   String
   sourceId  String?
-  source    Source?           @relation(fields: [sourceId], references: [id])
-  createdAt DateTime          @default(now())
+  source    Source?          @relation(fields: [sourceId], references: [id])
+  createdAt DateTime         @default(now())
 
   @@index([herbId])
   @@index([category])
@@ -336,6 +336,8 @@ model User {
   reviewedApplications SellerApplication[] @relation("SellerApplicationReviewer")
   seller               Seller?
   reviewedProducts     Product[]           @relation("ProductReviewer")
+  cartItems            CartItem[]
+  orders               Order[]
 
   @@unique([email])
   @@map("user")
@@ -443,23 +445,36 @@ model SellerApplication {
 
 // Created only when an admin approves an application. One store per user.
 model Seller {
-  id               String            @id @default(cuid())
-  userId           String            @unique
-  user             User              @relation(fields: [userId], references: [id], onDelete: Restrict)
-  applicationId    String            @unique
-  application      SellerApplication @relation(fields: [applicationId], references: [id], onDelete: Restrict)
-  storeName        String
-  slug             String            @unique
-  description      String
-  logoUrl          String? // upload arrives in Phase 3 with Vercel Blob
-  website          String?
-  contactEmail     String
-  status           SellerStatus      @default(ACTIVE)
-  isFoundingSeller Boolean           @default(false)
-  stripeAccountId  String?           @unique // set in Phase 5 (Stripe Connect)
-  createdAt        DateTime          @default(now())
-  updatedAt        DateTime          @updatedAt
-  products         Product[]
+  id                      String            @id @default(cuid())
+  userId                  String            @unique
+  user                    User              @relation(fields: [userId], references: [id], onDelete: Restrict)
+  applicationId           String            @unique
+  application             SellerApplication @relation(fields: [applicationId], references: [id], onDelete: Restrict)
+  storeName               String
+  slug                    String            @unique
+  description             String
+  logoUrl                 String? // upload arrives in Phase 3 with Vercel Blob
+  website                 String?
+  contactEmail            String
+  status                  SellerStatus      @default(ACTIVE)
+  isFoundingSeller        Boolean           @default(false)
+  stripeAccountId         String?           @unique // Stripe connected account (Express dashboard)
+  // True once Stripe reports the account can receive transfers. Products can
+  // only be bought from stores where this is true.
+  stripeTransfersActive   Boolean           @default(false)
+  stripePayoutsActive     Boolean           @default(false)
+  stripeCheckedAt         DateTime?
+  // Shipping (all amounts in cents). Standard items: one flat charge per order
+  // from this store, free when the store's items reach freeShippingOverCents.
+  // Calculated items (heavy, fragile, oversized, costly): base + per pound.
+  shippingFlatCents       Int               @default(0)
+  freeShippingOverCents   Int?
+  calculatedBaseCents     Int               @default(0)
+  calculatedPerPoundCents Int               @default(0)
+  createdAt               DateTime          @default(now())
+  updatedAt               DateTime          @updatedAt
+  products                Product[]
+  sellerOrders            SellerOrder[]
 
   @@index([status])
 }
@@ -490,6 +505,7 @@ model Product {
   inventory           Int            @default(0)
   weightGrams         Int?
   shippingNote        String?
+  shippingClass       ShippingClass  @default(STANDARD)
   status              ProductStatus  @default(DRAFT)
   submittedAt         DateTime?
   reviewNote          String?
@@ -500,6 +516,8 @@ model Product {
   updatedAt           DateTime       @updatedAt
   images              ProductImage[]
   herbs               ProductHerb[]
+  cartItems           CartItem[]
+  orderItems          OrderItem[]
 
   @@index([sellerId])
   @@index([status])
@@ -538,4 +556,133 @@ model RestrictedHerb {
   herb      Herb     @relation(fields: [herbId], references: [id], onDelete: Cascade)
   reason    String
   createdAt DateTime @default(now())
+}
+
+// ---------------------------------------------------------------------------
+// Marketplace, Phase 5: cart, checkout, orders and payouts (Stripe Connect,
+// separate charges and transfers: the platform takes the payment, then sends
+// each store its share).
+// ---------------------------------------------------------------------------
+
+enum ShippingClass {
+  STANDARD // lightweight: covered by the store's one flat charge
+  CALCULATED // oversized, heavy, fragile or costly: priced by weight
+}
+
+// One row (id "default"). Commission is in basis points: 700 = 7%.
+model MarketplaceSettings {
+  id            String   @id @default("default")
+  commissionBps Int      @default(700)
+  updatedById   String?
+  updatedAt     DateTime @updatedAt
+}
+
+model CartItem {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, productId])
+}
+
+enum OrderStatus {
+  PENDING_PAYMENT
+  PAID
+  CANCELED // checkout expired or payment failed
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+enum SellerOrderStatus {
+  PENDING_PAYMENT
+  PAID // waiting for the store to ship
+  SHIPPED
+  CANCELED
+  REFUNDED
+}
+
+// The customer's whole purchase (one Stripe payment across stores).
+model Order {
+  id                    String        @id @default(cuid())
+  number                String        @unique // shown to people, e.g. HS-7K2M9Q
+  userId                String
+  user                  User          @relation(fields: [userId], references: [id], onDelete: Restrict)
+  email                 String
+  status                OrderStatus   @default(PENDING_PAYMENT)
+  currency              String        @default("usd")
+  itemsCents            Int
+  shippingCents         Int
+  taxCents              Int           @default(0) // known after payment; kept by the platform to remit
+  totalCents            Int           @default(0)
+  refundedCents         Int           @default(0)
+  commissionBps         Int // rate at the time of the order
+  stripeCheckoutId      String?       @unique
+  stripePaymentIntentId String?       @unique
+  stripeChargeId        String?
+  shippingName          String?
+  shippingAddress       Json?
+  paidAt                DateTime?
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+  sellerOrders          SellerOrder[]
+
+  @@index([userId])
+  @@index([status])
+}
+
+// One store's part of an order: its items, its shipping, its payout.
+model SellerOrder {
+  id               String            @id @default(cuid())
+  orderId          String
+  order            Order             @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  sellerId         String
+  seller           Seller            @relation(fields: [sellerId], references: [id], onDelete: Restrict)
+  status           SellerOrderStatus @default(PENDING_PAYMENT)
+  itemsCents       Int
+  shippingCents    Int
+  taxCents         Int               @default(0) // this store's share of the tax, known after payment
+  commissionCents  Int // on items only
+  payoutCents      Int // items - commission + shipping
+  refundedCents    Int               @default(0)
+  stripeTransferId String?           @unique
+  transferredAt    DateTime?
+  reversedCents    Int               @default(0)
+  // Set when stock ran out between checkout and payment; an admin decides.
+  stockShortfall   Boolean           @default(false)
+  carrier          String?
+  trackingNumber   String?
+  shippedAt        DateTime?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  items            OrderItem[]
+
+  @@unique([orderId, sellerId])
+  @@index([sellerId, status])
+}
+
+// A copy of what was bought, so later product edits don't change past orders.
+model OrderItem {
+  id             String        @id @default(cuid())
+  sellerOrderId  String
+  sellerOrder    SellerOrder   @relation(fields: [sellerOrderId], references: [id], onDelete: Cascade)
+  productId      String?
+  product        Product?      @relation(fields: [productId], references: [id], onDelete: SetNull)
+  productName    String
+  productSlug    String
+  unitPriceCents Int
+  quantity       Int
+  shippingClass  ShippingClass
+  weightGrams    Int?
+}
+
+// Stripe webhook events already handled, so a retried event does nothing twice.
+model StripeEvent {
+  id          String   @id // Stripe event id
+  type        String
+  processedAt DateTime @default(now())
 }

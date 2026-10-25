@@ -13,6 +13,7 @@ import {
   setSellerStatus,
 } from "@/lib/marketplace/sellers";
 import { approveProduct, rejectProduct, setProductHerbsAsAdmin, setProductHidden } from "@/lib/marketplace/products";
+import { refundSellerOrder, setCommissionBps } from "@/lib/marketplace/orders";
 
 // Every action re-checks the signed-in user on the server, and the
 // marketplace functions check again that the actor is an admin.
@@ -114,5 +115,20 @@ export async function setProductHerbsAction(form: FormData) {
   const herbIds = form.getAll("herbIds").map(String).filter(Boolean);
   await attempt(`/admin/products/${id}`, "Herb links updated.", async () =>
     setProductHerbsAsAdmin(await adminActor(), id, herbIds, field(form, "primaryHerbId") || null),
+  );
+}
+
+export async function refundSellerOrderAction(form: FormData) {
+  const orderId = field(form, "orderId");
+  const sellerOrderId = field(form, "sellerOrderId");
+  await attempt(`/admin/orders/${orderId}`, "Refunded. The store's payout for it was taken back.", async () =>
+    refundSellerOrder(await adminActor(), sellerOrderId),
+  );
+}
+
+export async function setCommissionAction(form: FormData) {
+  const percent = Number(field(form, "percent"));
+  await attempt("/admin/settings", "Commission saved. It applies to new orders.", async () =>
+    setCommissionBps(await adminActor(), Number.isFinite(percent) ? Math.round(percent * 100) : NaN),
   );
 }

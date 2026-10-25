@@ -72,6 +72,7 @@ function product(overrides: Partial<ProductInput> = {}): ProductInput {
     inventory: 10,
     weightGrams: 113,
     shippingNote: null,
+    shippingClass: "STANDARD",
     herbIds: [ashwagandhaId],
     primaryHerbId: ashwagandhaId,
     ...overrides,

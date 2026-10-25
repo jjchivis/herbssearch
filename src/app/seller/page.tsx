@@ -26,8 +26,25 @@ export default async function SellerOverviewPage() {
             </Link>{" "}
             so shoppers know who you are.
           </li>
-          <li className="text-[var(--muted)]">Add products and link them to the herbs in the library (coming soon).</li>
-          <li className="text-[var(--muted)]">Connect a payout account so you can get paid (coming soon).</li>
+          <li>
+            <Link href="/seller/products" className="underline underline-offset-2 hover:text-[var(--highlight)]">
+              Add products
+            </Link>{" "}
+            and link them to the herbs in the library.
+          </li>
+          <li>
+            Set your{" "}
+            <Link href="/seller/shipping" className="underline underline-offset-2 hover:text-[var(--highlight)]">
+              shipping rates
+            </Link>
+            .
+          </li>
+          <li className={seller.stripeTransfersActive ? "text-[var(--muted)] line-through" : ""}>
+            <Link href="/seller/payouts" className="underline underline-offset-2 hover:text-[var(--highlight)]">
+              Set up payouts
+            </Link>{" "}
+            so customers can buy from you and you get paid.
+          </li>
         </ol>
       </section>
     </>

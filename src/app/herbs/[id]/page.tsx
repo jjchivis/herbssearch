@@ -79,7 +79,7 @@ export default async function HerbDetailPage({
   }
   const herbData = herb;
   const [shop, restriction] = await Promise.all([
-    herbProducts(herbData.id),
+    herbProducts(herbData.id, 3),
     prisma.restrictedHerb.findUnique({ where: { herbId: herbData.id }, select: { id: true } }),
   ]);
 
@@ -290,22 +290,26 @@ export default async function HerbDetailPage({
 
       {/* MARKETPLACE: live products linked to this herb */}
       <section id="shop" className="scroll-mt-16 flex flex-col gap-4 border-t border-[var(--border)] pt-8">
-        <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h2 className="font-serif text-xl text-[var(--foreground)]">Shop {herbData.name}</h2>
-          {shop.total > shop.products.length && (
-            <Link href={`/shop?herb=${herbData.id}`} className="text-sm underline underline-offset-2 hover:text-[var(--highlight)]">
-              See all {shop.total} products
-            </Link>
-          )}
-        </div>
+        <h2 className="font-serif text-xl text-[var(--foreground)]">Shop {herbData.name}</h2>
         {shop.products.length > 0 ? (
           <>
-            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               {shop.products.map((p) => (
                 <li key={p.slug}>
                   <ProductCard product={p} />
                 </li>
               ))}
+              {shop.total > shop.products.length && (
+                <li>
+                  <Link
+                    href={`/shop?herb=${herbData.id}`}
+                    className="flex h-full min-h-40 flex-col items-center justify-center gap-1 rounded-lg border border-dashed border-[var(--border)] p-3 text-center transition-colors hover:border-[var(--highlight)] hover:text-[var(--highlight)]"
+                  >
+                    <span className="font-serif text-lg">See all {shop.total} products</span>
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </li>
+              )}
             </ul>
             <p className="text-xs text-[var(--muted)]">
               Products are sold by independent sellers. Our herb information isn&apos;t influenced by them.

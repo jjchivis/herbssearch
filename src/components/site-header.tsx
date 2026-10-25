@@ -25,6 +25,9 @@ export function SiteHeader() {
           <Link href="/sources" className="hover:text-[var(--foreground)]">
             Sources
           </Link>
+          <Link href="/shop" className="hover:text-[var(--foreground)]">
+            Shop
+          </Link>
           <AuthNav />
         </nav>
       </div>

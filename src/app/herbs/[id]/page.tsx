@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { herbProducts } from "@/lib/marketplace/catalog";
+import { ProductCard } from "@/components/marketplace/product-card";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion/fade-in";
@@ -76,6 +78,10 @@ export default async function HerbDetailPage({
     notFound();
   }
   const herbData = herb;
+  const [shop, restriction] = await Promise.all([
+    herbProducts(herbData.id),
+    prisma.restrictedHerb.findUnique({ where: { herbId: herbData.id }, select: { id: true } }),
+  ]);
 
   const uses = herbData.uses.split(",").map((u) => u.trim()).filter(Boolean);
   const properties = herbData.properties.split(",").map((p) => p.trim()).filter(Boolean);
@@ -140,6 +146,7 @@ export default async function HerbDetailPage({
 
   const jumpLinks = [
     { id: "about", label: "Overview", show: botanicalFacts.length > 0 || synonymsByType.length > 0 },
+    { id: "shop", label: "Shop", show: true },
     { id: "topics", label: "Health topics", show: herbData.symptoms.length > 0 },
     { id: "traditions", label: "Traditions", show: herbData.traditions.length > 0 },
     { id: "compounds", label: "Compounds", show: herbData.constituents.length > 0 },
@@ -279,6 +286,43 @@ export default async function HerbDetailPage({
           Traditionally described as
         </h2>
         <TagList tags={properties} />
+      </section>
+
+      {/* MARKETPLACE: live products linked to this herb */}
+      <section id="shop" className="scroll-mt-16 flex flex-col gap-4 border-t border-[var(--border)] pt-8">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <h2 className="font-serif text-xl text-[var(--foreground)]">Shop {herbData.name}</h2>
+          {shop.total > shop.products.length && (
+            <Link href={`/shop?herb=${herbData.id}`} className="text-sm underline underline-offset-2 hover:text-[var(--highlight)]">
+              See all {shop.total} products
+            </Link>
+          )}
+        </div>
+        {shop.products.length > 0 ? (
+          <>
+            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {shop.products.map((p) => (
+                <li key={p.slug}>
+                  <ProductCard product={p} />
+                </li>
+              ))}
+            </ul>
+            <p className="text-xs text-[var(--muted)]">
+              Products are sold by independent sellers. Our herb information isn&apos;t influenced by them.
+            </p>
+          </>
+        ) : (
+          <p className="text-sm text-[var(--muted)]">
+            {restriction
+              ? `Make ${herbData.name} prints, books or other goods that aren't eaten or drunk?`
+              : `Sell ${herbData.name} products?`}{" "}
+            Your listings would appear right here, beside the research.{" "}
+            <Link href="/sell" className="underline underline-offset-2 hover:text-[var(--highlight)]">
+              Apply to sell here
+            </Link>
+            .
+          </p>
+        )}
       </section>
 
       {/* HEALTH TOPICS (symptom search) */}

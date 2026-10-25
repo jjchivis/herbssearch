@@ -1,7 +1,10 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion/fade-in";
 import { HerbGrid, HerbCardMotion } from "@/components/motion/herb-grid";
+import { parseShopQuery, searchProducts } from "@/lib/marketplace/catalog";
+import { ProductCard } from "@/components/marketplace/product-card";
 import { HerbImage } from "@/components/herb-image";
 import { BODY_SYSTEM_NOTES } from "@/lib/plain-language";
 
@@ -40,6 +43,11 @@ export default async function HerbLibraryPage({
 }) {
   const { q = "", category = "", bodySystem = "" } = await searchParams;
   const term = SEARCH_ALIASES[q.trim().toLowerCase()] ?? q;
+
+  // Marketplace products matching the same words, shown below the herb results.
+  const productMatchesPromise = q.trim()
+    ? searchProducts(parseShopQuery({ q: q.trim() }))
+    : Promise.resolve({ products: [], total: 0 });
 
   const [herbs, categories, bodySystems] = await Promise.all([
     prisma.herb.findMany({
@@ -84,6 +92,7 @@ export default async function HerbLibraryPage({
     }),
     prisma.bodySystem.findMany({ orderBy: { name: "asc" } }),
   ]);
+  const productMatches = await productMatchesPromise;
 
   const isFiltered = Boolean(q || category || bodySystem);
   const activeBodySystem = bodySystems.find((b) => b.slug === bodySystem);
@@ -219,6 +228,24 @@ export default async function HerbLibraryPage({
               ? `No herbs are linked to ${activeBodySystem.name} yet — that connection work hasn't been sourced yet.`
               : "No herbs matched your search. Try a different term or category."}
           </p>
+        )}
+
+        {productMatches.total > 0 && (
+          <div className="flex flex-col gap-3 border-t border-[var(--border)] pt-6">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h2 className="font-serif text-xl text-[var(--foreground)]">Products matching “{q.trim()}”</h2>
+              <Link href={`/shop?q=${encodeURIComponent(q.trim())}`} className="text-sm underline underline-offset-2 hover:text-[var(--highlight)]">
+                See all {productMatches.total} in the Shop
+              </Link>
+            </div>
+            <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {productMatches.products.slice(0, 4).map((p) => (
+                <li key={p.slug}>
+                  <ProductCard product={p} />
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </section>
     </main>

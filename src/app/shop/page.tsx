@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { PAGE_SIZE, SORTS, parseShopQuery, searchProducts } from "@/lib/marketplace/catalog";
 import { publicProductWhere } from "@/lib/marketplace/products";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ProductCard } from "@/components/marketplace/product-card";
+import { ApothecaryBanner, bannerMuted, bannerText } from "@/components/marketplace/apothecary-banner";
 import { PRODUCT_CATEGORY_LABELS, buttonClass, inputClass } from "@/components/marketplace/ui";
 
 export const metadata: Metadata = {
@@ -47,23 +47,13 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
   return (
     <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-8 px-6 py-12">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Shop" }]} />
-      <header className="relative isolate flex min-h-64 flex-col justify-end gap-2 overflow-hidden rounded-xl p-6 sm:min-h-80 sm:p-10">
-        <Image
-          src="/shop/apothecary.webp"
-          alt=""
-          fill
-          priority
-          sizes="(max-width: 1024px) 100vw, 1024px"
-          className="-z-10 object-cover object-[50%_40%]"
-        />
-        {/* Darkens the lower part so the text stays readable over the picture. */}
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1f2a17]/90 via-[#1f2a17]/45 to-transparent" />
-        <h1 className="font-serif text-4xl text-[#f8f2e2] sm:text-5xl">Shop</h1>
-        <p className="max-w-2xl text-[15px] leading-relaxed text-[#f1e6cc]">
+      <ApothecaryBanner>
+        <h1 className={`font-serif text-4xl sm:text-5xl ${bannerText}`}>Shop</h1>
+        <p className={`max-w-2xl text-[15px] leading-relaxed ${bannerMuted}`}>
           Herbs, teas, supplements and botanical goods from independent sellers, each linked to the herbs in our library. Our herb
           information isn&apos;t influenced by sellers.
         </p>
-      </header>
+      </ApothecaryBanner>
 
       <form method="GET" action="/shop" className="flex flex-col gap-4">
         <div className="flex flex-col gap-3 sm:flex-row">

@@ -6,6 +6,7 @@ import { prisma } from "@/lib/prisma";
 import { formatPrice, publicProductWhere } from "@/lib/marketplace/products";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Badge } from "@/components/marketplace/ui";
+import { ApothecaryBanner, bannerMuted, bannerText } from "@/components/marketplace/apothecary-banner";
 
 async function getSeller(slug: string) {
   // Suspended stores aren't public.
@@ -37,27 +38,38 @@ export default async function SellerPage({ params }: { params: Promise<{ slug: s
   return (
     <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-10 px-6 py-12">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: seller.storeName }]} />
-      <header className="flex flex-col gap-4 sm:flex-row sm:items-center">
-        <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full border border-[var(--border)]">
-          {seller.logoUrl ? (
-            <Image src={seller.logoUrl} alt={`${seller.storeName} logo`} fill sizes="96px" className="object-cover" />
-          ) : (
-            <span className="flex h-full items-center justify-center font-serif text-3xl text-[var(--muted)]">{seller.storeName.slice(0, 1)}</span>
-          )}
-        </div>
-        <div className="flex flex-col gap-2">
-          <div className="flex flex-wrap items-center gap-3">
-            <h1 className="font-serif text-4xl text-[var(--foreground)]">{seller.storeName}</h1>
-            {seller.isFoundingSeller && <Badge kind="FOUNDING" />}
+      <ApothecaryBanner>
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
+          <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full border-2 border-[#f1e6cc]/70 bg-[#33512c]">
+            {seller.logoUrl ? (
+              <Image src={seller.logoUrl} alt={`${seller.storeName} logo`} fill sizes="96px" className="object-cover" />
+            ) : (
+              <span className={`flex h-full items-center justify-center font-serif text-3xl ${bannerMuted}`}>{seller.storeName.slice(0, 1)}</span>
+            )}
           </div>
-          <p className="max-w-2xl whitespace-pre-line text-[15px] leading-relaxed text-[var(--muted)]">{seller.description}</p>
-          {seller.website && (
-            <a href={seller.website} target="_blank" rel="noopener noreferrer nofollow" className="w-fit text-sm underline underline-offset-2 hover:text-[var(--highlight)]">
-              Visit their website
-            </a>
-          )}
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-wrap items-center gap-3">
+              <h1 className={`font-serif text-4xl sm:text-5xl ${bannerText}`}>{seller.storeName}</h1>
+              {seller.isFoundingSeller && (
+                <span className="rounded-full bg-[#f8f2e2]">
+                  <Badge kind="FOUNDING" />
+                </span>
+              )}
+            </div>
+            <p className={`max-w-2xl whitespace-pre-line text-[15px] leading-relaxed ${bannerMuted}`}>{seller.description}</p>
+            {seller.website && (
+              <a
+                href={seller.website}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className={`w-fit text-sm underline underline-offset-2 hover:opacity-80 ${bannerText}`}
+              >
+                Visit their website
+              </a>
+            )}
+          </div>
         </div>
-      </header>
+      </ApothecaryBanner>
 
       <section className="flex flex-col gap-4">
         <h2 className="font-serif text-2xl text-[var(--foreground)]">Products</h2>

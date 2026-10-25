@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Badge, Notice, buttonClass } from "@/components/marketplace/ui";
 import { ApplicationForm } from "./application-form";
+import { ApothecaryBanner, bannerMuted, bannerText } from "@/components/marketplace/apothecary-banner";
 
 export const metadata: Metadata = {
   title: "Sell with us",
@@ -24,14 +25,14 @@ export default async function SellPage({ searchParams }: { searchParams: Promise
   return (
     <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-10 px-6 py-14">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Sell with us" }]} />
-      <header className="flex flex-col gap-3">
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--highlight)]">For growers and makers</p>
-        <h1 className="font-serif text-4xl text-[var(--foreground)]">Sell with us</h1>
-        <p className="text-[15px] leading-relaxed text-[var(--muted)]">
+      <ApothecaryBanner>
+        <p className="font-mono text-xs font-medium uppercase tracking-[0.3em] text-[#f0d3a8]">For growers and makers</p>
+        <h1 className={`font-serif text-4xl sm:text-5xl ${bannerText}`}>Sell with us</h1>
+        <p className={`text-[15px] leading-relaxed ${bannerMuted}`}>
           Your products appear right beside the herb research people are already reading, so shoppers find you while
           they&apos;re learning about the plant. Every store and product is reviewed before it goes live.
         </p>
-      </header>
+      </ApothecaryBanner>
 
       {!user ? (
         <div className="flex flex-col items-start gap-4">

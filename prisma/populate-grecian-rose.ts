@@ -43,12 +43,6 @@ run({
     { name: "Hierba del Clavo", type: "REGIONAL_NAME", region: "Chile" },
     { name: "Geum chiloense", type: "SCIENTIFIC_SYNONYM" },
   ],
-  traditions: [
-    {
-      slug: "mapuche-medicine",
-      notes: "Used for tooth nerve pain, stomach inflammation, prostatitis, to regulate menstruation, to increase urination and as an aphrodisiac.",
-    },
-  ],
   evidence: [
     {
       category: "TRADITIONAL",

@@ -3377,6 +3377,36 @@ const herbs = [
     cautions: "In mice, it strengthened the effects of the antipsychotic haloperidol.",
     imageUrl: "/herbs/yauhtli.jpg",
   },
+  {
+    name: "Yellow Mombin",
+    scientificName: "Spondias mombin",
+    category: "Culinary",
+    summary: "A tropical tree with tart yellow fruit (taperebá or cajá in Brazil), used in folk medicine for digestive problems, fever and wounds. The fruit is rich in antioxidants; medicinal effects have only been studied in animals.",
+    uses: "Diarrhea, Constipation, Fever, Wounds, Edible fruit",
+    properties: "Antioxidant, May lower blood sugar (in animal studies)",
+    cautions: "It's traditionally used to cause abortion.",
+    imageUrl: "/herbs/yellow-mombin.jpg",
+  },
+  {
+    name: "Mulungu",
+    scientificName: "Erythrina mulungu",
+    category: "Medicinal",
+    summary: "A Brazilian coral tree used traditionally for breathing problems. In a trial before dental surgery, it didn't ease anxiety better than a placebo.",
+    uses: "Breathing problems, Anxiety",
+    properties: "May ease seizures (in animal studies)",
+    cautions: "It didn't reduce anxiety in a clinical trial.",
+    imageUrl: "/herbs/mulungu.jpg",
+  },
+  {
+    name: "Red Cinchona",
+    scientificName: "Cinchona pubescens",
+    category: "Medicinal",
+    summary: "The Andean \"fever tree\" whose bark gave the world quinine, the first effective malaria treatment. Quinine is now a prescription drug with serious side effects.",
+    uses: "Malaria, Fever",
+    properties: "Source of quinine and quinidine",
+    cautions: "Quinine can cause hearing and vision loss, low blood sugar and heart rhythm problems.",
+    imageUrl: "/herbs/red-cinchona.jpg",
+  },
 ];
 
 async function main() {

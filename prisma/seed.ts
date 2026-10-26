@@ -3317,6 +3317,26 @@ const herbs = [
     cautions: "No studies in people were found.",
     imageUrl: "/herbs/spiral-ginger.jpg",
   },
+  {
+    name: "Cataia",
+    scientificName: "Pimenta pseudocaryophyllus",
+    category: "Medicinal",
+    summary: "A clove-scented Brazilian tree whose leaf tea is a folk remedy for emotional tension, as an aphrodisiac and to increase urination. In mice, its leaves reduced anxiety and inflammatory pain.",
+    uses: "Emotional tension, Aphrodisiac, Increasing urination",
+    properties: "Calming (in animal studies), May relieve pain (in animal studies), Antimicrobial (in lab studies)",
+    cautions: "No studies in people or safety studies were found.",
+    imageUrl: "/herbs/cataia.jpg",
+  },
+  {
+    name: "Spiked Pepper",
+    scientificName: "Piper aduncum",
+    category: "Medicinal",
+    summary: "A tropical American pepper shrub, also called matico, whose leaves are traditionally used for stomach pain and indigestion. In mice, its leaf oil protected the stomach from ulcers.",
+    uses: "Stomach pain, Indigestion",
+    properties: "Protects the stomach (in animal studies)",
+    cautions: "No studies in people or safety studies were found.",
+    imageUrl: "/herbs/spiked-pepper.jpg",
+  },
 ];
 
 async function main() {

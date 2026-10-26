@@ -18,6 +18,15 @@ const RESTRICTED: Record<string, string> = {
   Mitragyna: "Kratom; banned or restricted in several states.",
   Yohimbe: "Serious heart and blood pressure risks; restricted in some countries.",
   Kava: "Prohibited by our payment provider (Stripe) and linked to liver damage.",
+  // Added 2026-10-25 with the new herb cards. Herbs not yet in this database
+  // are skipped with a warning and restricted once they exist.
+  Datura: "Every part is poisonous; causes hallucinations, seizures and death.",
+  "Nicotiana Glauca": "Tree tobacco; its leaves contain anabasine, which can stop breathing.",
+  "Cassia Occidentalis": "The seeds and leaves have caused fatal liver, muscle and brain damage.",
+  "Red Jurema": "The roots contain the hallucinogen DMT.",
+  Angico: "The seeds contain hallucinogens that can harm the heart and nerves.",
+  Mandrake: "Poisonous; contains hallucinogenic tropane alkaloids.",
+  "Echinopsis Pachanoi": "San Pedro cactus; contains the hallucinogen mescaline.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

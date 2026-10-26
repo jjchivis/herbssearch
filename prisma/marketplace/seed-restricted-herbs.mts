@@ -27,6 +27,7 @@ const RESTRICTED: Record<string, string> = {
   Angico: "The seeds contain hallucinogens that can harm the heart and nerves.",
   Mandrake: "Poisonous; contains hallucinogenic tropane alkaloids.",
   "Echinopsis Pachanoi": "San Pedro cactus; contains the hallucinogen mescaline.",
+  Arcayuyo: "Its oil contains ascaridole and has caused a fatal poisoning.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

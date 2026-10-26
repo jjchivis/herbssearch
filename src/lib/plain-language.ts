@@ -45,6 +45,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Cannabaceae: "the hemp family, which includes hops",
   Caprifoliaceae: "the honeysuckle family",
   Caryophyllaceae: "the pink and carnation family",
+  Celastraceae: "the staff-vine family",
   Combretaceae: "the combretum family",
   Convolvulaceae: "the morning glory family",
   Cornaceae: "the dogwood family",

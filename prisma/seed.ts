@@ -3365,7 +3365,7 @@ const herbs = [
     uses: "Snakebites",
     properties: "Traditional antidote",
     cautions: "There's no clinical evidence that it works for snakebite or is safe.",
-    imageUrl: "/herbs/contrajerva.jpg",
+    imageUrl: "/herbs/contrajerva-v2.jpg",
   },
   {
     name: "Yauhtli",
@@ -3375,7 +3375,7 @@ const herbs = [
     uses: "Rheumatic pain, Inflammation, Nervous disorders",
     properties: "May relieve pain (in animal studies)",
     cautions: "In mice, it strengthened the effects of the antipsychotic haloperidol.",
-    imageUrl: "/herbs/yauhtli.jpg",
+    imageUrl: "/herbs/yauhtli-v2.jpg",
   },
   {
     name: "Yellow Mombin",
@@ -3605,7 +3605,7 @@ const herbs = [
     uses: "Tooth pain, Stomach inflammation, Prostatitis, Menstruation",
     properties: "Antioxidant (in lab studies)",
     cautions: "It can dangerously raise levels of the anti-rejection drug cyclosporine.",
-    imageUrl: "/herbs/grecian-rose.jpg",
+    imageUrl: "/herbs/grecian-rose-v2.jpg",
   },
 ];
 

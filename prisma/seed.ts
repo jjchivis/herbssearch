@@ -3407,6 +3407,36 @@ const herbs = [
     cautions: "Quinine can cause hearing and vision loss, low blood sugar and heart rhythm problems.",
     imageUrl: "/herbs/red-cinchona.jpg",
   },
+  {
+    name: "Echinopsis Pachanoi",
+    scientificName: "Echinopsis pachanoi",
+    category: "Medicinal",
+    summary: "The San Pedro cactus of the Andes, used in traditional medicine for centuries. It contains mescaline, a hallucinogen, whose effects and safety are poorly studied.",
+    uses: "Traditional ceremonies",
+    properties: "Hallucinogenic",
+    cautions: "Contains the hallucinogen mescaline; it can raise blood pressure and cause nausea and vomiting.",
+    imageUrl: "/herbs/echinopsis-pachanoi.jpg",
+  },
+  {
+    name: "Mandrake",
+    scientificName: "Mandragora autumnalis",
+    category: "Medicinal",
+    summary: "A Mediterranean plant with a forked root, famous in myth and used in old herbal medicine for sleep, pain and fertility. Its root contains poisonous tropane alkaloids.",
+    uses: "Sleeplessness, Inflammation, Coughs, Fertility",
+    properties: "Poisonous, Hallucinogenic",
+    cautions: "Its alkaloids can cause hallucinations and changes in breathing and heart rate.",
+    imageUrl: "/herbs/mandrake.jpg",
+  },
+  {
+    name: "Boldo",
+    scientificName: "Peumus boldus",
+    category: "Medicinal",
+    summary: "A Chilean shrub whose leaf tea is a recognized traditional European remedy for indigestion and mild gut cramps.",
+    uses: "Indigestion, Gut cramps",
+    properties: "Digestive",
+    cautions: "Don't use it with liver disease, gallstones or bile duct problems.",
+    imageUrl: "/herbs/boldo.jpg",
+  },
 ];
 
 async function main() {

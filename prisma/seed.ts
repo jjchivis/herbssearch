@@ -4077,6 +4077,26 @@ const herbs = [
     cautions: "No human or safety studies were found.",
     imageUrl: "/herbs/velvetweed.jpg",
   },
+  {
+    name: "Helichrysum Petiolare",
+    scientificName: "Helichrysum petiolare",
+    category: "Medicinal",
+    summary: "Licorice plant or kooigoed, a silvery South African everlasting used for colds, coughs, fever, menstrual problems and skin care. Lab studies suggest it may help with blood sugar.",
+    uses: "Colds, Coughs, Fever, Menstrual problems, Skin care (traditional)",
+    properties: "Silvery, aromatic leaves",
+    cautions: "One lab study found an extract damaged the DNA of normal cells.",
+    imageUrl: "/herbs/helichrysum-petiolare.jpg",
+  },
+  {
+    name: "Helichrysum Cymosum",
+    scientificName: "Helichrysum cymosum",
+    category: "Medicinal",
+    summary: "Gold carpet, a silvery South African everlasting with yellow flower heads, used for coughs, colds, fever, menstrual pain and wounds. Its oil was active against the malaria parasite in the lab.",
+    uses: "Coughs, Colds, Fever, Menstrual pain, Wounds (traditional)",
+    properties: "Aromatic essential oil",
+    cautions: "Its essential oil was toxic to kidney cells in the lab.",
+    imageUrl: "/herbs/helichrysum-cymosum.jpg",
+  },
 ];
 
 async function main() {

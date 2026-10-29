@@ -223,7 +223,7 @@ export default async function HerbDetailPage({
               <li key={l.id}>
                 <a
                   href={`#${l.id}`}
-                  className="text-[var(--muted)] underline decoration-[#c96a43] decoration-2 underline-offset-4 hover:text-[var(--highlight)]"
+                  className="font-medium text-[var(--on-band)] underline decoration-[#ab5030] underline-offset-4 hover:text-[var(--highlight)]"
                 >
                   {l.label}
                 </a>

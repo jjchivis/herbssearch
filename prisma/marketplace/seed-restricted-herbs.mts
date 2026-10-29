@@ -28,6 +28,14 @@ const RESTRICTED: Record<string, string> = {
   Mandrake: "Poisonous; contains hallucinogenic tropane alkaloids.",
   "Echinopsis Pachanoi": "San Pedro cactus; contains the hallucinogen mescaline.",
   Arcayuyo: "Its oil contains ascaridole and has caused a fatal poisoning.",
+  // Added 2026-10-29.
+  Yew: "Deadly poisonous; its taxine alkaloids stop the heart.",
+  Bloodroot: "Used in corrosive black salve; causes severe tissue damage.",
+  "Blue Cohosh Root": "Has caused severe heart and circulation problems, including in newborns.",
+  Sassafras: "Contains safrole, a carcinogen banned in US food.",
+  "White Hellebore": "Poisonous; causes a dangerously slow heartbeat and heart rhythm problems.",
+  "Sacred Thornapple": "A datura; poisonous, causing hallucinations, seizures and death.",
+  "Coyote Tobacco": "Wild tobacco; contains addictive nicotine.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

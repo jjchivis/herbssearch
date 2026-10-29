@@ -65,6 +65,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Fabaceae: "the pea and bean family",
   Fucaceae: "the rockweed family of brown seaweeds",
   Gentianaceae: "the gentian family",
+  Geraniaceae: "the geranium family",
   Gesneriaceae: "the gesneriad family, which includes African violets",
   Gigartinaceae: "a family of red seaweeds",
   Ginkgoaceae: "the ginkgo family",

@@ -3937,6 +3937,36 @@ const herbs = [
     cautions: "May harm unborn babies and cause miscarriage.",
     imageUrl: "/herbs/bishops-weed.jpg",
   },
+  {
+    name: "Agathosma Crenulata",
+    scientificName: "Agathosma crenulata",
+    category: "Medicinal",
+    summary: "Oval-leaf or long-leaf buchu, one of the two buchu species of South Africa, long used for urinary infections and other ailments.",
+    uses: "Urinary infections, Colds, Stomach problems (traditional)",
+    properties: "Aromatic; the oil is rich in pulegone",
+    cautions: "Its oil contains more liver-toxic pulegone than round-leaf buchu.",
+    imageUrl: "/herbs/agathosma-crenulata.jpg",
+  },
+  {
+    name: "African Geranium",
+    scientificName: "Pelargonium graveolens",
+    category: "Aromatic",
+    summary: "Rose geranium, the South African source of geranium oil. In small trials, breathing in the oil eased pain and tiredness, and a gel helped a denture-related fungal infection.",
+    uses: "Essential oil, Pain, Tiredness, Denture sores",
+    properties: "Aromatic essential oil",
+    cautions: "No safety studies were found.",
+    imageUrl: "/herbs/african-geranium.jpg",
+  },
+  {
+    name: "Diosma",
+    scientificName: "Coleonema album",
+    category: "Aromatic",
+    summary: "A fragrant South African shrub that the Khoisan rub on their skin. Its oil slowed a skin fungus in the lab.",
+    uses: "Skin care",
+    properties: "Essential oil rich in terpenes",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/diosma.jpg",
+  },
 ];
 
 async function main() {

@@ -2,7 +2,7 @@ import { run } from "./lib/populate-herb";
 
 // Buchu (Agathosma betulina), from a 2026 study of its leaf chemistry
 // (Mnisi et al.), a 2022 review (Brendler & Abdel-Tawab) and the abstract of a
-// 2008 review (Moolla & Viljoen; full text is paywalled). No human trials were
+// 2008 review (Moolla & Viljoen; abstract, introduction and section excerpts). No human trials were
 // found. Family per GBIF.
 
 run({
@@ -86,6 +86,24 @@ run({
       summary:
         "Research is scarce. In lab tests, a leaf extract had moderate activity against microbes (the essential oil didn't), and extracts reduced inflammation signals and helped cells take up sugar. In rats, a water extract brought high blood sugar down to normal, and in rats on a high-fat diet it reduced weight gain and lowered high blood pressure. The extracts' makeup often wasn't stated, and no proper human trials have been done.",
       source: "brendler",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "The Khoi-San used the word \"buchu\" for any fragrant plant that could be dried and powdered. Today it means two species, round-leaf buchu (Agathosma betulina) and oval-leaf buchu (Agathosma crenulata).",
+      source: "moolla",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "Indigenous people introduced buchu to European settlers at the Cape in the 1650s, and its use spread to Europe and America. It's still used across South Africa as a general tonic and medicine. Traditional uses include easing cramps, bringing down fever, as a rub, and for coughs.",
+      source: "moolla",
+    },
+    {
+      category: "PRECLINICAL",
+      summary:
+        "A 2008 review reported that buchu extracts and essential oils were active against four disease-causing bacteria in lab tests, including Staphylococcus aureus. It noted that most buchu research has been in the lab, and few studies have tested its traditional uses.",
+      source: "moolla",
     },
   ],
   safety: [

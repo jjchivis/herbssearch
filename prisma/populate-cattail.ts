@@ -1,8 +1,8 @@
 import { run } from "./lib/populate-herb";
 
 // Cattail (Typha angustifolia, narrowleaf cattail), from a 2012 rat study of
-// its pollen (Varpe et al.). No human or safety studies were found. Family
-// per GBIF.
+// its pollen (Varpe et al.). No human or safety studies were found. Traditional uses
+// also from the Native American Ethnobotany Database. Family per GBIF.
 
 run({
   name: "Cattail",

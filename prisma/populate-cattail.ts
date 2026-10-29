@@ -14,6 +14,13 @@ run({
     partsUsed: "The pollen",
   },
   sources: {
+    naeb: {
+      title: "Native American Ethnobotany Database: Typha angustifolia",
+      organization: "Botanical Research Institute of Texas (BRIT); compiled by Daniel E. Moerman",
+      url: "http://naeb.brit.org/uses/search/?string=Typha+angustifolia",
+      sourceType: "historical_text",
+      tier: "TIER_4_TRADITIONAL_TEXT",
+    },
     varpe: {
       title: "Evaluation of anti-inflammatory activity of Typha angustifolia pollen grains extracts in experimental animals",
       author: "Varpe SS, Juvekar AR, Bidikar MP, Juvekar PR",
@@ -27,7 +34,20 @@ run({
     },
   },
   synonyms: [{ name: "Narrowleaf Cattail", type: "COMMON_NAME" }, { name: "Bulrush", type: "COMMON_NAME" }],
+  traditions: [{ slug: "native-american-ethnobotany", notes: "Used by the Pima, Hopi, Micmac and Malecite." }],
   evidence: [
+    {
+      category: "TRADITIONAL",
+      summary:
+        "The Pima baked narrow-leaf cattail pollen into biscuits, cooked it into porridge, and ate the tender white stalks raw. They also wove the leaves into mats and roofs and the stalks into baskets.",
+      source: "naeb",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "The Micmac and Malecite used the root for kidney or bladder stones (gravel).",
+      source: "naeb",
+    },
     {
       category: "PRECLINICAL",
       summary:

@@ -1,7 +1,8 @@
 import { run } from "./lib/populate-herb";
 
 // Coyote Tobacco (Nicotiana attenuata), from a 2018 chemical study of ancient
-// pipes in the Columbia River Basin (Tushingham et al.). Family per GBIF.
+// pipes in the Columbia River Basin (Tushingham et al.). Traditional uses also from the Native American Ethnobotany
+// Database. Family per GBIF.
 
 run({
   name: "Coyote Tobacco",
@@ -13,6 +14,13 @@ run({
     partsUsed: "The leaves, traditionally smoked",
   },
   sources: {
+    naeb: {
+      title: "Native American Ethnobotany Database: Nicotiana attenuata",
+      organization: "Botanical Research Institute of Texas (BRIT); compiled by Daniel E. Moerman",
+      url: "http://naeb.brit.org/uses/search/?string=Nicotiana+attenuata",
+      sourceType: "historical_text",
+      tier: "TIER_4_TRADITIONAL_TEXT",
+    },
     tushingham: {
       title: "Biomolecular archaeology reveals ancient origins of indigenous tobacco smoking in North American Plateau",
       author: "Tushingham S, Snyder CM, Brownstein KJ, Damitio WJ, Gang DR",
@@ -29,6 +37,18 @@ run({
   constituents: [{ name: "Nicotine", slug: "nicotine", type: "pyridine alkaloid" }],
   traditions: [{ slug: "native-american-ethnobotany", notes: "Wild tobacco smoked in pipes on the Columbia Plateau for at least 1,200 years." }],
   evidence: [
+    {
+      category: "TRADITIONAL",
+      summary:
+        "Many Western peoples smoked coyote tobacco, including the Hopi, Navajo, Apache, Paiute, Klamath and Blackfoot, often in ceremonies. The Hopi smoked it for ceremonial occasions, and the Navajo used it in the Night Chant.",
+      source: "naeb",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "The Paiute used it widely as medicine: as a poultice for swellings, rheumatism, cuts, eczema and snakebites, as a wash for hives and aches, and smoked for colds and asthma. The Ramah Navajo smoked the leaves for headache and cough.",
+      source: "naeb",
+    },
     {
       category: "TRADITIONAL",
       summary:

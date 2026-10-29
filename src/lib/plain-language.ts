@@ -91,6 +91,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Myricaceae: "the bayberry family",
   Myrtaceae: "the myrtle family",
   Namaceae: "the nama family",
+  Nyctaginaceae: "the four o'clock family",
   Nymphaeaceae: "the water lily family",
   Oleaceae: "the olive family",
   Onagraceae: "the evening primrose family",
@@ -139,6 +140,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Viburnaceae: "the viburnum and elder family",
   Vitaceae: "the grape family",
   Zingiberaceae: "the ginger family",
+  Zygophyllaceae: "the caltrop family",
 };
 
 // Shown above the herb list when a visitor browses a body system whose

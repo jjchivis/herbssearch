@@ -1,10 +1,11 @@
 import { run } from "./lib/populate-herb";
 
-// Adds the hair loss topic to Rosemary, Ginseng, Aloe and Nettle. Rosemary
+// Adds the hair loss topic to Rosemary, Ginseng, Aloe, Nettle and Castor Oil. Rosemary
 // gets a 2024 review of a rosemary oil trial (Bin Rubaian et al.), Ginseng a
 // 2018 review of its human studies (Choi), and Aloe and Nettle a 2025
 // systematic review of herbal hair-loss trials (Allam et al.). Aloe and nettle
-// have no trials of their own, and their notes say so.
+// have no trials of their own, and their notes say so. Castor Oil gets a 2026
+// dermatology review (Girdler et al.); it has no hair-loss trials either.
 
 const ALLAM = {
   title: "Pathophysiology, conventional treatments, and evidence-based herbal remedies of hair loss with a systematic review of controlled clinical trials",
@@ -116,6 +117,56 @@ run(
       {
         slug: "hair-loss",
         notes: "Only tested as one of six herbs in a shampoo and scalp solution, which reduced hair shedding in a 6-month trial.",
+      },
+    ],
+  },
+  {
+    name: "Castor Oil",
+    sources: {
+      girdler: {
+        title: "Use of Castor Oil in Dermatology: A Narrative Review",
+        author: "Girdler K, Cabatu A, Olds H, Potts GA",
+        journal: "Cureus",
+        publicationDate: "2026-02-09",
+        doi: "10.7759/cureus.103289",
+        pmid: "41822610",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12978418/",
+        sourceType: "peer_reviewed",
+        tier: "TIER_3_PEER_REVIEWED",
+      },
+      allam: ALLAM,
+    },
+    evidence: [
+      {
+        category: "TRADITIONAL",
+        summary:
+          "Castor oil is a staple of hair and scalp care in African, Caribbean and Indigenous American traditions, especially for textured hair, where it's used to add shine and make hair easier to manage.",
+        source: "girdler",
+      },
+      {
+        category: "TRADITIONAL",
+        summary: "The ancient Egyptians put castor oil on the hair and scalp and thought it essential for thickening hair.",
+        source: "allam",
+      },
+      {
+        category: "PRECLINICAL",
+        summary:
+          "A substance called prostaglandin D2 slows hair growth and is higher in the scalps of people with male- or female-pattern hair loss. Lab research suggests ricinoleic acid, the main compound in castor oil, may block the enzyme that makes it. It hasn't been tested as a hair-loss treatment in people.",
+        source: "girdler",
+      },
+    ],
+    safety: [
+      {
+        category: "ADVERSE_EFFECT",
+        description:
+          "Very rarely, castor oil on the hair has caused hair felting, where the hair suddenly mats into a tangle that can't be combed out and has to be cut off. It can also occasionally cause an allergic skin rash.",
+        source: "girdler",
+      },
+    ],
+    symptoms: [
+      {
+        slug: "hair-loss",
+        notes: "Traditionally used to thicken and condition hair. A compound in it may block a hair-loss signal in lab research, but it hasn't been tested for hair loss in people.",
       },
     ],
   },

@@ -3907,6 +3907,26 @@ const herbs = [
     cautions: "No human safety studies were found.",
     imageUrl: "/herbs/western-mugwort.jpg",
   },
+  {
+    name: "Sweet Leaf",
+    scientificName: "Stevia rebaudiana",
+    category: "Culinary",
+    summary: "Stevia, a South American plant whose leaves give sugar-free sweeteners. Short human studies found little effect on blood sugar or weight.",
+    uses: "Sweetener",
+    properties: "Contains steviol glycosides",
+    cautions: "In the US, only highly purified stevia extracts are accepted as safe in food; whole leaf and crude extracts aren't.",
+    imageUrl: "/herbs/sweet-leaf.jpg",
+  },
+  {
+    name: "Finger Root",
+    scientificName: "Boesenbergia rotunda",
+    category: "Culinary",
+    summary: "An Asian member of the ginger family used as a spice. A finger root mouth gargle reduced mouth sores in a trial of cancer patients.",
+    uses: "Spice, Appetite, Pain (folk use), Mouth sores",
+    properties: "Contains panduratin A",
+    cautions: "In the mouth-gargle trial, side effects were similar to no treatment.",
+    imageUrl: "/herbs/finger-root.jpg",
+  },
 ];
 
 async function main() {

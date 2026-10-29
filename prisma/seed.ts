@@ -3987,6 +3987,26 @@ const herbs = [
     cautions: "No human or safety studies were found.",
     imageUrl: "/herbs/flanders-red.jpg",
   },
+  {
+    name: "Burkea Africana",
+    scientificName: "Burkea africana",
+    category: "Medicinal",
+    summary: "An African tree whose stem bark is used for mouth sores, stomach problems and malaria. Lab and animal studies found activity against malaria and flu viruses.",
+    uses: "Mouth sores, Stomach problems, Headache, Malaria (traditional)",
+    properties: "Rich in tannin-type antioxidants",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/burkea-africana.jpg",
+  },
+  {
+    name: "Ewe Taba",
+    scientificName: "Nicotiana tabacum",
+    category: "Medicinal",
+    summary: "Tobacco, called taba in Yoruba. In southwestern Nigeria the leaf is used for nosebleeds and many other ailments, and as snuff.",
+    uses: "Nosebleeds, Snuff (traditional)",
+    properties: "Contains nicotine",
+    cautions: "All forms of tobacco use are harmful, and nicotine is highly addictive.",
+    imageUrl: "/herbs/ewe-taba.jpg",
+  },
 ];
 
 async function main() {

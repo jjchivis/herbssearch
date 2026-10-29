@@ -15,6 +15,12 @@ const EXPLORE_LINKS = [
   { label: "Glossary", href: "/glossary" },
 ];
 
+// From 500 herbs on, show the count rounded down to the nearest hundred ("500+",
+// "600+", ...) so the landing page doesn't change with every new herb.
+function herbCountLabel(count: number) {
+  return count >= 500 ? `${Math.floor(count / 100) * 100}+` : count;
+}
+
 export default async function HomePage() {
   const [featured, curated, bodySystems, herbCount, sourceCount, evidenceCount, safetyCount, unsourcedCount, topicCount] = await Promise.all([
     prisma.herb.findFirst({ where: { name: "Echinacea" } }),
@@ -124,7 +130,7 @@ export default async function HomePage() {
           </div>
           <dl className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {[
-              { value: herbCount, label: "Herbs", href: "/herbs" },
+              { value: herbCountLabel(herbCount), label: "Herbs", href: "/herbs" },
               { value: statementCount, label: "Findings and warnings" },
               { value: sourceCount, label: "Sources cited", href: "/sources" },
               { value: `${sourcedShare}%`, label: "Linked to a source" },
@@ -226,7 +232,7 @@ export default async function HomePage() {
                   From the herbal library
                 </h2>
                 <p className="mt-1 text-sm text-[var(--muted)]">
-                  A small selection from {herbCount} herbs in the collection.
+                  A small selection from {herbCountLabel(herbCount)} herbs in the collection.
                 </p>
               </div>
               <a

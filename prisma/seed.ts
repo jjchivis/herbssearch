@@ -3927,6 +3927,16 @@ const herbs = [
     cautions: "In the mouth-gargle trial, side effects were similar to no treatment.",
     imageUrl: "/herbs/finger-root.jpg",
   },
+  {
+    name: "Bishop's Weed",
+    scientificName: "Trachyspermum ammi",
+    category: "Culinary",
+    summary: "Ajwain, a spice of the carrot family long used in Persian and Indian medicine for digestion and breathing. Its oil eased dental injection pain in a trial in children.",
+    uses: "Spice, Bloating, Diarrhea, Stomach pain, Asthma (traditional)",
+    properties: "Rich in thymol",
+    cautions: "May harm unborn babies and cause miscarriage.",
+    imageUrl: "/herbs/bishops-weed.jpg",
+  },
 ];
 
 async function main() {

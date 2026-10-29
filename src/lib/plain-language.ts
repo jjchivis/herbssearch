@@ -81,6 +81,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Lythraceae: "the loosestrife family, which includes pomegranate",
   Magnoliaceae: "the magnolia family",
   Malvaceae: "the mallow family",
+  Melanthiaceae: "the false hellebore family",
   Meliaceae: "the mahogany family",
   Menispermaceae: "the moonseed family",
   Monimiaceae: "the boldo family",

@@ -47,7 +47,7 @@ run({
   ],
   safety: [
     {
-      category: "REGULATORY",
+      category: "PREPARATION_SPECIFIC",
       description:
         "In the US, highly purified stevia sweeteners (at least 95% steviol glycosides) are accepted as safe in food. Whole stevia leaf and crude stevia extracts aren't, and they can't be imported as sweeteners.\n\nTechnical detail: acceptable daily intake 4 mg/kg body weight per day, as steviol equivalents (JECFA).",
       source: "fda",

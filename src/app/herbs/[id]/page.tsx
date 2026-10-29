@@ -221,7 +221,10 @@ export default async function HerbDetailPage({
           <ul className="flex gap-4 whitespace-nowrap text-sm">
             {jumpLinks.map((l) => (
               <li key={l.id}>
-                <a href={`#${l.id}`} className="text-[var(--muted)] hover:text-[var(--highlight)]">
+                <a
+                  href={`#${l.id}`}
+                  className="text-[var(--muted)] underline decoration-[#c96a43] decoration-2 underline-offset-4 hover:text-[var(--highlight)]"
+                >
                   {l.label}
                 </a>
               </li>

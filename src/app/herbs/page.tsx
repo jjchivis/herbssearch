@@ -23,6 +23,7 @@ const SEARCH_ALIASES: Record<string, string> = {
   hypotensive: "low blood pressure",
   "atopic dermatitis": "eczema",
   alopecia: "hair loss",
+  xerosis: "dry skin",
 };
 
 function libraryHref(params: { category?: string; q?: string; bodySystem?: string }) {

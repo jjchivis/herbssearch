@@ -4097,6 +4097,16 @@ const herbs = [
     cautions: "Its essential oil was toxic to kidney cells in the lab.",
     imageUrl: "/herbs/helichrysum-cymosum.jpg",
   },
+  {
+    name: "Olive",
+    scientificName: "Olea europaea",
+    category: "Culinary",
+    summary: "The Mediterranean fruit and its oil, the main fat of the Mediterranean diet. A review of 30 trials found olive oil lowered markers of inflammation.",
+    uses: "Cooking oil, Skin and hair care",
+    properties: "Rich in polyphenols",
+    cautions: "On the skin, olive oil can weaken the skin barrier.",
+    imageUrl: "/herbs/olive.jpg",
+  },
 ];
 
 async function main() {

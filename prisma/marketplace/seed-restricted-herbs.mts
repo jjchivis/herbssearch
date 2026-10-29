@@ -36,6 +36,7 @@ const RESTRICTED: Record<string, string> = {
   "White Hellebore": "Poisonous; causes a dangerously slow heartbeat and heart rhythm problems.",
   "Sacred Thornapple": "A datura; poisonous, causing hallucinations, seizures and death.",
   "Coyote Tobacco": "Wild tobacco; contains addictive nicotine.",
+  "Ewe Taba": "Tobacco; all forms of tobacco use are harmful and nicotine is highly addictive.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

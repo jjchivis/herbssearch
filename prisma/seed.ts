@@ -4307,6 +4307,16 @@ const herbs = [
     cautions: "Barely studied in people, so its safety is unknown.",
     imageUrl: "/herbs/crepe-ginger.jpg",
   },
+  {
+    name: "Bengal Quince",
+    scientificName: "Aegle marmelos",
+    category: "Medicinal",
+    summary: "Bael, a sacred Indian tree whose fruit is eaten as food and used in traditional medicine for diarrhea, stomach ulcers and fever. Its gut effects have only been tested in animals.",
+    uses: "Diarrhea, Dysentery, Stomach ulcers, Fever, Vomiting, Cough (traditional)",
+    properties: "Laxative, Stomach tonic",
+    cautions: "Not tested in people. Chewing the leaves caused white patches on the lips in one report, and leaf and bark extracts lowered fertility in male rats.",
+    imageUrl: "/herbs/bengal-quince.jpg",
+  },
 ];
 
 async function main() {

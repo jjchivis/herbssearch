@@ -93,6 +93,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Namaceae: "the nama family",
   Nyctaginaceae: "the four o'clock family",
   Nymphaeaceae: "the water lily family",
+  Olacaceae: "the olax family",
   Oleaceae: "the olive family",
   Onagraceae: "the evening primrose family",
   Ophiocordycipitaceae: "a family of fungi that grow on insects",

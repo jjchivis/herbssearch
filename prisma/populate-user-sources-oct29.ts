@@ -4,7 +4,8 @@ import { run } from "./lib/populate-herb";
 // leaf trial (Imperatrice et al. 2024), a bloodroot review (Croaker et al.
 // 2016), a papaya review (Srivastava et al. 2025), a Lippia javanica review
 // (Maroyi 2017) and the Lady Bird Johnson Wildflower Center entry for Dalea
-// compacta, plus related-species uses from the 2026 Dalea review. Commercial
+// compacta, plus related-species uses from the 2026 Dalea review and a 2019
+// Dalea chapter (Peralta et al.). Commercial
 // and blog sources they sent weren't used.
 
 run(
@@ -140,9 +141,30 @@ run(
         sourceType: "peer_reviewed",
         tier: "TIER_3_PEER_REVIEWED",
       },
+      peralta: {
+        title: "Dalea Genus, Chemistry, and Bioactivity Studies",
+        author: "Peralta MA, Santi MD, Cabrera JL, Ortega MG",
+        journal: "Studies in Natural Products Chemistry",
+        publicationDate: "2019-01-01",
+        doi: "10.1016/B978-0-444-64185-4.00008-3",
+        url: "https://doi.org/10.1016/B978-0-444-64185-4.00008-3",
+        sourceType: "peer_reviewed",
+        tier: "TIER_3_PEER_REVIEWED",
+      },
     },
     // The ladybird source supports the native range on the Dalea Compacta page.
     evidence: [
+      {
+        category: "TRADITIONAL",
+        summary:
+          "The prairie clover genus has 172 species, from Canada to Argentina and Chile. North American species were used by peoples such as the Apache and Dakota for headaches, rheumatism, heart disease and pneumonia, and in Ecuador for stomach problems. These uses are for the genus, not compact prairie clover specifically.",
+        source: "peralta",
+      },
+      {
+        category: "PRECLINICAL",
+        summary: "Prairie clovers are rich in flavonoids, and lab studies on several species have supported some of their traditional uses.",
+        source: "peralta",
+      },
       {
         category: "TRADITIONAL",
         summary:

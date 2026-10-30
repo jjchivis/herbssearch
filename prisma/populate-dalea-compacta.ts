@@ -10,7 +10,7 @@ run({
     family: "Fabaceae",
     genus: "Dalea",
     species: "compacta",
-    nativeRange: "The central United States and Rocky Mountains",
+    nativeRange: "Arkansas, Louisiana, Oklahoma and Texas",
     partsUsed: "The root",
   },
   sources: {

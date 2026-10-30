@@ -4357,6 +4357,16 @@ const herbs = [
     cautions: "Root extracts damaged the liver and kidneys in rats; not tested in people.",
     imageUrl: "/herbs/chitrak.jpg",
   },
+  {
+    name: "Manjistha",
+    scientificName: "Rubia cordifolia",
+    category: "Medicinal",
+    summary: "A climbing plant with long red roots, used in Chinese medicine to stop bleeding and in Ayurveda for inflammation, skin problems and menstrual pain. Most research is in labs and animals.",
+    uses: "Bleeding, Menstrual pain, Rheumatism, Skin discoloration, Wounds, Diarrhea (traditional)",
+    properties: "Stops bleeding (Chinese medicine), Cooling",
+    cautions: "Safety data in people is lacking; most research has been in labs and animals.",
+    imageUrl: "/herbs/manjistha.jpg",
+  },
 ];
 
 async function main() {

@@ -4197,6 +4197,16 @@ const herbs = [
     cautions: "No human or safety studies were found.",
     imageUrl: "/herbs/lung-lichen.jpg",
   },
+  {
+    name: "Old Man's Beard",
+    scientificName: "Usnea barbata",
+    category: "Medicinal",
+    summary: "Usnea, a beard-like lichen used in Chinese medicine and around the world for infections, wounds and coughs. Its usnic acid kills some microbes in the lab.",
+    uses: "Infections, Wounds, Cough (traditional)",
+    properties: "Contains usnic acid",
+    cautions: "Usnic acid taken by mouth can damage the liver; weight-loss supplements containing it were withdrawn.",
+    imageUrl: "/herbs/old-mans-beard.jpg",
+  },
 ];
 
 async function main() {

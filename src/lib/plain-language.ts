@@ -111,6 +111,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Pinaceae: "the pine family",
   Piperaceae: "the pepper family",
   Plantaginaceae: "the plantain family",
+  Plumbaginaceae: "the leadwort family",
   Poaceae: "the grass family",
   Polygonaceae: "the buckwheat and dock family",
   Polypodiaceae: "the polypody fern family",

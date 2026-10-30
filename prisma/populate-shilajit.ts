@@ -3,10 +3,17 @@ import { run } from "./lib/populate-herb";
 // Shilajit (mineral pitch), from two reviews (Meena et al. 2010; Carrasco-Gallardo
 // et al. 2012, including its "Potential Risks" section), two studies in people and
 // a 2025 thallium analysis, all found by direct PubMed Central search. Shilajit
-// isn't a plant, so there's no plant profile (family, genus, species).
+// isn't a plant, so the profile says so, as populate-quercetin.ts does.
 
 run({
   name: "Shilajit",
+  profile: {
+    family: "Not a plant: plant material and humus compressed in mountain rocks",
+    genus: "",
+    species: "",
+    nativeRange: "The Himalayas at 1,000 to 5,000 meters; also Afghanistan, Nepal, Bhutan, Pakistan, China, Tibet and Russia",
+    partsUsed: "The purified resin",
+  },
   sources: {
     meena: {
       title: "Shilajit: A panacea for high-altitude problems",

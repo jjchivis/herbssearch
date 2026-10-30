@@ -4187,6 +4187,16 @@ const herbs = [
     cautions: "No lab, human or safety studies were found.",
     imageUrl: "/herbs/pale-wolfberry.jpg",
   },
+  {
+    name: "Lung Lichen",
+    scientificName: "Lobaria pulmonaria",
+    category: "Medicinal",
+    summary: "A leafy forest lichen that looks like lung tissue and has been used for lung problems since the 1400s. In the lab it was active against drug-resistant tuberculosis.",
+    uses: "Tuberculosis, Coughs (traditional)",
+    properties: "Contains stictic acid",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/lung-lichen.jpg",
+  },
 ];
 
 async function main() {

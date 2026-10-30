@@ -4237,6 +4237,16 @@ const herbs = [
     cautions: "Animal tests found low toxicity; no human studies were found.",
     imageUrl: "/herbs/stinkingtoe.jpg",
   },
+  {
+    name: "Ewe Owu Akese",
+    scientificName: "Gossypium barbadense",
+    category: "Medicinal",
+    summary: "Sea-island cotton leaves, used by the Yoruba for infertility, malaria, ulcers and wounds, and in the Caribbean for itchy skin, bellyache and cuts.",
+    uses: "Infertility, Malaria, Wounds, Bellyache, Itchy skin (traditional)",
+    properties: "Medicinal leaves",
+    cautions: "Not enough information for use in pregnancy, breastfeeding or children under 12.",
+    imageUrl: "/herbs/ewe-owu-akese.jpg",
+  },
 ];
 
 async function main() {

@@ -4227,6 +4227,16 @@ const herbs = [
     cautions: "Contains mimosine, which can harm the thyroid and reproduction.",
     imageUrl: "/herbs/white-lead-tree.jpg",
   },
+  {
+    name: "Stinkingtoe",
+    scientificName: "Hymenaea courbaril",
+    category: "Medicinal",
+    summary: "Jatobá, a tropical American tree with large woody pods of edible pulp, used in Brazil for wounds, coughs, rheumatism and stomach problems.",
+    uses: "Edible pulp, Wounds, Coughs, Rheumatism (traditional)",
+    properties: "Edible fruit pulp and resin",
+    cautions: "Animal tests found low toxicity; no human studies were found.",
+    imageUrl: "/herbs/stinkingtoe.jpg",
+  },
 ];
 
 async function main() {

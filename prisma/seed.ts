@@ -4267,6 +4267,36 @@ const herbs = [
     cautions: "TRAMIL advises against it in pregnancy, breastfeeding and children under 3; get medical help for diarrhea with signs of dehydration.",
     imageUrl: "/herbs/guava-leaf.jpg",
   },
+  {
+    name: "Arjuna",
+    scientificName: "Terminalia arjuna",
+    category: "Medicinal",
+    summary: "The bark of a large Indian tree, used in Ayurveda for centuries as a heart tonic. Trials for chest pain (angina) were too poor in quality to show whether it helps.",
+    uses: "Heart tonic, Heart failure, Fractures, Ulcers, Liver problems, Anemia (traditional)",
+    properties: "Heart tonic",
+    cautions: "Trials for chest pain (angina) were poor quality, so any benefit is unproven.",
+    imageUrl: "/herbs/arjuna.jpg",
+  },
+  {
+    name: "Bhringaraj",
+    scientificName: "Eclipta prostrata",
+    category: "Medicinal",
+    summary: "A daisy-family plant used in India, Nepal and Bangladesh for jaundice and other liver problems, skin problems and hair loss. Its hair and liver effects have only been tested in animals.",
+    uses: "Hair loss, Graying hair, Jaundice, Skin problems, Wounds, Fever (traditional)",
+    properties: "Revitalizing herb (Ayurveda)",
+    cautions: "Hasn't been studied on its own in people, so its safety is unknown.",
+    imageUrl: "/herbs/bhringaraj.jpg",
+  },
+  {
+    name: "Guggulu",
+    scientificName: "Commiphora wightii",
+    category: "Medicinal",
+    summary: "The resin of the guggul tree, used in Ayurveda for thousands of years for arthritis, skin diseases and more. Studies on whether it lowers cholesterol are mixed, and it may make some medicines less effective.",
+    uses: "Arthritis, Rheumatism, Hemorrhoids, Urinary problems, Skin diseases, Nerve diseases (traditional)",
+    properties: "Ayurvedic resin",
+    cautions: "May make some medicines less effective; side effects include rash, upset stomach and headache.",
+    imageUrl: "/herbs/guggulu.jpg",
+  },
 ];
 
 async function main() {

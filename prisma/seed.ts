@@ -4257,6 +4257,16 @@ const herbs = [
     cautions: "Barely studied in people, so its safety is unknown.",
     imageUrl: "/herbs/southern-magnolia.jpg",
   },
+  {
+    name: "Guava Leaf",
+    scientificName: "Psidium guajava",
+    category: "Medicinal",
+    summary: "The leaves of the guava tree, widely used as a tea for diarrhea in the Caribbean, Latin America, Africa and Asia. Small trials have tested it for diarrhea, blood sugar after meals and gum inflammation.",
+    uses: "Diarrhea, Vomiting, Skin rashes, Pimples, Diabetes, Ataque de nervios (traditional)",
+    properties: "Leaf tea for diarrhea, Leaf wash for skin",
+    cautions: "TRAMIL advises against it in pregnancy, breastfeeding and children under 3; get medical help for diarrhea with signs of dehydration.",
+    imageUrl: "/herbs/guava-leaf.jpg",
+  },
 ];
 
 async function main() {

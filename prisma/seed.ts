@@ -4297,6 +4297,16 @@ const herbs = [
     cautions: "May make some medicines less effective; side effects include rash, upset stomach and headache.",
     imageUrl: "/herbs/guggulu.jpg",
   },
+  {
+    name: "Crepe Ginger",
+    scientificName: "Hellenia speciosa",
+    category: "Medicinal",
+    summary: "A plant from South East Asia whose rhizome is traditionally used for inflammation and pain. In Puerto Rico it's used alongside diabetes treatment, and one small study tested rhizome nose drops for sore throat.",
+    uses: "Inflammation, Pain, Diabetes (traditional)",
+    properties: "Medicinal rhizome",
+    cautions: "Barely studied in people, so its safety is unknown.",
+    imageUrl: "/herbs/crepe-ginger.jpg",
+  },
 ];
 
 async function main() {

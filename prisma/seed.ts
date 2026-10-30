@@ -4319,7 +4319,7 @@ const herbs = [
   },
   {
     name: "Shilajit",
-    scientificName: "Mineral pitch (a resin-like substance from mountain rocks)",
+    scientificName: "Mineral pitch, a resin-like substance from mountain rocks",
     category: "Medicinal",
     summary: "A blackish-brown, gummy substance that oozes from rocks in the Himalayas, used in Ayurveda as a rejuvenator. Unpurified shilajit and some products can contain heavy metals and other toxins.",
     uses: "Rejuvenation, Tiredness, Weakness, High-altitude problems (traditional)",

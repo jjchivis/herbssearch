@@ -37,6 +37,7 @@ const RESTRICTED: Record<string, string> = {
   "Sacred Thornapple": "A datura; poisonous, causing hallucinations, seizures and death.",
   "Coyote Tobacco": "Wild tobacco; contains addictive nicotine.",
   "Ewe Taba": "Tobacco; all forms of tobacco use are harmful and nicotine is highly addictive.",
+  "White Lead Tree": "Contains mimosine, which can harm the thyroid and reproduction.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

@@ -4247,6 +4247,16 @@ const herbs = [
     cautions: "Not enough information for use in pregnancy, breastfeeding or children under 12.",
     imageUrl: "/herbs/ewe-owu-akese.jpg",
   },
+  {
+    name: "Southern Magnolia",
+    scientificName: "Magnolia grandiflora",
+    category: "Medicinal",
+    summary: "A large evergreen magnolia tree from the southeastern United States. The Choctaw and Koasati used its bark as a wash for heat rash and sores, and one small trial tested a bark mouthwash against tooth-decay bacteria.",
+    uses: "Heat rash, Sores, Swelling, Fevers, Rheumatism (traditional)",
+    properties: "May cause sweating, Stomach tonic",
+    cautions: "Barely studied in people, so its safety is unknown.",
+    imageUrl: "/herbs/southern-magnolia.jpg",
+  },
 ];
 
 async function main() {

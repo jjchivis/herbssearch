@@ -4207,6 +4207,26 @@ const herbs = [
     cautions: "Usnic acid taken by mouth can damage the liver; weight-loss supplements containing it were withdrawn.",
     imageUrl: "/herbs/old-mans-beard.jpg",
   },
+  {
+    name: "Ewe Akintola",
+    scientificName: "Chromolaena odorata",
+    category: "Medicinal",
+    summary: "Siam weed, used by the Yoruba to stop bleeding and on fresh wounds, and for malaria and skin disease. Its leaf extract killed wound bacteria in the lab.",
+    uses: "Bleeding, Wounds, Malaria, Skin disease (traditional)",
+    properties: "Antibacterial leaf extract (lab)",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/ewe-akintola.jpg",
+  },
+  {
+    name: "White Lead Tree",
+    scientificName: "Leucaena leucocephala",
+    category: "Medicinal",
+    summary: "A fast-growing tropical tree used in Indonesia for diabetes. Its extracts lowered blood sugar in the lab, but it contains the toxic compound mimosine.",
+    uses: "Diabetes (traditional)",
+    properties: "Contains mimosine",
+    cautions: "Contains mimosine, which can harm the thyroid and reproduction.",
+    imageUrl: "/herbs/white-lead-tree.jpg",
+  },
 ];
 
 async function main() {

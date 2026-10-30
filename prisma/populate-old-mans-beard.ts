@@ -1,11 +1,11 @@
 import { run } from "./lib/populate-herb";
 
-// Usnea (Usnea barbata, old man's beard), a lichen, from two toxicology reviews
+// Old Man's Beard (Usnea barbata, usnea), a lichen, from two toxicology reviews
 // of usnic acid and Usnea (Guo et al. 2008; Chen et al. 2024) and a 2026 lab
 // study of an Usnea oil extract (Dan et al.). Family per GBIF.
 
 run({
-  name: "Usnea",
+  name: "Old Man's Beard",
   profile: {
     family: "Parmeliaceae",
     genus: "Usnea",
@@ -49,7 +49,7 @@ run({
     },
   },
   synonyms: [
-    { name: "Old Man's Beard", type: "COMMON_NAME" },
+    { name: "Usnea", type: "COMMON_NAME" },
     { name: "Beard Lichen", type: "COMMON_NAME" },
     { name: "Song Luo", type: "TRADITIONAL_NAME" },
   ],

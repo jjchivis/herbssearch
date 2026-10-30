@@ -4367,6 +4367,16 @@ const herbs = [
     cautions: "Safety data in people is lacking; most research has been in labs and animals.",
     imageUrl: "/herbs/manjistha.jpg",
   },
+  {
+    name: "Lemon",
+    scientificName: "Citrus limon",
+    category: "Culinary",
+    summary: "The familiar sour citrus fruit, once used to treat scurvy and long used for colds and sore throats. Lemonade raises urine citrate, which helps prevent some kidney stones.",
+    uses: "Food, Colds, Sore throat (traditional), Kidney stone prevention",
+    properties: "Rich in vitamin C",
+    cautions: "Lemon peel and oil can make skin burn more easily in sunlight.",
+    imageUrl: "/herbs/lemon.jpg",
+  },
 ];
 
 async function main() {

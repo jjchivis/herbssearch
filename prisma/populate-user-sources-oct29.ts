@@ -4,7 +4,8 @@ import { run } from "./lib/populate-herb";
 // leaf trial (Imperatrice et al. 2024), a bloodroot review (Croaker et al.
 // 2016), a papaya review (Srivastava et al. 2025), a Lippia javanica review
 // (Maroyi 2017) and the Lady Bird Johnson Wildflower Center entry for Dalea
-// compacta. Commercial and blog sources they sent weren't used.
+// compacta, plus related-species uses from the 2026 Dalea review. Commercial
+// and blog sources they sent weren't used.
 
 run(
   {
@@ -128,8 +129,26 @@ run(
         sourceType: "secondary",
         tier: "TIER_5_SECONDARY",
       },
+      solis: {
+        title: "Phytochemistry and Pharmacological Potential of the Genus Dalea: Current Evidence and Future Directions",
+        author: "Solis-Peña R, Correa-Macias VL, Peralez-Olguin HL, et al.",
+        journal: "Pharmaceuticals",
+        publicationDate: "2026-08-15",
+        doi: "10.3390/ph19081294",
+        pmid: "42653790",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13516910/",
+        sourceType: "peer_reviewed",
+        tier: "TIER_3_PEER_REVIEWED",
+      },
     },
-    // Supports the native range on the Dalea Compacta page.
-    synonyms: [{ name: "Purple Prairie Clover", type: "COMMON_NAME" }],
+    // The ladybird source supports the native range on the Dalea Compacta page.
+    evidence: [
+      {
+        category: "TRADITIONAL",
+        summary:
+          "Related prairie clovers have wider traditional uses. The Pawnee and Dakota used purple prairie clover for heart disease, diarrhea, measles and pneumonia, and the Dakota used golden prairie clover for dysentery, stomachaches and colic. In Ecuador, the flowers of an Andean species are used for pneumonia. These uses are for other species, not compact prairie clover.",
+        source: "solis",
+      },
+    ],
   },
 );

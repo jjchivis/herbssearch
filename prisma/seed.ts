@@ -4747,6 +4747,26 @@ const herbs = [
     cautions: "Was used by the Chumash to end pregnancies; avoid in pregnancy.",
     imageUrl: "/herbs/yerba-mansa.jpg",
   },
+  {
+    name: "Chamiso",
+    scientificName: "Atriplex canescens",
+    category: "Medicinal",
+    summary: "Four-wing saltbush, a shrub of the western US. Southwestern peoples put its leaves on ant bites and used its ashes like baking soda to keep blue corn blue.",
+    uses: "Ant bites, Itchy rashes, Cough (traditional)",
+    properties: "Salty leaves; alkaline ashes",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/chamiso.jpg",
+  },
+  {
+    name: "Mormon Tea",
+    scientificName: "Ephedra trifurca",
+    category: "Medicinal",
+    summary: "A jointfir shrub of the Southwest, drunk as a tea by the Navajo for stomach and kidney troubles. It's thought to lack the ephedrine in Chinese ephedra, but this is uncertain.",
+    uses: "Stomach troubles, Kidney problems, Sores (traditional)",
+    properties: "Green jointed stems",
+    cautions: "Related Chinese ephedra is banned in US supplements; whether this species contains ephedrine is unclear.",
+    imageUrl: "/herbs/mormon-tea.jpg",
+  },
 ];
 
 async function main() {

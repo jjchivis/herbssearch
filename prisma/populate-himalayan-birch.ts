@@ -2,7 +2,9 @@ import { run } from "./lib/populate-herb";
 
 // Himalayan Birch (Betula utilis, bhojpatra), from a 2016 lab study of its
 // bark (Mishra et al.) and a 2023 wound-dressing study in rats (Ishfaq et al.).
-// Also the EMA birch leaf summary for the related European species. No human
+// Also the EMA birch leaf summary for the related European species, a 2014
+// review of the birch genus (Rastogi et al.), a 2020 rat study of betulinic
+// acid (Kun-Liu et al.) and a 2026 trial of a birch bark gel (Sprecher et al.). No human
 // trials were found. Family per GBIF.
 
 run({
@@ -15,6 +17,39 @@ run({
     partsUsed: "The bark",
   },
   sources: {
+    rastogi: {
+      title: "Medicinal plants of the genus Betula--traditional uses and a phytochemical-pharmacological review",
+      author: "Rastogi S, Pandey MM, Kumar Singh Rawat A",
+      journal: "Journal of Ethnopharmacology",
+      publicationDate: "2014-11-18",
+      doi: "10.1016/j.jep.2014.11.010",
+      pmid: "25449458",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7126499/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
+    kunLiu: {
+      title: "Effects of betulinic acid on synovial inflammation in rats with collagen-induced arthritis",
+      author: "Kun-Liu, Wang JY, Zhang L, Pan YY, Chen XY, Yuan Y",
+      journal: "International Journal of Immunopathology and Pharmacology",
+      publicationDate: "2020-01-01",
+      doi: "10.1177/2058738420945078",
+      pmid: "32718263",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7388086/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
+    sprecher: {
+      title: "Long-Term Efficacy and Safety of Oleogel-S10 (Birch Triterpenes) for Pediatric Patients With Epidermolysis Bullosa",
+      author: "Sprecher E, Torres-Pradilla M, Fernandez MF, et al.",
+      journal: "Pediatric Dermatology",
+      publicationDate: "2026-05-28",
+      doi: "10.1111/pde.70224",
+      pmid: "42205007",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13617162/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
     ema: {
       title: "Birch leaf (Betulae folium): summary for the public (EMA/482160/2015)",
       organization: "European Medicines Agency, Committee on Herbal Medicinal Products (HMPC)",
@@ -49,6 +84,29 @@ run({
   synonyms: [{ name: "Bhojpatra", type: "REGIONAL_NAME", region: "India" }, { name: "Himalayan Silver Birch", type: "COMMON_NAME" }],
   constituents: [{ name: "Betulinic Acid", slug: "betulinic-acid", type: "triterpene" }],
   evidence: [
+    {
+      category: "TRADITIONAL",
+      summary:
+        "In the Himalayas, Himalayan birch bark and root are used for jaundice, burns, leprosy and bronchitis in Ladakh. In western Nepal, the papery bark is laid over wounds to keep them clean, and in Kashmir the powdered bark is taken for leprosy and convulsions and as a tonic.",
+      source: "rastogi",
+    },
+    {
+      category: "TRADITIONAL",
+      summary: "Several other birch species are traditionally used for inflammatory diseases, including arthritis.",
+      source: "rastogi",
+    },
+    {
+      category: "PRECLINICAL",
+      summary:
+        "In rats with arthritis, betulinic acid, a compound found in Himalayan birch bark, reduced paw swelling, joint inflammation and cartilage damage.",
+      source: "kunLiu",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "A gel made from birch bark compounds (Oleogel-S10) helps wounds heal in people with epidermolysis bullosa, a rare blistering skin disease. In a trial of 156 children, 45% had a wound fully close within 45 days, compared with 26% using a plain gel. The gel isn't made from Himalayan birch specifically.",
+      source: "sprecher",
+    },
     {
       category: "TRADITIONAL",
       summary:

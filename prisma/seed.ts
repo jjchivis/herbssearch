@@ -4697,6 +4697,26 @@ const herbs = [
     cautions: "Harmed unborn young and damaged DNA in rats; avoid in pregnancy. May interact with many medicines.",
     imageUrl: "/herbs/akuamma.jpg",
   },
+  {
+    name: "Bitter Orange",
+    scientificName: "Citrus aurantium",
+    category: "Medicinal",
+    summary: "Seville orange, a sour citrus whose fruit, peel and oils flavor food, drinks and perfume. It's sold in weight-loss supplements, but trials found no real weight loss and higher blood pressure.",
+    uses: "Flavoring, Aromatherapy, Sleeplessness (traditional)",
+    properties: "Fruit contains p-synephrine",
+    cautions: "Supplements can raise blood pressure and heart rate; may interact with medicines.",
+    imageUrl: "/herbs/bitter-orange.jpg",
+  },
+  {
+    name: "Cheesewood",
+    scientificName: "Pittosporum napaulense",
+    category: "Medicinal",
+    summary: "A Himalayan evergreen tree whose bark paste is put on injuries and broken bones in Nepal. Its bark stopped drug-resistant bacteria in a lab study.",
+    uses: "Injuries, Broken bones, Pain (traditional)",
+    properties: "Bark contains saponins",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/cheesewood.jpg",
+  },
 ];
 
 async function main() {

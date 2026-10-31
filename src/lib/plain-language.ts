@@ -112,6 +112,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Phytolaccaceae: "the pokeweed family",
   Pinaceae: "the pine family",
   Piperaceae: "the pepper family",
+  Pittosporaceae: "the cheesewood family",
   Plantaginaceae: "the plantain family",
   Plumbaginaceae: "the leadwort family",
   Poaceae: "the grass family",

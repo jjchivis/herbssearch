@@ -4617,6 +4617,36 @@ const herbs = [
     cautions: "Unlike most aconites, described as non-toxic.",
     imageUrl: "/herbs/atees.jpg",
   },
+  {
+    name: "Himalayan Birch",
+    scientificName: "Betula utilis",
+    category: "Medicinal",
+    summary: "Bhojpatra, a high-Himalayan birch whose bark is used in traditional medicine. Its compounds harmed cancer cells in the lab and a bark dressing healed wounds in rats.",
+    uses: "Inflammation, Kidney and bladder problems (traditional)",
+    properties: "Bark rich in betulinic acid",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/himalayan-birch.jpg",
+  },
+  {
+    name: "Elephant Yam",
+    scientificName: "Amorphophallus paeoniifolius",
+    category: "Culinary",
+    summary: "Suran, a large edible tuber used in folk medicine for digestive and inflammatory problems. It protected the bowel in rats with colitis.",
+    uses: "Food, Digestive problems (traditional)",
+    properties: "Edible tuber",
+    cautions: "A review of toxicity studies concluded it is safe.",
+    imageUrl: "/herbs/elephant-yam.jpg",
+  },
+  {
+    name: "Greater Galangal",
+    scientificName: "Alpinia galanga",
+    category: "Culinary",
+    summary: "A ginger-family spice used in Ayurveda, Chinese and Thai medicine. In a trial it improved erectile problems caused by antidepressants.",
+    uses: "Spice, Erectile problems (research)",
+    properties: "Aromatic rhizome",
+    cautions: "No safety studies were found.",
+    imageUrl: "/herbs/greater-galangal.jpg",
+  },
 ];
 
 async function main() {

@@ -6,8 +6,12 @@ const nextConfig: NextConfig = {
     // time. Keep sizes for 1x and 2x screens up to that width.
     deviceSizes: [384, 640, 750, 828, 1080],
     imageSizes: [128, 256, 320],
-    // Seller logos and product photos uploaded to Vercel Blob.
-    remotePatterns: [{ protocol: "https", hostname: "*.public.blob.vercel-storage.com" }],
+    // Seller logos and product photos uploaded to Vercel Blob, and photos of
+    // products imported from the Shopify store.
+    remotePatterns: [
+      { protocol: "https", hostname: "*.public.blob.vercel-storage.com" },
+      { protocol: "https", hostname: "cdn.shopify.com" },
+    ],
   },
 };
 

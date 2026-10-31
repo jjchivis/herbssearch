@@ -512,6 +512,12 @@ model Product {
   reviewedById        String?
   reviewedBy          User?          @relation("ProductReviewer", fields: [reviewedById], references: [id], onDelete: SetNull)
   reviewedAt          DateTime?
+  // Products imported from the connected Shopify store (supplied through
+  // Syncee). One HerbSearch product per Shopify variant; these are bought
+  // through Shopify's checkout, never the HerbSearch cart.
+  shopifyProductId    String?
+  shopifyVariantId    String?        @unique
+  shopifySyncedAt     DateTime?
   createdAt           DateTime       @default(now())
   updatedAt           DateTime       @updatedAt
   images              ProductImage[]
@@ -573,6 +579,8 @@ enum ShippingClass {
 model MarketplaceSettings {
   id            String   @id @default("default")
   commissionBps Int      @default(700)
+  // The store that Shopify products are listed under.
+  shopifySellerId String?
   updatedById   String?
   updatedAt     DateTime @updatedAt
 }

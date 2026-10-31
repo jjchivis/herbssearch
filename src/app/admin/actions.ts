@@ -12,8 +12,16 @@ import {
   setFoundingSeller,
   setSellerStatus,
 } from "@/lib/marketplace/sellers";
-import { approveProduct, rejectProduct, setProductHerbsAsAdmin, setProductHidden } from "@/lib/marketplace/products";
+import {
+  approveProduct,
+  rejectProduct,
+  setProductGroupAsAdmin,
+  setProductHerbsAsAdmin,
+  setProductHidden,
+} from "@/lib/marketplace/products";
 import { refundSellerOrder, setCommissionBps } from "@/lib/marketplace/orders";
+import { setShopifySeller, syncShopifyAsAdmin } from "@/lib/marketplace/shopify";
+import type { ProductGroup } from "@/generated/prisma/enums";
 
 // Every action re-checks the signed-in user on the server, and the
 // marketplace functions check again that the actor is an admin.
@@ -116,6 +124,42 @@ export async function setProductHerbsAction(form: FormData) {
   await attempt(`/admin/products/${id}`, "Herb links updated.", async () =>
     setProductHerbsAsAdmin(await adminActor(), id, herbIds, field(form, "primaryHerbId") || null),
   );
+}
+
+export async function setProductGroupAction(form: FormData) {
+  const id = field(form, "productId");
+  await attempt(`/admin/products/${id}`, "Category updated.", async () =>
+    setProductGroupAsAdmin(await adminActor(), id, field(form, "group") as ProductGroup),
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Shopify
+// ---------------------------------------------------------------------------
+
+export async function setShopifySellerAction(form: FormData) {
+  await attempt("/admin/settings", "Saved. Shopify products will be listed under that store.", async () =>
+    setShopifySeller(await adminActor(), field(form, "sellerId") || null),
+  );
+}
+
+export async function syncShopifyAction() {
+  const actor = await adminActor();
+  let message: string;
+  try {
+    const s = await syncShopifyAsAdmin(actor);
+    message =
+      `Synced from Shopify: ${s.created} new (waiting for review), ${s.updated} updated, ` +
+      `${s.sentToReview} sent back to review, ${s.blocked} blocked for banned wording, ${s.removed} hidden as no longer in Shopify.`;
+  } catch (e) {
+    const error =
+      e instanceof MarketplaceError ? e.message : "Couldn't reach Shopify. Check the Shopify settings in Vercel and try again.";
+    if (!(e instanceof MarketplaceError)) console.error("[shopify sync]", e);
+    redirect(`/admin/settings?error=${encodeURIComponent(error)}`);
+  }
+  revalidatePath("/admin", "layout");
+  revalidatePath("/shop");
+  redirect(`/admin/settings?done=${encodeURIComponent(message)}`);
 }
 
 export async function refundSellerOrderAction(form: FormData) {

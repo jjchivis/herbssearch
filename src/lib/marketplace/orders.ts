@@ -37,7 +37,12 @@ export async function setCommissionBps(actor: Actor, bps: number) {
 // ---------------------------------------------------------------------------
 
 /** A product can go in a cart only if it's public and its store can be paid. */
-const buyableWhere = { ...publicProductWhere, seller: { status: "ACTIVE", stripeTransfersActive: true } } as const;
+// Shopify products are bought through Shopify's checkout, never this cart.
+const buyableWhere = {
+  ...publicProductWhere,
+  shopifyVariantId: null,
+  seller: { status: "ACTIVE", stripeTransfersActive: true },
+} as const;
 
 export async function addToCart(userId: string, productId: string, quantity: number) {
   if (!Number.isInteger(quantity) || quantity < 1) throw new MarketplaceError("Choose a quantity.");

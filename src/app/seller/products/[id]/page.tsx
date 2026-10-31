@@ -30,7 +30,9 @@ export default async function EditProductPage({
   });
   if (!product) notFound();
 
-  const editable = seller.status === "ACTIVE" && product.status !== "HIDDEN";
+  // Shopify products are managed in Shopify and update here on each sync.
+  const fromShopify = Boolean(product.shopifyVariantId);
+  const editable = seller.status === "ACTIVE" && product.status !== "HIDDEN" && !fromShopify;
   const canSubmit = editable && (product.status === "DRAFT" || product.status === "REJECTED");
   const addImage = addProductImageAction.bind(null, product.id);
 
@@ -47,6 +49,9 @@ export default async function EditProductPage({
       {flags.created && <Notice tone="success">Draft saved. Add photos if you have them, then submit it for review.</Notice>}
       {flags.submitted && <Notice tone="success">Submitted. We&apos;ll review it and let you know.</Notice>}
       {flags.error && <Notice tone="error">{flags.error}</Notice>}
+      {fromShopify && (
+        <Notice>This product comes from your Shopify store. Change it in Shopify; it updates here on the next sync from Settings.</Notice>
+      )}
       {product.status === "REJECTED" && product.reviewNote && (
         <Notice>
           <p className="font-medium">This product wasn&apos;t approved.</p>

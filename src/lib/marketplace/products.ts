@@ -194,6 +194,12 @@ async function ownProduct(actor: Actor, productId: string) {
   return { seller, product };
 }
 
+/** Shopify products are managed in Shopify and update on the next sync. */
+function assertNotFromShopify(product: { shopifyVariantId: string | null }) {
+  if (product.shopifyVariantId)
+    throw new MarketplaceError("This product comes from the Shopify store. Change it in Shopify; it updates here on the next sync.");
+}
+
 function slugify(name: string) {
   return (
     name
@@ -251,6 +257,7 @@ const CONTENT_FIELDS = ["name", "description", "group"] as const;
  */
 export async function updateProduct(actor: Actor, productId: string, data: ProductInput) {
   const { product } = await ownProduct(actor, productId);
+  assertNotFromShopify(product);
   if (product.status === "HIDDEN") throw new MarketplaceError("This product was hidden by an admin and can't be edited. Contact us.");
   const problem = await checkHerbs(data);
   if (problem) throw new MarketplaceError(problem);
@@ -276,6 +283,7 @@ export async function updateProduct(actor: Actor, productId: string, data: Produ
 
 export async function submitProductForReview(actor: Actor, productId: string) {
   const { product } = await ownProduct(actor, productId);
+  assertNotFromShopify(product);
   if (product.status !== "DRAFT" && product.status !== "REJECTED")
     throw new MarketplaceError("Only drafts and products that weren't approved can be submitted.");
   return prisma.product.update({ where: { id: productId }, data: { status: "PENDING_REVIEW", submittedAt: new Date() } });
@@ -303,6 +311,7 @@ const MAX_IMAGES = 8;
 
 export async function addProductImage(actor: Actor, productId: string, image: { url: string; pathname: string; alt: string }) {
   const { seller, product } = await ownProduct(actor, productId);
+  assertNotFromShopify(product);
   if (!image.pathname.startsWith(imagePathPrefix(seller.id, productId)) || !isOurBlobUrl(image.url, image.pathname))
     throw new MarketplaceError("That upload doesn't belong to this product.");
   if (product.images.length >= MAX_IMAGES) throw new MarketplaceError(`A product can have at most ${MAX_IMAGES} photos.`);
@@ -321,6 +330,7 @@ export async function addProductImage(actor: Actor, productId: string, image: { 
 /** Removes the photo record; returns the blob pathname so the caller can delete the file. */
 export async function removeProductImage(actor: Actor, productId: string, imageId: string) {
   const { product } = await ownProduct(actor, productId);
+  assertNotFromShopify(product);
   const image = product.images.find((i) => i.id === imageId);
   if (!image) throw new MarketplaceError("Photo not found.");
   await prisma.productImage.delete({ where: { id: imageId } });
@@ -346,6 +356,16 @@ function assertAdmin(actor: Actor) {
 
 export async function approveProduct(actor: Actor, productId: string) {
   assertAdmin(actor);
+  // Imported products skip the seller form, so check links and banned herbs here.
+  const product = await prisma.product.findUnique({ where: { id: productId }, include: { herbs: true } });
+  if (!product) throw new MarketplaceError("Product not found.");
+  if (product.herbs.length === 0) throw new MarketplaceError("Link the product to at least one herb before approving it.");
+  const problem = await checkHerbs({
+    ...product,
+    herbIds: product.herbs.map((h) => h.herbId),
+    primaryHerbId: product.herbs.find((h) => h.isPrimary)?.herbId ?? null,
+  } as ProductInput);
+  if (problem) throw new MarketplaceError(problem);
   const updated = await prisma.product.updateMany({
     where: { id: productId, status: "PENDING_REVIEW" },
     data: { status: "LIVE", reviewNote: null, reviewedById: actor.id, reviewedAt: new Date() },
@@ -395,6 +415,25 @@ export async function setProductHerbsAsAdmin(actor: Actor, productId: string, he
     prisma.productHerb.deleteMany({ where: { productId } }),
     prisma.productHerb.createMany({ data: ids.map((herbId) => ({ productId, herbId, isPrimary: herbId === primary })) }),
   ]);
+}
+
+/**
+ * Admins can correct a product's category, which decides the eat-or-drink
+ * rules and the FDA disclaimer. Imported Shopify products get a best guess.
+ */
+export async function setProductGroupAsAdmin(actor: Actor, productId: string, group: ProductGroup) {
+  assertAdmin(actor);
+  if (!Object.values(ProductGroup).includes(group)) throw new MarketplaceError("Choose a category.");
+  const product = await prisma.product.findUnique({ where: { id: productId }, include: { herbs: true } });
+  if (!product) throw new MarketplaceError("Product not found.");
+  const problem = await checkHerbs({
+    ...product,
+    group,
+    herbIds: product.herbs.map((h) => h.herbId),
+    primaryHerbId: product.herbs.find((h) => h.isPrimary)?.herbId ?? null,
+  } as ProductInput);
+  if (problem) throw new MarketplaceError(problem);
+  await prisma.product.update({ where: { id: productId }, data: { group } });
 }
 
 // ---------------------------------------------------------------------------

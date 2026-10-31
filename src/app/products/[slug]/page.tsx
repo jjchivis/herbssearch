@@ -8,6 +8,7 @@ import { SAFETY_GLANCE } from "@/lib/plain-language";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Badge } from "@/components/marketplace/ui";
 import { AddToCart } from "@/components/marketplace/add-to-cart";
+import { BuyOnShopify } from "@/components/marketplace/buy-on-shopify";
 import { MAX_QUANTITY } from "@/lib/marketplace/orders";
 import { describeShipping } from "@/lib/marketplace/checkout-math";
 
@@ -110,13 +111,22 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             )}
           </p>
           <p className={`text-sm ${inStock ? "text-[var(--accent)]" : "text-[var(--caution)]"}`}>{inStock ? "In stock" : "Out of stock"}</p>
-          {!product.seller.stripeTransfersActive ? (
-            <p className="text-sm text-[var(--muted)]">This store isn&apos;t taking orders yet.</p>
-          ) : inStock ? (
-            <AddToCart productId={product.id} slug={product.slug} max={Math.min(product.inventory, MAX_QUANTITY)} />
-          ) : null}
-          <p className="text-sm text-[var(--muted)]">{describeShipping(product.seller, product.shippingClass)}</p>
-          {product.shippingNote && <p className="text-sm text-[var(--muted)]">Shipping: {product.shippingNote}</p>}
+          {product.shopifyVariantId ? (
+            <>
+              {inStock && <BuyOnShopify productId={product.id} max={Math.min(product.inventory, MAX_QUANTITY)} />}
+              <p className="text-sm text-[var(--muted)]">Shipping and tax are worked out at checkout.</p>
+            </>
+          ) : (
+            <>
+              {!product.seller.stripeTransfersActive ? (
+                <p className="text-sm text-[var(--muted)]">This store isn&apos;t taking orders yet.</p>
+              ) : inStock ? (
+                <AddToCart productId={product.id} slug={product.slug} max={Math.min(product.inventory, MAX_QUANTITY)} />
+              ) : null}
+              <p className="text-sm text-[var(--muted)]">{describeShipping(product.seller, product.shippingClass)}</p>
+              {product.shippingNote && <p className="text-sm text-[var(--muted)]">Shipping: {product.shippingNote}</p>}
+            </>
+          )}
           <p className="whitespace-pre-line text-[15px] leading-relaxed text-[var(--foreground)]">{product.description}</p>
           {product.group === "SUPPLEMENTS_EXTRACTS" && (
             <p className="rounded-lg border border-[var(--border)] p-3 text-xs leading-relaxed text-[var(--muted)]">*{FDA_DISCLAIMER}</p>

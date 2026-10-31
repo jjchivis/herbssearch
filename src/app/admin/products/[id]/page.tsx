@@ -15,7 +15,13 @@ import {
   inputClass,
   secondaryButtonClass,
 } from "@/components/marketplace/ui";
-import { approveProductAction, rejectProductAction, setProductHerbsAction, setProductHiddenAction } from "../../actions";
+import {
+  approveProductAction,
+  rejectProductAction,
+  setProductGroupAction,
+  setProductHerbsAction,
+  setProductHiddenAction,
+} from "../../actions";
 
 export default async function AdminProductPage({
   params,
@@ -40,6 +46,12 @@ export default async function AdminProductPage({
   const claim = findDiseaseClaim(`${p.name}\n${p.description}`);
   const rows: [string, string][] = [
     ["Store", `${p.seller.storeName}${p.seller.status !== "ACTIVE" ? " (suspended)" : ""}`],
+    [
+      "Source",
+      p.shopifyVariantId
+        ? `Shopify store (bought through Shopify checkout; last synced ${p.shopifySyncedAt?.toLocaleString("en-US") ?? "never"})`
+        : "Added by the seller",
+    ],
     ["Category", PRODUCT_CATEGORY_LABELS[p.group]],
     ["Price", `${formatPrice(p.priceCents)}${p.compareAtPriceCents ? ` (was ${formatPrice(p.compareAtPriceCents)})` : ""}`],
     ["In stock", String(p.inventory)],
@@ -86,6 +98,28 @@ export default async function AdminProductPage({
         <h2 className="font-serif text-2xl text-[var(--foreground)]">Description</h2>
         <p className="whitespace-pre-line text-[15px] leading-relaxed">{p.description}</p>
         {p.group === "SUPPLEMENTS_EXTRACTS" && <p className="text-xs text-[var(--muted)]">Shown with: {FDA_DISCLAIMER}</p>}
+      </section>
+
+      <section className="flex flex-col gap-3 border-t border-[var(--border)] pt-6">
+        <h2 className="font-serif text-2xl text-[var(--foreground)]">Category</h2>
+        {p.shopifyVariantId && (
+          <p className="text-sm text-[var(--muted)]">
+            Guessed from the Shopify product type. It decides the eat-or-drink rules and whether the FDA disclaimer shows.
+          </p>
+        )}
+        <form action={setProductGroupAction} className="flex flex-wrap items-end gap-3">
+          <input type="hidden" name="productId" value={p.id} />
+          <select name="group" defaultValue={p.group} aria-label="Category" className={inputClass + " max-w-xs"}>
+            {Object.entries(PRODUCT_CATEGORY_LABELS).map(([value, label]) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
+            ))}
+          </select>
+          <button type="submit" className={secondaryButtonClass}>
+            Save category
+          </button>
+        </form>
       </section>
 
       <section className="flex flex-col gap-3 border-t border-[var(--border)] pt-6">

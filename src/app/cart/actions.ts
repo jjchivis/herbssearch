@@ -1,11 +1,13 @@
 "use server";
 
 import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { getCurrentUser } from "@/lib/auth-guards";
 import { stripeConfigured } from "@/lib/stripe";
 import { MarketplaceError } from "@/lib/marketplace/sellers";
 import { addToCart, setCartQuantity, startCheckout } from "@/lib/marketplace/orders";
+import { startShopifyCheckout } from "@/lib/marketplace/shopify";
 
 export type CartState = { message?: string };
 
@@ -28,6 +30,21 @@ export async function addToCartAction(_prev: CartState, form: FormData): Promise
   }
   revalidatePath("/cart");
   redirect("/cart");
+}
+
+// Shopify products skip the cart: Shopify's checkout takes payment, works out
+// shipping and tax, and collects the shopper's details, so no sign-in is needed.
+export async function buyOnShopifyAction(_prev: CartState, form: FormData): Promise<CartState> {
+  let url: string;
+  try {
+    const ip = (await headers()).get("x-forwarded-for")?.split(",")[0]?.trim() || null;
+    url = await startShopifyCheckout(String(form.get("productId") ?? ""), quantityOf(form), ip);
+  } catch (e) {
+    if (e instanceof MarketplaceError) return { message: e.message };
+    console.error("[shopify checkout]", e);
+    return { message: "We couldn't start checkout. Please try again in a moment." };
+  }
+  redirect(url);
 }
 
 export async function updateCartAction(form: FormData) {

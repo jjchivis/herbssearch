@@ -5,7 +5,8 @@ import { run } from "./lib/populate-herb";
 // Also the EMA birch leaf summary for the related European species, a 2014
 // review of the birch genus (Rastogi et al.), a 2020 rat study of betulinic
 // acid (Kun-Liu et al.) a 2011 lab study of birch bark and cancer cells (Soica et
-// al.) and a 2026 trial of a birch bark gel (Sprecher et al.). No human
+// al.) and a 2026 trial of a birch bark gel (Sprecher et al.) and a 2022 review of birch
+// leaf and bark (Dragićević et al.). No human
 // trials were found. Family per GBIF.
 
 run({
@@ -48,6 +49,16 @@ run({
       doi: "10.1080/14786419.2010.545352",
       pmid: "21598174",
       url: "https://doi.org/10.1080/14786419.2010.545352",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
+    dragicevic: {
+      title: "Biological activity of the birch leaf and bark",
+      author: "Dragićević A, Kitić D, Pavlović D",
+      journal: "Natural Medicinal Materials (Lekovite sirovine)",
+      publicationDate: "2022-12-25",
+      doi: "10.5937/leksir2242089D",
+      url: "https://doi.org/10.5937/leksir2242089D",
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
@@ -114,6 +125,18 @@ run({
       source: "kunLiu",
     },
     {
+      category: "TRADITIONAL",
+      summary:
+        "European birch leaf has been used since ancient Greek and Roman times, for gout, arthritis, rheumatism and other pain. In Serbian folk medicine, birch leaves, bark and seeds are used for skin conditions, chesty coughs, colds and kidney pain. These are uses of European birches, not Himalayan birch specifically.",
+      source: "dragicevic",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "In a trial of 57 people with minor burns, more healed faster with a gel containing birch bark extract than with a standard wound gel.",
+      source: "dragicevic",
+    },
+    {
       category: "PRECLINICAL",
       summary:
         "Birch bark is rich in betulin and betulinic acid. In lab tests, a birch bark extract and both compounds slowed the growth of skin, breast and cervical cancer cells. This study used birch bark in general, not Himalayan birch specifically.",
@@ -148,6 +171,14 @@ run({
       summary:
         "In rats, a gel dressing containing birch bark extract helped wounds close by 93% and killed bacteria.",
       source: "ishfaq",
+    },
+  ],
+  safety: [
+    {
+      category: "PREGNANCY",
+      description:
+        "Because there isn't enough safety information, European birch leaf isn't recommended during pregnancy, while breastfeeding, or for children under 12.",
+      source: "dragicevic",
     },
   ],
 });

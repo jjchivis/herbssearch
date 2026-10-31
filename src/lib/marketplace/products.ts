@@ -17,32 +17,52 @@ export const INGESTIBLE_GROUPS: ProductGroup[] = ["DRIED_HERBS_TEAS", "SUPPLEMEN
  * prints, books and artwork are allowed. Refined hemp (seeds, hearts, seed oil,
  * protein, fabric, rope, paper) is allowed everywhere.
  */
-export const PROHIBITED_TERMS: { label: string; pattern: RegExp; scope: "all" | "ingestible" }[] = [
-  { label: "CBD", pattern: /\b(cbd|cannabidiol)\b/i, scope: "all" },
-  { label: "cannabinoids", pattern: /\b(cbn|cbg|cbc|thcv|cannabinoids?|cannabinol|cannabigerol)\b/i, scope: "all" },
-  { label: "THC", pattern: /\b(thc|tetrahydrocannabinol)\b/i, scope: "all" },
+const HEMP_ALLOWED = "Refined hemp (seeds, seed oil, protein) is allowed.";
+const POPPY_ALLOWED = "Poppy seeds for baking are allowed.";
+
+export const PROHIBITED_TERMS: { label: string; pattern: RegExp; scope: "all" | "ingestible"; allowed: string }[] = [
+  { label: "CBD", pattern: /\b(cbd|cannabidiol)\b/i, scope: "all", allowed: HEMP_ALLOWED },
+  { label: "cannabinoids", pattern: /\b(cbn|cbg|cbc|thcv|cannabinoids?|cannabinol|cannabigerol)\b/i, scope: "all", allowed: HEMP_ALLOWED },
+  { label: "THC", pattern: /\b(thc|tetrahydrocannabinol)\b/i, scope: "all", allowed: HEMP_ALLOWED },
   {
     label: "synthetic cannabinoid derivatives",
     pattern: /\b(delta[\s-]?(8|9|10|11)|d[89]\b|hhc|hexahydrocannabinol|thc[\s-]?[op]|synthetic cannabinoids?)\b/i,
     scope: "all",
+    allowed: HEMP_ALLOWED,
   },
   {
     label: "raw or unrefined hemp plant material",
     pattern: /\b(hemp (flowers?|buds?|pre-?rolls?|cigarettes?|smokables?|biomass|trim)|smokable hemp|(raw|unrefined|whole[\s-]plant) hemp)\b/i,
     scope: "all",
+    allowed: HEMP_ALLOWED,
   },
-  { label: "cannabis", pattern: /\b(cannabis|marijuana|marihuana|hemp (leaf|leaves))\b/i, scope: "ingestible" },
+  { label: "cannabis", pattern: /\b(cannabis|marijuana|marihuana|hemp (leaf|leaves))\b/i, scope: "ingestible", allowed: HEMP_ALLOWED },
   // Poppy seeds are a legal food. Opium is blocked everywhere; pods, straw and
   // unwashed seeds only for eat-or-drink products (pod and unwashed-seed teas
   // have caused fatal opioid overdoses), so dried pods for decoration are fine.
   // "Opium poppy" is the plant's common name, allowed on prints and artwork.
-  { label: "opium", pattern: /\bopium\b(?!\s+popp)/i, scope: "all" },
-  { label: "opium poppy", pattern: /\bopium popp/i, scope: "ingestible" },
-  { label: "poppy pods, poppy straw or unwashed poppy seeds", pattern: /\b(poppy (pods?|straw|heads?|capsules?)|unwashed poppy seeds?)\b/i, scope: "ingestible" },
+  { label: "opium", pattern: /\bopium\b(?!\s+popp)/i, scope: "all", allowed: POPPY_ALLOWED },
+  { label: "opium poppy", pattern: /\bopium popp/i, scope: "ingestible", allowed: POPPY_ALLOWED },
+  { label: "poppy pods, poppy straw or unwashed poppy seeds", pattern: /\b(poppy (pods?|straw|heads?|capsules?)|unwashed poppy seeds?)\b/i, scope: "ingestible", allowed: POPPY_ALLOWED },
+  // Akuamma seeds, roots, leaves and stems can be sold, but not the powder, which
+  // is mainly sold as a kratom substitute. Blocked when a listing mentions
+  // akuamma (or Picralima) together with powder or ground/milled seed, so a
+  // listing of whole seeds or roots still passes.
+  {
+    label: "akuamma powder",
+    pattern:
+      /\b(akuamma|picralima)\b[\s\S]*\b(powder(ed|s)?|pulveri[sz]ed|(ground|milled) (seeds?|roots?|bark))\b|\b(powder(ed|s)?|pulveri[sz]ed|(ground|milled) (seeds?|roots?|bark))\b[\s\S]*\b(akuamma|picralima)\b/i,
+    scope: "ingestible",
+    allowed: "Whole akuamma seeds, roots and dried leaves and stems are allowed.",
+  },
 ];
 
+function findProhibitedRule(text: string, ingestible = true) {
+  return PROHIBITED_TERMS.find((t) => (ingestible || t.scope === "all") && t.pattern.test(text));
+}
+
 export function findProhibitedTerm(text: string, ingestible = true): string | null {
-  return PROHIBITED_TERMS.find((t) => (ingestible || t.scope === "all") && t.pattern.test(text))?.label ?? null;
+  return findProhibitedRule(text, ingestible)?.label ?? null;
 }
 
 const CLAIM_VERBS = /\b(cures?|cured|curing|treats?|treating|treatment|prevents?|preventing|prevention|heals?|healing|reverses?|reversing|fights?|fighting|eliminates?|mitigates?|diagnos\w*)\b/i;
@@ -163,11 +183,11 @@ async function checkHerbs(data: ProductInput): Promise<string | null> {
   });
   if (herbs.length !== data.herbIds.length) return "One of the linked herbs wasn't found. Please pick it again.";
   const ingestible = INGESTIBLE_GROUPS.includes(data.group);
-  const prohibited = findProhibitedTerm(`${data.name}\n${data.description}`, ingestible);
+  const prohibited = findProhibitedRule(`${data.name}\n${data.description}`, ingestible);
   if (prohibited)
     return ingestible
-      ? `Products with ${prohibited} can't be sold to eat or drink here. Refined hemp (seeds, seed oil, protein) is allowed.`
-      : `Listings with ${prohibited} can't be sold here, in any category. Prints, books and artwork of the plant are allowed.`;
+      ? `Products with ${prohibited.label} can't be sold to eat or drink here. ${prohibited.allowed}`
+      : `Listings with ${prohibited.label} can't be sold here, in any category. Prints, books and artwork of the plant are allowed.`;
   if (ingestible) {
     const restricted = herbs.find((h) => h.restriction);
     if (restricted)

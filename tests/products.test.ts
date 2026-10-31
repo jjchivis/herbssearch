@@ -130,6 +130,15 @@ describe("listing text rules", () => {
     expect(findProhibitedTerm("Raw opium resin", false)).toBe("opium");
   });
 
+  it("allows whole akuamma seeds and roots but not akuamma powder to eat or drink", () => {
+    expect(findProhibitedTerm("Akuamma seeds, whole, 2 oz")).toBeNull();
+    expect(findProhibitedTerm("Dried akuamma root pieces")).toBeNull();
+    expect(findProhibitedTerm("Akuamma Seed Powder, 50 g")).toBe("akuamma powder");
+    expect(findProhibitedTerm("Powdered Picralima nitida")).toBe("akuamma powder");
+    expect(findProhibitedTerm("Akuamma\nFinely ground seeds in a resealable pouch")).toBe("akuamma powder");
+    expect(findProhibitedTerm("Akuamma seed powder botanical print", false)).toBeNull();
+  });
+
   it("allows cannabis artwork but not cannabis substances in non-ingestible goods", () => {
     expect(findProhibitedTerm("Vintage cannabis botanical print with hemp leaves", false)).toBeNull();
     expect(findProhibitedTerm("Vintage cannabis botanical print with hemp leaves", true)).toBe("cannabis");

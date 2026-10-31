@@ -3,7 +3,11 @@ import { run } from "./lib/populate-herb";
 // Scarlet Globemallow (Sphaeralcea coccinea), from the Native American
 // Ethnobotany Database (Moerman, BRIT) and the US Forest Service's Western
 // Forbs species review (Gucker and Shaw 2018). No medical research on this
-// species was found in PubMed Central. Family per GBIF.
+// species was found in PubMed Central; the trial and review of a related
+// Mexican species, Sphaeralcea angustifolia (Romero-Cerecero et al. 2013;
+// Meckes-Fischer and Nicasio-Torres 2023), are labeled as such. RxList
+// (Natural Medicines summary) for its evidence rating and safety. Family per
+// GBIF.
 
 run({
   name: "Scarlet Globemallow",
@@ -30,6 +34,35 @@ run({
       url: "https://research.fs.usda.gov/treesearch/60359",
       sourceType: "government",
       tier: "TIER_1_GOVERNMENT",
+    },
+    romero: {
+      title: "Clinical trial for evaluating the effectiveness and tolerability of topical Sphaeralcea angustifolia treatment in hand osteoarthritis",
+      author: "Romero-Cerecero O, Meckes-Fischer M, Zamilpa A, et al.",
+      journal: "Journal of Ethnopharmacology",
+      publicationDate: "2013-03-23",
+      doi: "10.1016/j.jep.2013.03.040",
+      pmid: "23528365",
+      url: "https://doi.org/10.1016/j.jep.2013.03.040",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
+    meckes: {
+      title: "The Journey of a Medicinal Plant throughout Science: Sphaeralcea angustifolia (Cav.) G. Don (Malvaceae)",
+      author: "Meckes-Fischer M, Nicasio-Torres P",
+      journal: "Plants",
+      publicationDate: "2023-01-10",
+      doi: "10.3390/plants12020321",
+      pmid: "36679034",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9867394/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
+    rxlist: {
+      title: "Globemallow: Health Benefits, Side Effects, Uses, Dose & Precautions",
+      organization: "RxList (WebMD), based on the Natural Medicines Comprehensive Database",
+      url: "https://www.rxlist.com/supplements/globemallow.htm",
+      sourceType: "secondary",
+      tier: "TIER_5_SECONDARY",
     },
   },
   synonyms: [
@@ -76,10 +109,45 @@ run({
         "The Navajo call it a medicine plant with gummy roots. The Gosiute pounded it into a gummy paste to seal small holes inside clay dishes. Today it's planted as a drought-tolerant native wildflower and in land restoration, and it's good forage for deer and pronghorn.",
       source: "usfs",
     },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "In Mexico a related species, Sphaeralcea angustifolia (vara de San José), is put on the skin for inflammation and rheumatism, and taken by mouth for stomach and gut problems.",
+      source: "meckes",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "Scarlet globemallow itself hasn't been tested in people. In a 4-week trial of 113 people with hand osteoarthritis, a gel made from the related Sphaeralcea angustifolia worked about as well as 2% diclofenac gel, a standard pain-relief gel. Neither gel caused side effects in the trial.",
+      source: "romero",
+    },
+    {
+      category: "HUMAN_RESEARCH",
+      summary:
+        "There isn't enough evidence to rate globemallow for any use, including coughs, colds, diarrhea, sores, burns or wounds.",
+      source: "rxlist",
+    },
+  ],
+  safety: [
+    {
+      category: "ADVERSE_EFFECT",
+      description: "It isn't known whether globemallow is safe to take or what side effects it might cause.",
+      source: "rxlist",
+    },
+    {
+      category: "PREGNANCY",
+      description:
+        "Not enough is known about using globemallow during pregnancy or while breastfeeding, so it's best avoided. The Acoma and Laguna did give the roots to pregnant women as a medicine.",
+      source: "rxlist",
+    },
   ],
   symptoms: [
     { slug: "wounds-and-burns", notes: "Chewed plant or roots were put on sores and wounds by the Dakota and Lakota. Not studied in people." },
     { slug: "loss-of-appetite", notes: "The Kayenta Navajo used it as a tonic to improve appetite. Not studied in people." },
+    {
+      slug: "joint-discomfort",
+      notes: "A gel from a related species, Sphaeralcea angustifolia, eased hand osteoarthritis about as well as diclofenac gel in one trial. Scarlet globemallow itself hasn't been tested.",
+    },
   ],
   preparations: [{ slug: "poultice", notes: "Chewed roots or plant put on sores and wounds.", source: "naeb" }],
 });

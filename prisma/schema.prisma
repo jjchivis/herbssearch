@@ -97,6 +97,7 @@ model Herb {
 
   // --- marketplace (relations only; no columns on Herb) ---
   products    ProductHerb[]
+  savedBy     SavedItem[]
   restriction RestrictedHerb?
 
   @@index([name])
@@ -338,6 +339,7 @@ model User {
   reviewedProducts     Product[]           @relation("ProductReviewer")
   cartItems            CartItem[]
   orders               Order[]
+  savedItems           SavedItem[]
 
   @@unique([email])
   @@map("user")
@@ -524,6 +526,7 @@ model Product {
   herbs               ProductHerb[]
   cartItems           CartItem[]
   orderItems          OrderItem[]
+  savedBy             SavedItem[]
 
   @@index([sellerId])
   @@index([status])
@@ -693,4 +696,22 @@ model StripeEvent {
   id          String   @id // Stripe event id
   type        String
   processedAt DateTime @default(now())
+}
+
+// Herbs and products a signed-in user has saved. Exactly one of herbId and
+// productId is set; each can be saved once per user.
+model SavedItem {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  herbId    String?
+  herb      Herb?    @relation(fields: [herbId], references: [id], onDelete: Cascade)
+  productId String?
+  product   Product? @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, herbId])
+  @@unique([userId, productId])
+  @@index([userId])
+  @@map("saved_item")
 }

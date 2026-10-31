@@ -5,12 +5,14 @@ import { customerOrders } from "@/lib/marketplace/orders";
 import { formatPrice } from "@/lib/marketplace/products";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Badge } from "@/components/marketplace/ui";
+import { shopifyAccountUrl } from "@/lib/marketplace/shopify";
 
 export const metadata: Metadata = { title: "Your orders", robots: { index: false } };
 
 export default async function OrdersPage() {
   const user = await requireUser("/orders");
   const orders = (await customerOrders(user.id)).filter((o) => o.status !== "PENDING_PAYMENT");
+  const shopifyAccount = shopifyAccountUrl();
 
   return (
     <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-6 py-12">
@@ -44,6 +46,16 @@ export default async function OrdersPage() {
             </li>
           ))}
         </ul>
+      )}
+      {shopifyAccount && (
+        <p className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 text-[15px] text-[var(--muted)]">
+          Bought something with <span className="text-[var(--foreground)]">Buy now</span>? Those orders are handled by our
+          Shopify store, so they aren&apos;t listed here.{" "}
+          <a href={shopifyAccount} className="underline underline-offset-2 hover:text-[var(--highlight)]">
+            See them and track them on Shopify
+          </a>
+          , signing in with the email you used at checkout.
+        </p>
       )}
     </main>
   );

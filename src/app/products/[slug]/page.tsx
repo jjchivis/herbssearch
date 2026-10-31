@@ -11,6 +11,9 @@ import { AddToCart } from "@/components/marketplace/add-to-cart";
 import { BuyOnShopify } from "@/components/marketplace/buy-on-shopify";
 import { MAX_QUANTITY } from "@/lib/marketplace/orders";
 import { describeShipping } from "@/lib/marketplace/checkout-math";
+import { getCurrentUser } from "@/lib/auth-guards";
+import { isSaved } from "@/lib/marketplace/saved";
+import { SaveButton } from "@/components/marketplace/save-button";
 
 async function getProduct(slug: string) {
   // Only live products from active stores are public; anything else is a 404.
@@ -36,6 +39,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const product = await getProduct((await params).slug);
   if (!product) notFound();
+  const user = await getCurrentUser();
+  const saved = user ? await isSaved(user.id, { productId: product.id }) : false;
 
   const primary = product.herbs[0]?.herb;
   // Until the seller adds photos, show the main herb's library illustration.
@@ -103,6 +108,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </Link>
               {product.seller.isFoundingSeller && <Badge kind="FOUNDING" />}
             </p>
+            <SaveButton kind="product" id={product.id} returnTo={`/products/${product.slug}`} initiallySaved={saved} />
           </div>
           <p className="flex items-baseline gap-3">
             <span className="font-serif text-3xl text-[var(--foreground)]">{formatPrice(product.priceCents)}</span>

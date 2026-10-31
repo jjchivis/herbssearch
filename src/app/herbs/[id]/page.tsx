@@ -9,6 +9,9 @@ import { TagList } from "@/components/motion/tag-list";
 import { HerbImage } from "@/components/herb-image";
 import { PlainText } from "@/components/plain-text";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { getCurrentUser } from "@/lib/auth-guards";
+import { isSaved } from "@/lib/marketplace/saved";
+import { SaveButton } from "@/components/marketplace/save-button";
 import {
   EVIDENCE_LABELS,
   EVIDENCE_NOTES,
@@ -78,9 +81,11 @@ export default async function HerbDetailPage({
     notFound();
   }
   const herbData = herb;
-  const [shop, restriction] = await Promise.all([
+  const user = await getCurrentUser();
+  const [shop, restriction, saved] = await Promise.all([
     herbProducts(herbData.id, 3),
     prisma.restrictedHerb.findUnique({ where: { herbId: herbData.id }, select: { id: true } }),
+    user ? isSaved(user.id, { herbId: herbData.id }) : false,
   ]);
 
   const uses = herbData.uses.split(",").map((u) => u.trim()).filter(Boolean);
@@ -181,6 +186,7 @@ export default async function HerbDetailPage({
           </div>
           <h1 className="font-serif text-4xl text-[var(--foreground)] sm:text-5xl">{herbData.name}</h1>
           <p className="font-serif text-lg text-[var(--muted)] italic">{herbData.scientificName}</p>
+          <SaveButton kind="herb" id={herbData.id} returnTo={`/herbs/${herbData.id}`} initiallySaved={saved} />
         </header>
       </FadeIn>
 

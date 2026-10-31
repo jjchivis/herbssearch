@@ -21,6 +21,19 @@ export function shopifyConfigured() {
   return Boolean(process.env.SHOPIFY_STORE_DOMAIN && process.env.SHOPIFY_STOREFRONT_PRIVATE_TOKEN);
 }
 
+/**
+ * Where shoppers see orders they placed through Shopify checkout. Those orders
+ * live in Shopify, so HerbSearch links to the store's own account page.
+ */
+export function shopifyAccountUrl() {
+  if (!shopifyConfigured()) return null;
+  try {
+    return `https://${storeDomain()}/account`;
+  } catch {
+    return null;
+  }
+}
+
 function storeDomain() {
   const domain = (process.env.SHOPIFY_STORE_DOMAIN ?? "").replace(/^https?:\/\//, "").replace(/\/.*$/, "");
   if (!/^[a-z0-9][a-z0-9-]*\.myshopify\.com$/i.test(domain))

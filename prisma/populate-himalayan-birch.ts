@@ -2,7 +2,8 @@ import { run } from "./lib/populate-herb";
 
 // Himalayan Birch (Betula utilis, bhojpatra), from a 2016 lab study of its
 // bark (Mishra et al.) and a 2023 wound-dressing study in rats (Ishfaq et al.).
-// No human trials were found. Family per GBIF.
+// Also the EMA birch leaf summary for the related European species. No human
+// trials were found. Family per GBIF.
 
 run({
   name: "Himalayan Birch",
@@ -14,6 +15,14 @@ run({
     partsUsed: "The bark",
   },
   sources: {
+    ema: {
+      title: "Birch leaf (Betulae folium): summary for the public (EMA/482160/2015)",
+      organization: "European Medicines Agency, Committee on Herbal Medicinal Products (HMPC)",
+      publicationDate: "2015-10-20",
+      url: "https://www.ema.europa.eu/en/medicines/herbal/betulae-folium",
+      sourceType: "government",
+      tier: "TIER_1_GOVERNMENT",
+    },
     mishra: {
       title: "Isolation, Characterization and Anticancer Potential of Cytotoxic Triterpenes from Betula utilis Bark",
       author: "Mishra T, Arya RK, Meena S, et al.",
@@ -40,6 +49,12 @@ run({
   synonyms: [{ name: "Bhojpatra", type: "REGIONAL_NAME", region: "India" }, { name: "Himalayan Silver Birch", type: "COMMON_NAME" }],
   constituents: [{ name: "Betulinic Acid", slug: "betulinic-acid", type: "triterpene" }],
   evidence: [
+    {
+      category: "TRADITIONAL",
+      summary:
+        "European birch leaf (from the related Betula pendula and Betula pubescens) is recognized in Europe as a traditional herbal medicine to increase urine flow and help flush the urinary tract in minor urinary problems, for adults and children over 12, for 2 to 4 weeks. This applies to those European species, not Himalayan birch specifically.",
+      source: "ema",
+    },
     {
       category: "TRADITIONAL",
       summary:

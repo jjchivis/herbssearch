@@ -4387,6 +4387,16 @@ const herbs = [
     cautions: "In rabbits it added to the blood-sugar-lowering effect of metformin.",
     imageUrl: "/herbs/gudmar.jpg",
   },
+  {
+    name: "Indian Gum",
+    scientificName: "Vachellia nilotica",
+    category: "Medicinal",
+    summary: "Babul, a thorny acacia whose gum, bark and pods are used in traditional medicine, and the most widely used acacia for treating livestock in Africa.",
+    uses: "Traditional medicine, Livestock health",
+    properties: "Rich in tannins; gum used as a medicine binder",
+    cautions: "Lowered sperm count and testosterone in male rats.",
+    imageUrl: "/herbs/indian-gum.jpg",
+  },
 ];
 
 async function main() {

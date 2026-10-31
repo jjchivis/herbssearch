@@ -4477,6 +4477,26 @@ const herbs = [
     cautions: "No human or safety studies were found.",
     imageUrl: "/herbs/staff-tree.jpg",
   },
+  {
+    name: "Devil's Cotton",
+    scientificName: "Abroma augusta",
+    category: "Medicinal",
+    summary: "Ulatkambal, a shrub whose slimy leaf drink is used in Bangladesh and India for diabetes. It slowed sugar absorption in rats.",
+    uses: "Diabetes (traditional)",
+    properties: "Slimy leaf extract",
+    cautions: "Reduced metformin absorption in rats; avoid taking the two together.",
+    imageUrl: "/herbs/devils-cotton.jpg",
+  },
+  {
+    name: "Yavasca",
+    scientificName: "Alhagi maurorum",
+    category: "Medicinal",
+    summary: "Camel thorn, a spiny desert shrub used in Iran for kidney stones. In a trial, its extract cleared stones as well as a standard drug.",
+    uses: "Kidney stones (traditional and trial)",
+    properties: "Spiny pea-family shrub",
+    cautions: "No serious side effects were seen in the trial.",
+    imageUrl: "/herbs/yavasca.jpg",
+  },
 ];
 
 async function main() {

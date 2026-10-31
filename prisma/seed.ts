@@ -4717,6 +4717,16 @@ const herbs = [
     cautions: "No human or safety studies were found.",
     imageUrl: "/herbs/cheesewood.jpg",
   },
+  {
+    name: "Cranberry Hibiscus",
+    scientificName: "Hibiscus acetosella",
+    category: "Culinary",
+    summary: "An African hibiscus whose leaves are eaten as a vegetable and boiled into drinks for anemia and fever. Its sour flowers are edible too.",
+    uses: "Leafy vegetable, Anemia, Fever (traditional)",
+    properties: "Rich in caffeic acid and red plant pigments",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/cranberry-hibiscus.jpg",
+  },
 ];
 
 async function main() {

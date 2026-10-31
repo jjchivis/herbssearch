@@ -4727,6 +4727,26 @@ const herbs = [
     cautions: "No human or safety studies were found.",
     imageUrl: "/herbs/cranberry-hibiscus.jpg",
   },
+  {
+    name: "Scarlet Globemallow",
+    scientificName: "Sphaeralcea coccinea",
+    category: "Medicinal",
+    summary: "A mallow of western and central North America. Plains and Southwestern peoples chewed it into a cooling salve for sores and wounds.",
+    uses: "Sores, Wounds, Swellings (traditional)",
+    properties: "Pounds into a gummy paste",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/scarlet-globemallow.jpg",
+  },
+  {
+    name: "Yerba Mansa",
+    scientificName: "Anemopsis californica",
+    category: "Medicinal",
+    summary: "A plant of the Southwest and California, one of the region's most used Native American remedies for wounds, colds and sore throats. Its root compounds stopped some germs in lab tests.",
+    uses: "Wounds, Colds, Sore throat, Stomach ulcers (traditional)",
+    properties: "Roots contain sesamin, asarinin and aromatic oils",
+    cautions: "Was used by the Chumash to end pregnancies; avoid in pregnancy.",
+    imageUrl: "/herbs/yerba-mansa.jpg",
+  },
 ];
 
 async function main() {

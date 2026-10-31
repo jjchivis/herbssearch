@@ -4377,6 +4377,16 @@ const herbs = [
     cautions: "Lemon peel and oil can make skin burn more easily in sunlight.",
     imageUrl: "/herbs/lemon.jpg",
   },
+  {
+    name: "Gudmar",
+    scientificName: "Gymnema sylvestre",
+    category: "Medicinal",
+    summary: "Gurmar, the \"sugar destroyer\", an Ayurvedic climbing plant used for diabetes. It lowered blood sugar in animal studies, with mixed results in people.",
+    uses: "Diabetes (traditional)",
+    properties: "Can block the taste of sweetness",
+    cautions: "In rabbits it added to the blood-sugar-lowering effect of metformin.",
+    imageUrl: "/herbs/gudmar.jpg",
+  },
 ];
 
 async function main() {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
@@ -12,11 +13,19 @@ export default function ContactPage() {
   return (
     <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-10 px-6 py-14">
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact Us" }]} />
-      <header className="flex max-w-2xl flex-col gap-3">
-        <h1 className="font-serif text-4xl text-[var(--foreground)]">Contact Us</h1>
-        <p className="text-[15px] text-[var(--muted)]">
-          Questions, corrections or suggestions for the library? We&apos;d like to hear from you.
-        </p>
+      {/* The banner shows the page title and invitation, so the text versions are for screen readers only. */}
+      <header>
+        <h1 className="sr-only">Contact Us</h1>
+        <p className="sr-only">Questions, corrections or suggestions for the library? We&apos;d like to hear from you.</p>
+        <Image
+          src="/brand/contact-banner.jpg"
+          alt=""
+          width={1672}
+          height={941}
+          priority
+          sizes="(min-width: 896px) 848px, calc(100vw - 48px)"
+          className="h-auto w-full rounded-lg border border-[var(--border)]"
+        />
       </header>
       <section className="flex max-w-2xl flex-col gap-2 rounded-lg border border-[var(--border)] p-6">
         <h2 className="font-mono text-xs uppercase tracking-wide text-[var(--muted)]">Email</h2>

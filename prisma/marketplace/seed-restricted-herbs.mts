@@ -39,6 +39,8 @@ const RESTRICTED: Record<string, string> = {
   "Ewe Taba": "Tobacco; all forms of tobacco use are harmful and nicotine is highly addictive.",
   "White Lead Tree": "Contains mimosine, which can harm the thyroid and reproduction.",
   "Elephant Creeper": "Hawaiian baby woodrose; its seeds contain the hallucinogen LSA.",
+  Monkshood: "Deadly poisonous; aconitine can stop the heart.",
+  Supari: "Areca nut; causes mouth and throat cancer.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

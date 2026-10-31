@@ -805,7 +805,7 @@ const herbs = [
     uses: "Inflammation, Arthritis, Colitis, IBS",
     properties: "May help reduce inflammation",
     cautions: "Likely safe by mouth in studied doses; little is known about use in pregnancy or breastfeeding.",
-    imageUrl: "/herbs/boswellia.jpg",
+    imageUrl: "/herbs/boswellia-v2.jpg",
   },
   {
     name: "Triphala",
@@ -825,7 +825,7 @@ const herbs = [
     uses: "Diarrhea, H. pylori, Blood sugar, Gut health",
     properties: "Antibacterial",
     cautions: "Can harm newborns: avoid in pregnancy, breastfeeding and babies.",
-    imageUrl: "/herbs/berberine.jpg",
+    imageUrl: "/herbs/berberine-v2.jpg",
   },
   {
     name: "Wormwood",
@@ -945,7 +945,7 @@ const herbs = [
     uses: "Immune support, Cholesterol, Blood sugar, Vitamin C",
     properties: "Antioxidant",
     cautions: "Research has been in small trials.",
-    imageUrl: "/herbs/amla.jpg",
+    imageUrl: "/herbs/amla-v2.jpg",
   },
   {
     name: "Giloy (Guduchi)",
@@ -985,7 +985,7 @@ const herbs = [
     uses: "Colds, Cough, Fever, Asthma (traditional), Diabetes (traditional)",
     properties: "May fight germs (in lab tests), Antioxidant (in lab tests)",
     cautions: "Little is known about its safety; flower extracts caused birth defects in zebrafish embryos.",
-    imageUrl: "/herbs/lions-ear.jpg",
+    imageUrl: "/herbs/lions-ear-v2.jpg",
   },
   {
     name: "Duppy Gun",
@@ -1025,7 +1025,7 @@ const herbs = [
     uses: "Vegetable, Blood sugar, Cholesterol, Shortness of breath (traditional), Dysentery (traditional)",
     properties: "Rich in omega-3 and vitamins C and E",
     cautions: "High in oxalates, which reduce how well minerals are absorbed; blanching or pickling lowers them.",
-    imageUrl: "/herbs/purslane.jpg",
+    imageUrl: "/herbs/purslane-v2.jpg",
   },
   {
     name: "Periwinkle",
@@ -1065,7 +1065,7 @@ const herbs = [
     uses: "Worms (traditional), Fever (traditional), Pain (traditional)",
     properties: "Kills parasites (in lab tests)",
     cautions: "Can cause deadly poisoning, especially in babies and children; a child died after repeated strong doses of the tea.",
-    imageUrl: "/herbs/epazote.jpg",
+    imageUrl: "/herbs/epazote-v2.jpg",
   },
   {
     name: "Jamaican Rat Ears",
@@ -1215,7 +1215,7 @@ const herbs = [
     uses: "Pain (traditional), Fever (traditional), Stomach ache (traditional), Skin (traditional)",
     properties: "May relieve pain (in animal studies)",
     cautions: "Unripe ackee fruit contains hypoglycin A, which has caused deadly poisoning.",
-    imageUrl: "/herbs/ackee-leaf.jpg",
+    imageUrl: "/herbs/ackee-leaf-v2.jpg",
   },
   {
     name: "Jack in the Bush",
@@ -3825,7 +3825,7 @@ const herbs = [
     uses: "Inflammation",
     properties: "May help reduce inflammation (in animal studies)",
     cautions: "No studies in people or safety studies were found.",
-    imageUrl: "/herbs/cattail.jpg",
+    imageUrl: "/herbs/cattail-v2.jpg",
   },
   {
     name: "Balsam Fir",

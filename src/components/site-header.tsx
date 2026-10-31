@@ -29,6 +29,9 @@ export function SiteHeader() {
           <Link href="/sources" className="hover:text-[var(--foreground)]">
             Sources
           </Link>
+          <Link href="/contact" className="hover:text-[var(--foreground)]">
+            Contact Us
+          </Link>
         </nav>
       </div>
     </header>

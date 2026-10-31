@@ -4,7 +4,8 @@ import { run } from "./lib/populate-herb";
 // bark (Mishra et al.) and a 2023 wound-dressing study in rats (Ishfaq et al.).
 // Also the EMA birch leaf summary for the related European species, a 2014
 // review of the birch genus (Rastogi et al.), a 2020 rat study of betulinic
-// acid (Kun-Liu et al.) and a 2026 trial of a birch bark gel (Sprecher et al.). No human
+// acid (Kun-Liu et al.) a 2011 lab study of birch bark and cancer cells (Soica et
+// al.) and a 2026 trial of a birch bark gel (Sprecher et al.). No human
 // trials were found. Family per GBIF.
 
 run({
@@ -36,6 +37,17 @@ run({
       doi: "10.1177/2058738420945078",
       pmid: "32718263",
       url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7388086/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
+    soica: {
+      title: "Physico-chemical comparison of betulinic acid, betulin and birch bark extract and in vitro investigation of their cytotoxic effects towards skin epidermoid carcinoma (A431), breast carcinoma (MCF7) and cervix adenocarcinoma (HeLa) cell lines",
+      author: "Soica CM, Dehelean CA, Peev C, Aluas M, Zupkó I, Kása P, Alexa E",
+      journal: "Natural Product Research",
+      publicationDate: "2011-05-27",
+      doi: "10.1080/14786419.2010.545352",
+      pmid: "21598174",
+      url: "https://doi.org/10.1080/14786419.2010.545352",
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
@@ -100,6 +112,12 @@ run({
       summary:
         "In rats with arthritis, betulinic acid, a compound found in Himalayan birch bark, reduced paw swelling, joint inflammation and cartilage damage.",
       source: "kunLiu",
+    },
+    {
+      category: "PRECLINICAL",
+      summary:
+        "Birch bark is rich in betulin and betulinic acid. In lab tests, a birch bark extract and both compounds slowed the growth of skin, breast and cervical cancer cells. This study used birch bark in general, not Himalayan birch specifically.",
+      source: "soica",
     },
     {
       category: "HUMAN_RESEARCH",

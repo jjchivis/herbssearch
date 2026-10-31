@@ -44,6 +44,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Cactaceae: "the cactus family",
   Campanulaceae: "the bellflower family",
   Cannabaceae: "the hemp family, which includes hops",
+  Capparaceae: "the caper family",
   Caprifoliaceae: "the honeysuckle family",
   Caricaceae: "the papaya family",
   Caryophyllaceae: "the pink and carnation family",

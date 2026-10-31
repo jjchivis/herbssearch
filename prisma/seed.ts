@@ -4657,6 +4657,36 @@ const herbs = [
     cautions: "Not recommended in pregnancy, breastfeeding or for children under 12.",
     imageUrl: "/herbs/european-birch.jpg",
   },
+  {
+    name: "Three-Leafed Caper",
+    scientificName: "Crateva nurvala",
+    category: "Medicinal",
+    summary: "An Asian tree used in traditional medicine for kidney and bladder stones, inflammation and fever. Its extracts eased pain and lowered blood sugar in animals.",
+    uses: "Kidney and bladder stones, Inflammation, Fever (traditional)",
+    properties: "Contains lupeol",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/three-leafed-caper.jpg",
+  },
+  {
+    name: "Sandalwood",
+    scientificName: "Santalum album",
+    category: "Aromatic",
+    summary: "Indian sandalwood, whose fragrant heartwood oil is prized in perfume and valued in Ayurveda and Chinese medicine. Much oil sold as sandalwood is fake.",
+    uses: "Perfume, Aromatherapy, Traditional medicine",
+    properties: "Oil rich in santalols",
+    cautions: "Much commercial sandalwood oil is fake or synthetic.",
+    imageUrl: "/herbs/sandalwood.jpg",
+  },
+  {
+    name: "Siberian Ginseng",
+    scientificName: "Eleutherococcus senticosus",
+    category: "Medicinal",
+    summary: "Eleuthero, a root recognized in Europe as a traditional medicine for tiredness and weakness.",
+    uses: "Tiredness, Weakness (traditional)",
+    properties: "Root preparations",
+    cautions: "Don't take for more than 2 months; not for children under 12.",
+    imageUrl: "/herbs/siberian-ginseng.jpg",
+  },
 ];
 
 async function main() {

@@ -16,7 +16,7 @@ export function SiteHeader() {
             className="h-14 w-auto"
           />
         </Link>
-        <nav className="flex max-w-full items-center gap-5 overflow-x-auto whitespace-nowrap text-sm text-[var(--muted)] sm:gap-6">
+        <nav className="flex max-w-full flex-wrap items-center justify-center gap-x-5 gap-y-1 whitespace-nowrap text-sm text-[var(--muted)] sm:gap-x-6">
           <Link href="/" className="hover:text-[var(--foreground)]">
             Discover
           </Link>

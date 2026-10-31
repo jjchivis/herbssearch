@@ -38,6 +38,7 @@ const RESTRICTED: Record<string, string> = {
   "Coyote Tobacco": "Wild tobacco; contains addictive nicotine.",
   "Ewe Taba": "Tobacco; all forms of tobacco use are harmful and nicotine is highly addictive.",
   "White Lead Tree": "Contains mimosine, which can harm the thyroid and reproduction.",
+  "Elephant Creeper": "Hawaiian baby woodrose; its seeds contain the hallucinogen LSA.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

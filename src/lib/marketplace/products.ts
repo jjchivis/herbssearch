@@ -44,14 +44,14 @@ export const PROHIBITED_TERMS: { label: string; pattern: RegExp; scope: "all" | 
   { label: "opium", pattern: /\bopium\b(?!\s+popp)/i, scope: "all", allowed: POPPY_ALLOWED },
   { label: "opium poppy", pattern: /\bopium popp/i, scope: "ingestible", allowed: POPPY_ALLOWED },
   { label: "poppy pods, poppy straw or unwashed poppy seeds", pattern: /\b(poppy (pods?|straw|heads?|capsules?)|unwashed poppy seeds?)\b/i, scope: "ingestible", allowed: POPPY_ALLOWED },
-  // Akuamma seeds, roots, leaves and stems can be sold, but not the powder, which
-  // is mainly sold as a kratom substitute. Blocked when a listing mentions
-  // akuamma (or Picralima) together with powder or ground/milled seed, so a
-  // listing of whole seeds or roots still passes.
+  // Akuamma seeds, roots, leaves and stems can be sold, but not the powder,
+  // capsules or tinctures, which are mainly sold as a kratom substitute. Blocked
+  // when a listing mentions akuamma (or Picralima) together with one of those
+  // forms or ground/milled material, so a listing of whole seeds or roots passes.
   {
-    label: "akuamma powder",
+    label: "akuamma powder, capsules or tinctures",
     pattern:
-      /\b(akuamma|picralima)\b[\s\S]*\b(powder(ed|s)?|pulveri[sz]ed|(ground|milled) (seeds?|roots?|bark))\b|\b(powder(ed|s)?|pulveri[sz]ed|(ground|milled) (seeds?|roots?|bark))\b[\s\S]*\b(akuamma|picralima)\b/i,
+      /\b(akuamma|picralima)\b[\s\S]*\b(powder(ed|s)?|pulveri[sz]ed|ground|milled|capsules?|tinctures?)\b|\b(powder(ed|s)?|pulveri[sz]ed|ground|milled|capsules?|tinctures?)\b[\s\S]*\b(akuamma|picralima)\b/i,
     scope: "ingestible",
     allowed: "Whole akuamma seeds, roots and dried leaves and stems are allowed.",
   },

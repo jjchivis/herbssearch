@@ -130,12 +130,15 @@ describe("listing text rules", () => {
     expect(findProhibitedTerm("Raw opium resin", false)).toBe("opium");
   });
 
-  it("allows whole akuamma seeds and roots but not akuamma powder to eat or drink", () => {
+  it("allows whole akuamma seeds and roots but not akuamma powder, capsules or tinctures", () => {
     expect(findProhibitedTerm("Akuamma seeds, whole, 2 oz")).toBeNull();
     expect(findProhibitedTerm("Dried akuamma root pieces")).toBeNull();
-    expect(findProhibitedTerm("Akuamma Seed Powder, 50 g")).toBe("akuamma powder");
-    expect(findProhibitedTerm("Powdered Picralima nitida")).toBe("akuamma powder");
-    expect(findProhibitedTerm("Akuamma\nFinely ground seeds in a resealable pouch")).toBe("akuamma powder");
+    expect(findProhibitedTerm("Akuamma Seed Powder, 50 g")).toBe("akuamma powder, capsules or tinctures");
+    expect(findProhibitedTerm("Powdered Picralima nitida")).toBe("akuamma powder, capsules or tinctures");
+    expect(findProhibitedTerm("Akuamma\nFinely ground seeds in a resealable pouch")).toBe("akuamma powder, capsules or tinctures");
+    expect(findProhibitedTerm("Akuamma capsules, 60 count")).toMatch(/akuamma/);
+    expect(findProhibitedTerm("Picralima nitida seed tincture, 1 fl oz")).toMatch(/akuamma/);
+    expect(findProhibitedTerm("Akuamma, freshly ground")).toMatch(/akuamma/);
     expect(findProhibitedTerm("Akuamma seed powder botanical print", false)).toBeNull();
   });
 

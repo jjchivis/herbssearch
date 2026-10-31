@@ -4647,6 +4647,16 @@ const herbs = [
     cautions: "No safety studies were found.",
     imageUrl: "/herbs/greater-galangal.jpg",
   },
+  {
+    name: "European Birch",
+    scientificName: "Betula pendula",
+    category: "Medicinal",
+    summary: "Silver birch, whose leaf is recognized in Europe as a traditional medicine to increase urine flow. Gels made from its bark helped burns and blistering skin wounds heal in trials.",
+    uses: "Urine flow, Gout, Arthritis (traditional), Wound healing",
+    properties: "Leaves rich in flavonoids; bark rich in betulin",
+    cautions: "Not recommended in pregnancy, breastfeeding or for children under 12.",
+    imageUrl: "/herbs/european-birch.jpg",
+  },
 ];
 
 async function main() {

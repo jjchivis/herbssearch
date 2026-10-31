@@ -4527,6 +4527,16 @@ const herbs = [
     cautions: "Better trials are needed to confirm its safety.",
     imageUrl: "/herbs/siris-tree.jpg",
   },
+  {
+    name: "Pellitory",
+    scientificName: "Parietaria officinalis",
+    category: "Medicinal",
+    summary: "Pellitory-of-the-wall, a plant whose close relative is used as a tea for urinary infections and swelling. Its pollen is a major cause of hay fever.",
+    uses: "Urinary infections, Swelling (traditional, related species)",
+    properties: "Pollen is a common allergen",
+    cautions: "Its pollen commonly causes hay fever and allergic asthma.",
+    imageUrl: "/herbs/pellitory.jpg",
+  },
 ];
 
 async function main() {

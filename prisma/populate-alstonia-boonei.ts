@@ -4,7 +4,9 @@ import { run } from "./lib/populate-herb";
 // of liver and kidney injury from a product containing it (Zacharia et al.).
 // The traditional preparations, rat arthritis studies and Ghanaian names come
 // from the review's full text. A 2014 lab study of the root bark (Obiagwu et
-// al.) adds its use for arthritis and a free-radical test. Family per GBIF.
+// al.) adds its use for arthritis and a free-radical test. A 2024 lab study
+// (Adepiti et al., abstract only) tested compounds from the stem bark on
+// bacteria. Family per GBIF.
 
 run({
   name: "Alstonia Boonei",
@@ -38,6 +40,17 @@ run({
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
+    adepiti: {
+      title: "Secondary metabolites from the stem bark of Alstonia boonei and the seeds of Picralima nitida with antibacterial activities",
+      author: "Adepiti AO, Nyamboki DK, Bedane KG, Elujoba AA, Spiteller M, Matasyoh JC",
+      journal: "Natural Product Research",
+      publicationDate: "2024-04-29",
+      doi: "10.1080/14786419.2024.2349254",
+      pmid: "38684042",
+      url: "https://doi.org/10.1080/14786419.2024.2349254",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
     zacharia: {
       title: "Complementary and Alternative Medicine-Induced Combined Hepatorenal Toxicity: A Case Report",
       author: "Zacharia GS, Ravte V, Jyala A, Shehi E",
@@ -63,6 +76,9 @@ run({
     { name: "Boonein", slug: "boonein", type: "iridoid" },
     { name: "Lupeol", slug: "lupeol", type: "triterpene" },
     { name: "Ursolic acid", slug: "ursolic-acid", type: "triterpene" },
+    { name: "Loganic acid", slug: "loganic-acid", type: "iridoid" },
+    { name: "Sweroside", slug: "sweroside", type: "iridoid" },
+    { name: "Secoxyloganin", slug: "secoxyloganin", type: "iridoid" },
   ],
   traditions: [{ slug: "african-traditional-medicine", notes: "Sacred in some West African forest communities; used for malaria and fever." }],
   evidence: [
@@ -112,6 +128,12 @@ run({
       category: "TRADITIONAL",
       summary: "The root bark is commonly used with other herbs to manage arthritis in West and Central Africa.",
       source: "obiagwu",
+    },
+    {
+      category: "PRECLINICAL",
+      summary:
+        "In a 2024 lab study, three compounds taken from the stem bark were tested against bacteria. The only compound reported to have any effect, a weak one, came from a different plant (akuamma seeds).",
+      source: "adepiti",
     },
     {
       category: "PRECLINICAL",

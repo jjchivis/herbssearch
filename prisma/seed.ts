@@ -315,7 +315,7 @@ const herbs = [
     uses: "Baking and cooking, Digestion, Blood sugar",
     properties: "May relieve gas and bloating",
     cautions: "Cassia cinnamon contains coumarin, which has been linked to liver problems; avoid large amounts during pregnancy.",
-    imageUrl: "/herbs/cinnamon.jpg",
+    imageUrl: "/herbs/cinnamon-v2.jpg",
   },
   {
     name: "Cerasee",

@@ -4614,7 +4614,7 @@ const herbs = [
     summary: "Ativisha, a Himalayan aconite used in Ayurveda for diarrhea, fever and urinary infections. Its root protected the kidneys in rats.",
     uses: "Diarrhea, Fever, Urinary infections (traditional)",
     properties: "Tuberous root",
-    cautions: "A member of the aconite family, most of which are extremely poisonous.",
+    cautions: "Unlike most aconites, described as non-toxic.",
     imageUrl: "/herbs/atees.jpg",
   },
 ];

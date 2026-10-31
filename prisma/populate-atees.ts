@@ -1,7 +1,8 @@
 import { run } from "./lib/populate-herb";
 
 // Atees (Aconitum heterophyllum, ativisha), from a 2017 review (Paramanick et
-// al.) and a 2016 kidney study in rats (Konda et al.). Family per GBIF.
+// al.), a 2025 study describing it as the genus's only non-toxic member (Tomar
+// et al.) and a 2016 kidney study in rats (Konda et al.). Family per GBIF.
 
 run({
   name: "Atees",
@@ -21,6 +22,17 @@ run({
       doi: "10.3831/KPI.2017.20.011",
       pmid: "30087784",
       url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5532466/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
+    tomar: {
+      title: "Population assessment and habitat suitability modelling of endangered medicinal plant, Aconitum heterophyllum Wall. ex Royle in the western Himalaya",
+      author: "Tomar S, Thakur S, Kanwal KS, Bhatt ID, Puri S",
+      journal: "Scientific Reports",
+      publicationDate: "2025-09-30",
+      doi: "10.1038/s41598-025-03324-w",
+      pmid: "41028014",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12484762/",
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
@@ -56,8 +68,13 @@ run({
     {
       category: "TOXICITY",
       description:
-        "Atees belongs to the aconite family, most of whose species are extremely poisonous, and its effects come from the same family of compounds.",
+        "Atees belongs to the aconite genus, most of whose species are extremely poisonous.",
       source: "paramanick",
+    },
+    {
+      category: "TOXICITY",
+      description: "Unlike its relatives, Atees is described as the only non-toxic member of the aconite genus.",
+      source: "tomar",
     },
   ],
 });

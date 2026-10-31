@@ -4687,6 +4687,16 @@ const herbs = [
     cautions: "Don't take for more than 2 months; not for children under 12.",
     imageUrl: "/herbs/siberian-ginseng.jpg",
   },
+  {
+    name: "Akuamma",
+    scientificName: "Picralima nitida",
+    category: "Medicinal",
+    summary: "A West African tree whose seeds are a traditional remedy for pain, fever and malaria. Its compounds act weakly on opioid receptors, and it's sold online for pain and mood.",
+    uses: "Pain, Fever, Malaria, Cough (traditional)",
+    properties: "Seeds rich in alkaloids such as akuammine",
+    cautions: "Harmed unborn young and damaged DNA in rats; avoid in pregnancy. May interact with many medicines.",
+    imageUrl: "/herbs/akuamma.jpg",
+  },
 ];
 
 async function main() {

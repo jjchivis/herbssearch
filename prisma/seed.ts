@@ -4397,6 +4397,16 @@ const herbs = [
     cautions: "Lowered sperm count and testosterone in male rats.",
     imageUrl: "/herbs/indian-gum.jpg",
   },
+  {
+    name: "Paneer Doda",
+    scientificName: "Withania coagulans",
+    category: "Medicinal",
+    summary: "Indian rennet, a shrub whose dried berries are used in Ayurveda and Unani medicine for diabetes. It lowered blood sugar in diabetic rats.",
+    uses: "Diabetes (traditional)",
+    properties: "Dried berries made into tea",
+    cautions: "Has caused a severe allergic reaction (anaphylaxis).",
+    imageUrl: "/herbs/paneer-doda.jpg",
+  },
 ];
 
 async function main() {

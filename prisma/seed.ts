@@ -4497,6 +4497,36 @@ const herbs = [
     cautions: "No serious side effects were seen in the trial.",
     imageUrl: "/herbs/yavasca.jpg",
   },
+  {
+    name: "Ketaki",
+    scientificName: "Cheilocostus speciosus",
+    category: "Medicinal",
+    summary: "Crepe ginger, an Indian plant with red cone-like flower spikes, long used in traditional medicine. It eased pain and fever in rats.",
+    uses: "Pain, Fever (traditional)",
+    properties: "Medicinal rhizome",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/ketaki.jpg",
+  },
+  {
+    name: "Palasha",
+    scientificName: "Butea monosperma",
+    category: "Medicinal",
+    summary: "Flame of the forest, an Indian tree. Its leaf extract lowered blood sugar and raised insulin in diabetic rats.",
+    uses: "Diabetes (research)",
+    properties: "Leaf extract raised insulin in rats",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/palasha.jpg",
+  },
+  {
+    name: "Siris Tree",
+    scientificName: "Albizia lebbeck",
+    category: "Medicinal",
+    summary: "Shirisha, the main herb in an Ayurvedic formula for allergies. Its stem bark improved breathing in people with asthma in clinical studies.",
+    uses: "Allergies, Asthma (traditional and research)",
+    properties: "Antihistamine-like bark",
+    cautions: "Better trials are needed to confirm its safety.",
+    imageUrl: "/herbs/siris-tree.jpg",
+  },
 ];
 
 async function main() {

@@ -4447,6 +4447,36 @@ const herbs = [
     cautions: "The seeds are hallucinogenic and have caused psychosis and hospital visits.",
     imageUrl: "/herbs/elephant-creeper.jpg",
   },
+  {
+    name: "Eaglewood",
+    scientificName: "Aquilaria malaccensis",
+    category: "Aromatic",
+    summary: "Agarwood or oud, the fragrant resin-filled heartwood of an Asian tree, prized for incense, perfume and traditional medicine.",
+    uses: "Incense, Perfume, Traditional medicine",
+    properties: "Fragrant resin",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/eaglewood.jpg",
+  },
+  {
+    name: "Country Mallow",
+    scientificName: "Abutilon indicum",
+    category: "Medicinal",
+    summary: "Thuthi, a yellow-flowered mallow used in Indian traditional medicine for bronchitis, diabetes, jaundice and piles. Its leaf extract protected cells from oxidative damage in the lab.",
+    uses: "Bronchitis, Diabetes, Jaundice, Piles (traditional)",
+    properties: "Antioxidant leaves",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/country-mallow.jpg",
+  },
+  {
+    name: "Staff Tree",
+    scientificName: "Celastrus paniculatus",
+    category: "Medicinal",
+    summary: "Jyotishmati, an Ayurvedic climbing shrub whose seed oil is used as a brain tonic for memory. In mice it eased pain and had antidepressant-like effects.",
+    uses: "Memory (traditional)",
+    properties: "Seed oil",
+    cautions: "No human or safety studies were found.",
+    imageUrl: "/herbs/staff-tree.jpg",
+  },
 ];
 
 async function main() {

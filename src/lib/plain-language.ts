@@ -136,6 +136,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Stemonaceae: "the stemona family",
   Taxaceae: "the yew family",
   Theaceae: "the tea family",
+  Thymelaeaceae: "the daphne family",
   Tremellaceae: "a family of jelly fungi",
   Typhaceae: "the cattail family",
   Ulmaceae: "the elm family",

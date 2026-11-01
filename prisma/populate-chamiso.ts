@@ -2,7 +2,8 @@ import { run } from "./lib/populate-herb";
 
 // Chamiso (Atriplex canescens, four-wing saltbush), from the Native American
 // Ethnobotany Database (Moerman, BRIT). No medical research on this species
-// was found in PubMed Central. Family per GBIF.
+// was found in PubMed Central. A 2018 Taos News column (Hawley) notes that
+// "chamiso" means big sagebrush in northern New Mexico. Family per GBIF.
 
 run({
   name: "Chamiso",
@@ -20,6 +21,15 @@ run({
       url: "http://naeb.brit.org/uses/search/?string=Atriplex+canescens",
       sourceType: "historical_text",
       tier: "TIER_4_TRADITIONAL_TEXT",
+    },
+    hawley: {
+      title: "Herb of the month: Chamiso",
+      author: "Hawley R",
+      organization: "The Taos News",
+      publicationDate: "2018-01-11",
+      url: "https://www.taosnews.com/la-vida/herb-of-the-month-chamiso/article_4ac591a0-9e97-508b-9196-d3918eddcbd2.html",
+      sourceType: "secondary",
+      tier: "TIER_5_SECONDARY",
     },
   },
   synonyms: [
@@ -50,6 +60,12 @@ run({
       summary:
         "The Hopi and Tewa use its ashes like baking soda in cooking, and to keep blue corn meal and piki bread blue. The Navajo dye wool yellow with the leaves and twigs, and feed the plant to sheep for salt in winter. The Gosiute ate the seeds.",
       source: "naeb",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "Watch the name: in northern New Mexico, \"chamiso\" usually means big sagebrush (Artemisia tridentata), a different plant with different uses. \"Chamisa\" is rabbitbrush.",
+      source: "hawley",
     },
   ],
   symptoms: [

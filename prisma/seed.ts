@@ -4767,6 +4767,16 @@ const herbs = [
     cautions: "Related Chinese ephedra is banned in US supplements; whether this species contains ephedrine is unclear.",
     imageUrl: "/herbs/mormon-tea.jpg",
   },
+  {
+    name: "Big Sagebrush",
+    scientificName: "Artemisia tridentata",
+    category: "Medicinal",
+    summary: "The great sagebrush of the American West, called chamiso in northern New Mexico. It was one of the most widely used Native American remedies for colds, coughs and upset stomachs.",
+    uses: "Colds, Coughs, Indigestion, Wounds (traditional)",
+    properties: "Aromatic leaves rich in camphor",
+    cautions: "The essential oil is toxic; avoid in pregnancy. Its pollen is a known allergen.",
+    imageUrl: "/herbs/big-sagebrush.jpg",
+  },
 ];
 
 async function main() {

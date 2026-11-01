@@ -4777,6 +4777,16 @@ const herbs = [
     cautions: "The essential oil is toxic; avoid in pregnancy. Its pollen is a known allergen.",
     imageUrl: "/herbs/big-sagebrush.jpg",
   },
+  {
+    name: "Mediterranean Saltbush",
+    scientificName: "Atriplex halimus",
+    category: "Medicinal",
+    summary: "A salty-leaved shrub of the Mediterranean and North Africa, eaten as a vegetable and drunk as a tea for diabetes. It lowered blood sugar in rats.",
+    uses: "Diabetes, Stomach problems, Arthritis (traditional), Food",
+    properties: "Leaves rich in fiber, iron and flavonoids",
+    cautions: "No human safety studies were found; absorbs heavy metals from soil.",
+    imageUrl: "/herbs/mediterranean-saltbush.jpg",
+  },
 ];
 
 async function main() {

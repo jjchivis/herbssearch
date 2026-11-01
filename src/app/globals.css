@@ -99,3 +99,16 @@ body {
   background-color: #33512c;
   border-color: #4a6a40;
 }
+
+/* The Herbal Kitchen: printing a recipe page keeps only the written recipe. */
+@media print {
+  body:has([data-print-recipe]) header,
+  body:has([data-print-recipe]) footer,
+  body:has([data-print-recipe]) [data-print-hide] {
+    display: none !important;
+  }
+  body:has([data-print-recipe]) {
+    background: #fff;
+    color: #000;
+  }
+}

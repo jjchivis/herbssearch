@@ -56,3 +56,6 @@ next-env.d.ts
 
 # local database content dumps (prisma/backup-content.ts)
 /backups
+
+# Herbal Kitchen videos are hosted outside the repository, never committed
+/public/kitchen-media/

@@ -123,7 +123,6 @@ run({
       slug: "enlarged-prostate",
       notes: "An EU traditional herbal medicine for urinary symptoms from an enlarged prostate; human evidence depends on the preparation.",
     },
-    { slug: "urinary", notes: "Used in Europe and by Native Americans for urinary problems, including an overactive bladder." },
     { slug: "sibo-and-parasites", notes: "The Cherokee ate the seeds for worms. Not studied in people." },
   ],
   preparations: [{ slug: "oil", notes: "Seed oil, 1 to 1.2 g three times a day in the EU monograph.", source: "ema" }],

@@ -78,6 +78,8 @@ run({
     { name: "Oceloxochitl", type: "TRADITIONAL_NAME", region: "Mexico (Nahuatl)" },
     { name: "Cacomite", type: "REGIONAL_NAME", region: "Mexico" },
     { name: "Flor de Tigre", type: "REGIONAL_NAME", region: "Mexico" },
+    { name: "Peacock Flower", type: "COMMON_NAME" },
+    { name: "Mexican Shell Flower", type: "COMMON_NAME" },
   ],
   evidence: [
     {

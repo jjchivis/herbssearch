@@ -4787,6 +4787,36 @@ const herbs = [
     cautions: "No human safety studies were found; absorbs heavy metals from soil.",
     imageUrl: "/herbs/mediterranean-saltbush.jpg",
   },
+  {
+    name: "Field Pumpkin",
+    scientificName: "Cucurbita pepo",
+    category: "Medicinal",
+    summary: "The common pumpkin. Its seeds are an EU traditional medicine for urinary symptoms from an enlarged prostate or overactive bladder, and Native Americans used them for urinary problems and worms.",
+    uses: "Enlarged prostate, Overactive bladder, Food",
+    properties: "Seeds rich in oil, protein and plant sterols",
+    cautions: "Seed medicines not recommended in pregnancy or under 18; may cause mild stomach upset.",
+    imageUrl: "/herbs/field-pumpkin.jpg",
+  },
+  {
+    name: "Lodgepole Pine",
+    scientificName: "Pinus contorta",
+    category: "Medicinal",
+    summary: "A western North American pine whose trunks were used as tipi poles. Its pitch was a favorite Native American remedy for colds, coughs, sore throats and sores.",
+    uses: "Coughs, Colds, Sore throat, Sores (traditional)",
+    properties: "Resinous pitch",
+    cautions: "Contains a chemical that causes miscarriage in cattle; effects in people unknown.",
+    imageUrl: "/herbs/lodgepole-pine.jpg",
+  },
+  {
+    name: "Tiger Flower",
+    scientificName: "Tigridia pavonia",
+    category: "Culinary",
+    summary: "A Mexican iris with spotted flowers, whose small corm is baked and eaten and tastes like sweet potato. Its flowers are offerings to saints in Michoacán.",
+    uses: "Food, Fever, Infertility (folk use), Ceremonial flower",
+    properties: "Edible corm",
+    cautions: "Cook the corm; raw it burns the mouth. No medical studies were found.",
+    imageUrl: "/herbs/tiger-flower.jpg",
+  },
 ];
 
 async function main() {

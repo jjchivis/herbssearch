@@ -35,8 +35,16 @@ run({
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
+    naeb: {
+      title: "Native American Ethnobotany Database: Chenopodium graveolens (fetid goosefoot)",
+      organization: "Botanical Research Institute of Texas (BRIT); compiled by Daniel E. Moerman",
+      url: "http://naeb.brit.org/uses/search/?string=Chenopodium+graveolens",
+      sourceType: "historical_text",
+      tier: "TIER_4_TRADITIONAL_TEXT",
+    },
   },
   synonyms: [
+    { name: "Fetid Goosefoot", type: "COMMON_NAME" },
     { name: "Chenopodium graveolens", type: "SCIENTIFIC_SYNONYM" },
     { name: "Epazote de Zorrillo", type: "REGIONAL_NAME", region: "Mexico" },
   ],
@@ -56,6 +64,12 @@ run({
       summary:
         "In mice, an extract, a tea and the oil from the plant reduced pain responses; the oil was strongest. Three of its compounds, pinostrobin, pinocembrin and chrysin, also eased pain.\n\nTechnical detail: 31–316 mg/kg orally; hot plate, writhing and formalin tests; effect reversed by naltrexone, flumazenil and bicuculline.",
       source: "deciga",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "In the US Southwest, where it's called fetid goosefoot, the Zuni breathed the steam of the plant soaked in water for headaches, and the Western Keres used it to cause vomiting. The Hopi ground the seeds into corn meal dumplings.",
+      source: "naeb",
     },
   ],
   safety: [

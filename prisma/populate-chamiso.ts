@@ -1,8 +1,9 @@
 import { run } from "./lib/populate-herb";
 
 // Chamiso (Atriplex canescens, four-wing saltbush), from the Native American
-// Ethnobotany Database (Moerman, BRIT). No medical research on this species
-// was found in PubMed Central. A 2018 Taos News column (Hawley) notes that
+// Ethnobotany Database (Moerman, BRIT) and a 2021 review of the Atriplex genus
+// (Ali et al.). No medical research on this species was found in PubMed
+// Central. A 2018 Taos News column (Hawley) notes that
 // "chamiso" means big sagebrush in northern New Mexico. Family per GBIF.
 
 run({
@@ -21,6 +22,16 @@ run({
       url: "http://naeb.brit.org/uses/search/?string=Atriplex+canescens",
       sourceType: "historical_text",
       tier: "TIER_4_TRADITIONAL_TEXT",
+    },
+    ali: {
+      title: "The Therapeutic Properties, Ethno pharmacology and Phyto-chemistry of Atriplex Species: A review",
+      author: "Ali B, Musaddiq S, Iqbal S, Rehman T, Shafiq N, Hussain A",
+      journal: "Pakistan Journal of Biochemistry and Biotechnology",
+      publicationDate: "2021-01-01",
+      doi: "10.52700/pjbb.v2i1.38",
+      url: "https://doi.org/10.52700/pjbb.v2i1.38",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
     },
     hawley: {
       title: "Herb of the month: Chamiso",
@@ -60,6 +71,18 @@ run({
       summary:
         "The Hopi and Tewa use its ashes like baking soda in cooking, and to keep blue corn meal and piki bread blue. The Navajo dye wool yellow with the leaves and twigs, and feed the plant to sheep for salt in winter. The Gosiute ate the seeds.",
       source: "naeb",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "Outside the US, the leaves are used for stomach and gut infections in Mexico, and a leaf paste is put on snake bites in Gilgit-Baltistan, Pakistan.",
+      source: "ali",
+    },
+    {
+      category: "PRECLINICAL",
+      summary:
+        "In lab tests, a leaf extract slowed the growth of E. coli and Salmonella bacteria, and extracts killed mosquito larvae. Very little else has been studied; the leaves contain 20-hydroxyecdysone, a plant steroid, and betaine.",
+      source: "ali",
     },
     {
       category: "TRADITIONAL",

@@ -4,7 +4,9 @@ import { run } from "./lib/populate-herb";
 // (Foletti et al.), a 2024 review (Roubi et al., abstract only), a 2021 review
 // of the Atriplex genus (Ali et al.), a 2013 lab study of Greco-Arab diabetes
 // herbs (Kadan et al.), a 2025 enzyme study (Roubi et al.) and a 2026 rat
-// arthritis study (Kaouane et al.). Family per GBIF.
+// arthritis study (Kaouane et al.), the 2008 Glucolevel study (Said et al.), a
+// 2022 review of the fat sand rat (Bilu et al.) and a 2005 sand rat diet study
+// (Palgi et al.). Family per GBIF.
 
 run({
   name: "Mediterranean Saltbush",
@@ -70,6 +72,39 @@ run({
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
+    said: {
+      title: "Maintaining a physiological blood glucose level with 'glucolevel', a combination of four anti-diabetes plants used in the traditional Arab herbal medicine",
+      author: "Said O, Fulder S, Khalil K, Azaizeh H, Kassis E, Saad B",
+      journal: "Evidence-Based Complementary and Alternative Medicine",
+      publicationDate: "2007-05-17",
+      doi: "10.1093/ecam/nem047",
+      pmid: "18955212",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2586306/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
+    bilu: {
+      title: "Circadian rhythms-related disorders in diurnal fat sand rats under modern lifestyle conditions: A review",
+      author: "Bilu C, Einat H, Zimmet P, Kronfeld-Schor N",
+      journal: "Frontiers in Physiology",
+      publicationDate: "2022-09-07",
+      doi: "10.3389/fphys.2022.963449",
+      pmid: "36160856",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9489903/",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
+    palgi: {
+      title: "Oxalate, calcium and ash intake and excretion balances in fat sand rats (Psammomys obesus) feeding on two different diets",
+      author: "Palgi N, Vatnick I, Pinshow B",
+      journal: "Comparative Biochemistry and Physiology Part A",
+      publicationDate: "2005-05-01",
+      doi: "10.1016/j.cbpb.2005.03.011",
+      pmid: "15922640",
+      url: "https://doi.org/10.1016/j.cbpb.2005.03.011",
+      sourceType: "peer_reviewed",
+      tier: "TIER_3_PEER_REVIEWED",
+    },
     kaouane: {
       title: "Phytochemical Characterization and Evaluation of Antioxidant, Anti-Inflammatory, Cytotoxic, Genotoxic, and Anti-Arthritic Activities of Atriplex halimus Aqueous Leaf Extract",
       author: "Kaouane K, Madoui S, Kemchache H, et al.",
@@ -116,14 +151,20 @@ run({
     {
       category: "HUMAN_RESEARCH",
       summary:
-        "In a small study, 16 people with type 2 diabetes took a tablet combining saltbush with walnut, olive and nettle leaves for 4 weeks. Blood sugar reached acceptable levels within 2 to 3 weeks, and HbA1c (long-term blood sugar) fell in the 6 people tested. Because it was a mixture with no comparison group, saltbush's own effect isn't known.",
+        "In a small 2008 study, 16 people with newly diagnosed type 2 diabetes took Glucolevel, a tablet combining saltbush with walnut, olive and nettle leaves, 3 times a day for 4 weeks. Average blood sugar fell from 290 to 210 mg/dl in the first week, HbA1c (long-term blood sugar) fell from 8.2 to 6.9 in the 6 people tested, and no side effects were reported. Because it was a mixture with no comparison group, saltbush's own effect isn't known.",
+      source: "said",
+    },
+    {
+      category: "PRECLINICAL",
+      summary:
+        "Leaf juice and water extracts lowered blood sugar in diabetic rats.",
       source: "ali",
     },
     {
       category: "PRECLINICAL",
       summary:
-        "Leaf juice and water extracts lowered blood sugar in diabetic rats. Saltbush is a natural food of the sand rat, a desert rodent.",
-      source: "ali",
+        "Saltbush is the favorite food of the fat sand rat, a North African desert gerbil, and is low in calories. When sand rats are kept in a lab and fed standard rodent food instead, they develop type 2 diabetes within 4 weeks, which makes them a common animal model for studying diabetes.",
+      source: "bilu",
     },
     {
       category: "PRECLINICAL",
@@ -167,6 +208,12 @@ run({
       category: "CONTAMINATION",
       description: "The plant absorbs heavy metals from the soil and is used to clean up polluted land.",
       source: "foletti",
+    },
+    {
+      category: "TOXICITY",
+      description:
+        "Like other plants in its family, saltbush is high in salts and in oxalates, compounds that bind calcium in the body.",
+      source: "palgi",
     },
   ],
   symptoms: [

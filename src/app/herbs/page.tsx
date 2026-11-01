@@ -24,6 +24,9 @@ const SEARCH_ALIASES: Record<string, string> = {
   "atopic dermatitis": "eczema",
   alopecia: "hair loss",
   xerosis: "dry skin",
+  "menopause weight gain": "menopausal weight gain",
+  "menopausal weight": "menopausal weight gain",
+  "menopause weight": "menopausal weight gain",
 };
 
 function libraryHref(params: { category?: string; q?: string; bodySystem?: string }) {

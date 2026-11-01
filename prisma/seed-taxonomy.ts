@@ -378,6 +378,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
     description:
       "Rough, flaky or tight-feeling skin that lacks moisture. See a doctor if it cracks and bleeds, is very itchy, or doesn't improve with a moisturizer, since some causes need treatment.",
   },
+  {
+    name: "Menopausal Weight Gain",
+    slug: "menopausal-weight-gain",
+    bodySystem: "reproductive",
+    description:
+      "Weight gain during and after menopause. No herb has been tested for it in menopausal women. Talk to a health professional before using supplements, especially if you take other medicines.",
+  },
 ];
 
 // Descriptions double as the plain-language definitions shown to visitors.

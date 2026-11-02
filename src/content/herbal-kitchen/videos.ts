@@ -30,7 +30,7 @@ export const KITCHEN_VIDEOS: KitchenVideo[] = [
       height: 1024,
     },
     recipe: {
-      approved: false,
+      approved: true,
       times: [
         { label: "Prep", iso: "PT10M", text: "10 minutes" },
         { label: "Cook", iso: "PT10M", text: "about 10 minutes" },

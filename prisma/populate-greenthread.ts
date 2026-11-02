@@ -1,7 +1,9 @@
 import { run } from "./lib/populate-herb";
 
 // Greenthread (Thelesperma filifolium), from the Native American Ethnobotany
-// Database (Moerman, BRIT). Its close relative Navajo tea (T. megapotamicum)
+// Database (Moerman, BRIT) and a 2009 University of New Mexico Maxwell Museum
+// guide to edible wild plants, which covers cota (T. filifolium and
+// T. megapotamicum) together. Its close relative Navajo tea (T. megapotamicum)
 // has more records and a 2019 metals study (Samuel-Nakamura and Hodge); both
 // are labeled as the related species. Family per GBIF.
 
@@ -29,6 +31,14 @@ run({
       sourceType: "historical_text",
       tier: "TIER_4_TRADITIONAL_TEXT",
     },
+    maxwell: {
+      title: "A Place at Mother Earth's Table: Edible Wild Plants of the Rio Grande Region (Cota)",
+      organization: "Maxwell Museum of Anthropology, University of New Mexico",
+      publicationDate: "2009-01-01",
+      url: "https://maxwellmuseum.unm.edu/sites/default/files/public/ResGuide.pdf",
+      sourceType: "historical_text",
+      tier: "TIER_4_TRADITIONAL_TEXT",
+    },
     samuel: {
       title: "Occurrence and Risk of Metal(loid)s in Thelesperma megapotamicum Tea Plant",
       author: "Samuel-Nakamura C, Hodge FS",
@@ -41,6 +51,11 @@ run({
       tier: "TIER_3_PEER_REVIEWED",
     },
   },
+  synonyms: [
+    { name: "Cota", type: "REGIONAL_NAME", region: "New Mexico" },
+    { name: "Navajo Tea", type: "COMMON_NAME" },
+    { name: "Indian Tea", type: "COMMON_NAME" },
+  ],
   traditions: [{ slug: "native-american-ethnobotany", notes: "Drunk as a tea by the Tewa and Western Keres; its relative Navajo tea by the Navajo, Hopi and Apache." }],
   evidence: [
     {
@@ -55,6 +70,23 @@ run({
         "Its close relative Navajo tea (Thelesperma megapotamicum) is a popular wild tea. The Navajo drank it as a stimulant and for toothache, and the Hopi, Apache and Keres boiled the flowers and young leaves for tea. The Hopi also used the flowers as a reddish-brown dye.",
       source: "naebRelated",
     },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "Known in New Mexico as cota, greenthread and its relatives make a reddish-brown, slightly sweet tea enjoyed across the Southwest by Native Americans, Hispanics and Anglos. A Zuni bundle of about 12 dried stalks makes about 10 cups.",
+      source: "maxwell",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "In Hispanic folk medicine the tea is used to bring down fever, soothe babies' chafed skin, and increase urine. At Zuni, two kinds of cota are recognized, and expectant mothers drink one or the other in the hope of having a boy or a girl. Navajo weavers and Hopi basket makers use it as a dye.",
+      source: "maxwell",
+    },
+    {
+      category: "PRECLINICAL",
+      summary: "The tea provides small amounts of potassium, calcium and magnesium.",
+      source: "maxwell",
+    },
   ],
   safety: [
     {
@@ -64,5 +96,6 @@ run({
       source: "samuel",
     },
   ],
+  symptoms: [{ slug: "fever", notes: "Cota tea is a Hispanic folk remedy for fever in New Mexico. Not studied in people." }],
   preparations: [{ slug: "tea-infusion", notes: "Leaves and flowers steeped as a tea.", source: "naeb" }],
 });

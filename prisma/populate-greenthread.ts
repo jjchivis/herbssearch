@@ -3,7 +3,8 @@ import { run } from "./lib/populate-herb";
 // Greenthread (Thelesperma filifolium), from the Native American Ethnobotany
 // Database (Moerman, BRIT) and a 2009 University of New Mexico Maxwell Museum
 // guide to edible wild plants, which covers cota (T. filifolium and
-// T. megapotamicum) together. Its close relative Navajo tea (T. megapotamicum)
+// T. megapotamicum) together, and Charles W. Kane's notes on Navajo tea from his
+// Applied Medical Botany site (citing his books). Its close relative Navajo tea (T. megapotamicum)
 // has more records and a 2019 metals study (Samuel-Nakamura and Hodge); both
 // are labeled as the related species. Family per GBIF.
 
@@ -38,6 +39,14 @@ run({
       url: "https://maxwellmuseum.unm.edu/sites/default/files/public/ResGuide.pdf",
       sourceType: "historical_text",
       tier: "TIER_4_TRADITIONAL_TEXT",
+    },
+    kane: {
+      title: "Thelesperma megapotamicum (Greenthread): medicinal uses (citing Medicinal Plants of the American Southwest and Wild Edible Plants of New Mexico)",
+      author: "Kane CW",
+      organization: "Applied Medical Botany",
+      url: "https://medivetus.com/botanic/thelesperma-megapotamicum-greenthread-medicinal-uses/",
+      sourceType: "secondary",
+      tier: "TIER_5_SECONDARY",
     },
     samuel: {
       title: "Occurrence and Risk of Metal(loid)s in Thelesperma megapotamicum Tea Plant",
@@ -86,6 +95,12 @@ run({
       category: "PRECLINICAL",
       summary: "The tea provides small amounts of potassium, calcium and magnesium.",
       source: "maxwell",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "Herbalist Charles Kane describes Navajo tea, a close relative, as a pleasant, non-bitter beverage tea that's only mildly diuretic and otherwise not significantly medicinal. Its very young leaves can be chopped into salads.",
+      source: "kane",
     },
   ],
   safety: [

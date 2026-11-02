@@ -79,6 +79,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Hypoxidaceae: "the star-grass family",
   Iridaceae: "the iris family",
   Juglandaceae: "the walnut family",
+  Laminariaceae: "the kelp family of brown seaweeds",
   Lamiaceae: "the mint family",
   Lauraceae: "the laurel family",
   Linaceae: "the flax family",

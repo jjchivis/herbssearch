@@ -4867,6 +4867,36 @@ const herbs = [
     cautions: "Food safety studies are lacking.",
     imageUrl: "/herbs/kakadu-plum.jpg",
   },
+  {
+    name: "Emu Bush",
+    scientificName: "Eremophila spp.",
+    category: "Medicinal",
+    summary: "A group of about 200 Australian desert shrubs, many of them traditional medicines of the First Australians for colds, flu, wounds and skin infections.",
+    uses: "Colds and flu, Wounds, Skin infections, Scabies (traditional)",
+    properties: "Leaves rich in terpenoids that kill germs in lab tests",
+    cautions: "Uses differ between species; no human safety studies were found.",
+    imageUrl: "/herbs/emu-bush.jpg",
+  },
+  {
+    name: "Kombu",
+    scientificName: "Saccharina japonica",
+    category: "Culinary",
+    summary: "A brown seaweed central to Japanese cooking and the main source of iodine in Japan. Too much iodine can harm the thyroid.",
+    uses: "Food, Iodine source",
+    properties: "Very rich in iodine",
+    cautions: "Too much can cause thyroid problems; avoid kelp products with thyroid disease.",
+    imageUrl: "/herbs/kombu.jpg",
+  },
+  {
+    name: "Aojiso",
+    scientificName: "Perilla frutescens",
+    category: "Culinary",
+    summary: "Green shiso leaf, a Japanese herb and an official medicine in the Chinese and Japanese pharmacopoeias, used for colds, nausea and allergies. Perilla extracts eased hay fever in human studies.",
+    uses: "Food, Colds, Nausea, Hay fever",
+    properties: "Leaves rich in rosmarinic acid",
+    cautions: "Perilla seeds can cause serious allergic reactions.",
+    imageUrl: "/herbs/aojiso.jpg",
+  },
 ];
 
 async function main() {

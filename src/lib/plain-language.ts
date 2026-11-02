@@ -122,6 +122,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Polyporaceae: "a family of bracket fungi (mushrooms that grow on wood)",
   Portulacaceae: "the purslane family",
   Primulaceae: "the primrose family",
+  Proteaceae: "the protea family, which includes macadamia",
   Ranunculaceae: "the buttercup family",
   Rhamnaceae: "the buckthorn family",
   Rosaceae: "the rose family",

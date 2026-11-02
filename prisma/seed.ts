@@ -4897,6 +4897,36 @@ const herbs = [
     cautions: "Perilla seeds can cause serious allergic reactions.",
     imageUrl: "/herbs/aojiso.jpg",
   },
+  {
+    name: "Lovage",
+    scientificName: "Levisticum officinale",
+    category: "Culinary",
+    summary: "A celery-flavored herb whose root is an EU traditional herbal medicine to flush the urinary tract in minor urinary complaints.",
+    uses: "Minor urinary complaints, Culinary herb",
+    properties: "Root rich in coumarins",
+    cautions: "Avoid with celery-family allergy, in pregnancy and under 18; use no longer than 2 to 4 weeks.",
+    imageUrl: "/herbs/lovage.jpg",
+  },
+  {
+    name: "Ashitaba",
+    scientificName: "Angelica keiskei",
+    category: "Culinary",
+    summary: "A Japanese health-food herb. In one trial, its chalcone compounds reduced belly fat and waist size in overweight adults.",
+    uses: "Food, Weight management",
+    properties: "Rich in chalcones such as xanthoangelol",
+    cautions: "No human safety studies were found.",
+    imageUrl: "/herbs/ashitaba.jpg",
+  },
+  {
+    name: "Greenthread",
+    scientificName: "Thelesperma filifolium",
+    category: "Culinary",
+    summary: "A threadleaf wildflower of the Southwest, steeped as a tea by Pueblo peoples. Its close relative, Navajo tea, is a popular wild tea.",
+    uses: "Tea, Tuberculosis (traditional)",
+    properties: "Leaves and flowers make a tea",
+    cautions: "A related tea plant gathered near mines and roads had high cadmium.",
+    imageUrl: "/herbs/greenthread.jpg",
+  },
 ];
 
 async function main() {

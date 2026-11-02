@@ -1,9 +1,11 @@
 import type { KitchenVideo } from "./types";
 
-// Video files are hosted outside the repository. Until the hosted URL is set,
-// the elderberry video plays from public/kitchen-media/ (git-ignored), which
-// only exists on a local machine.
-const ELDERBERRY_VIDEO_SRC = "/kitchen-media/elderberry-gummies.mp4";
+// Video files live in the site's public Vercel Blob store, not the repository.
+// Pages play a 1280x720 web copy (18.8 MB, every frame and the sound kept).
+// The untouched 1920x1080 original is stored alongside it as the master:
+// https://ia5hj0pulcwhejxm.public.blob.vercel-storage.com/lv_0_20261101082736.mp4
+const BLOB = "https://ia5hj0pulcwhejxm.public.blob.vercel-storage.com";
+const ELDERBERRY_VIDEO_SRC = `${BLOB}/elderberry-gummies-web.mp4`;
 
 export const KITCHEN_VIDEOS: KitchenVideo[] = [
   {

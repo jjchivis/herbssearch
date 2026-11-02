@@ -99,7 +99,7 @@ run({
     {
       category: "TRADITIONAL",
       summary:
-        "Herbalist Charles Kane describes Navajo tea, a close relative, as a pleasant, non-bitter beverage tea that's only mildly diuretic and otherwise not significantly medicinal. Its very young leaves can be chopped into salads.",
+        "Herbalist Charles Kane describes Navajo tea, a close relative, as a pleasant, non-bitter beverage tea that slightly increases urination but otherwise isn't significantly medicinal. Its very young leaves can be chopped into salads.",
       source: "kane",
     },
   ],

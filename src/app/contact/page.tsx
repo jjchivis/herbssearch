@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { BUSINESS_ADDRESS, BUSINESS_MAP_URL } from "@/lib/business";
+import { BUSINESS_ADDRESS, BUSINESS_MAP_URL, BUSINESS_NAME } from "@/lib/business";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -40,6 +40,8 @@ export default function ContactPage() {
       <section className="flex max-w-2xl flex-col gap-2 rounded-lg border border-[var(--border)] p-6">
         <h2 className="font-mono text-xs uppercase tracking-wide text-[var(--muted)]">Address</h2>
         <address className="font-serif text-2xl not-italic leading-snug text-[var(--foreground)]">
+          {BUSINESS_NAME}
+          <br />
           {BUSINESS_ADDRESS.street}
           <br />
           {BUSINESS_ADDRESS.suite}

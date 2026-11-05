@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BUSINESS_ADDRESS, BUSINESS_MAP_URL } from "@/lib/business";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -34,6 +35,22 @@ export default function ContactPage() {
           className="font-serif text-2xl text-[var(--foreground)] underline decoration-[var(--highlight)] underline-offset-4 hover:text-[var(--highlight)]"
         >
           {EMAIL}
+        </a>
+      </section>
+      <section className="flex max-w-2xl flex-col gap-2 rounded-lg border border-[var(--border)] p-6">
+        <h2 className="font-mono text-xs uppercase tracking-wide text-[var(--muted)]">Address</h2>
+        <address className="font-serif text-2xl not-italic leading-snug text-[var(--foreground)]">
+          {BUSINESS_ADDRESS.street}
+          <br />
+          {BUSINESS_ADDRESS.city}, {BUSINESS_ADDRESS.region} {BUSINESS_ADDRESS.postalCode}
+        </address>
+        <a
+          href={BUSINESS_MAP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-fit text-sm text-[var(--muted)] underline decoration-[var(--highlight)] underline-offset-4 hover:text-[var(--highlight)]"
+        >
+          View on a map
         </a>
       </section>
     </main>

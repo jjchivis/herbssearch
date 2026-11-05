@@ -1,3 +1,5 @@
+import { BUSINESS_ADDRESS_ONE_LINE } from "@/lib/business";
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-[var(--border)]">
@@ -7,6 +9,7 @@ export function SiteFooter() {
           Information provided is for educational purposes and is not a substitute for
           professional medical advice.
         </p>
+        <address className="mt-3 not-italic">HerbsSearch · {BUSINESS_ADDRESS_ONE_LINE}</address>
       </div>
     </footer>
   );

@@ -92,6 +92,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Melanthiaceae: "the false hellebore family",
   Meliaceae: "the mahogany family",
   Menispermaceae: "the moonseed family",
+  Molluginaceae: "the carpetweed family",
   Monimiaceae: "the boldo family",
   Moraceae: "the fig and mulberry family",
   Moringaceae: "the moringa family",

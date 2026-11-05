@@ -85,6 +85,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Laminariaceae: "the kelp family of brown seaweeds",
   Lamiaceae: "the mint family",
   Lauraceae: "the laurel family",
+  Lecythidaceae: "the Brazil nut family",
   Linaceae: "the flax family",
   Lobariaceae: "a family of leafy lichens",
   Lythraceae: "the loosestrife family, which includes pomegranate",

@@ -5177,6 +5177,16 @@ const herbs = [
     cautions: "The oil can cause allergic skin rashes.",
     imageUrl: "/herbs/patchouli.jpg",
   },
+  {
+    name: "Brazil Nut",
+    scientificName: "Bertholletia excelsa",
+    category: "Culinary",
+    summary: "The seed of a giant Amazon tree and the richest food source of selenium. Two nuts a day raised blood selenium as well as a supplement in a trial; eating many every day can mean too much.",
+    uses: "Food, Selenium source",
+    properties: "Very high in selenium; also protein and healthy fats",
+    cautions: "Too much selenium over time can cause hair and nail loss. A tree nut allergen.",
+    imageUrl: "/herbs/brazil-nut.jpg",
+  },
 ];
 
 async function main() {

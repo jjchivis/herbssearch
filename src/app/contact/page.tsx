@@ -42,6 +42,8 @@ export default function ContactPage() {
         <address className="font-serif text-2xl not-italic leading-snug text-[var(--foreground)]">
           {BUSINESS_ADDRESS.street}
           <br />
+          {BUSINESS_ADDRESS.suite}
+          <br />
           {BUSINESS_ADDRESS.city}, {BUSINESS_ADDRESS.region} {BUSINESS_ADDRESS.postalCode}
         </address>
         <a

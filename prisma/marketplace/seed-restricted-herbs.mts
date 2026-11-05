@@ -41,6 +41,8 @@ const RESTRICTED: Record<string, string> = {
   "Elephant Creeper": "Hawaiian baby woodrose; its seeds contain the hallucinogen LSA.",
   Monkshood: "Deadly poisonous; aconitine can stop the heart.",
   Supari: "Areca nut; causes mouth and throat cancer.",
+  // Added 2026-11-05.
+  Bhurundi: "Indian heliotrope; contains liver-toxic pyrrolizidine alkaloids.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

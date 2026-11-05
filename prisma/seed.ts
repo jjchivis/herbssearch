@@ -5127,6 +5127,16 @@ const herbs = [
     cautions: "Traditionally fermented paste can carry bacteria, so hygiene matters.",
     imageUrl: "/herbs/african-locust-bean-tree.jpg",
   },
+  {
+    name: "Indian Goosegrass",
+    scientificName: "Eleusine indica",
+    category: "Medicinal",
+    summary: "A common tropical weed grass, also called wiregrass, whose root and whole plant are boiled for fever, cough and worms. An extract lowered cholesterol in rats and protected their livers.",
+    uses: "Fever, Cough, Worms, Asthma (traditional)",
+    properties: "Contains lutein, beta-sitosterol and stigmasterol",
+    cautions: "No human safety studies were found.",
+    imageUrl: "/herbs/indian-goosegrass.jpg",
+  },
 ];
 
 async function main() {

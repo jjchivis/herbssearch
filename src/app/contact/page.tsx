@@ -10,6 +10,13 @@ export const metadata: Metadata = {
 
 const EMAIL = "support@herbssearch.com";
 
+// Antique parchment matching the "Contact Us" plaque in the banner: a pale
+// cream centre fading to gold edges. Fixed colours so it reads the same in
+// light and dark mode.
+const PARCHMENT_BOX =
+  "flex max-w-2xl flex-col gap-2 rounded-lg border border-[#d9b877] bg-[radial-gradient(ellipse_at_center,#fef1d1_0%,#fbe7b8_70%,#f3d79c_100%)] p-6 text-[#33512c] shadow-[inset_0_0_24px_rgb(170_120_40/0.18)]";
+const LABEL = "font-mono text-xs font-medium uppercase tracking-wide text-[#3f5a36]";
+
 export default function ContactPage() {
   return (
     <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-10 px-6 py-14">
@@ -28,18 +35,18 @@ export default function ContactPage() {
           className="h-auto w-full rounded-lg border border-[var(--border)]"
         />
       </header>
-      <section className="flex max-w-2xl flex-col gap-2 rounded-lg border border-[var(--border)] p-6">
-        <h2 className="font-mono text-xs uppercase tracking-wide text-[var(--muted)]">Email</h2>
+      <section className={PARCHMENT_BOX}>
+        <h2 className={LABEL}>Email</h2>
         <a
           href={`mailto:${EMAIL}`}
-          className="font-serif text-2xl text-[var(--foreground)] underline decoration-[var(--highlight)] underline-offset-4 hover:text-[var(--highlight)]"
+          className="font-serif text-2xl font-bold text-[#33512c] underline decoration-[#ab5030] underline-offset-4 hover:text-[#1f3616]"
         >
           {EMAIL}
         </a>
       </section>
-      <section className="flex max-w-2xl flex-col gap-2 rounded-lg border border-[var(--border)] p-6">
-        <h2 className="font-mono text-xs uppercase tracking-wide text-[var(--muted)]">Address</h2>
-        <address className="font-serif text-2xl not-italic leading-snug text-[var(--foreground)]">
+      <section className={PARCHMENT_BOX}>
+        <h2 className={LABEL}>Address</h2>
+        <address className="font-serif text-2xl font-bold not-italic leading-snug text-[#33512c]">
           {BUSINESS_NAME}
           <br />
           {BUSINESS_ADDRESS.street}
@@ -52,7 +59,7 @@ export default function ContactPage() {
           href={BUSINESS_MAP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-fit text-sm text-[var(--muted)] underline decoration-[var(--highlight)] underline-offset-4 hover:text-[var(--highlight)]"
+          className="w-fit text-sm font-medium text-[#3f5a36] underline decoration-[#ab5030] underline-offset-4 hover:text-[#1f3616]"
         >
           View on a map
         </a>

@@ -43,6 +43,7 @@ const RESTRICTED: Record<string, string> = {
   Supari: "Areca nut; causes mouth and throat cancer.",
   // Added 2026-11-05.
   Bhurundi: "Indian heliotrope; contains liver-toxic pyrrolizidine alkaloids.",
+  Jatropha: "Physic nut; the seeds are poisonous and a leading cause of plant poisoning in children.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

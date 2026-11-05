@@ -4978,10 +4978,10 @@ const herbs = [
     imageUrl: "/herbs/bhurundi.jpg",
   },
   {
-    name: "Pink Lady Slippers",
+    name: "Spade Flower",
     scientificName: "Hybanthus enneaspermus",
     category: "Medicinal",
-    summary: "A small Indian herb used in folk medicine to boost libido. It improved sexual behavior and reduced anxiety in rats.",
+    summary: "A small Indian herb, also called pink lady slippers, used in folk medicine to boost libido. It improved sexual behavior and reduced anxiety in rats.",
     uses: "Libido (traditional), Anxiety",
     properties: "Rich in cyclotides, very stable plant proteins",
     cautions: "No human medical or safety studies were found.",

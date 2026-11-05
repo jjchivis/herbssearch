@@ -1,11 +1,13 @@
 import { run } from "./lib/populate-herb";
 
-// Pink Lady Slippers (Hybanthus enneaspermus), from a 2020 rat study of its
+// Spade Flower (Hybanthus enneaspermus, also called pink lady slippers), from a 2020 rat study of its
 // libido-enhancing activity (Du et al., abstract only) and a 2024 rat anxiety
-// study (Fernandes e Mendonça et al., abstract only). Family per GBIF.
+// study (Fernandes e Mendonça et al., abstract only). The Georgia Biodiversity
+// Portal is cited for the pink lady's slipper orchid, a different plant that
+// shares the name. Family per GBIF.
 
 run({
-  name: "Pink Lady Slippers",
+  name: "Spade Flower",
   profile: { family: "Violaceae", genus: "Hybanthus", species: "enneaspermus", nativeRange: "Tropical Asia, Africa and Australia", partsUsed: "The whole plant" },
   sources: {
     du: {
@@ -30,12 +32,19 @@ run({
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
+    georgia: {
+      title: "Cypripedium acaule (Pink Lady's-slipper)",
+      organization: "Georgia Biodiversity Portal, Georgia Department of Natural Resources, Wildlife Resources Division",
+      url: "https://georgiabiodiversity.org/portal/profile?group=plants&es_id=19349",
+      sourceType: "government",
+      tier: "TIER_1_GOVERNMENT",
+    },
   },
-  synonyms: [{ name: "Spade Flower", type: "COMMON_NAME" }],
+  synonyms: [{ name: "Pink Lady Slippers", type: "COMMON_NAME" }],
   evidence: [
     {
       category: "TRADITIONAL",
-      summary: "Pink lady slippers is an Indian folk medicine widely used to boost libido.",
+      summary: "Spade flower is an Indian folk medicine widely used to boost libido.",
       source: "du",
     },
     {
@@ -48,6 +57,12 @@ run({
       category: "PRECLINICAL",
       summary: "In socially isolated rats, an extract reduced anxious behavior, possibly by acting on the same brain receptors as anti-anxiety drugs.",
       source: "fernandes",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "Not to be confused with the pink lady's slipper orchid (Cypripedium acaule) of eastern North America, a different plant. That orchid is protected in Georgia because poachers dig it up, and dug-up plants rarely survive.",
+      source: "georgia",
     },
   ],
   safety: [{ category: "PREPARATION_SPECIFIC", description: "No human medical or safety studies were found.", source: "du" }],

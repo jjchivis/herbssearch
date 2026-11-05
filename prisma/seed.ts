@@ -5015,7 +5015,7 @@ const herbs = [
     uses: "Food (non-toxic variety only), Seed oil",
     properties: "Seeds contain toxic phorbol esters",
     cautions: "Seeds are poisonous; toxic and non-toxic kinds look alike.",
-    imageUrl: "/herbs/jatropha.jpg",
+    imageUrl: "/herbs/jatropha-v2.jpg",
   },
   {
     name: "Dry Zone Mahogany",

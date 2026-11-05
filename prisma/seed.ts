@@ -4985,7 +4985,7 @@ const herbs = [
     uses: "Libido (traditional), Anxiety",
     properties: "Rich in cyclotides, very stable plant proteins",
     cautions: "No human medical or safety studies were found.",
-    imageUrl: "/herbs/pink-lady-slippers.jpg",
+    imageUrl: "/herbs/spade-flower.jpg",
   },
   {
     name: "African Mango",

@@ -54,7 +54,7 @@ const RESTRICTED: Record<string, string> = {
   "Gypsy Flower": "Hound's tongue; contains liver-damaging pyrrolizidine alkaloids that have killed livestock.",
   "Ephedra Distachya": "Contains ephedrine; the FDA bans dietary supplements containing ephedrine alkaloids.",
   "Caper Spurge": "Toxic seed and milky sap; the seed irritates the gut and the sap can severely injure the eyes.",
-  "Petty Spurge": "Sap-derived drug (ingenol mebutate) withdrawn in the EU in 2020 after it raised skin cancer risk; sap irritates skin.",
+  "Petty Spurge": "Sap-derived drug (ingenol mebutate) withdrawn in the EU in 2020 after it raised skin cancer risk.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

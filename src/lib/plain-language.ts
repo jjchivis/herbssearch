@@ -43,6 +43,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Brassicaceae: "the mustard and cabbage family",
   Bromeliaceae: "the pineapple and bromeliad family",
   Burseraceae: "the frankincense and myrrh family",
+  Buxaceae: "the boxwood family",
   Cactaceae: "the cactus family",
   Campanulaceae: "the bellflower family",
   Cannabaceae: "the hemp family, which includes hops",

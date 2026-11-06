@@ -48,6 +48,7 @@ const RESTRICTED: Record<string, string> = {
   "Tall White Squill": "Poisonous bulb; contains heart-acting bufadienolides with a very narrow safe dose.",
   "Red Bryony": "Poisonous berries and root; contains cucurbitacins and the toxic protein bryodin.",
   Boxwood: "Contains alkaloids that are toxic to cells.",
+  "Silver Thistle": "Root oil contains carlina oxide, which is toxic to cells and living organisms.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

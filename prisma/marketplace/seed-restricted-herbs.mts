@@ -44,6 +44,7 @@ const RESTRICTED: Record<string, string> = {
   // Added 2026-11-05.
   Bhurundi: "Indian heliotrope; contains liver-toxic pyrrolizidine alkaloids.",
   Jatropha: "Physic nut; the seeds are poisonous and a leading cause of plant poisoning in children.",
+  Khat: "Contains cathinone, a Schedule I controlled substance in the US (cathine is Schedule IV).",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

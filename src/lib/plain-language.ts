@@ -93,6 +93,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Malvaceae: "the mallow family",
   Melanthiaceae: "the false hellebore family",
   Meliaceae: "the mahogany family",
+  Melianthaceae: "the honey-flower family",
   Menispermaceae: "the moonseed family",
   Molluginaceae: "the carpetweed family",
   Monimiaceae: "the boldo family",

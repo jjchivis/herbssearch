@@ -5767,6 +5767,26 @@ const herbs = [
     cautions: "Galantamine is a prescription drug with serious side effects.",
     imageUrl: "/herbs/snowdrop.jpg",
   },
+  {
+    name: "Earth Smoke",
+    scientificName: "Fumaria officinalis",
+    category: "Medicinal",
+    summary: "A feathery-leaved herb with pink tubular flowers, also called fumitory. It is recognized in Europe as a traditional medicine for fullness, slow digestion and gas.",
+    uses: "Indigestion, Fullness, Gas",
+    properties: "May increase bile flow",
+    cautions: "Avoid with liver disease, gallstones or bile duct problems.",
+    imageUrl: "/herbs/earth-smoke.jpg",
+  },
+  {
+    name: "Petty Spurge",
+    scientificName: "Euphorbia peplus",
+    category: "Medicinal",
+    summary: "A small garden weed whose milky sap was used at home on skin cancers. A drug made from the sap was withdrawn in Europe over skin cancer risk.",
+    uses: "Skin cancers (home remedy)",
+    properties: "Sap contains ingenol mebutate",
+    cautions: "The sap-derived drug may raise skin cancer risk.",
+    imageUrl: "/herbs/petty-spurge.jpg",
+  },
 ];
 
 async function main() {

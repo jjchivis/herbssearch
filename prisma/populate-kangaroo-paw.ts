@@ -2,8 +2,8 @@ import { run } from "./lib/populate-herb";
 
 // Kangaroo Paw (Anigozanthos species), from a 2017 study of the pigments in two
 // species (Hendra and Keller), two 2008 nectar studies (Hölscher et al.; Wenzler et
-// al.) and a 2016 silver nanoparticle study (Shah et al.). No published medicinal or
-// traditional uses were found. Family per GBIF.
+// al.), a 2016 silver nanoparticle study (Shah et al.) and a 2022 ABC News report on
+// its use in skin care. No published medicinal or traditional uses were found. Family per GBIF.
 
 run({
   name: "Kangaroo Paw",
@@ -52,6 +52,15 @@ run({
       sourceType: "peer_reviewed",
       tier: "TIER_3_PEER_REVIEWED",
     },
+    abc: {
+      title: "Kangaroo paws used to fight wrinkles as demand booms for vegan cosmetics",
+      author: "Nichols J",
+      organization: "ABC News (Australian Broadcasting Corporation)",
+      publicationDate: "2022-10-08",
+      url: "https://www.abc.net.au/news/rural/2022-10-09/flower-cosmetics-kangaroo-native-australian-anti-wrinkle/101510580",
+      sourceType: "secondary",
+      tier: "TIER_5_SECONDARY",
+    },
   },
   evidence: [
     {
@@ -73,6 +82,12 @@ run({
       category: "PRECLINICAL",
       summary: "A leaf extract on its own had no effect against bacteria in lab tests; only silver particles made with it did.",
       source: "shah",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "Extracts of the big red kangaroo paw are used in anti-wrinkle creams by more than 30 skin care brands. The company that makes the ingredient says it boosts collagen and elastin in skin, but no independent studies have been published.",
+      source: "abc",
     },
   ],
   safety: [

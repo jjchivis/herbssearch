@@ -1,8 +1,8 @@
 import { run } from "./lib/populate-herb";
 
 // Christmas Bush (Alchornea cordifolia), from a 2016 review (Boniface et al.), a
-// 2022 sickle cell lab study (Adeniyi et al.), a 2016 antibacterial study (Noundou
-// et al.) and a 2024 study in healthy people (Otoo et al.). Family per GBIF.
+// 2022 sickle cell lab study (Adeniyi et al.) and a 2024 study in healthy people
+// (Otoo et al.). Family per GBIF.
 
 run({
   name: "Christmas Bush",

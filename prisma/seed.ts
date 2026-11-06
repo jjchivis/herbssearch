@@ -5357,6 +5357,16 @@ const herbs = [
     cautions: "No human medical or safety studies were found.",
     imageUrl: "/herbs/yellow-bulbine.jpg",
   },
+  {
+    name: "Hanza",
+    scientificName: "Boscia senegalensis",
+    category: "Culinary",
+    summary: "A drought-hardy Sahel shrub whose bitter seeds, soaked for days, are a vital famine food. Healers use the seeds for high blood sugar, and a seed product lowered blood sugar in an uncontrolled diabetes study.",
+    uses: "Famine food, Coffee substitute, Diabetes (traditional)",
+    properties: "Seeds contain glucosinolates",
+    cautions: "Seeds must be soaked for days to remove bitter compounds.",
+    imageUrl: "/herbs/hanza.jpg",
+  },
 ];
 
 async function main() {

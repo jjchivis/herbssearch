@@ -62,7 +62,4 @@ run({
       source: "ema",
     },
   ],
-  symptoms: [
-    { slug: "urinary", notes: "Recognized by the European Medicines Agency as a traditional remedy to flush the urinary tract in minor urinary complaints." },
-  ],
 });

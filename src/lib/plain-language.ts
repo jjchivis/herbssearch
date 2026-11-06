@@ -116,6 +116,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Parmeliaceae: "a large family of lichens",
   Passifloraceae: "the passionflower family",
   Pedaliaceae: "the sesame family",
+  Peraceae: "the pera family",
   Petiveriaceae: "the guinea hen weed family",
   Phyllanthaceae: "the leafflower family",
   Phytolaccaceae: "the pokeweed family",

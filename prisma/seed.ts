@@ -5145,7 +5145,7 @@ const herbs = [
     uses: "Food, Cooking oil (traditional)",
     properties: "Oily, edible seeds",
     cautions: "No human medical or safety studies were found.",
-    imageUrl: "/herbs/african-brazil-nut.jpg",
+    imageUrl: "/herbs/african-brazil-nut-v2.jpg",
   },
   {
     name: "Quassia Africana",
@@ -5155,7 +5155,7 @@ const herbs = [
     uses: "Malaria, Fever, Worms, Wounds (traditional)",
     properties: "Contains bitter quassinoids such as simalikalactone D",
     cautions: "Its bitter compounds can be toxic. No human safety studies were found.",
-    imageUrl: "/herbs/quassia-africana.jpg",
+    imageUrl: "/herbs/quassia-africana-v2.jpg",
   },
   {
     name: "Soapbark",
@@ -5165,7 +5165,7 @@ const herbs = [
     uses: "Soap, Food additive, Vaccine ingredient",
     properties: "Bark rich in saponins, including QS-21",
     cautions: "Approved in foods by the FDA and EFSA within set limits.",
-    imageUrl: "/herbs/soapbark.jpg",
+    imageUrl: "/herbs/soapbark-v2.jpg",
   },
   {
     name: "Patchouli",
@@ -5175,7 +5175,7 @@ const herbs = [
     uses: "Perfume, Colds, Nausea, Diarrhea (traditional)",
     properties: "Leaf oil rich in patchouli alcohol",
     cautions: "The oil can cause allergic skin rashes.",
-    imageUrl: "/herbs/patchouli.jpg",
+    imageUrl: "/herbs/patchouli-v2.jpg",
   },
   {
     name: "Brazil Nut",
@@ -5195,7 +5195,7 @@ const herbs = [
     uses: "Joint pain, Period pain, Muscle cramps, IBS",
     properties: "Main compound is paeoniflorin",
     cautions: "Most common side effect is mild diarrhea.",
-    imageUrl: "/herbs/white-peony-root.jpg",
+    imageUrl: "/herbs/white-peony-root-v2.jpg",
   },
   {
     name: "Jujube Seed",
@@ -5205,7 +5205,7 @@ const herbs = [
     uses: "Insomnia, Anxiety, Palpitations",
     properties: "Contains saponins, flavonoids and alkaloids",
     cautions: "Mild side effects such as dizziness and stomach upset have been reported.",
-    imageUrl: "/herbs/jujube-seed.jpg",
+    imageUrl: "/herbs/jujube-seed-v2.jpg",
   },
   {
     name: "Candle Bush",
@@ -5215,7 +5215,37 @@ const herbs = [
     uses: "Ringworm, Fungal skin infections, Constipation",
     properties: "Leaves contain anthraquinones and flavonoids",
     cautions: "Larger safety studies haven't been done.",
-    imageUrl: "/herbs/candle-bush.jpg",
+    imageUrl: "/herbs/candle-bush-v2.jpg",
+  },
+  {
+    name: "Jamun",
+    scientificName: "Syzygium cumini",
+    category: "Culinary",
+    summary: "Java plum, a tropical tree with dark purple fruit that's one of the most used traditional plants for diabetes. In trials it lowered fasting blood sugar slightly.",
+    uses: "Diabetes, Diarrhea, Sore throat (traditional)",
+    properties: "Rich in anthocyanins and ellagic acid",
+    cautions: "Shouldn't replace diabetes medicine.",
+    imageUrl: "/herbs/jamun.jpg",
+  },
+  {
+    name: "Vitex Negundo",
+    scientificName: "Vitex negundo",
+    category: "Medicinal",
+    summary: "Lagundi or nirgundi, a shrub approved in the Philippines as an herbal medicine for cough and asthma. In Ayurveda it's used for pain, inflammation and wounds.",
+    uses: "Cough, Asthma, Pain, Wounds",
+    properties: "Contains flavonoids, lignans and terpenoids",
+    cautions: "No serious harm at very high doses in mice.",
+    imageUrl: "/herbs/vitex-negundo.jpg",
+  },
+  {
+    name: "Horse Gram",
+    scientificName: "Macrotyloma uniflorum",
+    category: "Culinary",
+    summary: "A hardy, protein-rich pulse used in Himalayan and Indian folk medicine for kidney stones. A seed extract reduced kidney stone crystals in rats.",
+    uses: "Food, Kidney stones, Asthma (traditional)",
+    properties: "High in protein, fiber and polyphenols",
+    cautions: "No human medical studies were found.",
+    imageUrl: "/herbs/horse-gram.jpg",
   },
 ];
 

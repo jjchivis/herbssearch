@@ -36,6 +36,7 @@ run({
     { name: "Cascara", type: "COMMON_NAME" },
     { name: "Cascara Safrada", type: "COMMON_NAME" },
     { name: "Cascara Bark", type: "COMMON_NAME" },
+    { name: "Cascara Buckthorn", type: "COMMON_NAME" },
     { name: "Frangula purshiana", type: "SCIENTIFIC_SYNONYM" },
     { name: "Rhamni purshianae cortex", type: "COMMON_NAME" },
   ],

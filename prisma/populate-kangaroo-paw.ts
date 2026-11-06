@@ -2,8 +2,10 @@ import { run } from "./lib/populate-herb";
 
 // Kangaroo Paw (Anigozanthos species), from a 2017 study of the pigments in two
 // species (Hendra and Keller), two 2008 nectar studies (Hölscher et al.; Wenzler et
-// al.), a 2016 silver nanoparticle study (Shah et al.) and a 2022 ABC News report on
-// its use in skin care. No published medicinal or traditional uses were found. Family per GBIF.
+// al.), a 2016 silver nanoparticle study (Shah et al.), a 2022 ABC News report on
+// its use in skin care and the University of Oxford Plants 400 profile (Marner),
+// which records Noongar use of the roots as food. No published medicinal uses were
+// found. Family per GBIF.
 
 run({
   name: "Kangaroo Paw",
@@ -61,8 +63,29 @@ run({
       sourceType: "secondary",
       tier: "TIER_5_SECONDARY",
     },
+    oxford: {
+      title: "Plant 333: Anigozanthos species (Kangaroo paws)",
+      author: "Marner S",
+      organization: "University of Oxford, Department of Biology (Plants 400)",
+      url: "https://herbaria.plants.ox.ac.uk/bol/plants400/Profiles/AB/Angiozanthos",
+      sourceType: "secondary",
+      tier: "TIER_5_SECONDARY",
+    },
   },
+  synonyms: [{ name: "Nollamara", type: "REGIONAL_NAME", region: "Western Australia (Noongar)" }, { name: "Catspaw", type: "COMMON_NAME" }],
   evidence: [
+    {
+      category: "TRADITIONAL",
+      summary:
+        "The Noongar people of southwest Western Australia eat the starchy, tuber-like roots of the red-and-green kangaroo paw, which they call nollamara.",
+      source: "oxford",
+    },
+    {
+      category: "TRADITIONAL",
+      summary:
+        "All 11 species grow only in southwest Western Australia, and the red-and-green kangaroo paw is the state's floral emblem. Honeyeaters and the tiny honey possum feed on the nectar and pollinate the flowers.",
+      source: "oxford",
+    },
     {
       category: "TRADITIONAL",
       summary: "Western Australian plants with fuzzy, claw-shaped flowers that look like a kangaroo's paw. The red-and-green kangaroo paw (Anigozanthos manglesii) is one well-known species. They're bird-pollinated and rich in nectar.",
@@ -93,7 +116,7 @@ run({
   safety: [
     {
       category: "PREPARATION_SPECIFIC",
-      description: "No published medicinal or traditional uses, or human safety studies, were found.",
+      description: "No published medicinal uses or human safety studies were found.",
       source: "hendra",
     },
   ],

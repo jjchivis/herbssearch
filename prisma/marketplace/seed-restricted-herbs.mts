@@ -49,6 +49,8 @@ const RESTRICTED: Record<string, string> = {
   "Red Bryony": "Poisonous berries and root; contains cucurbitacins and the toxic protein bryodin.",
   Boxwood: "Contains alkaloids that are toxic to cells.",
   "Silver Thistle": "Root oil contains carlina oxide, which is toxic to cells and living organisms.",
+  "Meadow Saffron": "Contains colchicine; accidental poisonings are often fatal.",
+  "Field Bindweed": "Contains tropane alkaloids that harmed horses and mice.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

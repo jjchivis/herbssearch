@@ -5187,6 +5187,36 @@ const herbs = [
     cautions: "Too much selenium over time can cause hair and nail loss. A tree nut allergen.",
     imageUrl: "/herbs/brazil-nut.jpg",
   },
+  {
+    name: "White Peony Root",
+    scientificName: "Paeonia lactiflora",
+    category: "Medicinal",
+    summary: "Bai shao, the peeled root of Chinese peony, used for over 1,200 years for joint and period pain and cramps. An extract eased arthritis, lupus and psoriasis when added to standard care in many small trials.",
+    uses: "Joint pain, Period pain, Muscle cramps, IBS",
+    properties: "Main compound is paeoniflorin",
+    cautions: "Most common side effect is mild diarrhea.",
+    imageUrl: "/herbs/white-peony-root.jpg",
+  },
+  {
+    name: "Jujube Seed",
+    scientificName: "Ziziphus jujuba var. spinosa",
+    category: "Medicinal",
+    summary: "Suan zao ren, the seed of sour jujube and a classic Chinese remedy for insomnia. It improved sleep quality versus placebo in a review of 9 trials.",
+    uses: "Insomnia, Anxiety, Palpitations",
+    properties: "Contains saponins, flavonoids and alkaloids",
+    cautions: "Mild side effects such as dizziness and stomach upset have been reported.",
+    imageUrl: "/herbs/jujube-seed.jpg",
+  },
+  {
+    name: "Candle Bush",
+    scientificName: "Senna alata",
+    category: "Medicinal",
+    summary: "A tropical shrub with candle-like yellow flower spikes, widely used for ringworm and as a laxative. Its tea helped bowels restart sooner after surgery in a trial.",
+    uses: "Ringworm, Fungal skin infections, Constipation",
+    properties: "Leaves contain anthraquinones and flavonoids",
+    cautions: "Larger safety studies haven't been done.",
+    imageUrl: "/herbs/candle-bush.jpg",
+  },
 ];
 
 async function main() {

@@ -53,6 +53,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Caryophyllaceae: "the pink and carnation family",
   Celastraceae: "the staff-vine family",
   Clusiaceae: "the mangosteen family",
+  Colchicaceae: "the autumn crocus family",
   Combretaceae: "the combretum family",
   Convolvulaceae: "the morning glory family",
   Cornaceae: "the dogwood family",

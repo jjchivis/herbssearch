@@ -75,7 +75,7 @@ run({
     },
     {
       category: "PRECLINICAL",
-      summary: "The flowers contain flavonoids and red anthocyanin pigments. A few compounds had weak activity against one bacterium in lab tests.",
+      summary: "The flowers contain flavonoids and red anthocyanin pigments. Tested against seven germs, including MRSA and Candida yeast, a few compounds had only weak activity against one bacterium, Acinetobacter baumannii.",
       source: "hendra",
     },
     {

@@ -38,6 +38,8 @@ run({
   },
   synonyms: [
     { name: "Nut Grass", type: "COMMON_NAME" },
+    { name: "Java Grass", type: "COMMON_NAME" },
+    { name: "Purple Nutsedge", type: "COMMON_NAME" },
   ],
   traditions: [
     { slug: "ayurveda", notes: "Widely used in Ayurveda for about 2,000 years." },

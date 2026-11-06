@@ -5687,6 +5687,16 @@ const herbs = [
     cautions: "Contains toxic alkaloids; harmed horses and mice.",
     imageUrl: "/herbs/field-bindweed.jpg",
   },
+  {
+    name: "Gypsy Flower",
+    scientificName: "Cynoglossum officinale",
+    category: "Medicinal",
+    summary: "Hound's tongue, a hairy purple-flowered weed that's loaded with liver-destroying pyrrolizidine alkaloids. It has killed horses and calves that ate it.",
+    uses: "None recommended (poisonous)",
+    properties: "Contains pyrrolizidine alkaloids",
+    cautions: "Poisonous; contains liver-damaging pyrrolizidine alkaloids.",
+    imageUrl: "/herbs/gypsy-flower.jpg",
+  },
 ];
 
 async function main() {

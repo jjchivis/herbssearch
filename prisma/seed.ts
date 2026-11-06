@@ -5487,6 +5487,26 @@ const herbs = [
     cautions: "Raises LDL cholesterol.",
     imageUrl: "/herbs/african-oil-palm.jpg",
   },
+  {
+    name: "Embelia Schimperi",
+    scientificName: "Embelia schimperi",
+    category: "Medicinal",
+    summary: "An East African shrub whose fruit has been eaten for centuries in Ethiopia, and by the Maasai, to expel tapeworm. Fruit extracts cleared tapeworm in mice.",
+    uses: "Tapeworm, Intestinal worms (traditional)",
+    properties: "Fruit contains embelin",
+    cautions: "Embelin harmed pregnancy in rats; avoid during pregnancy.",
+    imageUrl: "/herbs/embelia-schimperi.jpg",
+  },
+  {
+    name: "Hop Bush",
+    scientificName: "Dodonaea viscosa",
+    category: "Medicinal",
+    summary: "A hardy shrub used in traditional medicine on several continents, mainly on skin rashes, infections and wounds. Leaf extracts sped wound healing in rats.",
+    uses: "Wounds, Skin rashes, Diarrhea (traditional)",
+    properties: "Leaves contain flavonoids, saponins and phenols",
+    cautions: "Toxic to zebrafish embryos; use caution in pregnancy.",
+    imageUrl: "/herbs/hop-bush.jpg",
+  },
 ];
 
 async function main() {

@@ -139,6 +139,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Salviniaceae: "the floating fern family",
   Santalaceae: "the sandalwood family, which includes mistletoe",
   Sapindaceae: "the soapberry family",
+  Sapotaceae: "the sapodilla family",
   Saururaceae: "the lizard's-tail family",
   Schisandraceae: "the magnolia-vine family",
   Scrophulariaceae: "the figwort family",

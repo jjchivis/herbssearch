@@ -52,6 +52,8 @@ const RESTRICTED: Record<string, string> = {
   "Meadow Saffron": "Contains colchicine; accidental poisonings are often fatal.",
   "Field Bindweed": "Contains tropane alkaloids that harmed horses and mice.",
   "Gypsy Flower": "Hound's tongue; contains liver-damaging pyrrolizidine alkaloids that have killed livestock.",
+  "Ephedra Distachya": "Contains ephedrine; the FDA bans dietary supplements containing ephedrine alkaloids.",
+  "Caper Spurge": "Toxic seed and milky sap; the seed irritates the gut and the sap can severely injure the eyes.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

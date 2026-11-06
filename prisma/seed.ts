@@ -5507,6 +5507,26 @@ const herbs = [
     cautions: "Toxic to zebrafish embryos; use caution in pregnancy.",
     imageUrl: "/herbs/hop-bush.jpg",
   },
+  {
+    name: "Lilac Tasselflower",
+    scientificName: "Emilia sonchifolia",
+    category: "Medicinal",
+    summary: "A small weedy daisy eaten as a vegetable and used in Chinese folk medicine for throat, chest and urinary infections. It contains a liver-damaging alkaloid, and extracts harmed the liver in mice.",
+    uses: "Throat and chest infections, Mouth ulcers (traditional)",
+    properties: "Contains senkirkine, a pyrrolizidine alkaloid",
+    cautions: "Contains a liver-damaging pyrrolizidine alkaloid.",
+    imageUrl: "/herbs/lilac-tasselflower.jpg",
+  },
+  {
+    name: "Kangaroo Paw",
+    scientificName: "Anigozanthos spp.",
+    category: "Medicinal",
+    summary: "Western Australian plants with fuzzy, paw-shaped flowers, rich in nectar. No published medicinal or traditional uses were found; lab studies only.",
+    uses: "Ornamental",
+    properties: "Flowers contain flavonoids and anthocyanins",
+    cautions: "No published medicinal uses or human safety studies were found.",
+    imageUrl: "/herbs/kangaroo-paw.jpg",
+  },
 ];
 
 async function main() {

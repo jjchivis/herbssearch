@@ -75,6 +75,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Gigartinaceae: "a family of red seaweeds",
   Ginkgoaceae: "the ginkgo family",
   Gnetaceae: "the gnetum family",
+  Haemodoraceae: "the bloodwort family, which includes kangaroo paws",
   Hamamelidaceae: "the witch hazel family",
   Hericiaceae: "a family of tooth fungi (mushrooms with hanging spines)",
   Hymenochaetaceae: "a family of bracket fungi that grow on trees",

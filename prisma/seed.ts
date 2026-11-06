@@ -5697,6 +5697,26 @@ const herbs = [
     cautions: "Poisonous; contains liver-damaging pyrrolizidine alkaloids.",
     imageUrl: "/herbs/gypsy-flower.jpg",
   },
+  {
+    name: "Smooth Bedstraw",
+    scientificName: "Cruciata laevipes",
+    category: "Medicinal",
+    summary: "A small yellow-flowered herb with leaves in crosses of four. In central Italy its leaf juice was drunk to expel worms, and its roots dyed wool red.",
+    uses: "Worms, Intestinal blockage (traditional)",
+    properties: "Contains benzyl alcohol and phenylacetaldehyde",
+    cautions: "No human medical or safety studies were found.",
+    imageUrl: "/herbs/smooth-bedstraw.jpg",
+  },
+  {
+    name: "Black Bryony",
+    scientificName: "Dioscorea communis",
+    category: "Medicinal",
+    summary: "A climbing wild yam whose root is rubbed on bruises, rheumatism and muscle pain in Bulgarian and Turkish folk medicine. Its berries and root sap irritate the skin.",
+    uses: "Bruises, Rheumatism, Muscle pain (traditional, external)",
+    properties: "Root contains phenanthrenes, calcium oxalate and histamine",
+    cautions: "Berries and root sap cause skin rashes.",
+    imageUrl: "/herbs/black-bryony.jpg",
+  },
 ];
 
 async function main() {

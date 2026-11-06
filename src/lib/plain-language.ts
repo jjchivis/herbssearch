@@ -63,6 +63,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Cupressaceae: "the cypress family",
   Cynomoriaceae: "the cynomorium family of parasitic plants",
   Cyperaceae: "the sedge family",
+  Dioscoreaceae: "the yam family",
   Ebenaceae: "the ebony family",
   Elaeagnaceae: "the oleaster family, which includes sea buckthorn",
   Ephedraceae: "the jointfir family",

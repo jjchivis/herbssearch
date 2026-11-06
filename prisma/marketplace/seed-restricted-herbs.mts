@@ -51,6 +51,7 @@ const RESTRICTED: Record<string, string> = {
   "Silver Thistle": "Root oil contains carlina oxide, which is toxic to cells and living organisms.",
   "Meadow Saffron": "Contains colchicine; accidental poisonings are often fatal.",
   "Field Bindweed": "Contains tropane alkaloids that harmed horses and mice.",
+  "Gypsy Flower": "Hound's tongue; contains liver-damaging pyrrolizidine alkaloids that have killed livestock.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

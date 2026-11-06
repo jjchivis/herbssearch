@@ -5747,6 +5747,26 @@ const herbs = [
     cautions: "Toxic seed and sap; sap can cause severe eye injury.",
     imageUrl: "/herbs/caper-spurge.jpg",
   },
+  {
+    name: "Meadowsweet",
+    scientificName: "Filipendula ulmaria",
+    category: "Medicinal",
+    summary: "A creamy-flowered meadow herb recognized in Europe as a traditional medicine for colds and minor joint pain.",
+    uses: "Common cold, Minor joint pain",
+    properties: "Contains salicylates",
+    cautions: "Avoid with aspirin allergy; adults only.",
+    imageUrl: "/herbs/meadowsweet.jpg",
+  },
+  {
+    name: "Snowdrop",
+    scientificName: "Galanthus nivalis",
+    category: "Medicinal",
+    summary: "An early-spring bulb whose galantamine was developed into a prescription drug for Alzheimer's disease. Folk medicine used it for pain and headache.",
+    uses: "Pain, Headache (traditional)",
+    properties: "Contains galantamine and lycorine",
+    cautions: "Galantamine is a prescription drug with serious side effects.",
+    imageUrl: "/herbs/snowdrop.jpg",
+  },
 ];
 
 async function main() {

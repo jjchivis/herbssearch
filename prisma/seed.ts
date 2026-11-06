@@ -5717,6 +5717,36 @@ const herbs = [
     cautions: "Berries and root sap cause skin rashes.",
     imageUrl: "/herbs/black-bryony.jpg",
   },
+  {
+    name: "Couch Grass",
+    scientificName: "Elymus repens",
+    category: "Medicinal",
+    summary: "A creeping grass whose rhizome the European Medicines Agency recognizes as a traditional remedy to flush the urinary tract in minor urinary complaints.",
+    uses: "Minor urinary complaints",
+    properties: "Rhizome contains polysaccharides and flavonoids",
+    cautions: "Drink plenty of fluids; not for children or in pregnancy.",
+    imageUrl: "/herbs/couch-grass.jpg",
+  },
+  {
+    name: "Ephedra Distachya",
+    scientificName: "Ephedra distachya",
+    category: "Medicinal",
+    summary: "A jointed, leafless shrub whose stems contain ephedrine, a stimulant. It's a Moroccan folk remedy for asthma and colds, but ephedrine supplements are banned in the US.",
+    uses: "Asthma, Colds (traditional)",
+    properties: "Contains ephedrine and pseudoephedrine",
+    cautions: "Ephedrine-alkaloid supplements are banned by the FDA.",
+    imageUrl: "/herbs/ephedra-distachya.jpg",
+  },
+  {
+    name: "Caper Spurge",
+    scientificName: "Euphorbia lathyris",
+    category: "Medicinal",
+    summary: "A blue-green spurge whose seed is a traditional Chinese medicine. Its seed irritates the gut and its milky sap can severely damage the eyes.",
+    uses: "Traditional Chinese medicine (seed)",
+    properties: "Seeds contain lathyrane diterpenoids",
+    cautions: "Toxic seed and sap; sap can cause severe eye injury.",
+    imageUrl: "/herbs/caper-spurge.jpg",
+  },
 ];
 
 async function main() {

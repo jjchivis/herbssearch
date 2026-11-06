@@ -46,6 +46,8 @@ const RESTRICTED: Record<string, string> = {
   Jatropha: "Physic nut; the seeds are poisonous and a leading cause of plant poisoning in children.",
   Khat: "Contains cathinone, a Schedule I controlled substance in the US (cathine is Schedule IV).",
   "Tall White Squill": "Poisonous bulb; contains heart-acting bufadienolides with a very narrow safe dose.",
+  "Red Bryony": "Poisonous berries and root; contains cucurbitacins and the toxic protein bryodin.",
+  Boxwood: "Contains alkaloids that are toxic to cells.",
 };
 
 // Removed from the list (poppy seeds are a legal food; opium, pods and straw are

@@ -15,6 +15,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Acanthaceae: "the acanthus family",
   Acoraceae: "the sweet flag family",
   Aizoaceae: "the ice plant family",
+  Achariaceae: "the chaulmoogra family",
   Alismataceae: "the water plantain family",
   Altingiaceae: "the sweetgum family",
   Amaranthaceae: "the amaranth family",

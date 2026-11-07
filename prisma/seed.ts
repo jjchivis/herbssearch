@@ -6125,7 +6125,7 @@ const herbs = [
     uses: "Lab research only",
     properties: "Essential oil",
     cautions: "No human safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/white-clover.jpg",
   },
   {
     name: "Orange Mullein",
@@ -6135,7 +6135,7 @@ const herbs = [
     uses: "Sore throat, Dry cough",
     properties: "Flowers",
     cautions: "Ages 12+; not in pregnancy.",
-    imageUrl: null,
+    imageUrl: "/herbs/orange-mullein.jpg",
   },
   {
     name: "Toothpick Plant",
@@ -6155,7 +6155,7 @@ const herbs = [
     uses: "Skin cleansing, Acne (in combinations)",
     properties: "Saponin-rich",
     cautions: "No safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/soapwort.jpg",
   },
   {
     name: "Camu Camu",

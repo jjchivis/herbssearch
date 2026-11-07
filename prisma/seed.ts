@@ -6165,7 +6165,7 @@ const herbs = [
     uses: "Vitamin C source",
     properties: "Very high in vitamin C",
     cautions: "Human research is limited.",
-    imageUrl: "/herbs/camu-camu.jpg",
+    imageUrl: "/herbs/camu-camu-v2.jpg",
   },
   {
     name: "Figwort",

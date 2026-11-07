@@ -5925,7 +5925,7 @@ const herbs = [
     uses: "Common cold symptoms, Breathing complaints, Digestive complaints",
     properties: "Root extract",
     cautions: "Ages 6+; rare liver problems reported; see a doctor if symptoms last over a week.",
-    imageUrl: null,
+    imageUrl: "/herbs/pelargonium.jpg",
   },
   {
     name: "Red Yeast Rice",
@@ -5935,7 +5935,7 @@ const herbs = [
     uses: "Food, Chinese medicine",
     properties: "Contains monacolin K (natural lovastatin)",
     cautions: "Statin-like side effects and interactions; may contain a kidney toxin; not in pregnancy.",
-    imageUrl: null,
+    imageUrl: "/herbs/red-yeast-rice.jpg",
   },
   {
     name: "Mastic Gum",
@@ -5945,7 +5945,7 @@ const herbs = [
     uses: "Mild indigestion, Minor skin inflammation, Small wounds",
     properties: "Tree resin",
     cautions: "Adults only by mouth; not in pregnancy or breastfeeding.",
-    imageUrl: null,
+    imageUrl: "/herbs/mastic-gum.jpg",
   },
   {
     name: "Kudzu",
@@ -5955,7 +5955,7 @@ const herbs = [
     uses: "Fever, Thirst, Diarrhea, Rashes, Effects of alcohol",
     properties: "Isoflavone-rich root",
     cautions: "Research is small and limited.",
-    imageUrl: null,
+    imageUrl: "/herbs/kudzu.jpg",
   },
   {
     name: "Tribulus",
@@ -5965,7 +5965,7 @@ const herbs = [
     uses: "Sexual function, Vitality",
     properties: "Fruit extract",
     cautions: "Rare serious liver and kidney injury reported; may interact with statins.",
-    imageUrl: null,
+    imageUrl: "/herbs/tribulus.jpg",
   },
   {
     name: "Pygeum",
@@ -5975,7 +5975,7 @@ const herbs = [
     uses: "Prostate problems, Wounds, Diabetes, Malaria, Chest pain",
     properties: "Bark extract",
     cautions: "Mild side effects; see a doctor about prostate symptoms.",
-    imageUrl: null,
+    imageUrl: "/herbs/pygeum.jpg",
   },
   {
     name: "Spirulina",
@@ -5985,7 +5985,7 @@ const herbs = [
     uses: "Food (protein and vitamins)",
     properties: "Protein- and vitamin-rich alga",
     cautions: "Products can be contaminated with algae toxins; rare allergic reactions.",
-    imageUrl: null,
+    imageUrl: "/herbs/spirulina.jpg",
   },
   {
     name: "Shiitake",
@@ -5995,7 +5995,7 @@ const herbs = [
     uses: "Cooking, Cancer (valued by some; not proven)",
     properties: "Contains lentinan",
     cautions: "Can cause a streaky skin rash; swallowed whole mushrooms have blocked the bowel.",
-    imageUrl: null,
+    imageUrl: "/herbs/shiitake.jpg",
   },
 ];
 

@@ -5925,7 +5925,7 @@ const herbs = [
     uses: "Common cold symptoms, Breathing complaints, Digestive complaints",
     properties: "Root extract",
     cautions: "Ages 6+; rare liver problems reported; see a doctor if symptoms last over a week.",
-    imageUrl: "/herbs/pelargonium.jpg",
+    imageUrl: "/herbs/pelargonium-v2.jpg",
   },
   {
     name: "Red Yeast Rice",
@@ -5985,7 +5985,7 @@ const herbs = [
     uses: "Food (protein and vitamins)",
     properties: "Protein- and vitamin-rich alga",
     cautions: "Products can be contaminated with algae toxins; rare allergic reactions.",
-    imageUrl: "/herbs/spirulina.jpg",
+    imageUrl: "/herbs/spirulina-v2.jpg",
   },
   {
     name: "Shiitake",

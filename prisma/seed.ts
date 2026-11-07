@@ -6305,7 +6305,7 @@ const herbs = [
     uses: "Lumps, Sores, Mastitis (traditional)",
     properties: "Tubers rich in saponins",
     cautions: "No human safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/bolbostemma-paniculatum.jpg",
   },
   {
     name: "Bee Venom",
@@ -6315,7 +6315,7 @@ const herbs = [
     uses: "Traditional remedy (stings or injections)",
     properties: "Contains melittin",
     cautions: "Harms healthy cells and red blood cells.",
-    imageUrl: null,
+    imageUrl: "/herbs/bee-venom.jpg",
   },
   {
     name: "Cannabis",
@@ -6325,7 +6325,7 @@ const herbs = [
     uses: "Epilepsy and chemo nausea (approved drugs), Chronic pain",
     properties: "Contains THC and CBD",
     cautions: "Linked to crashes, psychosis and use disorder; not in pregnancy.",
-    imageUrl: null,
+    imageUrl: "/herbs/cannabis.jpg",
   },
   {
     name: "Centaurea Ainetensis",
@@ -6335,7 +6335,7 @@ const herbs = [
     uses: "Folk medicine (Lebanon)",
     properties: "Contains salograviolide A",
     cautions: "No human studies or safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/centaurea-ainetensis.jpg",
   },
   {
     name: "Mezereon",
@@ -6345,7 +6345,7 @@ const herbs = [
     uses: "Folk remedy (cancer-like symptoms)",
     properties: "Contains diterpene esters such as mezerein",
     cautions: "Toxic bark and fruits.",
-    imageUrl: null,
+    imageUrl: "/herbs/mezereon.jpg",
   },
   {
     name: "Cotton",
@@ -6355,7 +6355,7 @@ const herbs = [
     uses: "Cancer trials, Male contraception (historical)",
     properties: "Seeds contain gossypol",
     cautions: "Gossypol can cause low-potassium paralysis; not safe to self-medicate.",
-    imageUrl: null,
+    imageUrl: "/herbs/cotton.jpg",
   },
   {
     name: "Nervilia Fordii",
@@ -6365,7 +6365,7 @@ const herbs = [
     uses: "Lung problems (traditional)",
     properties: "Orchid extract",
     cautions: "No human studies or safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/nervilia-fordii.jpg",
   },
   {
     name: "Smilax China",
@@ -6375,7 +6375,7 @@ const herbs = [
     uses: "Inflammation, Pelvic inflammation (traditional)",
     properties: "Steroid saponins and flavonoids",
     cautions: "No human safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/smilax-china.jpg",
   },
   {
     name: "Nux Vomica",
@@ -6385,7 +6385,7 @@ const herbs = [
     uses: "Traditional medicine",
     properties: "Contains strychnine and brucine",
     cautions: "Poisonous; strychnine poisoning has been reported.",
-    imageUrl: null,
+    imageUrl: "/herbs/nux-vomica.jpg",
   },
   {
     name: "Vernonia Amygdalina",
@@ -6395,7 +6395,7 @@ const herbs = [
     uses: "Cancers, Malaria (folk use)",
     properties: "Leaves rich in steroids and flavonoids",
     cautions: "No human safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/vernonia-amygdalina.jpg",
   },
   {
     name: "Agave Angustifolia",
@@ -6405,7 +6405,7 @@ const herbs = [
     uses: "Wound pain, Rheumatism, Psoriasis (traditional)",
     properties: "Fructan fiber",
     cautions: "No human safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/agave-angustifolia.jpg",
   },
   {
     name: "Hairy Agrimony",
@@ -6415,7 +6415,7 @@ const herbs = [
     uses: "Bleeding, Dysentery, Sore throat (traditional)",
     properties: "Tannins and flavonoids",
     cautions: "No human safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/hairy-agrimony.jpg",
   },
   {
     name: "Tree of Heaven",
@@ -6425,7 +6425,7 @@ const herbs = [
     uses: "Asthma, Bleeding (traditional)",
     properties: "Bark contains quassinoids such as ailanthone",
     cautions: "Toxic at high doses.",
-    imageUrl: null,
+    imageUrl: "/herbs/tree-of-heaven.jpg",
   },
   {
     name: "Adlay",
@@ -6435,7 +6435,7 @@ const herbs = [
     uses: "Food, Lung cancer (with chemotherapy)",
     properties: "Seed oils and fatty acids",
     cautions: "Injection trials were mostly low quality.",
-    imageUrl: null,
+    imageUrl: "/herbs/adlay.jpg",
   },
   {
     name: "Dryopteris Crassirhizoma",
@@ -6445,7 +6445,7 @@ const herbs = [
     uses: "Parasites, Bleeding, Flu (traditional)",
     properties: "Rich in phloroglucinols",
     cautions: "Toxicity concerns need more study.",
-    imageUrl: null,
+    imageUrl: "/herbs/dryopteris-crassirhizoma.jpg",
   },
   {
     name: "Vitex Rotundifolia",
@@ -6455,7 +6455,7 @@ const herbs = [
     uses: "Headache, Fever (traditional)",
     properties: "Fruit contains casticin",
     cautions: "No human safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/vitex-rotundifolia.jpg",
   },
   {
     name: "Scrophularia Striata",
@@ -6465,7 +6465,7 @@ const herbs = [
     uses: "Gum disease, Liver (under study)",
     properties: "Leaves",
     cautions: "No safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/scrophularia-striata.jpg",
   },
   {
     name: "Phaleria Macrocarpa",
@@ -6475,7 +6475,7 @@ const herbs = [
     uses: "Pain, Blood sugar, Blood pressure (traditional)",
     properties: "Fruit contains mangiferin",
     cautions: "No human safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/phaleria-macrocarpa.jpg",
   },
   {
     name: "Lantana Camara",
@@ -6485,7 +6485,7 @@ const herbs = [
     uses: "Folk medicine",
     properties: "Contains lantadenes",
     cautions: "Toxic to livestock; liver and kidney damage.",
-    imageUrl: null,
+    imageUrl: "/herbs/lantana-camara.jpg",
   },
   {
     name: "Juncus Effusus",
@@ -6495,7 +6495,7 @@ const herbs = [
     uses: "Sleeplessness, Swelling (traditional)",
     properties: "Contains phenanthrenes",
     cautions: "No human safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/juncus-effusus.jpg",
   },
 ];
 

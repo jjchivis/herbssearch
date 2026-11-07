@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { BUSINESS_ADDRESS, BUSINESS_MAP_URL, BUSINESS_NAME } from "@/lib/business";
+import { BUSINESS_ADDRESS, BUSINESS_MAP_URL, BUSINESS_NAME, BUSINESS_PHONE } from "@/lib/business";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -43,6 +43,16 @@ export default function ContactPage() {
         >
           {EMAIL}
         </a>
+      </section>
+      <section className={PARCHMENT_BOX}>
+        <h2 className={LABEL}>Phone</h2>
+        <a
+          href={`tel:${BUSINESS_PHONE.tel}`}
+          className="w-fit font-serif text-2xl font-bold text-[#33512c] underline decoration-[#ab5030] underline-offset-4 hover:text-[#1f3616]"
+        >
+          {BUSINESS_PHONE.display}
+        </a>
+        <p className="font-serif text-lg font-bold text-[#3f5a36]">or {BUSINESS_PHONE.vanity}</p>
       </section>
       <section className={PARCHMENT_BOX}>
         <h2 className={LABEL}>Address</h2>

@@ -2,6 +2,13 @@
 // site footer. Change them here and both places update.
 export const BUSINESS_NAME = "Herbs Search, LLC";
 
+// 67HERBS on a phone keypad is 674-3727.
+export const BUSINESS_PHONE = {
+  display: "1-800-674-3727",
+  vanity: "1-800-67HERBS",
+  tel: "+18006743727",
+};
+
 export const BUSINESS_ADDRESS = {
   street: "1601 Willow Lawn Drive",
   suite: "Suite 304",

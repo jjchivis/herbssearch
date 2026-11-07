@@ -1,4 +1,4 @@
-import { BUSINESS_ADDRESS_ONE_LINE, BUSINESS_NAME } from "@/lib/business";
+import { BUSINESS_ADDRESS_ONE_LINE, BUSINESS_NAME, BUSINESS_PHONE } from "@/lib/business";
 
 export function SiteFooter() {
   return (
@@ -9,7 +9,11 @@ export function SiteFooter() {
           Information provided is for educational purposes and is not a substitute for
           professional medical advice.
         </p>
-        <address className="mt-3 not-italic">{BUSINESS_NAME} · {BUSINESS_ADDRESS_ONE_LINE}</address>
+        <address className="mt-3 not-italic">{BUSINESS_NAME} · {BUSINESS_ADDRESS_ONE_LINE} ·{" "}
+          <a href={`tel:${BUSINESS_PHONE.tel}`} className="whitespace-nowrap hover:text-[var(--foreground)]">
+            {BUSINESS_PHONE.display} ({BUSINESS_PHONE.vanity})
+          </a>
+        </address>
       </div>
     </footer>
   );

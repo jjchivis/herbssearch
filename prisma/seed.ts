@@ -1145,7 +1145,7 @@ const herbs = [
     uses: "Period cramps, Dysentery (traditional), Wounds (traditional), Piles (traditional)",
     properties: "Fights bacteria (in lab tests)",
     cautions: "Not for use during pregnancy or breastfeeding, or in children under 12.",
-    imageUrl: "/herbs/shame-o-lady.jpg",
+    imageUrl: "/herbs/shame-o-lady-v2.jpg",
   },
   {
     name: "Vervain",
@@ -6266,6 +6266,16 @@ const herbs = [
     properties: "Leaves",
     cautions: "Research is on a related species; no safety data for this plant.",
     imageUrl: "/herbs/vicks-plant.jpg",
+  },
+  {
+    name: "Starlight Dancer",
+    scientificName: "Nicotiana langsdorffii",
+    category: "Medicinal",
+    summary: "A tobacco species with no medicinal research of its own. Its relative, common tobacco, has compounds studied in the lab, but nicotine is addictive and toxic.",
+    uses: "No documented medicinal use (related species: tobacco)",
+    properties: "A tobacco plant",
+    cautions: "Tobacco plants contain nicotine, which is addictive and toxic in high doses.",
+    imageUrl: "/herbs/starlight-dancer.jpg",
   },
 ];
 

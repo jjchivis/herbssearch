@@ -167,6 +167,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Tremellaceae: "a family of jelly fungi",
   Typhaceae: "the cattail family",
   Ulmaceae: "the elm family",
+  Ursidae: "the bear family",
   Urticaceae: "the nettle family",
   Verbenaceae: "the verbena family",
   Viburnaceae: "the viburnum and elder family",

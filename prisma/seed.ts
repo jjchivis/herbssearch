@@ -6145,7 +6145,7 @@ const herbs = [
     uses: "Traditional medicine",
     properties: "Contains visnagin",
     cautions: "Can be toxic; a fatal poisoning has been reported.",
-    imageUrl: null,
+    imageUrl: "/herbs/toothpick-plant.jpg",
   },
   {
     name: "Soapwort",
@@ -6276,6 +6276,16 @@ const herbs = [
     properties: "A tobacco plant",
     cautions: "Tobacco plants contain nicotine, which is addictive and toxic in high doses.",
     imageUrl: "/herbs/starlight-dancer.jpg",
+  },
+  {
+    name: "Bear Bile",
+    scientificName: "Ursus arctos",
+    category: "Medicinal",
+    summary: "An animal remedy used in traditional Chinese medicine for the liver. Its compound UDCA is now an approved liver drug made without bears; raw bear bile has caused liver injury.",
+    uses: "Liver, Bile flow, Fever (traditional)",
+    properties: "Contains ursodeoxycholic acid (UDCA)",
+    cautions: "Raw bear bile can injure the liver; serious animal-welfare and conservation concerns.",
+    imageUrl: "/herbs/bear-bile.jpg",
   },
 ];
 

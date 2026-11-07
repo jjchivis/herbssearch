@@ -46,6 +46,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
       "Feeling tense, pressured or overwhelmed. If stress feels unmanageable, or comes with low mood or thoughts of harming yourself, talk to a health professional straight away.",
   },
   { name: "Fatigue", slug: "fatigue", bodySystem: "general-wellness" },
+  {
+    name: "Animal-Derived Remedies",
+    slug: "animal-derived-remedies",
+    bodySystem: "general-wellness",
+    description:
+      "Traditional remedies made from animal products rather than plants. Some raise animal-welfare and conservation concerns, and their quality and safety can vary.",
+  },
   { name: "Cough", slug: "cough", bodySystem: "respiratory" },
   {
     name: "Hay Fever",

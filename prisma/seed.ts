@@ -6287,6 +6287,16 @@ const herbs = [
     cautions: "Raw bear bile can injure the liver; serious animal-welfare and conservation concerns.",
     imageUrl: "/herbs/bear-bile.jpg",
   },
+  {
+    name: "White Prakash",
+    scientificName: "Camellia sinensis",
+    category: "Medicinal",
+    summary: "A white tea from Nepal, from the same plant as green tea. White tea improved cholesterol in one study; it isn't necessarily low in caffeine.",
+    uses: "Tea (drink)",
+    properties: "Contains caffeine, catechins and L-theanine",
+    cautions: "Contains caffeine; seller's health claims are not studied for this tea.",
+    imageUrl: "/herbs/white-prakash.jpg",
+  },
 ];
 
 async function main() {

@@ -27,6 +27,22 @@ const SEARCH_ALIASES: Record<string, string> = {
   "menopause weight gain": "menopausal weight gain",
   "menopausal weight": "menopausal weight gain",
   "menopause weight": "menopausal weight gain",
+  // Everyday names for the "Fungal Skin and Nail Infections" topic.
+  "toe fungus": "fungal skin and nail",
+  "toenail fungus": "fungal skin and nail",
+  "toe nail fungus": "fungal skin and nail",
+  "toenail fungal infection": "fungal skin and nail",
+  "foot fungus": "fungal skin and nail",
+  "nail fungus": "fungal skin and nail",
+  "fingernail fungus": "fungal skin and nail",
+  onychomycosis: "fungal skin and nail",
+  "athlete's foot": "fungal skin and nail",
+  "athlete’s foot": "fungal skin and nail",
+  "athletes foot": "fungal skin and nail",
+  "athlete foot": "fungal skin and nail",
+  "athletes feet": "fungal skin and nail",
+  "tinea pedis": "fungal skin and nail",
+  ringworm: "fungal skin and nail",
 };
 
 function libraryHref(params: { category?: string; q?: string; bodySystem?: string }) {

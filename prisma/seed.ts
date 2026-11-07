@@ -6257,6 +6257,16 @@ const herbs = [
     cautions: "Cyanide risk: no more than 3 small raw kernels for adults; none for toddlers.",
     imageUrl: "/herbs/apricot-kernel.jpg",
   },
+  {
+    name: "Vick's Plant",
+    scientificName: "Plectranthus tomentosa",
+    category: "Medicinal",
+    summary: "Little research exists on this plant; its well-studied relative Coleus amboinicus is used for coughs and boosted breast milk in studies.",
+    uses: "Coughs and colds (related species), Breast milk (related species)",
+    properties: "Leaves",
+    cautions: "Research is on a related species; no safety data for this plant.",
+    imageUrl: "/herbs/vicks-plant.jpg",
+  },
 ];
 
 async function main() {

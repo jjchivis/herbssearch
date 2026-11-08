@@ -6567,6 +6567,26 @@ const herbs = [
     cautions: "Fresh plant is a strong irritant; use only dried and boiled; not in pregnancy.",
     imageUrl: null,
   },
+  {
+    name: "Dense-Fruit Pittany Root",
+    scientificName: "Dictamnus dasycarpus",
+    category: "Medicinal",
+    summary: "Bai Xian Pi, a Chinese medicinal root bark. It has been linked to serious, sometimes fatal liver damage.",
+    uses: "Heat and dampness (traditional)",
+    properties: "Root bark alkaloids and limonoids",
+    cautions: "Can cause serious liver damage.",
+    imageUrl: null,
+  },
+  {
+    name: "Pittosporum Tobira",
+    scientificName: "Pittosporum tobira",
+    category: "Medicinal",
+    summary: "An evergreen shrub whose extract was strongly active against gum-disease bacteria in the lab.",
+    uses: "Lab research only",
+    properties: "Leaves contain essential oil and saponins",
+    cautions: "No human safety data.",
+    imageUrl: null,
+  },
 ];
 
 async function main() {

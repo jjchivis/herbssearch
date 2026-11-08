@@ -6507,6 +6507,16 @@ const herbs = [
     cautions: "Speedwell products are often mislabeled.",
     imageUrl: "/herbs/speedwell.jpg",
   },
+  {
+    name: "Japanese Ardisia",
+    scientificName: "Ardisia japonica",
+    category: "Medicinal",
+    summary: "A Chinese medicinal plant used for nearly a thousand years for cough, phlegm and asthma. Its compound bergenin is a cough medicine in China.",
+    uses: "Cough, Phlegm, Asthma (traditional)",
+    properties: "Contains bergenin",
+    cautions: "No human safety data for the whole plant.",
+    imageUrl: "/herbs/japanese-ardisia.jpg",
+  },
 ];
 
 async function main() {

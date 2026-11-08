@@ -6585,7 +6585,7 @@ const herbs = [
     uses: "Lab research only",
     properties: "Leaves contain essential oil and saponins",
     cautions: "No human safety data.",
-    imageUrl: null,
+    imageUrl: "/herbs/pittosporum-tobira.jpg",
   },
 ];
 

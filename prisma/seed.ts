@@ -6559,13 +6559,13 @@ const herbs = [
   },
   {
     name: "Chinese Anemone Root",
-    scientificName: "Anemone hupehensis",
+    scientificName: "Pulsatilla chinensis",
     category: "Medicinal",
-    summary: "A Chinese anemone whose compounds harmed cancer cells in the lab. Little else is known.",
-    uses: "Lab research only",
-    properties: "Contains saponins and diterpenoids",
-    cautions: "No human safety data.",
-    imageUrl: "/herbs/chinese-anemone-root.jpg",
+    summary: "Bai Tou Weng, the dried root of Pulsatilla chinensis, the main traditional Chinese herb for dysentery. A formula built around it helped ulcerative colitis in trials.",
+    uses: "Dysentery, Diarrhea (traditional)",
+    properties: "Root rich in saponins",
+    cautions: "Fresh plant is a strong irritant; use only dried and boiled; not in pregnancy.",
+    imageUrl: null,
   },
 ];
 

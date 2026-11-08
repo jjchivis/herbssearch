@@ -6565,7 +6565,7 @@ const herbs = [
     uses: "Dysentery, Diarrhea (traditional)",
     properties: "Root rich in saponins",
     cautions: "Fresh plant is a strong irritant; use only dried and boiled; not in pregnancy.",
-    imageUrl: null,
+    imageUrl: "/herbs/chinese-anemone-root-v2.jpg",
   },
   {
     name: "Dense-Fruit Pittany Root",
@@ -6575,7 +6575,7 @@ const herbs = [
     uses: "Heat and dampness (traditional)",
     properties: "Root bark alkaloids and limonoids",
     cautions: "Can cause serious liver damage.",
-    imageUrl: null,
+    imageUrl: "/herbs/dense-fruit-pittany-root.jpg",
   },
   {
     name: "Pittosporum Tobira",

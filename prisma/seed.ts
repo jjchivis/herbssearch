@@ -6497,6 +6497,16 @@ const herbs = [
     cautions: "No human safety data.",
     imageUrl: "/herbs/juncus-effusus.jpg",
   },
+  {
+    name: "Speedwell",
+    scientificName: "Veronica chamaedrys",
+    category: "Medicinal",
+    summary: "Germander speedwell, often sold in place of the medicinal common speedwell. It is described as having no medicinal effect.",
+    uses: "Often substituted for common speedwell",
+    properties: "Contains flavonoids",
+    cautions: "Speedwell products are often mislabeled.",
+    imageUrl: "/herbs/speedwell.jpg",
+  },
 ];
 
 async function main() {

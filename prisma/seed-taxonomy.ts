@@ -53,6 +53,13 @@ const symptoms: { name: string; slug: string; bodySystem: string; description?: 
     description:
       "Traditional remedies made from animal products rather than plants. Some raise animal-welfare and conservation concerns, and their quality and safety can vary.",
   },
+  {
+    name: "Cancer Research",
+    slug: "cancer-research",
+    bodySystem: "general-wellness",
+    description:
+      "Herbs that have been studied for effects against cancer, mostly in lab dishes or animals, or used traditionally for it. No herb has been shown to cure cancer. Don't use herbs in place of cancer treatment, and tell your cancer care team about any herb or supplement, because some can interfere with treatment.",
+  },
   { name: "Cough", slug: "cough", bodySystem: "respiratory" },
   {
     name: "Hay Fever",

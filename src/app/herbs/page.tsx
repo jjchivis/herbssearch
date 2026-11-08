@@ -43,6 +43,17 @@ const SEARCH_ALIASES: Record<string, string> = {
   "athletes feet": "fungal skin and nail",
   "tinea pedis": "fungal skin and nail",
   ringworm: "fungal skin and nail",
+  // Everyday words for the "Cancer Research" topic.
+  tumor: "cancer research",
+  tumors: "cancer research",
+  tumour: "cancer research",
+  tumours: "cancer research",
+  leukemia: "cancer research",
+  leukaemia: "cancer research",
+  anticancer: "cancer research",
+  "anti-cancer": "cancer research",
+  "anti cancer": "cancer research",
+  cancers: "cancer research",
 };
 
 function libraryHref(params: { category?: string; q?: string; bodySystem?: string }) {

@@ -3085,7 +3085,7 @@ const herbs = [
     uses: "Food, Stomach and lungs (traditional), Weakness (traditional), Memory (one small trial)",
     properties: "Antioxidant (in lab studies)",
     cautions: "Spoiled snow fungus can contain a bacterial toxin that causes severe food poisoning.",
-    imageUrl: "/herbs/tremella.jpg",
+    imageUrl: "/herbs/tremella-v2.jpg",
   },
   {
     name: "Tea Tree",

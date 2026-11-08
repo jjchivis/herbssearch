@@ -95,6 +95,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Lamiaceae: "the mint family",
   Lauraceae: "the laurel family",
   Lecythidaceae: "the Brazil nut family",
+  Liliaceae: "the lily family",
   Linaceae: "the flax family",
   Lobariaceae: "a family of leafy lichens",
   Loganiaceae: "the strychnine family",

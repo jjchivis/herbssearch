@@ -6517,6 +6517,36 @@ const herbs = [
     cautions: "No human safety data for the whole plant.",
     imageUrl: "/herbs/japanese-ardisia.jpg",
   },
+  {
+    name: "White Hyacinth Bean",
+    scientificName: "Lablab purpureus",
+    category: "Medicinal",
+    summary: "A bean used as food and in Chinese medicine for a weak stomach, poor appetite and diarrhea. Toxic if not properly prepared.",
+    uses: "Poor appetite, Loose stools, Diarrhea (traditional)",
+    properties: "Seeds rich in saponins",
+    cautions: "Toxic if not properly prepared.",
+    imageUrl: "/herbs/white-hyacinth-bean.jpg",
+  },
+  {
+    name: "Lily Bulb",
+    scientificName: "Lilium spp.",
+    category: "Medicinal",
+    summary: "Baihe, lily bulbs eaten as food and used in Chinese medicine for breathing problems.",
+    uses: "Breathing problems (traditional), Food",
+    properties: "Bulb polysaccharides",
+    cautions: "No safety data.",
+    imageUrl: "/herbs/lily-bulb.jpg",
+  },
+  {
+    name: "Patrinia Herb",
+    scientificName: "Patrinia scabiosifolia",
+    category: "Medicinal",
+    summary: "An East Asian herb used for over 2,000 years, including for inflammation. It eased anxiety and improved sleep in mice.",
+    uses: "Inflammation (traditional), Anxiety (under study)",
+    properties: "Contains iridoids",
+    cautions: "No human safety data.",
+    imageUrl: "/herbs/patrinia.jpg",
+  },
 ];
 
 async function main() {

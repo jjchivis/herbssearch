@@ -6547,6 +6547,26 @@ const herbs = [
     cautions: "No human safety data.",
     imageUrl: "/herbs/patrinia.jpg",
   },
+  {
+    name: "Arborvitae Seed",
+    scientificName: "Platycladus orientalis",
+    category: "Medicinal",
+    summary: "Seeds of the Chinese arborvitae, a traditional calming tonic. Animal studies suggest benefits for memory and mood.",
+    uses: "Calming, Memory, Mood (traditional)",
+    properties: "Seed oils and fatty acids",
+    cautions: "No human safety data.",
+    imageUrl: "/herbs/arborvitae-seed.jpg",
+  },
+  {
+    name: "Chinese Anemone Root",
+    scientificName: "Anemone hupehensis",
+    category: "Medicinal",
+    summary: "A Chinese anemone whose compounds harmed cancer cells in the lab. Little else is known.",
+    uses: "Lab research only",
+    properties: "Contains saponins and diterpenoids",
+    cautions: "No human safety data.",
+    imageUrl: "/herbs/chinese-anemone-root.jpg",
+  },
 ];
 
 async function main() {

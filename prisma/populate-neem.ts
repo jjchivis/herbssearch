@@ -38,6 +38,7 @@ run({
   },
   synonyms: [
     { name: "Neem Oil", type: "COMMON_NAME" },
+    { name: "Neem Bark", type: "COMMON_NAME" },
     { name: "Margosa", type: "COMMON_NAME" },
     { name: "Margosa Oil", type: "COMMON_NAME" },
   ],

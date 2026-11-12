@@ -27,6 +27,7 @@ run({
     { name: "Oat Herb", type: "COMMON_NAME" },
     { name: "Green Oats", type: "COMMON_NAME" },
     { name: "Milky Oat Tops", type: "COMMON_NAME" },
+    { name: "Oatstraw", type: "COMMON_NAME" },
   ],
   traditions: [
     { slug: "european-folk-medicine", notes: "Green oat herb is recognised in Europe as a traditional remedy for mild stress and to help sleep." },

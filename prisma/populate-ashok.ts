@@ -51,6 +51,7 @@ run({
   },
   synonyms: [
     { name: "Ashoka", type: "COMMON_NAME" },
+    { name: "Ashoka Bark", type: "COMMON_NAME" },
     { name: "Saraca indica", type: "SCIENTIFIC_SYNONYM" },
   ],
   traditions: [{ slug: "ayurveda", notes: "A principal herb in Ayurvedic gynecology, for heavy periods and other uterine problems." }],

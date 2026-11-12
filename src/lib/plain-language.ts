@@ -148,6 +148,7 @@ export const FAMILY_COMMON_NAMES: Record<string, string> = {
   Primulaceae: "the primrose family",
   Proteaceae: "the protea family, which includes macadamia",
   Quillajaceae: "the soapbark family",
+  Radulaceae: "a family of leafy liverworts",
   Ranunculaceae: "the buttercup family",
   Rhamnaceae: "the buckthorn family",
   Rosaceae: "the rose family",

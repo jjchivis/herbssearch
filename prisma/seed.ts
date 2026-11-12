@@ -6637,6 +6637,16 @@ const herbs = [
     cautions: "No human safety studies.",
     imageUrl: "/herbs/wood-avens.jpg",
   },
+  {
+    name: "Radula Marginata",
+    scientificName: "Radula marginata",
+    category: "Medicinal",
+    summary: "A New Zealand liverwort that makes perrottetinene, a THC-like cannabinoid. Radula preparations are sold online as a legal high.",
+    uses: "None established",
+    properties: "Contains perrottetinene, a cannabinoid",
+    cautions: "Psychoactive; no human safety studies.",
+    imageUrl: "/herbs/radula-marginata.jpg",
+  },
 ];
 
 async function main() {

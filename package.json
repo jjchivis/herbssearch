@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma migrate deploy && next build",
+    "build": "npm run images:build && prisma migrate deploy && next build",
+    "images:build": "node scripts/build-image-copies.mjs",
     "start": "next start",
     "lint": "eslint",
     "postinstall": "prisma generate",
@@ -29,6 +30,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
     "prisma": "^7.10.0",
+    "sharp": "0.35.4",
     "tailwindcss": "^4",
     "tsx": "^4.23.13",
     "typescript": "^5"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion/fade-in";
 import { HerbGrid, HerbCardMotion } from "@/components/motion/herb-grid";
@@ -65,6 +66,67 @@ function libraryHref(params: { category?: string; q?: string; bodySystem?: strin
   return qs ? `/herbs?${qs}` : "/herbs";
 }
 
+// The library's database lookups are saved for a day so most visits don't
+// touch the database. The deployment is part of the key, so each new
+// deployment (including a plain redeploy) starts with fresh herb lists.
+const loadLibrary = unstable_cache(
+  async (category: string, bodySystem: string, term: string) => {
+    const [herbs, categories, bodySystems] = await Promise.all([
+      prisma.herb.findMany({
+        where: {
+          AND: [
+            category ? { category: { equals: category, mode: "insensitive" } } : {},
+            bodySystem
+              ? {
+                  symptoms: {
+                    some: { symptom: { bodySystem: { slug: bodySystem } } },
+                  },
+                }
+              : {},
+            term
+              ? {
+                  OR: [
+                    { name: { contains: term, mode: "insensitive" } },
+                    { scientificName: { contains: term, mode: "insensitive" } },
+                    { uses: { contains: term, mode: "insensitive" } },
+                    { summary: { contains: term, mode: "insensitive" } },
+                    // Other names (e.g. "lingzhi", "bitter melon") and symptom topics (e.g. "blood pressure")
+                    { synonyms: { some: { name: { contains: term, mode: "insensitive" } } } },
+                    { symptoms: { some: { symptom: { name: { contains: term, mode: "insensitive" } } } } },
+                  ],
+                }
+              : {},
+          ],
+        },
+        // Only the fields the cards show (cached data can't hold dates).
+        select: {
+          id: true,
+          name: true,
+          scientificName: true,
+          category: true,
+          imageUrl: true,
+          summary: true,
+          // Topics shown on each card when browsing a body system (none otherwise).
+          symptoms: {
+            where: bodySystem ? { symptom: { bodySystem: { slug: bodySystem } } } : { id: { in: [] } },
+            select: { symptom: { select: { name: true } } },
+          },
+        },
+        orderBy: { name: "asc" },
+      }),
+      prisma.herb.findMany({
+        distinct: ["category"],
+        select: { category: true },
+        orderBy: { category: "asc" },
+      }),
+      prisma.bodySystem.findMany({ select: { slug: true, name: true }, orderBy: { name: "asc" } }),
+    ]);
+    return { herbs, categories, bodySystems };
+  },
+  ["herb-library", process.env.VERCEL_DEPLOYMENT_ID ?? "local"],
+  { revalidate: 86400 },
+);
+
 export default async function HerbLibraryPage({
   searchParams,
 }: {
@@ -73,49 +135,7 @@ export default async function HerbLibraryPage({
   const { q = "", category = "", bodySystem = "" } = await searchParams;
   const term = SEARCH_ALIASES[q.trim().toLowerCase()] ?? q;
 
-  const [herbs, categories, bodySystems] = await Promise.all([
-    prisma.herb.findMany({
-      where: {
-        AND: [
-          category ? { category: { equals: category, mode: "insensitive" } } : {},
-          bodySystem
-            ? {
-                symptoms: {
-                  some: { symptom: { bodySystem: { slug: bodySystem } } },
-                },
-              }
-            : {},
-          term
-            ? {
-                OR: [
-                  { name: { contains: term, mode: "insensitive" } },
-                  { scientificName: { contains: term, mode: "insensitive" } },
-                  { uses: { contains: term, mode: "insensitive" } },
-                  { summary: { contains: term, mode: "insensitive" } },
-                  // Other names (e.g. "lingzhi", "bitter melon") and symptom topics (e.g. "blood pressure")
-                  { synonyms: { some: { name: { contains: term, mode: "insensitive" } } } },
-                  { symptoms: { some: { symptom: { name: { contains: term, mode: "insensitive" } } } } },
-                ],
-              }
-            : {},
-        ],
-      },
-      // Topics shown on each card when browsing a body system (none otherwise).
-      include: {
-        symptoms: {
-          where: bodySystem ? { symptom: { bodySystem: { slug: bodySystem } } } : { id: { in: [] } },
-          include: { symptom: true },
-        },
-      },
-      orderBy: { name: "asc" },
-    }),
-    prisma.herb.findMany({
-      distinct: ["category"],
-      select: { category: true },
-      orderBy: { category: "asc" },
-    }),
-    prisma.bodySystem.findMany({ orderBy: { name: "asc" } }),
-  ]);
+  const { herbs, categories, bodySystems } = await loadLibrary(category, bodySystem, term);
 
   const isFiltered = Boolean(q || category || bodySystem);
   const activeBodySystem = bodySystems.find((b) => b.slug === bodySystem);

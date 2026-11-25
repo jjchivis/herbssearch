@@ -18,6 +18,15 @@ import {
   herbPageTitle,
 } from "@/lib/plain-language";
 
+// Each page is built the first time someone visits it, then saved and served
+// from Vercel's cache, so visitors don't each wait on the database. Saved
+// copies refresh once a day, and every new deployment starts fresh.
+export const revalidate = 86400;
+
+export async function generateStaticParams() {
+  return [];
+}
+
 export async function generateMetadata({
   params,
 }: {

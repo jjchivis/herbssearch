@@ -4,6 +4,15 @@ import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { HerbNoteList } from "@/components/herb-note-list";
 
+// Each page is built the first time someone visits it, then saved and served
+// from Vercel's cache, so visitors don't each wait on the database. Saved
+// copies refresh once a day, and every new deployment starts fresh.
+export const revalidate = 86400;
+
+export async function generateStaticParams() {
+  return [];
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const tradition = await prisma.traditionSystem.findUnique({ where: { slug } });

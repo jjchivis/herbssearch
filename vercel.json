@@ -10,11 +10,9 @@
           "value": "(?i).*(meta-externalagent|meta-externalfetcher|meta-webindexer).*"
         }
       ],
-      "mitigate": { "action": "deny" }
-    },
-    {
-      "src": "/_next/image",
-      "mitigate": { "action": "deny" }
+      "mitigate": {
+        "action": "deny"
+      }
     }
   ]
 }

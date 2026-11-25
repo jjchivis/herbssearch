@@ -11,7 +11,16 @@ export const metadata: Metadata = {
   description: "Search and browse the full herb database by name, category, or body system.",
 };
 
-type SearchParams = { q?: string; category?: string; bodySystem?: string };
+type SearchParams = { q?: string | string[]; category?: string | string[]; bodySystem?: string | string[] };
+
+// Longest search phrase that reaches the database; anything longer is cut, so
+// huge machine-made queries can't be used to load the database.
+const MAX_QUERY_LENGTH = 100;
+
+// A parameter repeated in the address (?q=a&q=b) arrives as a list; use the first.
+function firstValue(value: string | string[] | undefined) {
+  return (Array.isArray(value) ? value[0] : value) ?? "";
+}
 
 // Common abbreviations people type, searched as the topic name they stand for.
 // Short terms like "uti" would otherwise match inside unrelated words ("therapeutic").
@@ -132,7 +141,10 @@ export default async function HerbLibraryPage({
 }: {
   searchParams: Promise<SearchParams>;
 }) {
-  const { q = "", category = "", bodySystem = "" } = await searchParams;
+  const params = await searchParams;
+  const q = firstValue(params.q).slice(0, MAX_QUERY_LENGTH);
+  const category = firstValue(params.category).slice(0, MAX_QUERY_LENGTH);
+  const bodySystem = firstValue(params.bodySystem).slice(0, MAX_QUERY_LENGTH);
   const term = SEARCH_ALIASES[q.trim().toLowerCase()] ?? q;
 
   const { herbs, categories, bodySystems } = await loadLibrary(category, bodySystem, term);

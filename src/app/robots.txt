@@ -1,5 +1,8 @@
 # HerbsSearch.com
-# Block Meta AI crawlers
+# Block Meta AI crawlers (also blocked by the Vercel Firewall in vercel.json).
+# meta-externalads is deliberately NOT blocked, so Herbs Search can advertise
+# through Meta later; facebookexternalhit (Facebook/Instagram link previews)
+# stays allowed.
 
 User-agent: meta-externalagent
 Disallow: /
@@ -10,11 +13,18 @@ Disallow: /
 User-agent: meta-webindexer
 Disallow: /
 
-# General crawler permissions
+# Link previews when someone shares a Herbs Search page on Facebook or Instagram
+User-agent: facebookexternalhit
+Allow: /
+
+# General crawler permissions (Googlebot, Bingbot and others)
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
+# Library search results are endless duplicate pages; herb, topic and filter
+# pages stay crawlable.
+Disallow: /herbs?q=
 
 # XML Sitemap
 Sitemap: https://www.herbssearch.com/sitemap.xml

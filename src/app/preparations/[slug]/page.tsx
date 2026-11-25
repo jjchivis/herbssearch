@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { cache } from "react";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -13,9 +14,18 @@ export async function generateStaticParams() {
   return [];
 }
 
+// generateMetadata and the page both need this record; React's cache()
+// makes them share one database lookup per render.
+const loadPreparation = cache((slug: string) =>
+  prisma.preparation.findUnique({
+    where: { slug },
+    include: { herbs: { include: { herb: true }, orderBy: { herb: { name: "asc" } } } },
+  }),
+);
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const preparation = await prisma.preparation.findUnique({ where: { slug } });
+  const preparation = await loadPreparation(slug);
   if (!preparation) return {};
   return {
     title: `Herbs Prepared as ${preparation.name}`,
@@ -25,10 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function PreparationPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const preparation = await prisma.preparation.findUnique({
-    where: { slug },
-    include: { herbs: { include: { herb: true }, orderBy: { herb: { name: "asc" } } } },
-  });
+  const preparation = await loadPreparation(slug);
   if (!preparation) notFound();
 
   return (

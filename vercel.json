@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?i).*(meta-externalagent|meta-externalfetcher|meta-webindexer).*"
+        }
+      ],
+      "mitigate": { "action": "deny" }
+    },
+    {
+      "src": "/_next/image",
+      "mitigate": { "action": "deny" }
+    }
+  ]
+}

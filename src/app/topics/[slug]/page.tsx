@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { cache } from "react";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -14,9 +15,21 @@ export async function generateStaticParams() {
   return [];
 }
 
+// generateMetadata and the page both need this record; React's cache()
+// makes them share one database lookup per render.
+const loadTopic = cache((slug: string) =>
+  prisma.symptom.findUnique({
+    where: { slug },
+    include: {
+      bodySystem: true,
+      herbs: { include: { herb: true }, orderBy: { herb: { name: "asc" } } },
+    },
+  }),
+);
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const topic = await prisma.symptom.findUnique({ where: { slug } });
+  const topic = await loadTopic(slug);
   if (!topic) return {};
   return {
     title: `${topic.name}: Herbs Used and Studied`,
@@ -26,13 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function TopicPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const topic = await prisma.symptom.findUnique({
-    where: { slug },
-    include: {
-      bodySystem: true,
-      herbs: { include: { herb: true }, orderBy: { herb: { name: "asc" } } },
-    },
-  });
+  const topic = await loadTopic(slug);
   if (!topic) notFound();
 
   const caution = topic.bodySystem ? BODY_SYSTEM_NOTES[topic.bodySystem.slug] : undefined;

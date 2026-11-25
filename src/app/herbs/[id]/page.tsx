@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cache } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
@@ -27,16 +28,31 @@ export async function generateStaticParams() {
   return [];
 }
 
+// generateMetadata and the page both need this record; React's cache()
+// makes them share one database lookup per render.
+const loadHerb = cache((id: string) =>
+  prisma.herb.findUnique({
+    where: { id },
+    include: {
+      synonyms: true,
+      symptoms: { include: { symptom: true }, orderBy: { symptom: { name: "asc" } } },
+      constituents: { include: { constituent: true } },
+      preparations: { include: { preparation: true, source: true }, orderBy: { preparation: { name: "asc" } } },
+      actions: { include: { action: true, source: true } },
+      traditions: { include: { tradition: true } },
+      evidence: { include: { source: true } },
+      safetyRecords: { include: { source: true } },
+    },
+  }),
+);
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const herb = await prisma.herb.findUnique({
-    where: { id },
-    include: { safetyRecords: { where: { category: "DRUG_INTERACTION" } } },
-  });
+  const herb = await loadHerb(id);
   if (!herb) return {};
   return {
     title: { absolute: herbPageTitle(herb.name, herb.scientificName, hasKnownInteractions(herb.safetyRecords)) },
@@ -67,19 +83,7 @@ export default async function HerbDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const herb = await prisma.herb.findUnique({
-    where: { id },
-    include: {
-      synonyms: true,
-      symptoms: { include: { symptom: true }, orderBy: { symptom: { name: "asc" } } },
-      constituents: { include: { constituent: true } },
-      preparations: { include: { preparation: true, source: true }, orderBy: { preparation: { name: "asc" } } },
-      actions: { include: { action: true, source: true } },
-      traditions: { include: { tradition: true } },
-      evidence: { include: { source: true } },
-      safetyRecords: { include: { source: true } },
-    },
-  });
+  const herb = await loadHerb(id);
 
   if (!herb) {
     notFound();

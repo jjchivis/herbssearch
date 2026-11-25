@@ -1,0 +1,20 @@
+# HerbsSearch.com
+# Block Meta AI crawlers
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: meta-externalfetcher
+Disallow: /
+
+User-agent: meta-webindexer
+Disallow: /
+
+# General crawler permissions
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# XML Sitemap
+Sitemap: https://www.herbssearch.com/sitemap.xml

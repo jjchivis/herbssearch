@@ -1,7 +1,33 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion/fade-in";
 import { HerbImage } from "@/components/herb-image";
+import { absoluteUrl } from "@/lib/site-url";
+
+// Search and sharing details for the homepage only; other pages keep the
+// site-wide defaults from the root layout. The share picture still comes from
+// src/app/opengraph-image.jpg.
+const HOME_TITLE = "Herbs Search | Herbal Encyclopedia, Research & Safety";
+const HOME_DESCRIPTION =
+  "Explore 600+ herbs, traditional uses, scientific research, drug interactions, safety information and herbal recipes in the Herbs Search botanical encyclopedia.";
+
+export const metadata: Metadata = {
+  title: { absolute: HOME_TITLE },
+  description: HOME_DESCRIPTION,
+  openGraph: {
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    url: absoluteUrl("/"),
+    siteName: "Herbs Search",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+  },
+};
 
 const CURATED_NAMES = ["Ashwagandha", "Chamomile", "Ginger", "Lavender", "Peppermint", "Turmeric"];
 

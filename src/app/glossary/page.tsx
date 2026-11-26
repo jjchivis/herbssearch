@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { EVIDENCE_LABELS, EVIDENCE_NOTES, GLOSSARY, TIER_BADGES, TIER_ORDER } from "@/lib/plain-language";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/glossary" },
   title: "What These Words Mean",
   description: "Plain-language definitions of the herbal and research terms used in the library.",
 };

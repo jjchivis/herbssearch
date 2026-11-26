@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const compound = await loadCompound(slug);
   if (!compound) return {};
   return {
+    alternates: { canonical: `/compounds/${slug}` },
     title: `Herbs Containing ${compound.name}`,
     description: compound.description ?? `Herbs in this library that contain ${compound.name}.`,
   };

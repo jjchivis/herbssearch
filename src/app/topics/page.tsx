@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/topics" },
   title: "Health Topics",
   description: "Browse health topics by body system and see which herbs have been traditionally used or studied for each.",
 };

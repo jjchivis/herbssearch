@@ -5,11 +5,23 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { HerbGrid, HerbCardMotion } from "@/components/motion/herb-grid";
 import { HerbImage } from "@/components/herb-image";
 import { BODY_SYSTEM_NOTES } from "@/lib/plain-language";
+import { herbPath } from "@/lib/herb-slugs";
 
-export const metadata: Metadata = {
-  title: "The Herbal Library",
-  description: "Search and browse the full herb database by name, category, or body system.",
-};
+// Category and body-system views are pages search engines may list; search
+// results (?q=) are not, so their canonical is the view without the search.
+export async function generateMetadata({ searchParams }: { searchParams: Promise<SearchParams> }): Promise<Metadata> {
+  const params = await searchParams;
+  return {
+    title: "The Herbal Library",
+    description: "Search and browse the full herb database by name, category, or body system.",
+    alternates: {
+      canonical: libraryHref({
+        category: firstValue(params.category).slice(0, MAX_QUERY_LENGTH),
+        bodySystem: firstValue(params.bodySystem).slice(0, MAX_QUERY_LENGTH),
+      }),
+    },
+  };
+}
 
 type SearchParams = { q?: string | string[]; category?: string | string[]; bodySystem?: string | string[] };
 
@@ -250,7 +262,7 @@ export default async function HerbLibraryPage({
 
         <HerbGrid>
           {herbs.map((herb, index) => (
-            <HerbCardMotion key={herb.id} href={`/herbs/${herb.id}`}>
+            <HerbCardMotion key={herb.id} href={herbPath(herb)}>
               <div className="font-mono flex items-baseline justify-between text-[11px] tracking-wide text-[var(--muted)]">
                 <span>No. {String(index + 1).padStart(3, "0")}</span>
                 <span className="uppercase text-[var(--highlight)]">{herb.category}</span>

@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { TIER_LABELS, TIER_ORDER } from "@/lib/plain-language";
+import { herbPath } from "@/lib/herb-slugs";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/sources" },
   title: "Sources",
   description: "Every source cited in the library, grouped by type, with the herbs that cite it.",
 };
@@ -93,7 +95,7 @@ export default async function SourcesPage() {
                   {s.herbs.map((h, i) => (
                     <span key={h.id}>
                       {i > 0 && ", "}
-                      <Link href={`/herbs/${h.id}`} className="hover:text-[var(--highlight)]">
+                      <Link href={herbPath(h)} className="hover:text-[var(--highlight)]">
                         {h.name}
                       </Link>
                     </span>

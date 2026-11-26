@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import type { ShopIngredient } from "@/content/herbal-kitchen/types";
+import { herbPath } from "@/lib/herb-slugs";
 
 // Until the HerbsSearch shop opens on this site, nothing here is purchasable:
 // ingredients with an Herbal Library entry link to it, and the rest are listed
@@ -34,7 +35,7 @@ export async function ShopTheRecipe({ ingredients }: { ingredients: ShopIngredie
           {libraryRows.map(({ ingredient, herb }) => (
             <Link
               key={ingredient.name}
-              href={`/herbs/${herb!.id}`}
+              href={herbPath(herb!)}
               className="group flex items-center gap-4 rounded-lg border border-[var(--border)] bg-[var(--background)] p-3 transition-colors hover:border-[var(--highlight)]"
             >
               {herb!.imageUrl && (

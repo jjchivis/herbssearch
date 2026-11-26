@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion/fade-in";
 import { HerbImage } from "@/components/herb-image";
 import { absoluteUrl } from "@/lib/site-url";
+import { herbPath } from "@/lib/herb-slugs";
 
 // Search and sharing details for the homepage only; other pages keep the
 // site-wide defaults from the root layout. The share picture still comes from
@@ -14,6 +15,7 @@ const HOME_DESCRIPTION =
 
 export const metadata: Metadata = {
   title: { absolute: HOME_TITLE },
+  alternates: { canonical: "/" },
   description: HOME_DESCRIPTION,
   openGraph: {
     title: HOME_TITLE,
@@ -27,6 +29,29 @@ export const metadata: Metadata = {
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
   },
+};
+
+// schema.org WebSite + Organization, so search results can show "Herbs Search"
+// as the site name.
+const SITE_STRUCTURED_DATA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${absoluteUrl("/")}#website`,
+      name: "Herbs Search",
+      alternateName: ["HerbsSearch", "HerbsSearch.com"],
+      url: absoluteUrl("/"),
+      publisher: { "@id": `${absoluteUrl("/")}#organization` },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${absoluteUrl("/")}#organization`,
+      name: "Herbs Search",
+      url: absoluteUrl("/"),
+      logo: absoluteUrl("/brand/herbssearch-logo.png"),
+    },
+  ],
 };
 
 const CURATED_NAMES = ["Ashwagandha", "Chamomile", "Ginger", "Lavender", "Peppermint", "Turmeric"];
@@ -70,6 +95,11 @@ export default async function HomePage() {
 
   return (
     <main className="flex flex-1 flex-col">
+      {/* Tells search engines the site's name and logo (not shown on the page). */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_STRUCTURED_DATA).replace(/</g, "\\u003c") }}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden bg-[var(--band)]">
         <div
@@ -210,7 +240,7 @@ export default async function HomePage() {
                 {featured.summary}
               </p>
               <a
-                href={`/herbs/${featured.id}`}
+                href={herbPath(featured)}
                 className="mt-2 w-fit rounded-full border border-[var(--border)] px-5 py-2 text-sm font-medium text-[var(--foreground)] transition hover:border-[var(--highlight)] hover:text-[var(--highlight)]"
               >
                 Read the full entry →
@@ -273,7 +303,7 @@ export default async function HomePage() {
               {curated.map((herb) => (
                 <a
                   key={herb.id}
-                  href={`/herbs/${herb.id}`}
+                  href={herbPath(herb)}
                   className="group flex flex-col gap-2 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--highlight)]"
                 >
                   <HerbImage

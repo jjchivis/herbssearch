@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { cache } from "react";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { FadeIn } from "@/components/motion/fade-in";
@@ -8,6 +8,7 @@ import { TagList } from "@/components/motion/tag-list";
 import { HerbImage } from "@/components/herb-image";
 import { PlainText } from "@/components/plain-text";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { getHerbSlugIndex, RENAMED_HERB_SLUGS } from "@/lib/herb-slugs";
 import {
   EVIDENCE_LABELS,
   EVIDENCE_NOTES,
@@ -46,15 +47,27 @@ const loadHerb = cache((id: string) =>
   }),
 );
 
+// Turns the address into a herb's database id. Old /herbs/<id> links, renamed
+// herbs and capitalised addresses forward permanently to the current address;
+// anything else is "not found" without touching the database.
+async function resolveHerbId(slug: string) {
+  const { idBySlug, slugById } = await getHerbSlugIndex();
+  if (idBySlug[slug]) return idBySlug[slug];
+  const current = RENAMED_HERB_SLUGS[slug] ?? slugById[slug] ?? (idBySlug[slug.toLowerCase()] ? slug.toLowerCase() : undefined);
+  if (current && idBySlug[current]) permanentRedirect(`/herbs/${current}`);
+  notFound();
+}
+
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { id } = await params;
-  const herb = await loadHerb(id);
+  const { slug } = await params;
+  const herb = await loadHerb(await resolveHerbId(slug));
   if (!herb) return {};
   return {
+    alternates: { canonical: `/herbs/${slug}` },
     title: { absolute: herbPageTitle(herb.name, herb.scientificName, hasKnownInteractions(herb.safetyRecords)) },
     description: herb.summary,
   };
@@ -80,10 +93,10 @@ const SYNONYM_LABELS: Record<string, string> = {
 export default async function HerbDetailPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }) {
-  const { id } = await params;
-  const herb = await loadHerb(id);
+  const { slug } = await params;
+  const herb = await loadHerb(await resolveHerbId(slug));
 
   if (!herb) {
     notFound();

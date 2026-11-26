@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const preparation = await loadPreparation(slug);
   if (!preparation) return {};
   return {
+    alternates: { canonical: `/preparations/${slug}` },
     title: `Herbs Prepared as ${preparation.name}`,
     description: preparation.description ?? undefined,
   };

@@ -8,6 +8,7 @@ import { VideoLibrary } from "@/components/herbal-kitchen/video-library";
 import { Sprig } from "@/components/herbal-kitchen/sprig";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/herbal-kitchen" },
   title: "The Herbal Kitchen: Herbal Recipes & Botanical Videos",
   description:
     "Welcome to The Herbal Kitchen, where botanical traditions meet delicious creations. Watch herbal recipe videos, explore fascinating plants, and bring nature into your kitchen.",

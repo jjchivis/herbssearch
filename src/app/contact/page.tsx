@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { BUSINESS_ADDRESS, BUSINESS_MAP_URL, BUSINESS_NAME, BUSINESS_PHONE } from "@/lib/business";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact Us",
   description: "How to get in touch with HerbsSearch.",
 };

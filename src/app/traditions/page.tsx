@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/traditions" },
   title: "Healing Traditions",
   description: "Traditional medicine systems, such as Ayurveda and Traditional Chinese Medicine, and the herbs they use.",
 };

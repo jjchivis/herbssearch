@@ -32,6 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const topic = await loadTopic(slug);
   if (!topic) return {};
   return {
+    alternates: { canonical: `/topics/${slug}` },
     title: `${topic.name}: Herbs Used and Studied`,
     description: topic.description ?? `Herbs traditionally used or studied for ${topic.name.toLowerCase()}.`,
   };

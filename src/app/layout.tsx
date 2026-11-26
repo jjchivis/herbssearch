@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant, Archivo, IBM_Plex_Mono } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { SITE_URL } from "@/lib/site-url";
 import "./globals.css";
 
 const cormorant = Cormorant({
@@ -23,9 +24,14 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  // Canonical links and share images use the public www address, even on
+  // preview copies of the site.
+  metadataBase: new URL(SITE_URL),
+  // Page titles end with the brand name; the "Discover the Power of Plants"
+  // tagline stays on the page itself (header, homepage, footer).
   title: {
-    default: "Discover the Power of Plants",
-    template: "%s · Discover the Power of Plants",
+    default: "Herbs Search",
+    template: "%s | Herbs Search",
   },
   description:
     "A botanical discovery platform for researching herbs and plants — their traditional uses, properties, and safety information.",

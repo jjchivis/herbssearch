@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/preparations" },
   title: "Preparations",
   description: "Teas, tinctures, capsules and other ways herbs are commonly prepared, and which herbs are prepared each way.",
 };

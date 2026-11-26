@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/compounds" },
   title: "Plant Compounds",
   description: "Natural compounds found in the herbs in this library, and which herbs contain them.",
 };

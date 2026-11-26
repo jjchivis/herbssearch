@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { HerbImage } from "@/components/herb-image";
 import { PlainText } from "@/components/plain-text";
+import { herbPath } from "@/lib/herb-slugs";
 
 type Item = {
   key: string;
@@ -17,7 +18,7 @@ export function HerbNoteList({ items }: { items: Item[] }) {
       {items.map(({ key, herb, notes }) => (
         <li key={key}>
           <Link
-            href={`/herbs/${herb.id}`}
+            href={herbPath(herb)}
             className="group flex gap-4 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors hover:border-[var(--highlight)]"
           >
             <HerbImage

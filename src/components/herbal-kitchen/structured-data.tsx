@@ -25,7 +25,7 @@ export function KitchenStructuredData({ video }: { video: KitchenVideo }) {
       description: video.description,
       image: [absoluteUrl(video.video.poster.src), ...(video.recipeCard ? [absoluteUrl(video.recipeCard.src)] : [])],
       datePublished: video.publishedAt,
-      author: { "@type": "Organization", name: "HerbsSearch" },
+      author: { "@type": "Organization", name: "Herbs Search" },
       ...(r.yield ? { recipeYield: r.yield } : {}),
       ...Object.fromEntries(
         r.times.flatMap((t) =>

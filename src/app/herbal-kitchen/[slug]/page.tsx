@@ -14,6 +14,7 @@ import { ShopTheRecipe } from "@/components/herbal-kitchen/shop-the-recipe";
 import { ShareButtons } from "@/components/herbal-kitchen/share-buttons";
 import { VideoCard } from "@/components/herbal-kitchen/video-card";
 import { KitchenStructuredData } from "@/components/herbal-kitchen/structured-data";
+import { herbPath } from "@/lib/herb-slugs";
 
 export function generateStaticParams() {
   return publishedVideos().map((v) => ({ slug: v.slug }));
@@ -24,7 +25,9 @@ export async function generateMetadata({ params }: PageProps<"/herbal-kitchen/[s
   if (!video) return {};
   const kind = video.recipe ? "Recipe & Video" : "Video";
   return {
-    title: `${video.title}: ${kind} · The Herbal Kitchen`,
+    // The site name is added by the root layout's title template.
+    title: `${video.title}: ${kind}`,
+    alternates: { canonical: `/herbal-kitchen/${video.slug}` },
     description: video.description,
     openGraph: {
       title: video.title,
@@ -90,7 +93,7 @@ export default async function KitchenVideoPage({ params }: PageProps<"/herbal-ki
             {herbs.map((h) => (
               <Link
                 key={h.id}
-                href={`/herbs/${h.id}`}
+                href={herbPath(h)}
                 className="group flex items-center gap-4 rounded-lg border border-[var(--border)] p-3 transition-colors hover:border-[var(--highlight)]"
               >
                 {h.imageUrl && (

@@ -9,6 +9,7 @@ import { HerbImage } from "@/components/herb-image";
 import { PlainText } from "@/components/plain-text";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { getHerbSlugIndex, RENAMED_HERB_SLUGS } from "@/lib/herb-slugs";
+import { absoluteUrl } from "@/lib/site-url";
 import {
   EVIDENCE_LABELS,
   EVIDENCE_NOTES,
@@ -175,8 +176,35 @@ export default async function HerbDetailPage({
     { id: "sources", label: "Sources", show: sortedCitations.length > 0 },
   ].filter((l) => l.show);
 
+  // Every other name for this herb (common, regional, traditional and older
+  // scientific names), stated for search engines so a search for e.g. "Haldi"
+  // can match the Turmeric page. These names are also shown on the page.
+  const otherNames = [herbData.scientificName, ...herbData.synonyms.map((s) => s.name)]
+    .map((n) => n.trim())
+    .filter((n, i, all) => n && n.toLowerCase() !== herbData.name.toLowerCase() && all.findIndex((m) => m.toLowerCase() === n.toLowerCase()) === i);
+  const pageUrl = absoluteUrl(`/herbs/${slug}`);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": pageUrl,
+    url: pageUrl,
+    name: herbData.name,
+    description: herbData.summary,
+    isPartOf: { "@id": `${absoluteUrl("/")}#website` },
+    about: {
+      "@type": "Thing",
+      name: herbData.name,
+      ...(otherNames.length ? { alternateName: otherNames } : {}),
+    },
+  };
+
   return (
     <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-10 px-6 py-14">
+      <script
+        type="application/ld+json"
+        // "<" is escaped so a name can never close the script tag.
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+      />
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Herbal Library", href: "/herbs" }, { label: herbData.name }]} />
 
       <FadeIn className="flex flex-col gap-6 border-b border-[var(--border)] pb-8">

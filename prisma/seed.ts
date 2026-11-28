@@ -6687,6 +6687,26 @@ const herbs = [
     cautions: "Some samples contain lead; limit salt to under 5 g a day.",
     imageUrl: "/herbs/himalayan-pink-salt.jpg",
   },
+  {
+    name: "Palo Azul",
+    scientificName: "Eysenhardtia polystachya",
+    category: "Medicinal",
+    summary: "A small Mexican tree whose wood makes a tea that glows blue. It's traditionally used for kidney stones, urinary problems and diabetes, but has only been studied in the lab and in animals.",
+    uses: "Kidney stones, Urinary problems, Diabetes, Rheumatism (traditional)",
+    properties: "Rich in flavonoids; its tea glows blue",
+    cautions: "Studied only in the lab and in animals; its safety in people hasn't been tested.",
+    imageUrl: "/herbs/palo-azul.jpg",
+  },
+  {
+    name: "Bhumyamalaki",
+    scientificName: "Phyllanthus amarus",
+    category: "Medicinal",
+    summary: "A small, bitter Ayurvedic herb used for the liver, kidneys and digestion. It has been studied for hepatitis B, but Cochrane reviews found no convincing benefit when it's used on its own.",
+    uses: "Liver problems, Hepatitis B, Urinary problems, Diarrhea (traditional)",
+    properties: "Bitter; rich in lignans, flavonoids and tannins",
+    cautions: "Hepatitis B needs medical care; don't use it in place of treatment.",
+    imageUrl: "/herbs/bhumyamalaki.jpg",
+  },
 ];
 
 async function main() {

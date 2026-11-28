@@ -174,7 +174,6 @@ run({
       notes:
         "Traditionally used for the liver. Cochrane reviews of hepatitis B trials found no convincing benefit when it's used on its own.",
     },
-    { slug: "urinary", notes: "Traditionally used for urinary problems. It increased urine in a small 10-day study." },
     { slug: "high-blood-sugar", notes: "Blood sugar fell in a small 10-day study of 9 people with no comparison group." },
     { slug: "high-blood-pressure", notes: "Blood pressure fell in some people in a small 10-day study with no comparison group." },
     { slug: "diarrhea", notes: "Traditionally used for diarrhea and dysentery." },

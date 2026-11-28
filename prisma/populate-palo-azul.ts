@@ -185,7 +185,6 @@ run({
   ],
   symptoms: [
     { slug: "kidney-stones", notes: "Traditionally used in Mexico for kidney stones. Studied only in the lab and in animals." },
-    { slug: "urinary", notes: "Traditionally used for bladder and urinary problems." },
     {
       slug: "high-blood-sugar",
       notes:

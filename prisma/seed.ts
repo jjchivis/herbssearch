@@ -6707,6 +6707,16 @@ const herbs = [
     cautions: "Hepatitis B needs medical care; don't use it in place of treatment.",
     imageUrl: "/herbs/bhumyamalaki.jpg",
   },
+  {
+    name: "Cardoon",
+    scientificName: "Cynara cardunculus var. altilis",
+    category: "Culinary",
+    summary: "A thistle-like Mediterranean relative of the artichoke, grown for its fleshy leaf stalks. Its flowers curdle milk for traditional sheep and goat cheeses, and supplements made from it have been studied for fatty liver and cholesterol.",
+    uses: "Vegetable (leaf stalks), Cheese-making (flowers), Fatty liver, High cholesterol",
+    properties: "Rich in polyphenols, inulin and fiber",
+    cautions: "Don't use leaf extracts if you have gallstones, a blocked bile duct or liver disease, or are allergic to daisy-family plants.",
+    imageUrl: "/herbs/cardoon.jpg",
+  },
 ];
 
 async function main() {

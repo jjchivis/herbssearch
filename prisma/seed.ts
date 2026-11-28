@@ -6717,6 +6717,16 @@ const herbs = [
     cautions: "Don't use leaf extracts if you have gallstones, a blocked bile duct or liver disease, or are allergic to daisy-family plants.",
     imageUrl: "/herbs/cardoon.jpg",
   },
+  {
+    name: "Glossy Privet",
+    scientificName: "Ligustrum lucidum",
+    category: "Medicinal",
+    summary: "An evergreen tree from China whose dried black berries, nü zhen zi, are a traditional Chinese tonic for the liver and kidneys. Most research is in the lab, on bones, the liver and immunity; trials in people have tested it only as part of mixed formulas.",
+    uses: "Dizziness and ringing in the ears, Weak lower back and knees, Early graying hair (traditional), Bone health (lab research)",
+    properties: "Bitter, sweet and cooling in Chinese medicine; contains triterpenes such as oleanolic and ursolic acid",
+    cautions: "Only short-term animal safety studies exist. Its pollen can trigger hay fever and asthma.",
+    imageUrl: "/herbs/glossy-privet.jpg",
+  },
 ];
 
 async function main() {
